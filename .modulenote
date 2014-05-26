@@ -1,0 +1,4 @@
+# Here are submodule addition commands used to link to other repositories:
+#
+# git submodule add -f git://github.com/craigsapp/bach-371-chorales bach-js/371chorales
+# git submodule add -f git://github.com/josquin-research-project/jrp-scores jrp

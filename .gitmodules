@@ -1,0 +1,6 @@
+[submodule "bach-js/371chorales"]
+	path = bach-js/371chorales
+	url = git://github.com/craigsapp/bach-371-chorales
+[submodule "jrp"]
+	path = jrp
+	url = git://github.com/josquin-research-project/jrp-scores
