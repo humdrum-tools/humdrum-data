@@ -39,6 +39,8 @@ repository separately.
 Data overview
 =============
 
+Here is a alphabetic listing of data directories within the repository:
+
 <table cellpadding="0" cellspacing="0">
 <tr valign="top" style="border-bottom:1px solid black"><td><em>Directory</em></td><td></td><td><em>Description</em></td></tr>
 
