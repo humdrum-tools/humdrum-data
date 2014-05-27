@@ -57,7 +57,7 @@ Data overview
 <tr valign="top" style="background-color:#dddddd">
 <td><span style="font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/jrp-scores>jrp</a></td>
 <td width="20">&nbsp;</td>
-<td>Music of the early Renaissance (*c*1425&ndash;*c*1525) from the [Josquin Research Project](http://josquin.stanford.edu)</td>
+<td>Music of the early Renaissance (*c*1425&ndash;*c*1525) from the <a href=http://josquin.stanford.edu>Josquin Research Project</a></td>
 </tr>
 
 <tr valign="top">
