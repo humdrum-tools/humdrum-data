@@ -57,7 +57,7 @@ Data overview
 <tr valign="top" style="background-color:#dddddd">
 <td><span style="font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/jrp-scores>jrp</a></td>
 <td width="20">&nbsp;</td>
-<td>Music of the early Renaissance (*c*1425&ndash;*c*1525) from the <a href=http://josquin.stanford.edu>Josquin Research Project</a></td>
+<td>Music of the early Renaissance (<em>c</em>1425&ndash;<em>c</em>1525) from the <a href=http://josquin.stanford.edu>Josquin Research Project</a></td>
 </tr>
 
 <tr valign="top">
@@ -69,49 +69,49 @@ Data overview
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Agr>Agr</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Alexander Agricola (*c*1446&ndash;1506)</td>
+<td>Music by Alexander Agricola (<em>c</em>1446&ndash;1506)</td>
 </tr>
 
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Bus>Bus</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Antoine Busnoys (*c*1430&ndash;1492)</td>
+<td>Music by Antoine Busnoys (<em>c</em>1430&ndash;1492)</td>
 </tr>
 
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Com>Com</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Loyset Comp&egrave;re (*c*1445&ndash;1518)</td>
+<td>Music by Loyset Comp&egrave;re (<em>c</em>1445&ndash;1518)</td>
 </tr>
 
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Duf>Duf</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Guillaume Du Fay (*c*1397&ndash;1474)</td>
+<td>Music by Guillaume Du Fay (<em>c</em>1397&ndash;1474)</td>
 </tr>
 
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Jap>Jap</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Jean Japart (*c*1450&ndash;*c*1507)</td>
+<td>Music by Jean Japart (<em>c</em>1450&ndash;<em>c</em>1507)</td>
 </tr>
 
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Jos>Jos</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Josquin des Prez (*c*1450&ndash;1521)</td>
+<td>Music by Josquin des Prez (<em>c</em>1450&ndash;1521)</td>
 </tr>
 
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Mar>Man</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Johannes Martini (*c*1440&ndash;*c*1497)</td>
+<td>Music by Johannes Martini (<em>c</em>1440&ndash;<em>c</em>1497)</td>
 </tr>
 
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Mou>Mou</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Jean Mouton (*c*1459&ndash;1522)</td>
+<td>Music by Jean Mouton (<em>c</em>1459&ndash;1522)</td>
 </tr>
 
 <tr valign="top">
@@ -123,31 +123,31 @@ Data overview
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Ock>Ock</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Johannes Ockeghem (*c*1425&ndash;1497)</td>
+<td>Music by Johannes Ockeghem (<em>c</em>1425&ndash;1497)</td>
 </tr>
 
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Ort>Ort</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Marbrianus de Orto (*c*1460&ndash;1529)</td>
+<td>Music by Marbrianus de Orto (<em>c</em>1460&ndash;1529)</td>
 </tr>
 
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Pip>Pip</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Matthaeus Pipelare (*c*1450&ndash;*c*1550)</td>
+<td>Music by Matthaeus Pipelare (<em>c</em>1450&ndash;<em>c</em>1550)</td>
 </tr>
 
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Reg>Reg</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Johannes Regis (*c*1425&ndash;*c*1496)</td>
+<td>Music by Johannes Regis (<em>c</em>1425&ndash;<em>c</em>1496)</td>
 </tr>
 
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Rue>Rue</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Pierre de la Rue (*c*1452&ndash;1518)</td>
+<td>Music by Pierre de la Rue (<em>c</em>1452&ndash;1518)</td>
 </tr>
 
 </table>
