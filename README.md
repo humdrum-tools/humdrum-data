@@ -40,7 +40,7 @@ Data overview
 =============
 
 <table cellpadding="0" cellspacing="0">
-<tr valign="top" style="border-bottom:1px solid black"><td>Directory</td><td></td><td>Description</td></tr>
+<tr valign="top" style="border-bottom:1px solid black"><td>*Directory*</td><td></td><td>*Description*</td></tr>
 
 <tr><td><small>&nbsp;<small></td><td></td><td></td></tr>
 
@@ -51,7 +51,7 @@ Data overview
 </tr>
 
 <tr valign="top">
-<td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold">[371-chorales](https://github.com/craigsapp/bach-371-chorales)</span></td>
+<td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/bach-371-chorales">371-chorales</a></span></td>
 <td width="20">&nbsp;</td>
 <td>371 four-part chorales collected by C.P.E. Bach and Johann Kirnberger, published by Breitkopf & H&auml;rtel</td>
 </tr>
