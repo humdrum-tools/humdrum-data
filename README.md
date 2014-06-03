@@ -53,7 +53,13 @@ Here is a alphabetic listing of data directories within the repository:
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/bach-371-chorales">371-chorales</a></span></td>
 <td width="20">&nbsp;</td>
-<td>371 four-part chorales collected by C.P.E. Bach and Johann Kirnberger, published by Breitkopf & H&auml;rtel</td>
+<td>371 four-part chorales collected by C.P.E. Bach and Johann Kirnberger, published by Breitkopf & H&auml;rtel from <a href=http://kern.humdrum.org/data?l=371chorales>kernScores</a></td>
+</tr>
+
+<tr valign="top" style="background-color:#dddddd">
+<td><span style="font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/craigsapp/joplin-rags>joplin</a></td>
+<td width="20">&nbsp;</td>
+<td>Music by Scott Joplin(<em>c</em>1867&ndash;<em>c</em>1917) from <a href=http://kern.humdrum.org/data?l=joplin>kernScores</a></td>
 </tr>
 
 <tr valign="top" style="background-color:#dddddd">

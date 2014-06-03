@@ -4,3 +4,6 @@
 [submodule "jrp"]
 	path = jrp
 	url = git://github.com/josquin-research-project/jrp-scores
+[submodule "joplin"]
+	path = joplin
+	url = git://github.com/craigsapp/joplin-rags
