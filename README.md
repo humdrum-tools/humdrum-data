@@ -59,13 +59,13 @@ Here is a alphabetic listing of data directories within the repository:
 <tr valign="top" style="background-color:#dddddd">
 <td><span style="font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/craigsapp/joplin-rags>joplin</a></td>
 <td width="20">&nbsp;</td>
-<td>Music by Scott Joplin(<em>c</em>1867&ndash;<em>c</em>1917) from <a href=http://kern.humdrum.org/browse?l=joplin>kernScores</a></td>
+<td>Music by Scott Joplin (<em>c</em>1867&ndash;1917) from <a href=http://kern.humdrum.org/browse?l=joplin>kernScores</a></td>
 </tr>
 
 <tr valign="top" style="background-color:#dddddd">
 <td><span style="font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/jrp-scores>jrp</a></td>
 <td width="20">&nbsp;</td>
-<td>Music of the early Renaissance (<em>c</em>1425&ndash;<em>c</em>1525) from the <a href=http://josquin.stanford.edu>Josquin Research Project</a></td>
+<td>Music of the early Renaissance (<em>c</em>1425&ndash;<em>c</em>1525) from the <a href=http://josquin.stanford.edu>Josquin Research Project</a> (and mirroed on <a href=http://kern.humdrum.org/browse?l=jrp>kernScores</a></td>
 </tr>
 
 <tr valign="top">
