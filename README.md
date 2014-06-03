@@ -42,7 +42,7 @@ Data overview
 Here is a alphabetic listing of data directories within the repository:
 
 <table cellpadding="0" cellspacing="0">
-<tr valign="top" style="border-bottom:1px solid black"><td><em><span>Directory</span></em></td><td></td><td><em>Description</em></td></tr>
+<tr valign="top" style="border-bottom:1px solid black"><td width="200"><em>Directory</em></td><td></td><td><em>Description</em></td></tr>
 
 <tr valign="top" style="background-color:#dddddd">
 <td><span style="font-weight:bold; font-family:Arial Rounded MT Bold">bach-js</span></td>
