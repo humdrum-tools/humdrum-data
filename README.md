@@ -47,13 +47,25 @@ Here is a alphabetic listing of data directories within the repository:
 <tr valign="top" style="background-color:#dddddd">
 <td><span style="font-weight:bold; font-family:Arial Rounded MT Bold">bach-js</span></td>
 <td width="20">&nbsp;</td>
-<td>Music by Johann Sebastian Bach</td>
+<td>Music by Johann Sebastian Bach (1685&ndash;1750)</td>
 </tr>
- 
+
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/bach-371-chorales">371-chorales</a></span></td>
 <td width="20">&nbsp;</td>
 <td>371 four-part chorales collected by C.P.E. Bach and Johann Kirnberger, published by Breitkopf & H&auml;rtel from <a href=http://kern.humdrum.org/browse?l=371chorales>kernScores</a></td>
+</tr>
+
+<tr valign="top" style="background-color:#dddddd">
+<td><span style="font-weight:bold; font-family:Arial Rounded MT Bold"><a href=beethoven>beethoven</a></span></td>
+<td width="20">&nbsp;</td>
+<td>Music by Ludwig van Beethoven (1770&ndash;1827)</td>
+</tr>
+
+<tr valign="top">
+<td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/beethoven-piano-sonatas">piano-sonatas</a></span></td>
+<td width="20">&nbsp;</td>
+<td>32 piano sonata <a href=http://kern.humdrum.org/browse?l=beethoven/sonatas>kernScores</a></td>
 </tr>
 
 <tr valign="top" style="background-color:#dddddd">

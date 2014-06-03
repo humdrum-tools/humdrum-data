@@ -7,3 +7,6 @@
 [submodule "joplin"]
 	path = joplin
 	url = git://github.com/craigsapp/joplin-rags
+[submodule "beethoven/piano-sonatas"]
+	path = beethoven/piano-sonatas
+	url = git://github.com/craigsapp/beethoven-piano-sonatas
