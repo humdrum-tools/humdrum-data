@@ -57,7 +57,7 @@ Here is a alphabetic listing of data directories within the repository:
 </tr>
 
 <tr valign="top" style="background-color:#dddddd">
-<td><span style="font-weight:bold; font-family:Arial Rounded MT Bold"><a href=beethoven>beethoven</a></span></td>
+<td><span style="font-weight:bold; font-family:Arial Rounded MT Bold">beethoven</span></td>
 <td width="20">&nbsp;</td>
 <td>Music by Ludwig van Beethoven (1770&ndash;1827)</td>
 </tr>
