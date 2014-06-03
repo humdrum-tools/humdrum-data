@@ -65,7 +65,7 @@ Here is a alphabetic listing of data directories within the repository:
 <tr valign="top" style="background-color:#dddddd">
 <td><span style="font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/jrp-scores>jrp</a></td>
 <td width="20">&nbsp;</td>
-<td>Music of the early Renaissance (<em>c</em>1425&ndash;<em>c</em>1525) from the <a href=http://josquin.stanford.edu>Josquin Research Project</a> (and mirroed on <a href=http://kern.humdrum.org/browse?l=jrp>kernScores</a></td>
+<td>Music of the early Renaissance (<em>c</em>1425&ndash;<em>c</em>1525) from the <a href=http://josquin.stanford.edu>Josquin Research Project</a> (and mirrored on <a href=http://kern.humdrum.org/browse?l=jrp>kernScores</a>)</td>
 </tr>
 
 <tr valign="top">
