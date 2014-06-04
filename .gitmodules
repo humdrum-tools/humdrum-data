@@ -16,3 +16,6 @@
 [submodule "scarlatti-d/keyboard-sonatas"]
 	path = scarlatti-d/keyboard-sonatas
 	url = git://github.com/craigsapp/scarlatti-keyboard-sonatas
+[submodule "chopin/mazurkas"]
+	path = chopin/mazurkas
+	url = git://github.com/craigsapp/chopin-mazurkas
