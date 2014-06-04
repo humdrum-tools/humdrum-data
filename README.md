@@ -69,6 +69,42 @@ Here is a alphabetic listing of data directories within the repository:
 </tr>
 
 <tr valign="top" style="background-color:#dddddd">
+<td><span style="font-weight:bold; font-family:Arial Rounded MT Bold">chopin</span></td>
+<td width="20">&nbsp;</td>
+<td>Music by Fr&eacute;d&eacute;ric Chopin (1810&ndash;1839)</td>
+</tr>
+
+<tr valign="top">
+<td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/chopin-mazurkas">mazurkas</a></span></td>
+<td width="20">&nbsp;</td>
+<td>49 mauzurkas from <a href=http://kern.humdrum.org/browse?l=chopin/mazurkas>kernScores</a></td>
+</tr>
+
+<tr valign="top">
+<td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/chopin-preludes">preludes</a></span></td>
+<td width="20">&nbsp;</td>
+<td>24 preludes from <a href=http://kern.humdrum.org/browse?l=chopin/preludes>kernScores</a></td>
+</tr>
+
+<tr valign="top" style="background-color:#dddddd">
+<td><span style="font-weight:bold; font-family:Arial Rounded MT Bold">hummel</span></td>
+<td width="20">&nbsp;</td>
+<td>Music by Johann Nepomuk Hummel (1778&ndash;1837)</td>
+</tr>
+
+<tr valign="top">
+<td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/hummel-preludes">preludes</a></span></td>
+<td width="20">&nbsp;</td>
+<td>24 preludes from <a href=http://kern.humdrum.org/browse?l=hummel/preludes>kernScores</a></td>
+</tr>
+
+<tr valign="top" style="background-color:#dddddd">
+<td><span style="font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/craigsapp/joplin-rags>joplin</a></td>
+<td width="20">&nbsp;</td>
+<td>Music by Scott Joplin (<em>c</em>1867&ndash;1917) from <a href=http://kern.humdrum.org/browse?l=joplin>kernScores</a></td>
+</tr>
+
+<tr valign="top" style="background-color:#dddddd">
 <td><span style="font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/craigsapp/joplin-rags>joplin</a></td>
 <td width="20">&nbsp;</td>
 <td>Music by Scott Joplin (<em>c</em>1867&ndash;1917) from <a href=http://kern.humdrum.org/browse?l=joplin>kernScores</a></td>

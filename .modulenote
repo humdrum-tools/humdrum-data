@@ -7,4 +7,5 @@
 #git submodule add -f git://github.com/craigsapp/mozart-piano-sonatas mozart/piano-sonatas
 #git submodule add -f git://github.com/craigsapp/scarlatti-keyboard-sonatas scarlatti-d/keyboard-sonatas
 #git submodule add -f git://github.com/craigsapp/chopin-mazurkas chopin/mazurkas
-git submodule add -f git://github.com/craigsapp/chopin-preludes chopin/preludes
+#git submodule add -f git://github.com/craigsapp/chopin-preludes chopin/preludes
+#git submodule add -f git://github.com/craigsapp/hummel-preludes hummel/preludes

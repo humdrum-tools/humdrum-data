@@ -22,3 +22,6 @@
 [submodule "chopin/preludes"]
 	path = chopin/preludes
 	url = git://github.com/craigsapp/chopin-preludes
+[submodule "hummel/preludes"]
+	path = hummel/preludes
+	url = git://github.com/craigsapp/hummel-preludes
