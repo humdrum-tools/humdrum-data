@@ -28,3 +28,6 @@
 [submodule "beethoven/quartets"]
 	path = beethoven/quartets
 	url = git://github.com/craigsapp/beethoven-string-quartets
+[submodule "mozart/quartets"]
+	path = mozart/quartets
+	url = git://github.com/musedata/humdrum-mozart-quartets

@@ -109,6 +109,12 @@ Here is a alphabetic listing of data directories within the repository:
 <td>32 piano sonatas from <a href=http://kern.humdrum.org/browse?l=beethoven/sonatas>kernScores</a></td>
 </tr>
 
+<tr valign="top">
+<td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/beethoven-quartets">quartets</a></span></td>
+<td width="20">&nbsp;</td>
+<td>String quartets</td>
+</tr>
+
 <tr valign="top" style="background-color:#dddddd">
 <td><span style="font-weight:bold; font-family:Arial Rounded MT Bold">chopin</span></td>
 <td width="20">&nbsp;</td>
@@ -251,6 +257,12 @@ Here is a alphabetic listing of data directories within the repository:
 <td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/mozart-piano-sonatas">piano-sonatas</a></span></td>
 <td width="20">&nbsp;</td>
 <td>17 piano sonatas from <a href=http://kern.humdrum.org/browse?l=mozart/sonatas>kernScores</a></td>
+</tr>
+
+<tr valign="top">
+<td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/musedata/humdrum-mozart-quartets">quartets</a></span></td>
+<td width="20">&nbsp;</td>
+<td>String quartets</td>
 </tr>
 
 <tr valign="top" style="background-color:#dddddd">
