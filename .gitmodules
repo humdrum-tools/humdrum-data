@@ -19,3 +19,6 @@
 [submodule "chopin/mazurkas"]
 	path = chopin/mazurkas
 	url = git://github.com/craigsapp/chopin-mazurkas
+[submodule "chopin/preludes"]
+	path = chopin/preludes
+	url = git://github.com/craigsapp/chopin-preludes
