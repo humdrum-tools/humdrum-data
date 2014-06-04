@@ -13,3 +13,6 @@
 [submodule "mozart/piano-sonatas"]
 	path = mozart/piano-sonatas
 	url = git://github.com/craigsapp/mozart-piano-sonatas
+[submodule "scarlatti-d/keyboard-sonatas"]
+	path = scarlatti-d/keyboard-sonatas
+	url = git://github.com/craigsapp/scarlatti-keyboard-sonatas

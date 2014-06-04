@@ -33,3 +33,17 @@ help:
 	@echo "[0;32mmake update[0m      -- Download most recent versions of the data"
 	@echo "[0m"
 
+
+###########################################################################
+##
+## Update to the master branch of all submodules.
+##
+
+pull: update
+update: 
+	git pull
+ifneq ($(wildcard .gitmodules),) 
+	git submodule update --init --recursive
+	git submodule foreach "(git checkout master; git pull origin master)"
+endif
+

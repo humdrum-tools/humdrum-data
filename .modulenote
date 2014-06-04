@@ -5,3 +5,4 @@
 #git submodule add -f git://github.com/craigsapp/joplin-rags joplin
 #git submodule add -f git://github.com/craigsapp/beethoven-piano-sonatas beethoven/piano-sonatas
 #git submodule add -f git://github.com/craigsapp/mozart-piano-sonatas mozart/piano-sonatas
+git submodule add -f git://github.com/craigsapp/scarlatti-keyboard-sonatas scarlatti-d/keyboard-sonatas
