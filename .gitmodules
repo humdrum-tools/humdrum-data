@@ -10,3 +10,6 @@
 [submodule "beethoven/piano-sonatas"]
 	path = beethoven/piano-sonatas
 	url = git://github.com/craigsapp/beethoven-piano-sonatas
+[submodule "mozart/piano-sonatas"]
+	path = mozart/piano-sonatas
+	url = git://github.com/craigsapp/mozart-piano-sonatas

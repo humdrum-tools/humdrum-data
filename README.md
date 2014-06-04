@@ -65,7 +65,7 @@ Here is a alphabetic listing of data directories within the repository:
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/beethoven-piano-sonatas">piano-sonatas</a></span></td>
 <td width="20">&nbsp;</td>
-<td>32 piano sonata <a href=http://kern.humdrum.org/browse?l=beethoven/sonatas>kernScores</a></td>
+<td>32 piano sonatas from <a href=http://kern.humdrum.org/browse?l=beethoven/sonatas>kernScores</a></td>
 </tr>
 
 <tr valign="top" style="background-color:#dddddd">
@@ -168,6 +168,18 @@ Here is a alphabetic listing of data directories within the repository:
 <td align="right" style="background-color:#eeeeee"><span style="margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href=https://github.com/josquin-research-project/Rue>Rue</a></td>
 <td width="20">&nbsp;</td>
 <td>Music by Pierre de la Rue (<em>c</em>1452&ndash;1518)</td>
+</tr>
+
+<tr valign="top" style="background-color:#dddddd">
+<td><span style="font-weight:bold; font-family:Arial Rounded MT Bold">mozart</span></td>
+<td width="20">&nbsp;</td>
+<td>Music by Wolfgang Amadeus Mozart (1756&ndash;1791)</td>
+</tr>
+
+<tr valign="top">
+<td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/mozart-piano-sonatas">piano-sonatas</a></span></td>
+<td width="20">&nbsp;</td>
+<td>17 piano sonatas from <a href=http://kern.humdrum.org/browse?l=mozart/sonatas>kernScores</a></td>
 </tr>
 
 </table>
