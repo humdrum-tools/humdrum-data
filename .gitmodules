@@ -31,3 +31,6 @@
 [submodule "mozart/quartets"]
 	path = mozart/quartets
 	url = git://github.com/musedata/humdrum-mozart-quartets
+[submodule "haydn/quartets"]
+	path = haydn/quartets
+	url = git://github.com/musedata/humdrum-haydn-quartets

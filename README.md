@@ -136,6 +136,18 @@ Here is a alphabetic listing of data directories within the repository:
 <tr valign="top" style="background-color:#dddddd">
 <td><span style="font-weight:bold; font-family:Arial Rounded MT Bold">hummel</span></td>
 <td width="20">&nbsp;</td>
+<td>Music by Joseph Haydn (1732&ndash;1809)</td>
+</tr>
+
+<tr valign="top">
+<td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/musedata/humdrum-haydn-quartets">quartets</a></span></td>
+<td width="20">&nbsp;</td>
+<td>String Quartets (converted from MuseData) also on <a href=http://kern.humdrum.org/browse?l=haydn/quartets>kernScores</a></td>
+</tr>
+
+<tr valign="top" style="background-color:#dddddd">
+<td><span style="font-weight:bold; font-family:Arial Rounded MT Bold">hummel</span></td>
+<td width="20">&nbsp;</td>
 <td>Music by Johann Nepomuk Hummel (1778&ndash;1837)</td>
 </tr>
 
