@@ -134,7 +134,7 @@ Here is a alphabetic listing of data directories within the repository:
 </tr>
 
 <tr valign="top" style="background-color:#dddddd">
-<td><span style="font-weight:bold; font-family:Arial Rounded MT Bold">hummel</span></td>
+<td><span style="font-weight:bold; font-family:Arial Rounded MT Bold">haydn</span></td>
 <td width="20">&nbsp;</td>
 <td>Music by Joseph Haydn (1732&ndash;1809)</td>
 </tr>
