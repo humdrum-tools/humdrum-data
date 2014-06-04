@@ -25,3 +25,6 @@
 [submodule "hummel/preludes"]
 	path = hummel/preludes
 	url = git://github.com/craigsapp/hummel-preludes
+[submodule "beethoven/quartets"]
+	path = beethoven/quartets
+	url = git://github.com/craigsapp/beethoven-string-quartets
