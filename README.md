@@ -274,7 +274,7 @@ Additional online data
 Most of the repertories in this archive can also be found on kernScores
 (http://kern.humdrum.org), with mirrors at http://kern.ccarh.org and
 http://kernscores.stanford.edu.  When this is the case, a file called
-kern/.kernscores within each submodule will give the kernScores address
+[kern/.kernscores](https://github.com/craigsapp/bach-371-chorales/blob/master/kern/.kernscores) within each submodule will give the kernScores address
 for the repertory, such as ```h://371chorales``` for the set of 
 371 Bach chorales.
 
