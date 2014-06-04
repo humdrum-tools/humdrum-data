@@ -112,7 +112,7 @@ Here is a alphabetic listing of data directories within the repository:
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/beethoven-quartets">quartets</a></span></td>
 <td width="20">&nbsp;</td>
-<td>String quartets from <a href=http://kern.humdrum.org/browse?l=beethoven/quartets>kernScores</a></td>
+<td>16 string quartets from <a href=http://kern.humdrum.org/browse?l=beethoven/quartets>kernScores</a></td>
 </tr>
 
 <tr valign="top" style="background-color:#dddddd">
@@ -262,7 +262,7 @@ Here is a alphabetic listing of data directories within the repository:
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/musedata/humdrum-mozart-quartets">quartets</a></span></td>
 <td width="20">&nbsp;</td>
-<td>String quartets (converted from MuseData stage 1 data) also on <a href=http://kern.humdrum.org/browse?l=mozart/quartets>kernScores</a></td>
+<td>String quartets (converted from MuseData) also on <a href=http://kern.humdrum.org/browse?l=mozart/quartets>kernScores</a></td>
 </tr>
 
 <tr valign="top" style="background-color:#dddddd">
