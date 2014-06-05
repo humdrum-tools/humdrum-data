@@ -310,7 +310,7 @@ Here is a alphabetic listing of data directories within the repository:
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/erk-liederschatz">liederschatz</a></span></td>
 <td width="20">&nbsp;</td>
-<td>Deutscher Liederschatz, edited by Ludwig Erk, also available on <a href=http://kern.humdrum.org/browse?l=craig/songs/erk/liederschatz>kernScores</a></td>
+<td>Deutscher Liederschatz, edited by Ludwig Erk, also available on <a href=http://kern.humdrum.org/browse?l=/users/craig/songs/erk/liederschatz>kernScores</a></td>
 </tr>
 
 </table>
