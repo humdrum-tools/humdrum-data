@@ -40,3 +40,6 @@
 [submodule "bach-js/brandenburg"]
 	path = bach-js/brandenburg
 	url = git://github.com/musedata/humdrum-bach-brandenburg
+[submodule "songs/harmonized/liederschatz"]
+	path = songs/harmonized/liederschatz
+	url = git://github.com/craigsapp/erk-liederschatz
