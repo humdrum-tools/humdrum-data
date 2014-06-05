@@ -43,3 +43,6 @@
 [submodule "songs/harmonized/liederschatz"]
 	path = songs/harmonized/liederschatz
 	url = git://github.com/craigsapp/erk-liederschatz
+[submodule "songs/unaccompanied/nova-scotia"]
+	path = songs/unaccompanied/nova-scotia
+	url = git://github.com/craigsapp/creighton-nova-scotia

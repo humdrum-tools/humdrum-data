@@ -15,3 +15,4 @@
 #git submodule add -f git://github.com/humdrum-tools/bach-wtc bach-js/wtc
 #git submodule add -f git://github.com/musedata/humdrum-bach-brandenburg bach-js/brandenburg
 #git submodule add -f git://github.com/craigsapp/erk-liederschatz songs/harmonized/liederschatz
+git submodule add -f git://github.com/craigsapp/creighton-nova-scotia songs/unaccompanied/nova-scotia
