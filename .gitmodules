@@ -34,3 +34,6 @@
 [submodule "haydn/quartets"]
 	path = haydn/quartets
 	url = git://github.com/musedata/humdrum-haydn-quartets
+[submodule "bach-js/wtc"]
+	path = bach-js/wtc
+	url = git://github.com/humdrum-tools/bach-wtc
