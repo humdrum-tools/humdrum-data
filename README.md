@@ -322,7 +322,7 @@ Here is a alphabetic listing of data directories within the repository:
 <tr valign="top">
 <td align="right" style="background-color:#eeeeee"><span style="white-space:nowrap; padding-left:10px; margin-right:10px; font-weight:bold; font-family:Arial Rounded MT Bold"><a href="https://github.com/craigsapp/creighton-nova-scotia">nova-scotia</a></span></td>
 <td width="20">&nbsp;</td>
-<td>Songs and Ballads from Nova Scotia, collected by Helen Creightin (1932), also available on <a href=http://kern.humdrum.org/browse?l=/folk/nova-scotia>kernScores</a></td>
+<td>Songs and Ballads from Nova Scotia, collected by Helen Creightin (1932), also available on <a href=http://kern.humdrum.org/browse?l=/folk/novascotia>kernScores</a></td>
 </tr>
 
 </table>
