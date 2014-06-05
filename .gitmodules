@@ -37,3 +37,6 @@
 [submodule "bach-js/wtc"]
 	path = bach-js/wtc
 	url = git://github.com/humdrum-tools/bach-wtc
+[submodule "bach-js/brandenburg"]
+	path = bach-js/brandenburg
+	url = git://github.com/musedata/humdrum-bach-brandenburg
