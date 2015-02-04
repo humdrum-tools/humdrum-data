@@ -1,48 +1,48 @@
 [submodule "bach-js/371chorales"]
 	path = bach-js/371chorales
-	url = git://github.com/craigsapp/bach-371-chorales
-[submodule "jrp"]
-	path = jrp
-	url = git://github.com/josquin-research-project/jrp-scores
+	url = https://github.com/craigsapp/bach-371-chorales
 [submodule "joplin"]
 	path = joplin
-	url = git://github.com/craigsapp/joplin-rags
+	url = https://github.com/craigsapp/joplin-rags
 [submodule "beethoven/piano-sonatas"]
 	path = beethoven/piano-sonatas
-	url = git://github.com/craigsapp/beethoven-piano-sonatas
+	url = https://github.com/craigsapp/beethoven-piano-sonatas
 [submodule "mozart/piano-sonatas"]
 	path = mozart/piano-sonatas
-	url = git://github.com/craigsapp/mozart-piano-sonatas
+	url = https://github.com/craigsapp/mozart-piano-sonatas
 [submodule "scarlatti-d/keyboard-sonatas"]
 	path = scarlatti-d/keyboard-sonatas
-	url = git://github.com/craigsapp/scarlatti-keyboard-sonatas
+	url = https://github.com/craigsapp/scarlatti-keyboard-sonatas
 [submodule "chopin/mazurkas"]
 	path = chopin/mazurkas
-	url = git://github.com/craigsapp/chopin-mazurkas
+	url = https://github.com/craigsapp/chopin-mazurkas
 [submodule "chopin/preludes"]
 	path = chopin/preludes
-	url = git://github.com/craigsapp/chopin-preludes
+	url = https://github.com/craigsapp/chopin-preludes
 [submodule "hummel/preludes"]
 	path = hummel/preludes
-	url = git://github.com/craigsapp/hummel-preludes
+	url = https://github.com/craigsapp/hummel-preludes
 [submodule "beethoven/quartets"]
 	path = beethoven/quartets
-	url = git://github.com/craigsapp/beethoven-string-quartets
+	url = https://github.com/craigsapp/beethoven-string-quartets
 [submodule "mozart/quartets"]
 	path = mozart/quartets
-	url = git://github.com/musedata/humdrum-mozart-quartets
+	url = https://github.com/musedata/humdrum-mozart-quartets
 [submodule "haydn/quartets"]
 	path = haydn/quartets
-	url = git://github.com/musedata/humdrum-haydn-quartets
+	url = https://github.com/musedata/humdrum-haydn-quartets
 [submodule "bach-js/wtc"]
 	path = bach-js/wtc
-	url = git://github.com/humdrum-tools/bach-wtc
+	url = https://github.com/humdrum-tools/bach-wtc
 [submodule "bach-js/brandenburg"]
 	path = bach-js/brandenburg
-	url = git://github.com/musedata/humdrum-bach-brandenburg
+	url = https://github.com/musedata/humdrum-bach-brandenburg
 [submodule "songs/harmonized/liederschatz"]
 	path = songs/harmonized/liederschatz
-	url = git://github.com/craigsapp/erk-liederschatz
+	url = https://github.com/craigsapp/erk-liederschatz
 [submodule "songs/unaccompanied/nova-scotia"]
 	path = songs/unaccompanied/nova-scotia
-	url = git://github.com/craigsapp/creighton-nova-scotia
+	url = https://github.com/craigsapp/creighton-nova-scotia
+[submodule "jrp"]
+	path = jrp
+	url = https://github.com/josquin-research-project/jrp-scores
