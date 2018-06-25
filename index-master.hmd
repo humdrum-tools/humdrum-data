@@ -1,0 +1,28 @@
+!! This is the master index of Humdrum datafile URI's for Verovio Humdrum Viewer,
+!! Humdrum Extras, and kernScores.
+!!
+!! Meaning of data columns below:
+!! 
+!! (1) uri   == The URI of a repertory (excluding the scope prefix).
+!! (2) type  == "primary" means it should be shown when listing
+!!              URI entries.  "alias" means that it is an alternate name
+!!              (usually shorter) for a longer URI.
+!! (3) index == The location of the index for files/works in the given URI.
+!!              If the index location does not start with http:// or https://,
+!!              The it refers to the URI of another entry in the list.
+!!              Multiple indexes or aliases can be lised in the index spine,
+!!              separated by spaces.
+!!
+**uri	**type	**index
+humdrum://joplin	primary	https://raw.githubusercontent.com/craigsapp/joplin/master/index.hmd
+humdrum://mozart/piano/sonatas	primary	https://raw.githubusercontent.com/craigsapp/mozart-piano-sonatas/master/index.hmd
+humdrum://mozart/sonatas	alias	humdrum://mozart/piano/sonatas
+humdrum://beethoven/piano/sonatas	primary	https://raw.githubusercontent.com/craigsapp/beethoven-piano-sonatas/master/index.hmd
+humdrum://beethoven/sonatas	alias	humdrum://beethoven/piano/sonatas
+*-	*-
+!!
+!! Scope aliases: Shortcuts for URI scopes.  For example 
+!! "h://" is equivalent to "humdrum://".
+!!
+!!!scope-alias: h = humdrum
+!!!scope-alias: hum = humdrum
