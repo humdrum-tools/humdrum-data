@@ -3,7 +3,7 @@
 	url = https://github.com/craigsapp/bach-371-chorales
 [submodule "joplin"]
 	path = joplin
-	url = https://github.com/craigsapp/joplin-rags
+	url = https://github.com/craigsapp/joplin
 [submodule "beethoven/piano-sonatas"]
 	path = beethoven/piano-sonatas
 	url = https://github.com/craigsapp/beethoven-piano-sonatas
