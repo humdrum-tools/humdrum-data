@@ -15,6 +15,7 @@
 !! (4) **title == Title of the repertory.
 !!
 **uri	**type	**index	**title
+humdrum://bach/chorales-370	primary	https://raw.githubusercontent.com/craigsapp/bach-370-chorales/master/index.hmd	370 Bach chorales
 humdrum://mozart/piano/sonatas	primary	https://raw.githubusercontent.com/craigsapp/mozart-piano-sonatas/master/index.hmd	17 Mozart piano sonatas
 humdrum://mozart/sonatas	alias	humdrum://mozart/piano/sonatas	.
 humdrum://beethoven/piano/sonatas	primary	https://raw.githubusercontent.com/craigsapp/beethoven-piano-sonatas/master/index.hmd	32 Beethoven piano sonatas
