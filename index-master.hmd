@@ -21,6 +21,7 @@ humdrum://mozart/sonatas	alias	humdrum://mozart/piano/sonatas	.
 humdrum://beethoven/piano/sonatas	primary	https://raw.githubusercontent.com/craigsapp/beethoven-piano-sonatas/master/index.hmd	32 Beethoven piano sonatas
 humdrum://beethoven/sonatas	alias	humdrum://beethoven/piano/sonatas	.
 humdrum://joplin	primary	https://raw.githubusercontent.com/craigsapp/joplin/master/index.hmd	Music of Scott Joplin (1868&ndash;1917)
+humdrum://corelli	primary	https://raw.githubusercontent.com/musedata/humdrum-corelli/master/index.hmd	Music of Arcangelo Corelli (1653&ndash;1713)
 *-	*-	*-	*-
 !!
 !! Scope aliases: Shortcuts for URI scopes.  For example 

@@ -32,17 +32,17 @@ possibilities:
    sudo apt-get install git
 ```
 
-For [cygwin](http://www.cygwin.com) on MS Windows computers, you
-should have included ```git``` when installing packages when you
-first installed cygwin.  Re-run the installation program and include
-git in the package installation list.
-
 For Apple OS X, the easiest method is to download git from [this
 link](http://git-scm.com/download/mac).  More advanced Mac users
 can use [Homebrew](http://brew.sh) to install git:
 ```bash
    brew install git
 ```
+
+For [cygwin](http://www.cygwin.com) on MS Windows computers, you
+should have included ```git``` when installing packages when you
+first installed cygwin.  Re-run the installation program and include
+git in the package installation list.
 
 You could also download GUI interfaces for git
 [here](http://git-scm.com/downloads/guis).  A [Github/git
@@ -53,28 +53,23 @@ IDE ([watch video](http://www.youtube.com/watch?v=ptK9-CNms98)).
 Download
 ========
 
-To download the humdrum-data repository, use this command:
+To download the humdrum-data repository, type these two commands in a terminal:
 ```bash
-    git clone --recursive https://github.com/humdrum-tools/humdrum-data
+    git clone https://github.com/humdrum-tools/humdrum-data
+    cd humdrum-data
+    make update
 ```
 
-The ```--recursive``` option is needed to include other data 
-repositories which are linked to the humdrum-data repository 
-as [submodules](http://git-scm.com/book/en/Git-Tools-Submodules).
+The first command downloads the repository (which is fairly empty, and only 
+contains links to other repositories).  The second command changes the working
+directory to the newly downloaded humdrum-data repository, and the last command
+will download most all of the actual data files.  Type `make update` whenever you
+want to download the most recent version of the humdrum-data repository.
 
-The humdrum-data repository can also be downloaded within the 
-[humdrum-tools](https://github.com/humdrum-tools/humdrum-tools) 
-package of command-line Humdrum-processing software:
-```bash
-    git clone --recursive https://github.com/humdrum-tools/humdrum-tools
-    cd humdrum-tools 
-    make data
-```
-
-The ZIP file link on the right-hand side of this github page will currently
-not include submodules (GitHub may add this functionality in the future).
-To download by ZIP files, you will also have to get the ZIP file for 
-each included repository separately.
+Note that the ZIP file link found in the green button on the
+right-hand side of this github page will currently not include
+submodules (GitHub may add this functionality in the future), so
+it cannot be used to download this metarepository.
 
 
 Data overview
