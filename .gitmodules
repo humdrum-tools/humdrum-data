@@ -46,3 +46,6 @@
 [submodule "jrp"]
 	path = jrp
 	url = https://github.com/josquin-research-project/jrp-scores
+[submodule "corelli"]
+	path = corelli
+	url = https://github.com/musedata/humdrum-corelli

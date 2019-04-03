@@ -1,7 +1,7 @@
 # Here are submodule addition commands used to link to other repositories:
 #
 #git submodule add -f https://github.com/craigsapp/bach-371-chorales bach-js/371chorales
-git submodule add -f https://github.com/josquin-research-project/jrp-scores jrp
+#git submodule add -f https://github.com/josquin-research-project/jrp-scores jrp
 #git submodule add -f https://github.com/craigsapp/joplin-rags joplin
 #git submodule add -f https://github.com/craigsapp/beethoven-piano-sonatas beethoven/piano-sonatas
 #git submodule add -f https://github.com/craigsapp/mozart-piano-sonatas mozart/piano-sonatas
@@ -16,3 +16,4 @@ git submodule add -f https://github.com/josquin-research-project/jrp-scores jrp
 #git submodule add -f https://github.com/musedata/humdrum-bach-brandenburg bach-js/brandenburg
 #git submodule add -f https://github.com/craigsapp/erk-liederschatz songs/harmonized/liederschatz
 #git submodule add -f https://github.com/craigsapp/creighton-nova-scotia songs/unaccompanied/nova-scotia
+#git submodule add -f https://github.com/musedata/humdrum-corelli corelli
