@@ -43,9 +43,81 @@
 [submodule "songs/unaccompanied/nova-scotia"]
 	path = songs/unaccompanied/nova-scotia
 	url = https://github.com/craigsapp/creighton-nova-scotia
-[submodule "jrp"]
-	path = jrp
-	url = https://github.com/josquin-research-project/jrp-scores
 [submodule "corelli"]
 	path = corelli
 	url = https://github.com/musedata/humdrum-corelli
+
+
+# Josquin Research Project scores
+[submodule "Agr/kern"]
+	path = jrp/Agr
+	url = https://github.com/josquin-research-project/Agr.git
+[submodule "Ano/kern"]
+	path = jrp/Ano
+	url = https://github.com/josquin-research-project/Ano.git
+[submodule "Bus/kern"]
+	path = jrp/Bus
+	url = https://github.com/josquin-research-project/Bus.git
+[submodule "Duf/kern"]
+	path = jrp/Duf
+	url = https://github.com/josquin-research-project/Duf.git
+[submodule "Jap/kern"]
+	path = jrp/Jap
+	url = https://github.com/josquin-research-project/Jap.git
+[submodule "Jos/kern"]
+	path = jrp/Jos
+	url = https://github.com/josquin-research-project/Jos.git
+[submodule "Mou/kern"]
+	path = jrp/Mou
+	url = https://github.com/josquin-research-project/Mou.git
+[submodule "Obr/kern"]
+	path = jrp/Obr
+	url = https://github.com/josquin-research-project/Obr.git
+[submodule "Oke/kern"]
+	path = jrp/Oke
+	url = https://github.com/josquin-research-project/Oke.git
+[submodule "Ort/kern"]
+	path = jrp/Ort
+	url = https://github.com/josquin-research-project/Ort.git
+[submodule "Pip/kern"]
+	path = jrp/Pip
+	url = https://github.com/josquin-research-project/Pip.git
+[submodule "Com/kern"]
+	path = jrp/Com
+	url = https://github.com/josquin-research-project/Com.git
+[submodule "Mar/kern"]
+	path = jrp/Mar
+	url = https://github.com/josquin-research-project/Mar.git
+[submodule "Reg/kern"]
+	path = jrp/Reg
+	url = https://github.com/josquin-research-project/Reg.git
+[submodule "Tin/kern"]
+	path = jrp/Tin
+	url = https://github.com/josquin-research-project/Tin.git
+[submodule "Bru/kern"]
+	path = jrp/Bru
+	url = https://github.com/josquin-research-project/Bru.git
+[submodule "Isa/kern"]
+	path = jrp/Isa
+	url = https://github.com/josquin-research-project/Isa.git
+[submodule "Fva/kern"]
+	path = jrp/Fva
+	url = https://github.com/josquin-research-project/Fva.git
+[submodule "Das/kern"]
+	path = jrp/Das
+	url = https://github.com/josquin-research-project/Das.git
+[submodule "Fry/kern"]
+	path = jrp/Fry
+	url = https://github.com/josquin-research-project/Fry.git
+[submodule "Rue/kern"]
+	path = jrp/Rue
+	url = https://github.com/josquin-research-project/Rue.git
+[submodule "Gas/kern"]
+	path = jrp/Gas
+	url = https://github.com/josquin-research-project/Gas.git
+[submodule "Bin/kern"]
+	path = jrp/Bin
+	url = https://github.com/josquin-research-project/Bin.git
+
+
+
