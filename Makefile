@@ -41,7 +41,7 @@ help:
 
 pull: update
 update: 
-	git pull orgin main
+	git pull origin main
 ifneq ($(wildcard .gitmodules),) 
 	git submodule sync
 	git submodule update --init --recursive --remote
