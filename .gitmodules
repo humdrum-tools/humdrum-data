@@ -1,6 +1,8 @@
 # After making changes to this file, run:
 #   git submodule sync
 #   git submodule update --init --recursive
+# Adding a submodule:
+# git submodule add https://github.com/josquin-research-project/Agr.git jrp/Agr
 
 
 [submodule "bach-js/371chorales"]
