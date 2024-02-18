@@ -1,4 +1,7 @@
-#git submodule add https://github.com/josquin-research-project/Agr.git jrp/Agr
+
+
+git submodule add -b main https://github.com/josquin-research-project/Agr.git jrp/Agr
+
 #git submodule add https://github.com/josquin-research-project/Ano.git jrp/Ano
 #git submodule add https://github.com/josquin-research-project/Bin.git jrp/Bin
 #git submodule add https://github.com/josquin-research-project/Bru.git jrp/Bru
