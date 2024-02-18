@@ -41,9 +41,9 @@ help:
 
 pull: update
 update: 
-	git pull
+	git pull orgin main
 ifneq ($(wildcard .gitmodules),) 
-	git submodule update --init --recursive
-	git submodule foreach "(git checkout master; git pull origin master)"
+	git submodule sync
+	git submodule update --init --recursive --remote
 endif
 
