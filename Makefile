@@ -46,6 +46,7 @@ update:
 ifneq ($(wildcard .gitmodules),) 
 	git submodule sync
 	git submodule update --init --recursive --remote
+	git submodule foreach git pull origin main
 endif
 
 
