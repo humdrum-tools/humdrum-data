@@ -89,115 +89,115 @@
 # Josquin Research Project scores
 
 [submodule "jrp/Agr"]
-	path = jrp/Agr
+	path = early-music/Agr
 	url = https://github.com/josquin-research-project/Agr.git
 	branch = main
 
 [submodule "jrp/Ano"]
-	path = jrp/Ano
+	path = early-music/Ano
 	url = https://github.com/josquin-research-project/Ano.git
 	branch = main
 
 [submodule "jrp/Bin"]
-	path = jrp/Bin
+	path = early-music/Bin
 	url = https://github.com/josquin-research-project/Bin.git
 	branch = main
 
 [submodule "jrp/Bru"]
-	path = jrp/Bru
+	path = early-music/Bru
 	url = https://github.com/josquin-research-project/Bru.git
 	branch = main
 
 [submodule "jrp/Bus"]
-	path = jrp/Bus
+	path = early-music/Bus
 	url = https://github.com/josquin-research-project/Bus.git
 
 [submodule "jrp/Com"]
-	path = jrp/Com
+	path = early-music/Com
 	url = https://github.com/josquin-research-project/Com.git
 	branch = main
 
 [submodule "jrp/Das"]
-	path = jrp/Das
+	path = early-music/Das
 	url = https://github.com/josquin-research-project/Das.git
 	branch = main
 
 [submodule "jrp/Duf"]
-	path = jrp/Duf
+	path = early-music/Duf
 	url = https://github.com/josquin-research-project/Duf.git
 
 [submodule "jrp/Fry"]
-	path = jrp/Fry
+	path = early-music/Fry
 	url = https://github.com/josquin-research-project/Fry.git
 	branch = main
 
 [submodule "jrp/Fva"]
-	path = jrp/Fva
+	path = early-music/Fva
 	url = https://github.com/josquin-research-project/Fva.git
 	branch = main
 
 [submodule "jrp/Gas"]
-	path = jrp/Gas
+	path = early-music/Gas
 	url = https://github.com/josquin-research-project/Gas.git
 	branch = main
 
 [submodule "jrp/Isa"]
-	path = jrp/Isa
+	path = early-music/Isa
 	url = https://github.com/josquin-research-project/Isa.git
 	branch = main
 
 [submodule "jrp/Jap"]
-	path = jrp/Jap
+	path = early-music/Jap
 	url = https://github.com/josquin-research-project/Jap.git
 	branch = main
 
 [submodule "jrp/Jos"]
-	path = jrp/Jos
+	path = early-music/Jos
 	url = https://github.com/josquin-research-project/Jos.git
 	branch = main
 
 [submodule "jrp/Mar"]
-	path = jrp/Mar
+	path = early-music/Mar
 	url = https://github.com/josquin-research-project/Mar.git
 	branch = main
 
 [submodule "jrp/Mou"]
-	path = jrp/Mou
+	path = early-music/Mou
 	url = https://github.com/josquin-research-project/Mou.git
 	branch = main
 
 [submodule "jrp/Obr"]
-	path = jrp/Obr
+	path = early-music/Obr
 	url = https://github.com/josquin-research-project/Obr.git
 	branch = main
 
 [submodule "jrp/Oke"]
-	path = jrp/Oke
+	path = early-music/Oke
 	url = https://github.com/josquin-research-project/Oke.git
 	branch = main
 
 [submodule "jrp/Ort"]
-	path = jrp/Ort
+	path = early-music/Ort
 	url = https://github.com/josquin-research-project/Ort.git
 	branch = main
 
 [submodule "jrp/Pip"]
-	path = jrp/Pip
+	path = early-music/Pip
 	url = https://github.com/josquin-research-project/Pip.git
 	branch = main
 
 [submodule "jrp/Reg"]
-	path = jrp/Reg
+	path = early-music/Reg
 	url = https://github.com/josquin-research-project/Reg.git
 	branch = main
 
 [submodule "jrp/Rue"]
-	path = jrp/Rue
+	path = early-music/Rue
 	url = https://github.com/josquin-research-project/Rue.git
 	branch = main
 
 [submodule "jrp/Tin"]
-	path = jrp/Tin
+	path = early-music/Tin
 	url = https://github.com/josquin-research-project/Tin.git
 	branch = main
 
