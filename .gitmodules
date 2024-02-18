@@ -60,6 +60,7 @@
 [submodule "jrp/Agr"]
 	path = jrp/Agr
 	url = https://github.com/josquin-research-project/Agr.git
+	branch = main
 
 [submodule "jrp/Ano"]
 	path = jrp/Ano
