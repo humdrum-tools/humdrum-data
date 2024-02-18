@@ -22,7 +22,7 @@ all: help
 
 ###########################################################################
 ##
-## Target to list main targets that the makefile can run
+## help: Target to list main targets that the makefile can run
 ##
 
 info: help
@@ -34,9 +34,10 @@ help:
 	@echo "[0m"
 
 
+
 ###########################################################################
 ##
-## Update to the master branch of all submodules.
+## update: Update to the master branch of all submodules.
 ##
 
 pull: update
@@ -46,4 +47,18 @@ ifneq ($(wildcard .gitmodules),)
 	git submodule sync
 	git submodule update --init --recursive --remote
 endif
+
+
+
+###########################################################################
+##
+## update: Update to the master branch of all submodules.
+##
+
+nc: notecount
+note-count: notecount
+note-counts: notecount
+notecounts: notecount
+notecount:
+	@bin/getNoteCount
 
