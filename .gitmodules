@@ -8,51 +8,82 @@
 [submodule "bach-js/371chorales"]
 	path = bach-js/371chorales
 	url = https://github.com/craigsapp/bach-371-chorales
+	branch = main
+
 [submodule "joplin"]
 	path = joplin
 	url = https://github.com/craigsapp/joplin
+	branch = main
+
 [submodule "beethoven/piano-sonatas"]
 	path = beethoven/piano-sonatas
 	url = https://github.com/craigsapp/beethoven-piano-sonatas
+	branch = main
+
 [submodule "mozart/piano-sonatas"]
 	path = mozart/piano-sonatas
 	url = https://github.com/craigsapp/mozart-piano-sonatas
+	branch = main
+
 [submodule "scarlatti-d/keyboard-sonatas"]
 	path = scarlatti-d/keyboard-sonatas
 	url = https://github.com/craigsapp/scarlatti-keyboard-sonatas
+	branch = main
+
 [submodule "chopin/mazurkas"]
 	path = chopin/mazurkas
 	url = https://github.com/craigsapp/chopin-mazurkas
+	branch = main
+
 [submodule "chopin/preludes"]
 	path = chopin/preludes
 	url = https://github.com/craigsapp/chopin-preludes
+	branch = main
+
 [submodule "hummel/preludes"]
 	path = hummel/preludes
 	url = https://github.com/craigsapp/hummel-preludes
+	branch = main
+
 [submodule "beethoven/quartets"]
 	path = beethoven/quartets
 	url = https://github.com/craigsapp/beethoven-string-quartets
+	branch = main
+
 [submodule "mozart/quartets"]
 	path = mozart/quartets
 	url = https://github.com/musedata/humdrum-mozart-quartets
+	branch = main
+
 [submodule "haydn/quartets"]
 	path = haydn/quartets
 	url = https://github.com/musedata/humdrum-haydn-quartets
+	branch = main
+
 [submodule "bach-js/wtc"]
 	path = bach-js/wtc
 	url = https://github.com/humdrum-tools/bach-wtc
+	branch = main
+
 [submodule "bach-js/brandenburg"]
 	path = bach-js/brandenburg
 	url = https://github.com/musedata/humdrum-bach-brandenburg
+	branch = main
+
 [submodule "songs/harmonized/liederschatz"]
 	path = songs/harmonized/liederschatz
 	url = https://github.com/craigsapp/erk-liederschatz
+	branch = main
+
 [submodule "songs/unaccompanied/nova-scotia"]
 	path = songs/unaccompanied/nova-scotia
 	url = https://github.com/craigsapp/creighton-nova-scotia
+	branch = main
+
 [submodule "corelli"]
 	path = corelli
 	url = https://github.com/musedata/humdrum-corelli
+	branch = main
 
 
 # Josquin Research Project scores
@@ -169,6 +200,9 @@
 	path = jrp/Tin
 	url = https://github.com/josquin-research-project/Tin.git
 	branch = main
+
+
+# Fryderyk Chopin Institute repositories
 
 
 
