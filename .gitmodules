@@ -65,14 +65,17 @@
 [submodule "jrp/Ano"]
 	path = jrp/Ano
 	url = https://github.com/josquin-research-project/Ano.git
+	branch = main
 
 [submodule "jrp/Bin"]
 	path = jrp/Bin
 	url = https://github.com/josquin-research-project/Bin.git
+	branch = main
 
 [submodule "jrp/Bru"]
 	path = jrp/Bru
 	url = https://github.com/josquin-research-project/Bru.git
+	branch = main
 
 [submodule "jrp/Bus"]
 	path = jrp/Bus
@@ -81,10 +84,12 @@
 [submodule "jrp/Com"]
 	path = jrp/Com
 	url = https://github.com/josquin-research-project/Com.git
+	branch = main
 
 [submodule "jrp/Das"]
 	path = jrp/Das
 	url = https://github.com/josquin-research-project/Das.git
+	branch = main
 
 [submodule "jrp/Duf"]
 	path = jrp/Duf
@@ -93,62 +98,77 @@
 [submodule "jrp/Fry"]
 	path = jrp/Fry
 	url = https://github.com/josquin-research-project/Fry.git
+	branch = main
 
 [submodule "jrp/Fva"]
 	path = jrp/Fva
 	url = https://github.com/josquin-research-project/Fva.git
+	branch = main
 
 [submodule "jrp/Gas"]
 	path = jrp/Gas
 	url = https://github.com/josquin-research-project/Gas.git
+	branch = main
 
 [submodule "jrp/Isa"]
 	path = jrp/Isa
 	url = https://github.com/josquin-research-project/Isa.git
+	branch = main
 
 [submodule "jrp/Jap"]
 	path = jrp/Jap
 	url = https://github.com/josquin-research-project/Jap.git
+	branch = main
 
 [submodule "jrp/Jos"]
 	path = jrp/Jos
 	url = https://github.com/josquin-research-project/Jos.git
+	branch = main
 
 [submodule "jrp/Mar"]
 	path = jrp/Mar
 	url = https://github.com/josquin-research-project/Mar.git
+	branch = main
 
 [submodule "jrp/Mou"]
 	path = jrp/Mou
 	url = https://github.com/josquin-research-project/Mou.git
+	branch = main
 
 [submodule "jrp/Obr"]
 	path = jrp/Obr
 	url = https://github.com/josquin-research-project/Obr.git
+	branch = main
 
 [submodule "jrp/Oke"]
 	path = jrp/Oke
 	url = https://github.com/josquin-research-project/Oke.git
+	branch = main
 
 [submodule "jrp/Ort"]
 	path = jrp/Ort
 	url = https://github.com/josquin-research-project/Ort.git
+	branch = main
 
 [submodule "jrp/Pip"]
 	path = jrp/Pip
 	url = https://github.com/josquin-research-project/Pip.git
+	branch = main
 
 [submodule "jrp/Reg"]
 	path = jrp/Reg
 	url = https://github.com/josquin-research-project/Reg.git
+	branch = main
 
 [submodule "jrp/Rue"]
 	path = jrp/Rue
 	url = https://github.com/josquin-research-project/Rue.git
+	branch = main
 
 [submodule "jrp/Tin"]
 	path = jrp/Tin
 	url = https://github.com/josquin-research-project/Tin.git
+	branch = main
 
 
 
