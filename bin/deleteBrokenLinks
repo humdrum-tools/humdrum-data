@@ -1,0 +1,114 @@
+#!/usr/bin/env perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Wed Feb 21 22:04:35 PST 2024
+# Last Modified: Wed Feb 21 22:04:38 PST 2024
+# Filename:      deleteBokenLinks
+# Syntax:        perl 5
+# vim:           ts=3:nowrap
+#
+# Description:   Remove broken links and empty directories which is useful
+#                for resetting the repository relink a list of repositories
+#                to copy.
+#
+
+use strict;
+use Cwd;
+
+recursiveProcess(".");
+
+###########################################################################
+
+##############################
+##
+## recursiveProcess --
+##
+
+sub recursiveProcess {
+	my ($dir) = @_;
+	my @files = getFiles($dir);
+	my @subdirs = getDirs($dir);
+
+	my $remainingFileCount = 0;
+	foreach my $file (@files) {
+		my $filepath = "$dir/$file";
+		if (!-l "$filepath") {
+			$remainingFileCount++;
+			next;
+		}
+		my $target = readlink($filepath);
+		if (defined $target) {
+			if (!-e $target) {
+				unlink($filepath);
+			} else {
+				$remainingFileCount++;
+			}
+		} else {
+				$remainingFileCount++;
+		}
+	}
+
+	foreach my $subdir (@subdirs) {
+		recursiveProcess("$dir/$subdir");
+	}
+
+	my $dirCount = 0;
+	foreach my $subdir (@subdirs) {
+		if (-d "$dir/$subdir") {
+			$dirCount ++;
+		}
+	}
+
+	if (!($remainingFileCount or $dirCount)) {
+		rmdir($dir);
+	}
+}
+
+	
+
+
+
+##############################
+##
+## getFiles --
+##
+
+sub getFiles {
+	my ($dir) = @_;
+	my @output;
+	opendir(DIR, $dir) or die "Cannot read directory $dir\n";
+	while (my $file = readdir(DIR)) {
+		next if $file eq ".";
+		next if $file eq "..";
+		next if -d "$dir/$file";
+		$output[@output] = $file;
+	}
+	closedir(DIR);
+	return sort @output;
+}
+
+
+
+##############################
+##
+## getDirs --
+##
+
+sub getDirs {
+	my ($dir) = @_;
+	my @output;
+	opendir(DIR, $dir) or die "Cannot read directory $dir\n";
+	while (my $file = readdir(DIR)) {
+		next if $file eq ".";
+		next if $file eq "..";
+		next if !-d "$dir/$file";
+		next if "dir/$file" eq "./.source"; # don't process ./source
+		next if "dir/$file" eq "./.lists"; # don't process ./lists
+		$output[@output] = $file;
+	}
+	closedir(DIR);
+	return sort @output;
+}
+
+
+

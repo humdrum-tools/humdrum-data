@@ -1,0 +1,325 @@
+#!/usr/bin/env perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Sat Feb 17 20:17:18 PST 2024
+# Last Modified: Wed Feb 28 03:24:25 PST 2024
+# Filename:      bin/getNoteCount
+# Syntax:        perl 5
+#
+# Description:   List note counts by subdirectory and give a total count
+#                of unique files and unique note counts at the end.
+#
+
+use strict;
+use Getopt::Long;
+use Cwd;
+use File::Basename;
+
+my $REPODIR = ".source";
+
+# %hashes == keep track of MD5 sums of files to avoid double-counting notes in the total count.
+my %hashes;
+
+# Also keep track of the total files size for unique symbolically linked files.
+my $totalFileSize = 0;
+
+my $dhideQ = 0; # Do not list source directories in output.
+my $fhideQ = 0; # Do not list file counts in output.
+my $nhideQ = 0; # Do not list note counts in output.
+my $shideQ = 0; # Do not list file sizes in output.
+my $totalQ = 0; # Give only the total note an file counts in output.
+my $realQ  = 0; # Count notes only in non-symbolic link files.
+
+Getopt::Long::Configure("bundling");
+GetOptions (
+   "F|no-directory-names" => \$dhideQ,
+   "C|no-file-count"      => \$fhideQ,
+   "N|no-note-count"      => \$nhideQ,
+   "S|no-file-sizes"      => \$shideQ,
+	"t|total"              => \$totalQ,
+	"r|real"               => \$realQ
+);
+
+
+my $notecount = `which notecount`;
+chomp $notecount;
+die "Install Humdrum Extras (or Humdrum Tools) for notecount command\n" if $notecount =~ /^s\*$/;
+
+my $md5sum = `which md5`; # for MacOS
+chomp $md5sum;
+if ($md5sum =~ /^\s*$/) {
+	$md5sum = `which md5sum`; # for Linux/unix
+	chomp $md5sum;
+}
+die "Cannot find md5sum command-line tool for checksums\n" if $md5sum =~ /^\s*$/;
+
+if (!$totalQ) {
+	print "**notes\t**files\t**size\t**directory\n";
+}
+
+my $noteCount = 0;
+my $fileCount = 0;
+my ($noteCount, $fileCount) = countNotes(".", $noteCount, $fileCount);
+my $totalSize = getTotalSize($totalFileSize);
+
+if (!$totalQ) {
+	print "*-\t*-\t*-\t*-\n";
+	print "!!!total-notes: $noteCount\n";
+	print "!!!total-files: $fileCount\n";
+	print "!!!total-size: $totalSize\n";
+} else {
+	print "$noteCount\t$fileCount\n";
+}
+
+exit(0);
+
+
+###########################################################################
+
+
+##############################
+##
+## getTotalSize -- convert input byte count to KB, MB, or GB.
+##
+
+sub getTotalSize {
+	my ($bytes) = @_;
+	my $original = $bytes;
+	my $counter = 0;
+	if ($bytes > 1024.0) {
+		$bytes = $bytes / 1024.0;
+		$counter++;
+	}
+	if ($bytes > 1024.0) {
+		$bytes = $bytes / 1024.0;
+		$counter++;
+	}
+	if ($bytes > 1024.0) {
+		$bytes = $bytes / 1024.0;
+		$counter++;
+	}
+	if ($original > 1024.0) {
+		$bytes = int($bytes * 10.0 + 0.5)/10.0;
+	}
+	my $output = "$bytes";
+	if ($counter == 0) {
+		$output .= "B";
+	} elsif ($counter == 1) {
+		$output .= "KB";
+	} elsif ($counter == 2) {
+		$output .= "MB";
+	} elsif ($counter == 3) {
+		$output .= "GB";
+	}
+	return $output;
+}
+
+
+
+##############################
+##
+## printInfo -- Print note, file, and directory information.
+##
+
+sub printInfo {
+	my ($ncount, $fcount, $dir, $size, $tQ) = @_;
+	return if $totalQ && !$tQ;
+	return if $ncount == 0;
+	return if $fcount == 0;
+
+	$dir =~ s/^\.\///;
+
+	my $counter = 0;
+	if (!$nhideQ) {
+		print $ncount;
+		$counter++;
+	}
+
+	if (!$fhideQ) {
+		print "\t" if $counter > 0;
+		print $fcount;
+		$counter++;
+	}
+
+	if (!$shideQ) {
+		print "\t" if $counter > 0;
+		print $size;
+		$counter++;
+	}
+
+	if (!$dhideQ) {
+		$dir =~ s/^\.\///;
+		print "\t" if $counter > 0;
+		if ($tQ) {
+			print "TOTAL";
+		} else {
+			print $dir;
+		}
+		$counter++;
+	}
+
+	print "\n";
+}
+
+
+
+##############################
+##
+## countNotes --
+##
+
+sub countNotes {
+	my ($dir, $uncount, $ufcount) = @_;
+	my @files = getFiles($dir);
+
+	my $nsum = 0;
+	my $fsum = 0;
+
+	my $localSize = 0;
+
+	my $unsum = 0; # unique file note count sum
+	my $ufsum = 0; # unique file count sum
+
+	for (my $i=0; $i<@files; $i++) {
+		my $file = $files[$i];
+
+		# Allow only .krn, .hum, .rap, .pc, .harm file extensions.
+		# Add other extensions here.
+		next if $file !~ /\.(krn|hum|rap|pc|harm)$/;
+
+		# Get MD5 checksum for identifying duplicate files:
+		my $command1 = "$md5sum -q \"$dir/$file\"";
+		chomp(my $hash = `$command1`);
+
+		# Do not add multiple counts of the same file
+		# in different locations to the total sum:
+		my $unique = 1;
+		$unique = 0 if $hashes{$hash} !~ /^\s*$/;
+		$hashes{$hash} = 1;
+
+		# Add size of file if unique:
+		$localSize += getFileSizeInBytes("$dir/$file");
+
+		# Run the Humdrum Extras notecount tool on the file:
+		my $command2 = "$notecount -s \"$dir/$file\" | cut -f 1";
+		my $result = `$command2`;
+		chomp $result;
+		if ($result =~ /^\s*$/) {
+			warn "PROBLEM:\t$dir/$file\n";
+			next;
+		}
+		if ($result !~ /^\d+$/) {
+			warn "PROBLEM:\t$dir/$file\n";
+			next;
+		}
+
+		# Add note counts to sums:
+		$nsum += $result;
+		$unsum += $result if $unique;
+
+		# Add file counts to sums:
+		$fsum++;
+		$ufsum++ if $unique;
+	}
+
+	$totalFileSize += $localSize;
+
+	if ($fsum > 0) {
+		my $size = getTotalSize($localSize);
+		printInfo($nsum, $fsum, $dir, $size, 0);
+	}
+
+	$uncount += $unsum;
+	$ufcount += $ufsum;
+
+	my @dirs = getDirectories("$dir");
+
+	for (my $i=0; $i<@dirs; $i++) {
+		my $subdir = $dirs[$i];
+		($uncount, $ufcount) = countNotes("$dir/$subdir", $uncount, $ufcount);
+	}
+
+	return ($uncount, $ufcount);
+}
+
+
+
+##############################
+##
+## getFileSizeInBytes -- Return the size of the file linked from the
+##     input file.  
+##
+
+sub getFileSizeInBytes {
+	my ($file) = @_;
+	return 0 if !-e $file;
+	return 0 if !-l $file;
+	my $link = readlink($file);
+	$link =~ s/^[\/.]+source\///;
+	my $realFile = "$REPODIR/$link";
+	return 0 if -l $realFile;
+	return 0 if !-e $realFile;
+	return -s $realFile;
+}
+
+
+
+##############################
+##
+## getDirectories -- Return a list of subdirectories in a directory.
+##
+
+sub getDirectories {
+	my ($dir) = @_;
+	opendir(DIR, $dir) or die "Cannot open directory $dir\n";
+	my @output;
+	while (my $file = readdir(DIR)) {
+		next if !-d "$dir/$file";
+		next if $file =~ /\.source/;  # in case the .source director slips through
+		next if $file =~ /\.lists/;   # in case the .lists director slips through
+		next if $file =~ /^\./;       # Ignore directories that start with ".".
+		next if $file eq "bin";
+		$output[@output] = $file;
+	}
+	return sort @output;
+}
+
+
+
+##############################
+##
+## getFiles -- Return a list of Humdrum files in a directory.
+##
+
+sub getFiles {
+	my ($dir) = @_;
+	opendir(DIR, $dir) or die "Cannot open directory $dir\n";
+	my @output;
+	while (my $file = readdir(DIR)) {
+		next if $file =~ /^\./;    # ignore files that start with ".".
+
+		# Allow only .krn, .hum, .rap, .cp, .harm file extensions.
+		# Add other extensions here.
+		next if $file !~ /\.(krn|hum|rap|pc|harm)$/;
+
+		my $fullpath = "$dir/$file";
+		next if -d $fullpath;
+		if ($realQ) {
+			next if -l $fullpath;
+		} else {
+			next if !-l $fullpath;
+		}
+
+		# Ignore the link if it is in turn a broken link (JRP data has this feature).
+		my $link = Cwd::realpath(readlink($fullpath));
+		if (-l $link) {
+			next if !-e $link;
+		}
+
+		$output[@output] = $file;
+	}
+	return sort @output;
+}
+
+
+

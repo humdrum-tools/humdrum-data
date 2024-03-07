@@ -1,0 +1,1170 @@
+#!/usr/bin/env perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Tue Feb 20 00:54:47 PST 2024
+# Last Modified: Mon Mar  4 00:40:11 PST 2024
+# Filename:      bin/getRepositoryDirectory
+# URL:           https://github.com/humdrum-tools/humdrum-data/tree/main/bin/getRepositoryDirectory
+# Syntax:        perl 5
+# vim:           ts=3:nowrap
+#
+# Description:   Download the given directory (-t option) from the
+#                given repository (-g and -f options).  This script
+#                is used by the bin/processList script and is not
+#                generally used directly and uses LIST files in the
+#                humdrum-data/.lists directory.  In theory this
+#                script could be used on its own, but the bin/processList
+#                script is an interface between the parameters in
+#                LIST files and the command-line arguments of this script.
+#
+# Reference:     Discussion on how to download specific directories from a git repository:
+#                https://medium.com/@gabrielcruz_68416/clone-a-specific-folder-from-a-github-repository-f8949e7a02b4
+#                https://git-scm.com/docs/git-sparse-checkout
+#
+# Prototype:
+#     git clone --depth=1 --filter=blob:none --no-checkout --branch=<branch> <repository-url> <local-repository-name>
+#     cd <local-repository-name>
+#     git sparse-checkout init
+#     git sparse-checkout set <source-directory>
+#		git read-tree -mu HEAD
+#
+
+use strict;
+
+# Packages used in this script (should be installed by defualt with perl):
+use Getopt::Long;       # For handling command-line options.
+use Cwd;                # For resolving symbolic link relative paths.
+use POSIX qw/strftime/; # For getting the current date.
+
+my $verboseQ = 0;
+
+# Number of copied file:
+my $FileCount = 0;
+
+# Size of files copied:
+my $FileSize  = 0;
+
+###########################################################################
+##                                                                       ##
+## Check for access to support tools:                                    ##
+##                                                                       ##
+
+# Either curl or wget is required for this script:
+chomp(my $curl = `which curl`);
+chomp(my $wget = `which wget`);
+if (!$curl and !$wget) {
+	die "Either curl or wget command needs to be available\n";
+}
+
+chomp (my $git = `which git`);
+if (!$git) {
+	die "git command not found\n";
+}
+
+chomp(my $gitVersion = `$git -v`);
+if ($gitVersion =~ /version (\d+)\.(\d+)/) {
+	my $major = $1;
+	my $minor = $2;
+	if ($major < 1) {
+		die "Git version is $major.$minor, but git version must be at least 2.25\n";
+	} elsif ($major == 2 and $minor < 25) {
+		die "Git version is $major.$minor, but git version must be at least 2.25\n";
+	}
+}
+
+# Install Humdrum Extract (https://github.com/humdrum-tools/humdrum-tools, or
+# https://github.com/craigsapp/humextra if you want to include notecounts in
+# .info files.
+chomp(my $notecount = `which notecount`);
+if (!$notecount) {
+	warn "Warning: install humextras to include notecounts in .info files\n";
+}
+
+chomp(my $extractx = `which extractx`);
+if ($notecount and !$extractx) {
+	die "Humdrum Extras notecount found but not extractx for some strange reason.\n";
+}
+
+chomp(my $ridx = `which ridx`);
+if ($notecount and $extractx and !$ridx) {
+	die "Humdrum Extras notecount and extractx tools found but not ridx for some strange reason.\n";
+}
+
+
+###########################################################################
+##                                                                       ##
+## Input parameters:                                                     ##
+##                                                                       ##
+
+# -g: $GITHUB: Merged $GITHUB_OWNER/$GITHUB_REPO string (where repo
+# will be stored in $REPODIR), such as "craigsapp/mozart-piano-sonatas".
+my $GITHUB = "";
+
+# -s: $REPO_SUBDIR: Path within $REPODIR that contains files to copy
+# into the local file structure.  For example the full path to the
+# directory would be $REPODIR/$GITHUB/kern, where $REPODIR is ".source",
+# $GITHUB is "craigsapp/mozart-piano-sonatas" and "/kern" is the
+# directory within the repository containing Humdrum files to copy.
+# This wil be set from the --from command-line parameter.
+my $REPO_SUBDIR = "";
+
+# -t: $TARGDIR: Path from the local base directory files should be
+# copied into.  This is relative to the base directory of the
+# humdrum-data directory, such as "mozart/piano/sonatas".  This is
+# set from the --to option comming in from the command line.
+my $TARGDIR = "";
+
+# --prefix: PREFIX: String to add to copied filename fronts.
+my $PREFIX = "";
+
+# --suffix: SUFFIX: string to add to copied filename ends.
+my $SUFFIX = "";
+
+# --sar: SAR: regular expression to search and replace for in filename.
+# The substitution string should be formatted in a manner similar
+# to sed: "s/search/replace/flags", where "search" can be a PERL
+# regular expression, "replace" is the replacement string, which can
+# include capture groups, such as $1, and "flags" are similar to sed,
+# such as "g" for a global replacement or "gi" for a global replament
+# that ignore letter case.
+my $SAR = "";
+
+# --filter: FILTER: A PERL regular expression to select filenames
+# from the originating repository to the local copy of the Humdrum
+# files.  For example, to select only *.krn files from a repository
+# directory, use
+#    --filter "\.krn$"
+# or
+#    --filter ".*\.krn$"
+# This will avoid copying files such as README.md into the local
+# directory, since the humdrum-data directories are intended to only
+# include Humdrum files.  See the .info file in each local directory
+# for the GitHum source repository where you can view the README,
+# LICENSE, and any other support files (in otherwords, download the
+# GitHub repository independently of the humdrum-data system if you
+# need full details about the files).
+my $FILTER = "";
+
+# --xfilter: XFILTER: A PERL regular expression to deselect filenames
+# from the originating repository to the local copy of the Humdrum
+# files.  For example, to select remove files from a repository
+# directory that do not start with the letter F:
+#    --xfilter "^F"
+my $XFILTER = "";
+
+
+###########################################################################
+##                                                                       ##
+## Variables derived from or support for input parameters:               ##
+##                                                                       ##
+
+# $REPODIR: Location where GitHub repository downloads are stored locally.
+my $REPODIR = ".source";
+
+# $GITHUB_URLBASE: Start of URL to GitHub repository.
+my $GITHUB_URLBASE = "https://github.com";
+
+# $GITHUB_RAW: Start of raw GitHub file URL
+my $GITHUB_RAW = "https://raw.githubusercontent.com";
+
+# $GITHUB_URL: Full URL address to the repository on GitHub. This URL
+# will be stored in the info file for the downloaded repository which
+# will be linked to in the local Humdrum file target directory.  The
+# variable will be set to "$GITHUB_URLBASE/$GITHUB".
+my $GITHUB_URL = "";
+
+# $GITHUB_OWNER: Owner of the online GitHub repository.
+my $GITHUB_OWNER = "";
+
+# $GITHUB_REPO: Specific online GitHub repository of an owner.
+my $GITHUB_REPO = "";
+
+# The default branch for the repository (determined later).
+my $BRANCH = "";
+
+##                                                                       ##
+##                                                                       ##
+###########################################################################
+
+
+# Process command-ine options:
+Getopt::Long::Configure("bundling");
+GetOptions (
+   "g|github=s"                         => \$GITHUB,      # Github user/repo.
+   "s|source|source-directory|from|f=s" => \$REPO_SUBDIR, # Source subdirectory in repository to copy files from.
+   "t|target|target-directory|to=s"     => \$TARGDIR,     # Target directory in this repo to copy into.
+	"sar=s"                              => \$SAR,         # Search-and-replace for filenames to rename them in target.
+	"suffix=s"                           => \$SUFFIX,      # Suffix string to append to target filename.
+	"prefix=s"                           => \$PREFIX,      # Prefix stiring to append to target filename.
+	"filter=s"                           => \$FILTER,      # Filter to link only certain source files to target directory.
+	"xfilter=s"                          => \$XFILTER      # Filter out certain source files.
+);
+
+# Do basic error checks on and preparations of the input parameters:
+$GITHUB =~ s/^\s+//;
+$GITHUB =~ s/\s+$//;
+die "Bad repository name: $GITHUB\n" if $GITHUB !~ /^(.+?)\/([^\/]+)$/;
+$GITHUB_OWNER = $1;
+$GITHUB_REPO  = $2;
+$GITHUB_URL = "$GITHUB_URLBASE/$GITHUB_OWNER/$GITHUB_REPO";
+$BRANCH = getDefaultBranch($GITHUB_URL);
+
+die "Repository owner cannot have spaces: $GITHUB_OWNER\n" if $GITHUB_OWNER =~ /\s/;
+die "Repository name cannot have spaces: $GITHUB_REPO\n" if $GITHUB_REPO =~ /\s/;
+die "Prefix cannot have spaces: $PREFIX\n" if $PREFIX =~ /\s/;
+die "Suffix cannot have spaces: $SUFFIX\n" if $SUFFIX =~ /\s/;
+
+$TARGDIR =~ s/^[.\/]+//;  # Remove any leading dots or slashes from target directory
+$TARGDIR =~ s/\/$//;      # Remove any trailing slashes from target directory
+die "Target directory cannot be empty\n" if $TARGDIR =~ /^\s*$/;
+die "Target directory should not include spaces: \"$TARGDIR\"\n" if $TARGDIR =~ /\s/;
+die "Target directory should not include non-standard characters: \"$TARGDIR\"\n" if $TARGDIR =~ /[^A-Za-z0-9_\-\/]/;
+
+# Download or update the GitHub repository:
+prepareRepository();
+
+# Copy the files from the downloaded GitHub repository into the local target directory
+# (as symbolic links):
+linkRepositoryFilesToLocalDirectory($REPO_SUBDIR, $TARGDIR);
+
+exit(0);
+
+
+###########################################################################
+
+##############################
+##
+## prepareRepository -- Download or update the specified GitHub repository.
+##
+
+sub prepareRepository {
+	if (!-d "$REPODIR/$GITHUB") {
+		downloadRepository($GITHUB_URL, $REPODIR, $GITHUB_OWNER, $GITHUB_REPO, $BRANCH);
+	}
+
+	if ($REPO_SUBDIR eq "") {
+		checkoutRootDirectory("$REPODIR/$GITHUB");
+	} else {
+		checkoutSubdirectory("$REPODIR/$GITHUB", $REPO_SUBDIR);
+	}
+
+	deleteUnwantedFiles();
+
+	# Ensure the directory where the repository files will be stored exists:
+	`mkdir -p \"$TARGDIR\"`;
+}
+
+
+
+##############################
+##
+## downloadRepository -- Download a minimal version of the repository.
+##
+
+sub downloadRepository {
+	my ($github_url, $repodir, $github_owner, $github_repo, $branch) = @_;
+	# Create the .source and owner directories if they do not already exist.
+	`mkdir -p "$repodir/$github_owner"`;
+
+	my $command = "(cd $repodir/$github_owner && $git clone --depth=1 --sparse --filter=blob:none --branch=\"$branch\" --no-checkout \"$github_url\" \"$github_repo\")";
+	if ($verboseQ) {
+		warn "COMMAND TO DOWNLOAD REPOSITORY INFORMATION: $command\n";
+	}
+	# Parameters to minimize the downloaded files (such as to avoid downloading source
+	# PDF files and other non-Humdrum files):
+	# --depth=1          Do not download the entire history of the repository.
+	# --filter=blob:none Indicates that no file contents (blobs) will be cloned initially.
+	#                    Instead, only the commit and tree objects are fetched.
+	#                    This helps further reduce the amount of data transferred during
+	#                    the cloning process, with blob:none mean download no files initially.
+	# --no-checkout      Do not extract repository files to the visible part of the repository's
+	#                    local directory structure--this will be done later after selecting
+	#                    the specific directories with the git "set" subcommand.  This further
+	#                    saves time and space so that only the desired directories (and/or
+	#                    individual files) are downloaded and available for copying.
+	# --sparse           Initialize .git/info/sparse-checkout
+
+	# Download the repository, but suppress non-error messages that will otherwise be
+	# displayed while downloading (2>&1 reroutes STDERR to STDOUT so that it can be captured):
+	open my $stderr_capture, "-|", $command . " 2>&1";
+	if (not defined $stderr_capture) {
+		warn "Error: cannot do command: $command\n" ;
+	}
+	my $cloningInto  = "";  # Save repository name if error messages need to be displayed.
+	my $outputErrors = "";  # Save error text if there are any messages to display.
+	while (my $line = <$stderr_capture>) {
+		# Sorts of messages that are not interesting to see:
+		#   Cloning into 'jasonleeubc/Cantopop-corpus'...
+		#   remote: Enumerating objects: 2, done.
+		#   remote: Counting objects: 100% (2/2), done.
+		#   remote: Compressing objects: 100% (2/2), done.
+		#   remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+		#   Receiving objects: 100% (2/2), done.
+		if ($line =~ /Cloning into/) {
+			$cloningInto = $line;
+			next;
+		}
+		next if $line =~ /Enumerating objects:/;
+		next if $line =~ /Counting objects:/;
+		next if $line =~ /Compressing objects:/;
+		next if $line =~ /remote: Total/;
+		next if $line =~ /Receiving objects:/;
+		$outputErrors .= $line;
+	}
+	if ($outputErrors !~ /^\s*$/) {
+		warn $cloningInto;
+		warn $outputErrors;
+	}
+	close $stderr_capture;
+
+	createInfoFileForRepository();
+
+}
+
+
+
+##############################
+##
+## createInfoFileForRepository -- Store metadata about the source
+##     repository which is available in the local directory structure as
+##     .info files in each directory.   Multiple .info files will be linked
+##     in the target directories with creatInfoFileLink().  Such as ".info"
+##     for the first processed repository in a local directory, then
+##     ".info2", ".info3", etc. for local directories containing files
+##     from multiple repositories.
+##
+
+sub createInfoFileForRepository {
+	my $repopath = "$REPODIR/$GITHUB_OWNER/$GITHUB_REPO";
+	my $filepath = "$REPODIR/$GITHUB_OWNER/.$GITHUB_REPO.info";
+	my $license_url_base = "$GITHUB_RAW/$GITHUB/$BRANCH";
+	my $readme_url_base  = "$GITHUB_RAW/$GITHUB/$BRANCH";
+
+	my $source = $GITHUB_URL;
+	chomp (my $commitHash = `$git --git-dir="$repopath/.git" log -n 1 --format=%H --date=local`);
+	my $commitHashShort = $commitHash;
+	if ($commitHash =~ /^(.{8})/) {
+		$commitHashShort = $1;
+	}
+	my $lastCommitUrl = "$GITHUB_URL/tree/$commitHashShort";
+	my $downloadDate = strftime("%a %b %e %H:%M:%S %Z %Y", localtime());
+	my $repositoryLicense = getLicense($license_url_base);
+	my $repositoryReadme  = getReadme($readme_url_base);
+	$repositoryLicense    = "$GITHUB_URL/blob/$BRANCH/$repositoryLicense" if $repositoryLicense;
+	$repositoryReadme     = "$GITHUB_URL/blob/$BRANCH/$repositoryReadme"  if $repositoryReadme;
+	chomp (my $lastCommitDate = `$git --git-dir="$repopath/.git" log -n 1 --format="%cd" --date=local`);
+
+	open (IFILE, ">$filepath") or die "Cannot write info to $filepath\n";
+
+print IFILE<<"EOT";
+!!!source:             $source
+!!!download-date:      $downloadDate
+!!!last-commit:        $lastCommitUrl
+!!!last-commit-date:   $lastCommitDate
+!!!repository-license: $repositoryLicense 
+!!!repository-readme:  $repositoryReadme
+!! vim:                ts=39:nowrap
+!!
+!! Directories downloaded from this repository are listed below.
+!!
+!! Meaning of the spines:
+!!    **sound   = Number of sounding notes in the copied files. If a
+!!                null token, then the Humdrum Extras notecount tool
+!!                was not available when the repository was downloaded.
+!!    **files   = Number of files in the copied directory.
+!!    **bytes   = Byte size of files copied to local directory.
+!!    **from    = The subdirectory in the repository lised in the source
+!!                refence record above that files were copied from.
+!!                A null token means the root of repository working directory.
+!!    **to      = The subdirectory in the repository lised in the source
+!!                refence record above that files were copied from.
+!!                A null token means the root of target directory.
+!!    **prefix  = Prefix string to add to copied filename (if any).
+!!    **suffix  = Suffix string to add to copied filename (if any).
+!!    **filter  = Copy only files with given PERL/JavaScript regex.
+!!    **xfilter = Exclude fils with the given PERL/JavaScript regex.
+!!    **sar     = sed-like search and replacement for filename (before
+!!                prefix and suffix are added).  Multiple SAR entries
+!!                can be given, separated by semicolons (;).
+!!
+EOT
+	close IFILE;
+}
+
+
+
+##############################
+##
+## checkoutRootDirectory -- Download only the root directory files.
+##
+
+sub checkoutRootDirectory {
+	my ($dir) = @_;
+
+	# Run the "git sparse-checkout command", filtering out non-error output.
+	my $command = "(cd $dir && $git read-tree -mu HEAD)";
+	open my $stderr_capture, "-|", $command . " 2>&1";
+	if (not defined $stderr_capture) {
+		warn "Error: cannot do command: $command\n" ;
+	}
+	while (my $line = <$stderr_capture>) {
+		# Boring lines that are not problems:
+		#   remote: Enumerating objects: 1, done.
+		#   remote: Counting objects: 100% (1/1), done.
+		#   remote: Total 1 (delta 0), reused 1 (delta 0), pack-reused 0
+		#   Receiving objects: 100% (1/1), 17.57 KiB | 856.00 KiB/s, done.
+		next if $line =~ /Enumerating objects:/;
+		next if $line =~ /Counting objects:/;
+		next if $line =~ /remote: Total/;
+		next if $line =~ /Receiving objects:/;
+		warn $line;
+	}
+
+}
+
+
+
+##############################
+##
+## checkoutSubdirectory -- Download only a single subdirectory of
+##     repository.  In order to download only the given directory, "git
+##     ls-tree" is used to find the index hash of the directory.  "git
+##     read-tree" in conjunction with "get sparse-checkout" also downloads
+##     the root directory files (which make contain sizeable files) in
+##     addition to the desired directory.  See checkoutRootDirector() for
+##     downloading files for the root directory.  Using the "git ls-tree"
+##     system in conjunction with "git fetch" will only download the desired
+##     files in the given subdirectory rather than also downloading files
+##     in the root directory, thus minimizing the size of the local
+##     repository and speed with which the downloading occurs.
+##
+
+sub checkoutSubdirectory {
+	my ($repopath, $subdir) = @_;
+	my @dirs = split(/\//, $subdir);
+	my $id = getId($repopath, "HEAD", $dirs[0]);
+	die "Cannot find $dirs[0]\n" if $id eq "";
+	for (my $i=1; $i<@dirs; $i++) {
+		$id = getId("$repopath", $id, $dirs[$i]);
+	}
+	# Found index ID of directory to download.
+
+	# Create a dummy work directory so that the sparse download does not store
+	# the downloaded file in the root directory when the fetch is done:
+
+	# Fetch the directory files, but suppress non-error messages that will otherwise be
+	# displayed while downloading (2>&1 reroutes STDERR to STDOUT so that it can be captured):
+	my $command1 = "$git -C \"$repopath\" fetch origin \"$id\"";
+	if ($verboseQ) {
+		warn "COMMAND TO DOWNLOAD FILE INDEX FOR GIVEN FROM DIRECTORY: $command1\n";
+	}
+	open my $stderr_capture, "-|", $command1 . " 2>&1";
+	if (not defined $stderr_capture) {
+		warn "Error: cannot do command: $command1\n" ;
+	}
+	my $branchInfo  = "";   # Save branch info for if there is an error message to display.
+	my $outputErrors = "";  # Save error text if there are any messages to display.
+	while (my $line = <$stderr_capture>) {
+		# Sorts of messages that are not interesting to see:
+		#   From https://github.com/craigsapp/densmore-teton-sioux
+ 		#   * branch            cb8b36528d59c7303bd37ff57b90b83ab1f70a68 -> FETCH_HEAD
+		if ($line =~ /branch.*FETCH_HEAD/) {
+			$branchInfo .= $line;
+			next;
+		}
+		if ($line =~ /^From\s+/) {
+			$branchInfo .= $line;
+			next;
+		}
+		$outputErrors .= $line;
+	}
+	if ($outputErrors !~ /^\s*$/) {
+		warn "When fetching $repopath/$subdir, these warnings/errors happened:\n";
+		warn $branchInfo;
+		warn "$outputErrors\n";
+	}
+	close $stderr_capture;
+
+	# Download the desired files from the remote repository:
+	my $command2 = "$git -C \"$repopath\" sparse-checkout add \"$subdir\" && $git -C \"$repopath\" read-tree -mu FETCH_HEAD";
+	if ($verboseQ) {
+		warn "COMMAND FOR COPYING DOWNLOADED FROM DIRECTORY INDEX TO WORKING DIRECTORY: $command2\n";
+	}
+	open my $stderr_capture, "-|", $command2 . " 2>&1";
+	if (not defined $stderr_capture) {
+		warn "Error: cannot do command: $command2\n" ;
+	}
+	$outputErrors = "";  # Save error text if there are any messages to display.
+	while (my $line = <$stderr_capture>) {
+		# Sorts of messages that are not interesting to see:
+		#   remote: Enumerating objects: 134, done.
+		#   remote: Counting objects: 100% (134/134), done.
+		#   remote: Compressing objects: 100% (134/134), done.
+		#   remote: Total 134 (delta 2), reused 4 (delta 0), pack-reused 0
+		#   Receiving objects: 100% (134/134), 63.43 KiB | 1.81 MiB/s, done.
+		#   Resolving deltas: 100% (2/2), done.
+		#   Auto packing the repository in background for optimum performance.
+		#   See "git help gc" for manual housekeeping.
+		next if $line =~ /^remote:\s*Enumerating objects:/;
+		next if $line =~ /^remote:\s*Counting objects:/;
+		next if $line =~ /^remote:\s*Compressing objects:/;
+		next if $line =~ /^remote:\s*Total/;
+		next if $line =~ /^Receiving objects:/;
+		next if $line =~ /^Resloving deltas:/;
+		next if $line =~ /^Auto packing/;
+		next if $line =~ /git help gc/;
+		$outputErrors .= $line;
+	}
+	if ($outputErrors !~ /^\s*$/) {
+		warn "When fetching $repopath/$subdir, these warnings/errors happened:\n";
+		warn "$outputErrors\n";
+	}
+	close $stderr_capture;
+
+	# Create files for the working directory from the git index:
+	my $command3 = "(cd \"$repopath\" && $git checkout-index -a --prefix=\"$subdir/\")";
+	open my $stderr_capture, "-|", $command3 . " 2>&1";
+	if (not defined $stderr_capture) {
+		warn "Error: cannot do command: $command3\n" ;
+	}
+	$outputErrors = "";  # Save error text if there are any messages to display.
+	while (my $line = <$stderr_capture>) {
+		# Sorts of messages that are not interesting to see:
+		#   kern/002-1-Hat.krn already exists, no checkout
+		next if $line =~ /already exists/;
+		$outputErrors .= $line;
+	}
+	if ($outputErrors !~ /^\s*$/) {
+		warn "When fetching $repopath/$subdir, these warnings/errors happened:\n";
+		warn "$outputErrors\n";
+	}
+	close $stderr_capture;
+
+}
+
+
+
+##############################
+##
+## getId -- get index ID of subdirectory to download into
+##     the repository from the remote host for the repository.
+##
+
+sub getId {
+	my ($repopath, $thing, $entry) = @_;
+	chomp(my @contents = `(cd $repopath && $git ls-tree $thing)`);
+	foreach my $line (@contents) {
+		my @data = split(/\s+/, $line);
+		next if @data < 4;
+		my $hash = $data[2];
+		my $name = $data[3];
+		if ($entry eq $name) {
+			return $hash;
+		}
+	}
+	return "";
+}
+
+
+
+##############################
+##
+## getLicense -- Search for LICENSE.txt, LICENSE, LICENSE.md,
+##    license.txt, license, license.md In the given directory
+##    of the repository.
+##
+
+sub getLicense {
+	my ($base) = @_;
+	if ($curl) {
+		if (`$curl -Iso /dev/null -w "%{http_code}" "$base/LICENSE.txt"` == 200) {
+			return "LICENSE.txt";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/LICENSE"` == 200) {
+			return "LICENSE";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/LICENSE.md"` == 200) {
+			return "LICENSE.md";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/license.txt"` == 200) {
+			return "license.txt";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/license"` == 200) {
+			return "license";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/license.md"` == 200) {
+			return "license.md";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/LICENSE.TXT"` == 200) {
+			return "LICENSE.TXT";
+		}
+	} elsif ($wget) {
+		my $result;
+		$result =  `$wget --spider \"$base/LIECNSE.txt\" 2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "LICENSE.txt";
+		}
+		$result =  `$wget --spider \"$base/LIECNSE\" 2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "LICENSE";
+		}
+		$result =  `$wget --spider \"$base/LIECNSE.md\"  2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "LICENSE.md";
+		}
+		$result =  `$wget --spider \"$base/license.txt\" 2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "license.txt";
+		}
+		$result =  `$wget --spider \"$base/licnse\" 2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "license";
+		}
+		$result =  `$wget --spider \"$base/license.md\"  2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "license.md";
+		}
+		$result =  `$wget --spider \"$base/LICENSE.TXT\"  2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "LICENSE.TXT";
+		}
+	}
+
+	return "";
+}
+
+
+##############################
+##
+## getReadme -- Search for README.txt, README, README.md,
+##    readme.txt, readme, readme.md In the given directory
+##    of the repository.
+##
+
+sub getReadme {
+	my ($base) = @_;
+	if ($curl) {
+		if (`$curl -Iso /dev/null -w "%{http_code}" "$base/README.txt"` == 200) {
+			return "README.txt";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/README"` == 200) {
+			return "README";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/README.md"` == 200) {
+			return "README.md";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/readme.txt"` == 200) {
+			return "readme.txt";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/readme"` == 200) {
+			return "readme";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/readme.md"` == 200) {
+			return "readme.md";
+		} elsif (`$curl -Iso /dev/null -w "%{http_code}" "$base/README.TXT"` == 200) {
+			return "README.TXT";
+		}
+	} elsif ($wget) {
+		my $result;
+		$result =  `$wget --spider \"$base/LIECNSE.txt\" 2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "README.txt";
+		}
+		$result =  `$wget --spider \"$base/LIECNSE\" 2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "README";
+		}
+		$result =  `$wget --spider \"$base/LIECNSE.md\"  2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "README.md";
+		}
+		$result =  `$wget --spider \"$base/readme.txt\" 2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "readme.txt";
+		}
+		$result =  `$wget --spider \"$base/licnse\" 2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "readme";
+		}
+		$result =  `$wget --spider \"$base/readme.md\"  2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "readme.md";
+		}
+		$result =  `$wget --spider \"$base/README.TXT\"  2>&1`;
+		if ($result =~ /Remote file exists/) {
+			return "README.TXT";
+		}
+	}
+
+	return "";
+}
+
+##############################
+##
+## linkRepositoryFilesToLocalDirectory -- After the GitHub repository
+##     has been downloaded and prepared, this function create the local
+##     directory (if needed), and creates symbolic links to the source
+##     files.  This function will also apply the $PREFIX, $SUFFIX, $FILTER
+##     and $XFILTER parameters to rename to source files for use in the
+##     local directory structure.  In addition, .info files will be created
+##     in the target directory so that the source of the files on GitHub
+##     can easily be identified by looking in the .info file (or files if
+##     there are multiple source repositories being copied to the same
+##     local directory.
+##
+
+sub linkRepositoryFilesToLocalDirectory {
+	my ($fromSubdir, $toSubdir) = @_;
+
+	# Create a full relative path from the root directory of humdrum-data to the
+	# source GitHub subdirectry where files will be copied from:
+	my $srcdir = "$REPODIR/$GITHUB/$fromSubdir";
+
+	# Create a relative path from the $TARGDIR to the $REPODIR directory.
+	# This will be used to create relative symbolic links from the target directory
+	# to the source directory.  This enables the humdrum-data directory to be
+	# moved in the local file system without breaking the symbolic links.
+	my $relativePath = $toSubdir;
+	$relativePath =~ s/[^\/]+/../g;
+
+	# Create a list of the files (and directories) in the source subdir repository
+	# which need to be linked to the target directory.
+	#
+	my @files = sort glob("$srcdir/*");
+	return if @files == 0;
+
+	# Improve later by checking for symbolic links that need to to remove (when
+	# the repository has removed files, and also it is not necessary to relink
+	# files that are already set up properly in the target directory.
+	# Here I just delete all of the links related to the currently processing
+	# GitHub repository subdirector, and recreate new symbolic links.  This
+	# will cause problems if multiple repository sources are placed in the same
+	# target directory.
+	clearOldLinks($srcdir, $toSubdir, $relativePath);
+
+	# Link the repository info file into the target directory. It will be called
+	# .info, or .info2 if there is a second GitHub repository being merged into
+	# the target directory.
+	createInfoFileLink($srcdir, $toSubdir, $relativePath);
+
+	# Now iterate through the souce files and create links in the target directory:
+	my $noteCount = 0;
+	$FileCount = 0;
+	$FileSize  = 0;
+
+	foreach my $file (@files) {
+		#warn "PROCESSING $file\n";
+
+		# Don't process symbolic files already in repository (these are
+		# probably related to merged files from other repository sources).
+		# In other words, users are not allow to used symbolic links, but if they
+		# do, this process will not alter them.  There will be a problem if the
+		# GitHub repository changes name.  In that case the clearOldLinks should
+		# handle the problem by deleting broken symbolic links.
+		next if -l $file;
+
+		# glob() returns the full path of the source file, so $targname is extracted
+		# here to uses as a basis for the target targname that will be adjusted with
+		# $PREFIX, $SUFFIX and $FILTER parameters.
+		my $targname = $file;
+		$targname =~ s/.*\///;
+		next if $targname =~ /^\./;
+
+		# Apply the $XFILTER input parameter to exclude unwanted files (such as non-Humdrum files):
+		if ($XFILTER ne "") {
+			# Check to see if the input regular expression is valid, and ignore it otherwise
+			# after printing a warning message that it is invalid.
+			my $filter_qr =  eval { qr/$XFILTER/; };
+			if ($@) {
+				warn "Invalid search pattern: $filter_qr Error message: $@";
+			} else {
+				if ($targname =~ /$filter_qr/) {
+					next;
+				}
+			}
+		}
+
+		# Apply the $FILTER input parameter to include wanted files:
+		if ($FILTER ne "") {
+			# Check to see if the input regular expression is valid, and ignore it otherwise
+			# after printing a warning message that it is invalid.
+			my $filter_qr =  eval { qr/$FILTER/; };
+			if ($@) {
+				warn "Invalid search pattern: $filter_qr Error message: $@";
+			} else {
+				if ($targname !~ /$filter_qr/) {
+					next;
+				}
+			}
+		}
+
+		# Apply the $SAR search-and-replace option to $targname:
+		$targname = searchAndReplace($targname, $SAR);
+
+		# Now apply the $PREFIX and $SUFFIX input parameters to the renamed target filename:
+		$targname = "$PREFIX$targname" if $PREFIX;
+		$targname = "$targname$SUFFIX" if $SUFFIX;
+
+		# It is hard to pass "'" on the command line, so do it here, removing
+		# any "'" characters:
+		$targname =~ s/[']//g;
+		# Also automatically get rid of ":
+		$targname =~ s/["]//g;
+		# Also automatically get rid of ?:
+		$targname =~ s/[?]//g;
+
+		if ($targname =~ /^\s*$/) {
+			$targname = "__NONAME__";
+		}
+
+		# This warn is useful to make sure SAR is not mapping multiple files
+		# to a single linked filename:  make 2>&1  | grep TARGNAME | sortcount | less
+		# Piano sonatas had duplicate names for different composers, and chopin-first-editions
+		# are installed in two locations.  Currently all other filenames are unique
+		# across all directories.
+		# warn "\tTARGNAME: $targname\n";
+		if (!symlink("$relativePath/$file", "$toSubdir/$targname")) {
+			print "PROBLEM LINKING $relativePath/$file TO $toSubdir/$targname\n";
+		} else {
+			$FileCount++;
+			$FileSize += -s "$toSubdir/$targname";
+		}
+
+		if ($notecount) {
+			if (!-e "$toSubdir/$targname") {
+				warn "FILE DOES NOT EXIST: $toSubdir/$targname\n";
+			}
+			my $command = "$notecount \"$toSubdir/$targname\" | $extractx -i sound | $ridx -H";
+			chomp (my $count = `$command`);
+			if ($count > 0) {
+				$noteCount += $count;
+			}
+		}
+	} # end of processing files in source subdirectory
+
+	storeDirectoryInfo($noteCount, $fromSubdir, $toSubdir);
+}
+
+
+
+##############################
+##
+## searchAndReplace -- Rename the file according to --sar input option.  The search and replace
+##     string can be one or more of the sed-like pattern s/search/replace/flags, separated
+##     by semicolons (;).
+##
+
+sub searchAndReplace {
+	my ($string, $sar) = @_;
+
+	# Remove leading and trailing spaces
+	$sar =~ s/^\s+|\s+$//g;
+	$sar =~ s/^s\///;
+	$sar =~ s/\s*;$//;
+
+	# Split the $SAR string into individual search and replace operations
+	my @operations = split /\s*;\s*s\//, $sar;
+
+	# Iterate through each operation
+	foreach my $operation (@operations) {
+		# Split the operation into search, replace, and flags
+		$operation =~ s/^s\///;
+		my ($search, $replace, $flags) = split /\//, $operation;
+
+		# Check if search and replace are defined
+		if (defined $search && defined $replace) {
+			# Apply the search and replace to the filename
+			eval {
+				local $SIG{__WARN__} = sub { };  # Suppress warnings
+				my $eval_string = '$string =~ s/' . $search . '/' . $replace . '/' . $flags . ';';
+				eval $eval_string;
+			};
+		}
+	}
+
+	# Replace spaces with underscores
+	$string =~ s/\s+/_/g;
+
+	return $string;
+}
+
+
+
+##############################
+##
+## createInfoFileLink -- Each local directory will have a file called .info
+##     which is a link to the info file for each online repository in
+##     the .source directory.   This file has a hyperlink to the online GitHub
+##     repository.   Files in a local directory may come from multiple online
+##     repositories, so there may be additional info files such as .info2,
+##     .info3 and so on.  So this function will check to see if there is
+##     an existing .info file pointing to the currently processing
+##     repository, and add an info file for it if does not find an existing
+##     .info file that does that already.
+##
+
+sub createInfoFileLink {
+	my ($srcdir, $targdir, $relativePath) = @_;
+	# $srcdir       = Path to downloaded online repository, such as .source/craigsapp/mozart-piano-sonatas
+	# $targdir      = Path to local files copied from repository, such as beethoven/piano/sonatas
+	# $relativePath = Relative path from the target to .source directory for doing symbolic links, such as ../../../
+
+	my @infos = (); # list of .info files in target directory already.
+
+	# Fill in the list of .info files in target directory
+	# .info is used instead of .info1, since most target directories will have only one source.
+	$infos[@infos] = ".info" if -e "$targdir/.info";
+	my $counter = 2;
+	# .info numbers must be successive:
+	while (-e "$targdir/.info$counter") {
+		$infos[@infos] = ".info$counter";
+		$counter++;
+	}
+
+	# Search for any .info file that include a symbolic link to the $srcdir already:
+	my $fullpath = "$relativePath/$srcdir";
+	for (my $i=0; $i<@infos; $i++) {
+		my $link = getSymbolicLink("$targdir/$infos[$i]");
+		my $position = index($link, $srcdir);
+		if ($position >= 0) {
+			# Already a link to the desired .info file.
+			return;
+		}
+	}
+
+	# Create a new .info file for the new source repository:
+	my $number = @infos;
+	$number++;
+	$number = "" if $number <= 1;
+	my $infoFilename = ".info$number";
+	my $linkSource = "$relativePath/$REPODIR/$GITHUB_OWNER/.$GITHUB_REPO.info";
+
+	if (!symlink($linkSource, "$targdir/$infoFilename")) {
+		warn "PROBLEM LINKING $infoFilename IN $targdir \n";
+	}
+
+}
+
+
+
+##############################
+##
+## storeDirectoryInfo -- For each repository directory/target directory,
+##     create and entry in the .info file for the repository.
+##
+
+sub storeDirectoryInfo {
+	my ($noteCount, $fromSubdir, $toSubdir) = @_;
+
+	my $infoFile = "$REPODIR/$GITHUB_OWNER/.$GITHUB_REPO.info";
+	if (!-e $infoFile) {
+		die "Cannot find info file $infoFile\n";
+	}
+	open (IFILE, $infoFile) or die "Cannot read $infoFile\n";
+	chomp(my @contents = <IFILE>);
+	close IFILE;
+
+	# Search backwards in file contents for prior entry for this $fromSubdir/$toSubdir pair:
+	my $prefix = $PREFIX;
+	$prefix = "." if $prefix eq "";
+	my $suffix = $SUFFIX;
+	$suffix = "." if $suffix eq "";
+	my $filter = $FILTER;
+	$filter = "." if $filter eq "";
+	my $xfilter = $XFILTER;
+	$xfilter = "." if $xfilter eq "";
+	my $sar = $SAR;
+	$sar = "." if $sar eq "";
+
+	my $found = 0;
+	my $exinterp = -1;
+	for (my $i = $#contents; $i>=0; $i--) {
+		my $line = $contents[$i];
+		if ($line =~ /^\*\*/) {
+			$exinterp = $i;
+			last;
+		}
+		next if $line =~ /^!/;
+		next if $line =~ /^\*/;
+		next if $line =~ /^\s*$/;
+		my @data = split(/\t+/, $line);
+		next if @data != 8;
+		my $count = $data[0];
+		my $from  = $data[1];
+		my $to    = $data[2];
+		if ($fromSubdir eq $from and $toSubdir eq $to) {
+			$found = 1;
+			last;
+		}
+	}
+	if ($exinterp < 0) {
+		$contents[@contents] = "**sound\t**files\t**bytes\t**from\t**to\t**prefix\t**suffix\t**filter\t**xfilter\t**sar";
+		$contents[@contents] = "*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-";
+	}
+
+	if (!$found) {
+		my $line = "";
+		if (!$found) {
+
+			if ($notecount) {
+				$line .= $noteCount;
+			} else {
+				$line .= ".";
+			}
+
+			$line .= "\t";
+			if ($FileCount !~ /^\s*$/) {
+				$line .= $FileCount;
+			} else {
+				$line .= ".";
+			}
+
+			$line .= "\t";
+			if ($FileSize !~ /^\s*$/) {
+				$line .= $FileSize;
+			} else {
+				$line .= ".";
+			}
+
+			$line .= "\t";
+			if ($fromSubdir eq "") {
+				$line .= ".";
+			} else {
+				$line .= $fromSubdir;
+			}
+
+			$line .= "\t";
+			if ($toSubdir eq "") {
+				$line .= ".";
+			} else {
+				$line .= $toSubdir;
+			}
+
+			$line .= "\t$prefix";
+			$line .= "\t$suffix";
+			$line .= "\t$filter";
+			$line .= "\t$xfilter";
+			$line .= "\t$sar";
+
+			$contents[$#contents] = "$line\n$contents[$#contents]";
+
+			open IFILE, ">$infoFile" or die "Cannot write directry info to $GITHUB_OWNER/.$GITHUB_REPO.info\n";
+			print IFILE join("\n", @contents), "\n";
+			close IFILE;
+		}
+	}
+}
+
+
+
+#############################
+##
+## clearOldLinks -- Remove all symbolic links in directory.  Does not look
+##     at files starting with "." (for .info files).  A correct list of
+##     .info files should be handled by the crateInfoFile() function, but
+##     there may need to be refinements in that function if a GitHumb repository
+##     has been renamed.
+##
+
+sub clearOldLinks {
+	my ($srcdir, $targdir, $relativePath) = @_;
+	my @files = sort glob("$targdir/*");
+
+	foreach my $file (@files) {
+		next if !-l "$file";
+		next if !-d "$file";
+		my $link = getSymbolicLink($file);
+		die "PROBLEM GETTING SYMLINK: $link\n" if $link =~ /^\s*$/;
+		next if index($link, $srcdir) == -1;
+		unlink($file);
+	}
+}
+
+
+
+##############################
+##
+## getSymbolicLink -- Resolve the symbolic link from a file (in the target directory.
+##
+
+sub getSymbolicLink {
+	my ($file) = @_;
+	if (-l $file) {
+		my $target = readlink($file);
+		if (defined $target) {
+			return $target;
+		} else {
+			warn "Error getting target of symbolic link for file $file: $!\n";
+			return "";
+		}
+	} else {
+		# This function should not be called with a regular file, since there
+		# is no symbolic link to extract from it.  Print a warning if this happens
+		# and return an empty string.
+		warn "FILE $file IS NOT A SYMLINK\n";
+		return "";
+	}
+}
+
+
+
+##############################
+##
+## getDefaultBranch -- Determine the default branch of the given GitHub
+##     repository directory.  The default branch will have a "*" marker
+##     when listing the downloaded branches.  Die if no default branch
+##     is found.
+##
+
+sub getDefaultBranch {
+	my ($repourl) = @_;
+	my $command = "$git ls-remote \"$repourl\"";
+	chomp(my @results = `$command`);
+	my $head = "";
+	my %branches;
+	foreach my $line (@results) {
+		my @data = split(/\s+/, $line);
+		next if @data < 2;
+		my $hash = $data[0];
+		my $info = $data[1];
+		$head = $hash if $info eq "HEAD";
+		next if $info =~ /^refs\/pull\/\d+\//;
+		next if $info !~ /^refs\/heads\/(.*)\s*$/;
+		my $branch = $1;
+		$branches{$hash} = $branch;
+	}
+	die "Cannot find HEAD of $repourl\n" if $head =~ /^\s*$/;
+	my $defaultBranch = $branches{$head};
+	die "Cannot find default branch in $repourl\n" if $defaultBranch =~ /^\s*$/;
+	return $defaultBranch;
+}
+
+
+##############################
+##
+## deleteUnwantedFiles -- Remove non-root files from
+##     the root directory of the downloaded repository.
+##     The command:
+##        read-tree -mu FETCH_HEAD
+##     leaves a copy of the subdirectory in the root reason for some reason,
+##     so this function gets rid of these messy files.
+##
+## $ git ls-tree HEAD
+## 100644 blob 9500ec22457c432cf1c4366aa8a76bc43f088c84	.DS_Store
+## 100644 blob 85c149322238fd9fe308d1a4fd506817e3d0574f	Densmore.zip
+## 040000 tree 3e72b5ca1647c6d982c12cc8e87b8d73883f19fc	Densmore
+##
+
+sub deleteUnwantedFiles {
+	my $repoRoot = "$REPODIR/$GITHUB";
+	chomp(my @index = `(git -C "$repoRoot" ls-tree HEAD)`);
+	my %allowed;
+	foreach my $line (@index) {
+		next if ($line !~ /^\d+\s+(blob|tree)\s+[^\s]+\t+(.*)/);
+		my $type = $1;
+		my $file = $2;
+		next if $type ne "blob";
+		$allowed{$file} = 1;
+	}
+
+	my @files = sort glob("$repoRoot/*");
+	foreach my $file (@files) {
+		next if -d $file;
+		my $basename = $file;
+		$basename =~ s/.*\///;
+		my $state = $allowed{$basename};
+		next if $state;
+		unlink($file);
+	}
+}
+
+

@@ -1,0 +1,12 @@
+!!!OTL: Tasso in Music Project digital scores
+!! vim: ts=24:nowrap
+**ghname	**ghrepo	**from	**to
+TassoInMusicProject	tasso-scores	Tam/kern	tasso/Tam
+TassoInMusicProject	tasso-scores	Tbv/kern	tasso/Tbv
+TassoInMusicProject	tasso-scores	Tco/kern	tasso/Tco
+TassoInMusicProject	tasso-scores	Tec/kern	tasso/Tec
+TassoInMusicProject	tasso-scores	Tri/kern	tasso/Tri
+TassoInMusicProject	tasso-scores	Trm/kern	tasso/Trm
+TassoInMusicProject	tasso-scores	Trt/kern	tasso/Trt
+TassoInMusicProject	tasso-scores	Tsg/kern	tasso/Tsg
+*-	*-	*-	*-

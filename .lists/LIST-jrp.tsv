@@ -1,0 +1,28 @@
+!!!OTL: Josquin Research Project digital scores
+!! vim: ts=27:nowrap
+**ghname	**ghrepo	**from	**to
+josquin-research-project	Agr	.	jrp/Agr
+josquin-research-project	Ano	.	jrp/Ano
+josquin-research-project	Bin	.	jrp/Bin
+josquin-research-project	Bru	.	jrp/Bru
+josquin-research-project	Bus	.	jrp/Bus
+josquin-research-project	Com	.	jrp/Com
+josquin-research-project	Das	.	jrp/Das
+josquin-research-project	Duf	.	jrp/Duf
+josquin-research-project	Fry	.	jrp/Fry
+josquin-research-project	Fva	.	jrp/Fva
+josquin-research-project	Gas	.	jrp/Gas
+josquin-research-project	Isa	.	jrp/Isa
+josquin-research-project	Jap	.	jrp/Jap
+josquin-research-project	Jos	.	jrp/Jos
+josquin-research-project	Mar	.	jrp/Mar
+!! The following repository contains only symbolic links:
+!!josquin-research-project	Mou	.	jrp/Mou
+josquin-research-project	Obr	.	jrp/Obr
+josquin-research-project	Oke	.	jrp/Oke
+josquin-research-project	Ort	.	jrp/Ort
+josquin-research-project	Pip	.	jrp/Pip
+josquin-research-project	Reg	.	jrp/Reg
+josquin-research-project	Rue	.	jrp/Rue
+josquin-research-project	Tin	.	jrp/Tin
+*-	*-	*-	*-

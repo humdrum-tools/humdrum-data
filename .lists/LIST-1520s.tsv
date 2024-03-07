@@ -1,0 +1,37 @@
+!!!OTL: The 1520s Project digital scores
+!!!ONB:  When a new composer directory is added to the repository,
+!!!ONB2: that directory will need to be added to the below list.
+!! vim: ts=27:nowrap
+**ghname	**ghrepo	**from	**to
+benory	1520s-project-scores	humdrum/Ano	1520s/Ano
+benory	1520s-project-scores	humdrum/Bar	1520s/Bar
+benory	1520s-project-scores	humdrum/Bau	1520s/Bau
+benory	1520s-project-scores	humdrum/Bis	1520s/Bis
+benory	1520s-project-scores	humdrum/Cha	1520s/Cha
+benory	1520s-project-scores	humdrum/Con	1520s/Con
+benory	1520s-project-scores	humdrum/Era	1520s/Era
+benory	1520s-project-scores	humdrum/Fsc	1520s/Fsc
+benory	1520s-project-scores	humdrum/Fss	1520s/Fss
+benory	1520s-project-scores	humdrum/Fva	1520s/Fva
+benory	1520s-project-scores	humdrum/Gom	1520s/Gom
+benory	1520s-project-scores	humdrum/Gsc	1520s/Gsc
+benory	1520s-project-scores	humdrum/Jac	1520s/Jac
+benory	1520s-project-scores	humdrum/Jan	1520s/Jan
+benory	1520s-project-scores	humdrum/Jom	1520s/Jom
+benory	1520s-project-scores	humdrum/Lfg	1520s/Lfg
+benory	1520s-project-scores	humdrum/Lhe	1520s/Lhe
+benory	1520s-project-scores	humdrum/Lpi	1520s/Lpi
+benory	1520s-project-scores	humdrum/Lps	1520s/Lps
+benory	1520s-project-scores	humdrum/Lsa	1520s/Lsa
+benory	1520s-project-scores	humdrum/Mlu	1520s/Mlu
+benory	1520s-project-scores	humdrum/Mou	1520s/Mou
+benory	1520s-project-scores	humdrum/Ren	1520s/Ren
+benory	1520s-project-scores	humdrum/Ric	1520s/Ric
+benory	1520s-project-scores	humdrum/Ser	1520s/Ser
+benory	1520s-project-scores	humdrum/Sil	1520s/Sil
+benory	1520s-project-scores	humdrum/Snf	1520s/Snf
+benory	1520s-project-scores	humdrum/The	1520s/The
+benory	1520s-project-scores	humdrum/Ver	1520s/Ver
+benory	1520s-project-scores	humdrum/Vin	1520s/Vin
+benory	1520s-project-scores	humdrum/Wil	1520s/Wil
+*-	*-	*-	*-

@@ -1,0 +1,216 @@
+!!!OTL: Complete Humdrum data list
+!!!ONB: Commented entries have Humdrum syntax errors and are not downloaded.
+!! vim: ts=39:nowrap
+**ghname	**ghrepo	**from	**to
+bel28kent	Mysterium	op01	scriabin/piano
+bel28kent	Mysterium	op02	scriabin/piano
+bel28kent	Mysterium	op03	scriabin/piano
+bel28kent	Mysterium	op04	scriabin/piano
+bel28kent	Mysterium	op05	scriabin/piano
+bel28kent	Mysterium	op06	scriabin/piano
+bel28kent	Mysterium	op07	scriabin/piano
+bel28kent	Mysterium	op09	scriabin/piano
+bel28kent	Mysterium	op10	scriabin/piano
+bel28kent	Mysterium	op11	scriabin/piano
+bel28kent	Mysterium	op12	scriabin/piano
+bel28kent	Mysterium	op13	scriabin/piano
+bel28kent	Mysterium	op14	scriabin/piano
+bel28kent	Mysterium	op15	scriabin/piano
+bel28kent	Mysterium	op16	scriabin/piano
+bel28kent	Mysterium	op17	scriabin/piano
+bel28kent	Mysterium	op18	scriabin/piano
+bel28kent	Mysterium	op19	scriabin/piano
+bel28kent	Mysterium	op21	scriabin/piano
+bel28kent	Mysterium	op22	scriabin/piano
+bel28kent	Mysterium	op23	scriabin/piano
+bel28kent	Mysterium	op25	scriabin/piano
+bel28kent	Mysterium	op27	scriabin/piano
+bel28kent	Mysterium	op28	scriabin/piano
+bel28kent	Mysterium	op30	scriabin/piano
+bel28kent	Mysterium	op31	scriabin/piano
+bel28kent	Mysterium	op32	scriabin/piano
+bel28kent	Mysterium	op33	scriabin/piano
+bel28kent	Mysterium	op34	scriabin/piano
+bel28kent	Mysterium	op35	scriabin/piano
+bel28kent	Mysterium	op36	scriabin/piano
+bel28kent	Mysterium	op37	scriabin/piano
+bel28kent	Mysterium	op38	scriabin/piano
+bel28kent	Mysterium	op39	scriabin/piano
+bel28kent	Mysterium	op40	scriabin/piano
+bel28kent	Mysterium	op41	scriabin/piano
+bel28kent	Mysterium	op42	scriabin/piano
+bel28kent	Mysterium	op44	scriabin/piano
+bel28kent	Mysterium	op45	scriabin/piano
+bel28kent	Mysterium	op46	scriabin/piano
+bel28kent	Mysterium	op47	scriabin/piano
+bel28kent	Mysterium	op48	scriabin/piano
+bel28kent	Mysterium	op49	scriabin/piano
+bel28kent	Mysterium	op51	scriabin/piano
+bel28kent	Mysterium	op52	scriabin/piano
+bel28kent	Mysterium	op53	scriabin/piano
+bel28kent	Mysterium	op56	scriabin/piano
+bel28kent	Mysterium	op57	scriabin/piano
+bel28kent	Mysterium	op58	scriabin/piano
+bel28kent	Mysterium	op59	scriabin/piano
+bel28kent	Mysterium	op61	scriabin/piano
+bel28kent	Mysterium	op62	scriabin/piano
+bel28kent	Mysterium	op63	scriabin/piano
+bel28kent	Mysterium	op64	scriabin/piano
+bel28kent	Mysterium	op65	scriabin/piano
+bel28kent	Mysterium	op66	scriabin/piano
+bel28kent	Mysterium	op67	scriabin/piano
+bel28kent	Mysterium	op68	scriabin/piano
+bel28kent	Mysterium	op69	scriabin/piano
+bel28kent	Mysterium	op70	scriabin/piano
+bel28kent	Mysterium	op71	scriabin/piano
+bel28kent	Mysterium	op72	scriabin/piano
+bel28kent	Mysterium	op73	scriabin/piano
+bel28kent	Mysterium	op74	scriabin/piano
+benory	1520s-project-scores	humdrum/Ano	early-music/anonymous-1520s
+benory	1520s-project-scores	humdrum/Bar	early-music/barra
+benory	1520s-project-scores	humdrum/Bau	early-music/bauldeweyn
+benory	1520s-project-scores	humdrum/Bis	early-music/bisegueria
+benory	1520s-project-scores	humdrum/Cha	early-music/champion
+benory	1520s-project-scores	humdrum/Con	early-music/conseil
+benory	1520s-project-scores	humdrum/Era	early-music/erasmus
+benory	1520s-project-scores	humdrum/Fsc	early-music/festa-costanzo
+benory	1520s-project-scores	humdrum/Fss	early-music/festa-sebastiano
+benory	1520s-project-scores	humdrum/Fva	early-music/fevin-antoine
+benory	1520s-project-scores	humdrum/Gom	early-music/gombert
+benory	1520s-project-scores	humdrum/Gsc	early-music/gascongne
+benory	1520s-project-scores	humdrum/Jac	early-music/jacotin
+benory	1520s-project-scores	humdrum/Jan	early-music/janmaistre
+benory	1520s-project-scores	humdrum/Jom	early-music/jachetofmantua
+benory	1520s-project-scores	humdrum/Lfg	early-music/fage
+benory	1520s-project-scores	humdrum/Lhe	early-music/lheritier
+benory	1520s-project-scores	humdrum/Lpi	early-music/lupi
+benory	1520s-project-scores	humdrum/Lps	early-music/lupus
+benory	1520s-project-scores	humdrum/Lsa	early-music/lasantier
+benory	1520s-project-scores	humdrum/Mlu	early-music/moulu
+benory	1520s-project-scores	humdrum/Mou	early-music/mouton
+benory	1520s-project-scores	humdrum/Ren	early-music/renaldo
+benory	1520s-project-scores	humdrum/Ric	early-music/richafort
+benory	1520s-project-scores	humdrum/Ser	early-music/sermisy
+benory	1520s-project-scores	humdrum/Sil	early-music/silva
+benory	1520s-project-scores	humdrum/Snf	early-music/senfl
+benory	1520s-project-scores	humdrum/The	early-music/therache
+benory	1520s-project-scores	humdrum/Ver	early-music/verdelot
+benory	1520s-project-scores	humdrum/Vin	early-music/vinders
+benory	1520s-project-scores	humdrum/Wil	early-music/willaert
+Computational-Cognitive-Musicology-Lab	CoCoPops	Billboard/Data	songs/pop/billboard
+craigsapp	bach-370-chorales	kern	bach/chorales-370
+craigsapp	beethoven-piano-sonatas	kern	beethoven/piano/sonata
+craigsapp	beethoven-string-quartets	kern	beethoven/quartet
+craigsapp	chopin-mazurkas	kern	chopin/mazurkas
+craigsapp	chopin-preludes	kern	chopin/preludes
+craigsapp	creighton-nova-scotia	kern	songs/monophonic/nova-scotia
+craigsapp	densmore-teton-sioux	kern	songs/monophonic/densmore/sioux
+craigsapp	erk-liederschatz	kern	songs/harmonized/erk-liederschatz
+craigsapp	haydn-piano-sonatas	kern	haydn/piano
+craigsapp	hummel-preludes	kern	hummel/preludes
+craigsapp	joplin	kern	joplin
+craigsapp	mozart-piano-sonatas	kern	mozart/piano/sonata
+craigsapp	scarlatti-keyboard-sonatas	kern	scarlatti/sonata
+humdrum-tools	bach-wtc	kern	bach/wtc
+humdrum-tools	barbershop	kern	songs/harmonized/barbershop
+humdrum-tools	child-ballads	kern	songs/monophonic/child-ballads
+humdrum-tools	foster-songs	kern	songs/monophonic/foster
+humdrum-tools	gershwin-songs	kern	songs/monophonic/gershwin
+humdrum-tools	schubert-songs	kern	songs/monophonic/schubert
+humdrum-tools	tonerow	berg	tonerow/berg
+humdrum-tools	tonerow	schoenberg	tonerow/schoenberg
+humdrum-tools	tonerow	webern	tonerow/webern
+humdrum-tools	inventions	kern	bach/inventions
+josquin-research-project	Agr	.	early-music/agricola
+josquin-research-project	Ano	.	early-music/anonymous
+josquin-research-project	Bin	.	early-music/binchois
+josquin-research-project	Bru	.	early-music/brumel
+josquin-research-project	Bus	.	early-music/busnoys
+josquin-research-project	Com	.	early-music/compere
+josquin-research-project	Das	.	early-music/daser
+josquin-research-project	Duf	.	early-music/dufay
+josquin-research-project	Fry	.	early-music/frye
+josquin-research-project	Fva	.	early-music/fevin-antoine
+josquin-research-project	Gas	.	early-music/gaspar
+josquin-research-project	Isa	.	early-music/isaac
+josquin-research-project	Jap	.	early-music/japart
+josquin-research-project	Mar	.	early-music/martini
+josquin-research-project	Mou	.	early-music/mouton
+josquin-research-project	Obr	.	early-music/obrecht
+josquin-research-project	Oke	.	early-music/okeghem
+josquin-research-project	Ort	.	early-music/orto
+josquin-research-project	Pip	.	early-music/pipelare
+josquin-research-project	Reg	.	early-music/regis
+josquin-research-project	Rue	.	early-music/larue
+josquin-research-project	Tin	.	early-music/tinctoris
+!!musedata	humdrum-bach-chorales	kern	bach/chorales-185
+musedata	humdrum-bach-brandenburg	kern	bach/brandenburg
+musedata	humdrum-corelli	op1	corelli
+musedata	humdrum-corelli	op3	corelli
+musedata	humdrum-corelli	op4	corelli
+musedata	humdrum-corelli	op5	corelli
+musedata	humdrum-corelli	op6	corelli
+musedata	humdrum-haydn-quartets	kern	haydn/quartet
+musedata	humdrum-mozart-quartets	kern	mozart/quartet
+musedata	humdrum-haydn-symphonies	kern	haydn/symphony
+pl-wnifc	humdrum-chopin-first-editions	kern	chopin/first-editions
+pl-wnifc	humdrum-chopin-first-editions	kern	nifc/popc1
+pl-wnifc	humdrum-polish-scores	a-wn/kern	nifc/popc2/a-wn
+pl-wnifc	humdrum-polish-scores	ch-gmu/kern	nifc/popc2/ch-gmu
+pl-wnifc	humdrum-polish-scores	d-b/kern	nifc/popc2/d-b
+pl-wnifc	humdrum-polish-scores	d-bnu/kern	nifc/popc2/d-bnu
+pl-wnifc	humdrum-polish-scores	d-dl/kern	nifc/popc2/d-dl
+pl-wnifc	humdrum-polish-scores	d-hs/kern	nifc/popc2/d-hs
+pl-wnifc	humdrum-polish-scores	d-mbs/kern	nifc/popc2/d-mbs
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	nifc/popc2/pl-cz
+pl-wnifc	humdrum-polish-scores	pl-gd/kern	nifc/popc2/pl-dg
+pl-wnifc	humdrum-polish-scores	pl-kc/kern	nifc/popc2/pl-kc
+pl-wnifc	humdrum-polish-scores	pl-kj/kern	nifc/popc2/pl-kj
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	nifc/popc2/pl-kk
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	nifc/popc2/pl-kozmk
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	nifc/popc2/pl-sa
+pl-wnifc	humdrum-polish-scores	pl-stab/kern	nifc/popc2/pl-stab
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	nifc/popc2/pl-wn
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	nifc/popc2/pl-wnifc
+pl-wnifc	humdrum-polish-scores	pl-wru/kern	nifc/popc2/pl-wru
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	nifc/popc2/pl-wtm
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	nifc/popc2/pl-wumfc
+pl-wnifc	humdrum-polish-scores	s-uu/kern	nifc/popc2/s-uu
+polyrhythm-project	rds-scores	kern	polyrhythm/rds
+!!shanahdt	smt_jazz_2019	omnibook_kern	jazz/omnibook
+TassoInMusicProject	tasso-scores	Tam/kern	early-music/tasso
+TassoInMusicProject	tasso-scores	Tbv/kern	early-music/tasso
+TassoInMusicProject	tasso-scores	Tco/kern	early-music/tasso
+TassoInMusicProject	tasso-scores	Tec/kern	early-music/tasso
+TassoInMusicProject	tasso-scores	Tri/kern	early-music/tasso
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/tasso
+TassoInMusicProject	tasso-scores	Trt/kern	early-music/tasso
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/tasso
+WolfgangDrescher	lassus-geistliche-psalmen	kern	early-music/lassus
+WolfgangDrescher	ulenberg-psalmen-davids	kern	ulenberg
+*-	*-	*-	*-
+!!
+!! Repositories that need extra parameters:
+!!
+**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**sar
+bel28kent	Mysterium	op08	scriabin/piano	.	.	.	scriabin-op08_no03.krn	.
+Computational-Cognitive-Musicology-Lab	CoCoPops	RollingStone/Data	songs/pop/rollingstone	.	.	.	\.md$	.
+Computational-Cognitive-Musicology-Lab	MCFlow	Humdrum	songs/rap/mcflow	.	.	.	\.md$	.
+jasonleeubc	Cantopop-corpus	.	songs/pop/cantonese	.	.krn	^C\d+$	.	s/^C/cpop-/
+josquin-research-project	Jos	.	early-music/josquin	.	.	.	^Jos2514	.
+shanahdt	densmore	Densmore/acoma	densmore/acoma	acoma	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!!shanahdt	densmore	Densmore/british_columbia	densmore/bc	bc	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/cheyenne_and_arapaho	densmore/cheyenne	cheyenne	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/chippewa1	densmore/chippewa_a	chippewa_a	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/chippewa2	densmore/chippewa_a	chippewa_b	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/choctaw	densmore/choctaw	.	.	\.krn$	.	s/^(choct)(\d\d)([^\d].*)$/${1}0$2$3/; s/^(choct)(\d)([^\d].*)$/${1}00$2$2/;
+shanahdt	densmore	Densmore/maidu	densmore/maidu	maidu	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/mandan	densmore/mandan	.	.	\.krn$	.	s/^mandan(\d\d\.)/mandan0$1/; s/^mandan(\d\.)/mandan00$1/
+shanahdt	densmore	Densmore/menominee	densmore/menomiee	menomiee	.krn	\.krn$	^Flute	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!!shanahdt	densmore	Densmore/nootka	densmore/nootka	nootka	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/northern_ute	densmore/northute	northute	.krn	\.krn$	^[DRU]	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!!shanahdt	densmore	Densmore/papago	densmore/papago	papago	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+shanahdt	densmore	Densmore/pawnee	densmore/pawnee	.	.	\.krn$	.	s/^pawnee(\d\d\.)/pawnee0$1/; s/^pawnee(\d\.)/pawnee00$1/
+shanahdt	densmore	Densmore/seminole	densmore/seminole	seminole	.krn	\.krn$	^[AT]	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/yuman	densmore/yuman	yuman	.krn	\.krn$	^(^F|No_12[45]_)	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+*-	*-	*-	*-	*-	*-	*-	*-

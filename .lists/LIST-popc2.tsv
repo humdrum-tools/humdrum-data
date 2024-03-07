@@ -1,0 +1,25 @@
+!!!OTL: Polish Music in Open Access digital scores
+!! vim: ts=24:nowrap
+**ghname	**ghrepo	**from	**to
+pl-wnifc	humdrum-polish-scores	a-wn/kern	popc2/a-wn
+pl-wnifc	humdrum-polish-scores	ch-gmu/kern	popc2/ch-gmu
+pl-wnifc	humdrum-polish-scores	d-b/kern	popc2/d-b
+pl-wnifc	humdrum-polish-scores	d-bnu/kern	popc2/d-bnu
+pl-wnifc	humdrum-polish-scores	d-dl/kern	popc2/d-dl
+pl-wnifc	humdrum-polish-scores	d-hs/kern	popc2/d-hs
+pl-wnifc	humdrum-polish-scores	d-mbs/kern	popc2/d-mbs
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	popc2/pl-cz
+pl-wnifc	humdrum-polish-scores	pl-gd/kern	popc2/pl-dg
+pl-wnifc	humdrum-polish-scores	pl-kc/kern	popc2/pl-kc
+pl-wnifc	humdrum-polish-scores	pl-kj/kern	popc2/pl-kj
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	popc2/pl-kk
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	popc2/pl-kozmk
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	popc2/pl-sa
+pl-wnifc	humdrum-polish-scores	pl-stab/kern	popc2/pl-stab
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	popc2/pl-wn
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	popc2/pl-wnifc
+pl-wnifc	humdrum-polish-scores	pl-wru/kern	popc2/pl-wru
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	popc2/pl-wtm
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	popc2/pl-wumfc
+pl-wnifc	humdrum-polish-scores	s-uu/kern	popc2/s-uu
+*-	*-	*-	*-

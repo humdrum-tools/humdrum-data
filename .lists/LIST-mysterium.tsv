@@ -1,0 +1,75 @@
+!!!OTL: Mysterium: Piano music of Scriabin
+!! vim: ts=12:nowrap
+**ghname	**ghrepo	**from	**to
+bel28kent	Mysterium	op01	mysterium
+bel28kent	Mysterium	op02	mysterium
+bel28kent	Mysterium	op03	mysterium
+bel28kent	Mysterium	op04	mysterium
+bel28kent	Mysterium	op05	mysterium
+bel28kent	Mysterium	op06	mysterium
+bel28kent	Mysterium	op07	mysterium
+bel28kent	Mysterium	op09	mysterium
+bel28kent	Mysterium	op10	mysterium
+bel28kent	Mysterium	op11	mysterium
+bel28kent	Mysterium	op12	mysterium
+bel28kent	Mysterium	op13	mysterium
+bel28kent	Mysterium	op14	mysterium
+bel28kent	Mysterium	op15	mysterium
+bel28kent	Mysterium	op16	mysterium
+bel28kent	Mysterium	op17	mysterium
+bel28kent	Mysterium	op18	mysterium
+bel28kent	Mysterium	op19	mysterium
+bel28kent	Mysterium	op21	mysterium
+bel28kent	Mysterium	op22	mysterium
+bel28kent	Mysterium	op23	mysterium
+bel28kent	Mysterium	op25	mysterium
+bel28kent	Mysterium	op27	mysterium
+bel28kent	Mysterium	op28	mysterium
+bel28kent	Mysterium	op30	mysterium
+bel28kent	Mysterium	op31	mysterium
+bel28kent	Mysterium	op32	mysterium
+bel28kent	Mysterium	op33	mysterium
+bel28kent	Mysterium	op34	mysterium
+bel28kent	Mysterium	op35	mysterium
+bel28kent	Mysterium	op36	mysterium
+bel28kent	Mysterium	op37	mysterium
+bel28kent	Mysterium	op38	mysterium
+bel28kent	Mysterium	op39	mysterium
+bel28kent	Mysterium	op40	mysterium
+bel28kent	Mysterium	op41	mysterium
+bel28kent	Mysterium	op42	mysterium
+bel28kent	Mysterium	op44	mysterium
+bel28kent	Mysterium	op45	mysterium
+bel28kent	Mysterium	op46	mysterium
+bel28kent	Mysterium	op47	mysterium
+bel28kent	Mysterium	op48	mysterium
+bel28kent	Mysterium	op49	mysterium
+bel28kent	Mysterium	op51	mysterium
+bel28kent	Mysterium	op52	mysterium
+bel28kent	Mysterium	op53	mysterium
+bel28kent	Mysterium	op56	mysterium
+bel28kent	Mysterium	op57	mysterium
+bel28kent	Mysterium	op58	mysterium
+bel28kent	Mysterium	op59	mysterium
+bel28kent	Mysterium	op61	mysterium
+bel28kent	Mysterium	op62	mysterium
+bel28kent	Mysterium	op63	mysterium
+bel28kent	Mysterium	op64	mysterium
+bel28kent	Mysterium	op65	mysterium
+bel28kent	Mysterium	op66	mysterium
+bel28kent	Mysterium	op67	mysterium
+bel28kent	Mysterium	op68	mysterium
+bel28kent	Mysterium	op69	mysterium
+bel28kent	Mysterium	op70	mysterium
+bel28kent	Mysterium	op71	mysterium
+bel28kent	Mysterium	op72	mysterium
+bel28kent	Mysterium	op73	mysterium
+bel28kent	Mysterium	op74	mysterium
+*-	*-	*-	*-
+!!
+!! Repositories directory with syntax problem in scriabin-op08_no03.krn.
+!! Move this entry to the above list when fixed.
+!!
+**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**sar
+bel28kent	Mysterium	op08	mysterium	.	.	.	scriabin-op08_no03.krn	.
+*-	*-	*-	*-	*-	*-	*-	*-

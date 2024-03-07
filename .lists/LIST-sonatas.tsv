@@ -1,0 +1,7 @@
+!!!OTL: Classical piano sonatas of Beethoven (complete), Mozart (complete), and Haydn (selections)
+!! vim:  ts=24:nowrap
+**ghname	**ghrepo	**from	**to	**prefix
+craigsapp	beethoven-piano-sonatas	kern	sonatas	beethoven-
+craigsapp	mozart-piano-sonatas	kern	sonatas	mozart-
+craigsapp	haydn-piano-sonatas	kern	sonatas	haydn-
+*-	*-	*-	*-	*-
