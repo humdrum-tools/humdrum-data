@@ -1,0 +1,7 @@
+!!!OTL: Tonerows used by Schoenberg, Berg and Webern
+!! vim: ts=16:nowrap
+**ghname	**ghrepo	**from	**to
+humdrum-tools	tonerow	berg	tonerows/berg
+humdrum-tools	tonerow	schoenberg	tonerows/schoenberg
+humdrum-tools	tonerow	webern	tonerows/webern
+*-	*-	*-	*-
