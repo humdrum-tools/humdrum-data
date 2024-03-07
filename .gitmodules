@@ -1,0 +1,208 @@
+# After making changes to this file, run:
+#   git submodule sync
+#   git submodule update --init --recursive
+# Adding a submodule:
+# git submodule add https://github.com/josquin-research-project/Agr.git jrp/Agr
+
+
+[submodule "bach-js/371chorales"]
+	path = bach-js/371chorales
+	url = https://github.com/craigsapp/bach-371-chorales
+	branch = main
+
+[submodule "joplin"]
+	path = joplin
+	url = https://github.com/craigsapp/joplin
+	branch = main
+
+[submodule "beethoven/piano-sonatas"]
+	path = beethoven/piano-sonatas
+	url = https://github.com/craigsapp/beethoven-piano-sonatas
+	branch = main
+
+[submodule "mozart/piano-sonatas"]
+	path = mozart/piano-sonatas
+	url = https://github.com/craigsapp/mozart-piano-sonatas
+	branch = main
+
+[submodule "scarlatti-d/keyboard-sonatas"]
+	path = scarlatti-d/keyboard-sonatas
+	url = https://github.com/craigsapp/scarlatti-keyboard-sonatas
+	branch = main
+
+[submodule "chopin/mazurkas"]
+	path = chopin/mazurkas
+	url = https://github.com/craigsapp/chopin-mazurkas
+	branch = main
+
+[submodule "chopin/preludes"]
+	path = chopin/preludes
+	url = https://github.com/craigsapp/chopin-preludes
+	branch = main
+
+[submodule "hummel/preludes"]
+	path = hummel/preludes
+	url = https://github.com/craigsapp/hummel-preludes
+	branch = main
+
+[submodule "beethoven/quartets"]
+	path = beethoven/quartets
+	url = https://github.com/craigsapp/beethoven-string-quartets
+	branch = main
+
+[submodule "mozart/quartets"]
+	path = mozart/quartets
+	url = https://github.com/musedata/humdrum-mozart-quartets
+	branch = main
+
+[submodule "haydn/quartets"]
+	path = haydn/quartets
+	url = https://github.com/musedata/humdrum-haydn-quartets
+	branch = main
+
+[submodule "bach-js/wtc"]
+	path = bach-js/wtc
+	url = https://github.com/humdrum-tools/bach-wtc
+	branch = main
+
+[submodule "bach-js/brandenburg"]
+	path = bach-js/brandenburg
+	url = https://github.com/musedata/humdrum-bach-brandenburg
+	branch = main
+
+[submodule "songs/harmonized/liederschatz"]
+	path = songs/harmonized/liederschatz
+	url = https://github.com/craigsapp/erk-liederschatz
+	branch = main
+
+[submodule "songs/unaccompanied/nova-scotia"]
+	path = songs/unaccompanied/nova-scotia
+	url = https://github.com/craigsapp/creighton-nova-scotia
+	branch = main
+
+[submodule "corelli"]
+	path = corelli
+	url = https://github.com/musedata/humdrum-corelli
+	branch = main
+
+
+# Josquin Research Project scores
+
+[submodule "jrp/Agr"]
+	path = early-music/Agr
+	url = https://github.com/josquin-research-project/Agr.git
+	branch = main
+
+[submodule "jrp/Ano"]
+	path = early-music/Ano
+	url = https://github.com/josquin-research-project/Ano.git
+	branch = main
+
+[submodule "jrp/Bin"]
+	path = early-music/Bin
+	url = https://github.com/josquin-research-project/Bin.git
+	branch = main
+
+[submodule "jrp/Bru"]
+	path = early-music/Bru
+	url = https://github.com/josquin-research-project/Bru.git
+	branch = main
+
+[submodule "jrp/Bus"]
+	path = early-music/Bus
+	url = https://github.com/josquin-research-project/Bus.git
+
+[submodule "jrp/Com"]
+	path = early-music/Com
+	url = https://github.com/josquin-research-project/Com.git
+	branch = main
+
+[submodule "jrp/Das"]
+	path = early-music/Das
+	url = https://github.com/josquin-research-project/Das.git
+	branch = main
+
+[submodule "jrp/Duf"]
+	path = early-music/Duf
+	url = https://github.com/josquin-research-project/Duf.git
+
+[submodule "jrp/Fry"]
+	path = early-music/Fry
+	url = https://github.com/josquin-research-project/Fry.git
+	branch = main
+
+[submodule "jrp/Fva"]
+	path = early-music/Fva
+	url = https://github.com/josquin-research-project/Fva.git
+	branch = main
+
+[submodule "jrp/Gas"]
+	path = early-music/Gas
+	url = https://github.com/josquin-research-project/Gas.git
+	branch = main
+
+[submodule "jrp/Isa"]
+	path = early-music/Isa
+	url = https://github.com/josquin-research-project/Isa.git
+	branch = main
+
+[submodule "jrp/Jap"]
+	path = early-music/Jap
+	url = https://github.com/josquin-research-project/Jap.git
+	branch = main
+
+[submodule "jrp/Jos"]
+	path = early-music/Jos
+	url = https://github.com/josquin-research-project/Jos.git
+	branch = main
+
+[submodule "jrp/Mar"]
+	path = early-music/Mar
+	url = https://github.com/josquin-research-project/Mar.git
+	branch = main
+
+[submodule "jrp/Mou"]
+	path = early-music/Mou
+	url = https://github.com/josquin-research-project/Mou.git
+	branch = main
+
+[submodule "jrp/Obr"]
+	path = early-music/Obr
+	url = https://github.com/josquin-research-project/Obr.git
+	branch = main
+
+[submodule "jrp/Oke"]
+	path = early-music/Oke
+	url = https://github.com/josquin-research-project/Oke.git
+	branch = main
+
+[submodule "jrp/Ort"]
+	path = early-music/Ort
+	url = https://github.com/josquin-research-project/Ort.git
+	branch = main
+
+[submodule "jrp/Pip"]
+	path = early-music/Pip
+	url = https://github.com/josquin-research-project/Pip.git
+	branch = main
+
+[submodule "jrp/Reg"]
+	path = early-music/Reg
+	url = https://github.com/josquin-research-project/Reg.git
+	branch = main
+
+[submodule "jrp/Rue"]
+	path = early-music/Rue
+	url = https://github.com/josquin-research-project/Rue.git
+	branch = main
+
+[submodule "jrp/Tin"]
+	path = early-music/Tin
+	url = https://github.com/josquin-research-project/Tin.git
+	branch = main
+
+
+# Fryderyk Chopin Institute repositories
+
+
+

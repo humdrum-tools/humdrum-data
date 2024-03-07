@@ -1,0 +1,31 @@
+!! This is the master index of Humdrum datafile URI's for Verovio Humdrum Viewer,
+!! Humdrum Extras, and kernScores.
+!!
+!! Meaning of data columns below:
+!! 
+!! (1) **uri   == The URI of a repertory (excluding the scope prefix).
+!! (2) **type  == "primary" means it should be shown when listing
+!!                URI entries.  "alias" means that it is an alternate name
+!!                (usually shorter) for a longer URI.
+!! (3) **index == The location of the index for files/works in the given URI.
+!!                If the index location does not start with http:// or https://,
+!!                The it refers to the URI of another entry in the list.
+!!                Multiple indexes or aliases can be lised in the index spine,
+!!                separated by spaces.
+!! (4) **title == Title of the repertory.
+!!
+**uri	**type	**index	**title
+humdrum://bach/chorales-370	primary	https://raw.githubusercontent.com/craigsapp/bach-370-chorales/master/index.hmd	370 Bach chorales
+humdrum://mozart/piano/sonatas	primary	https://raw.githubusercontent.com/craigsapp/mozart-piano-sonatas/master/index.hmd	17 Mozart piano sonatas
+humdrum://mozart/sonatas	alias	humdrum://mozart/piano/sonatas	.
+humdrum://beethoven/piano/sonatas	primary	https://raw.githubusercontent.com/craigsapp/beethoven-piano-sonatas/master/index.hmd	32 Beethoven piano sonatas
+humdrum://beethoven/sonatas	alias	humdrum://beethoven/piano/sonatas	.
+humdrum://joplin	primary	https://raw.githubusercontent.com/craigsapp/joplin/master/index.hmd	Music of Scott Joplin (1868&ndash;1917)
+humdrum://corelli	primary	https://raw.githubusercontent.com/musedata/humdrum-corelli/master/index.hmd	Music of Arcangelo Corelli (1653&ndash;1713)
+*-	*-	*-	*-
+!!
+!! Scope aliases: Shortcuts for URI scopes.  For example 
+!! "h://" is equivalent to "humdrum://".
+!!
+!!!scope-alias: h = humdrum
+!!!scope-alias: hum = humdrum
