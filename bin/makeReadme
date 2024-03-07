@@ -291,7 +291,7 @@ The `humdrum-data` repository manages collections of
 [Humdrum](https://humdrum.org) files found in other
 [GitHub](https://github.com) repositories.
 
-You can also design your own local directory structure, or choose
+You can design your own local directory structure, or choose
 subsets of the complete downloadable dataset.  See the "Adding more
 repositories/data subsets" section below for more information.  The current
 full download list and local directory mappings can be found in
@@ -395,12 +395,15 @@ If the version of Linux you use is not in the list, either try one
 of the above commands or determine which package manager is used in
 your version of linux.
 
+This also applies to `git`, which would be installed in a similar
+manner as `make`, such as `sudo apt-get install git`.
+
 
 ### git caveat ###
 
-Note that [`git` 2.25.0](https://github.blog/2020-01-17-bring-your-monorepo-down-to-size-with-sparse-checkout)
-(2020) is the minimum version of `git` that can be used with this
-repository.  You can check your version of `git` with the command:
+Note that `git` 2.25.0 (2020) is the minimum version of `git` that
+can be used with this repository.  You can check your version of
+`git` with the command:
 
 ```bash
 git -v
@@ -412,7 +415,8 @@ A good reply would be something like this:
 git version 2.39.2 (Apple Git-143)
 ```
 
-Upgrade your version of `git` if it is less than version 2.25.
+Upgrade your version of `git` if it is less than version 2.25 before
+trying to download files for this repository.
 
 
 ## Downloading scores ##
@@ -480,7 +484,7 @@ information about each source repository.  Here is the contents of
 
 ```tsv
 !!!source:             https://github.com/craigsapp/mozart-piano-sonatas
-!!!download-date:      Wed Mar  6 23:49:25 PST 2024
+!!!download-date:      Thu Mar  7 10:52:19 PST 2024
 !!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/44330d18
 !!!last-commit-date:   Sun Jun 18 10:32:56 2023
 !!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt 
@@ -495,16 +499,16 @@ information about each source repository.  Here is the contents of
 !!                was not available when the repository was downloaded.
 !!    **files   = Number of files in the copied directory.
 !!    **bytes   = Byte size of files copied to local directory.
-!!    **from    = The subdirectory in the repository lised in the source
-!!                refence record above that files were copied from.
+!!    **from    = The subdirectory in the repository listed in the source
+!!                reference record above that files were copied from.
 !!                A null token means the root of repository working directory.
 !!    **to      = The subdirectory in the repository lised in the source
-!!                refence record above that files were copied from.
+!!                reference record above that files were copied from.
 !!                A null token means the root of target directory.
 !!    **prefix  = Prefix string to add to copied filename (if any).
 !!    **suffix  = Suffix string to add to copied filename (if any).
 !!    **filter  = Copy only files with given PERL/JavaScript regex.
-!!    **xfilter = Exclude fils with the given PERL/JavaScript regex.
+!!    **xfilter = Exclude files with the given PERL/JavaScript regex.
 !!    **sar     = sed-like search and replacement for filename (before
 !!                prefix and suffix are added).  Multiple SAR entries
 !!                can be given, separated by semicolons (;).

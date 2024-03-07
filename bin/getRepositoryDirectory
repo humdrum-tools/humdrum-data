@@ -373,16 +373,16 @@ print IFILE<<"EOT";
 !!                was not available when the repository was downloaded.
 !!    **files   = Number of files in the copied directory.
 !!    **bytes   = Byte size of files copied to local directory.
-!!    **from    = The subdirectory in the repository lised in the source
-!!                refence record above that files were copied from.
+!!    **from    = The subdirectory in the download repository listed in the
+!!                source reference record above that files were copied from.
 !!                A null token means the root of repository working directory.
 !!    **to      = The subdirectory in the repository lised in the source
-!!                refence record above that files were copied from.
+!!                reference record above that files were copied from.
 !!                A null token means the root of target directory.
 !!    **prefix  = Prefix string to add to copied filename (if any).
 !!    **suffix  = Suffix string to add to copied filename (if any).
 !!    **filter  = Copy only files with given PERL/JavaScript regex.
-!!    **xfilter = Exclude fils with the given PERL/JavaScript regex.
+!!    **xfilter = Exclude files with the given PERL/JavaScript regex.
 !!    **sar     = sed-like search and replacement for filename (before
 !!                prefix and suffix are added).  Multiple SAR entries
 !!                can be given, separated by semicolons (;).
