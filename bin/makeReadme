@@ -164,7 +164,7 @@ sub getStatsForRepo {
 		my @data = split(/\t+/, $line);
 		my $from = $data[$index{"from"}];
 		$used{$from}++;
-		next if $used{$from} < 1;
+		next if $used{$from} > 1;
 		my $sound = $data[$index{"sound"}];
 		my $files = $data[$index{"files"}];
 		my $bytes = $data[$index{"bytes"}];

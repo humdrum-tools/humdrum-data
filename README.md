@@ -5,7 +5,7 @@ The `humdrum-data` repository manages collections of
 [Humdrum](https://humdrum.org) files found in other
 [GitHub](https://github.com) repositories.
 
-You can also design your own local directory structure, or choose
+You can design your own local directory structure, or choose
 subsets of the complete downloadable dataset.  See the "Adding more
 repositories/data subsets" section below for more information.  The current
 full download list and local directory mappings can be found in
@@ -15,10 +15,10 @@ and the
 directory gives example for downloading smaller datasets.
 
 By default all registered Humdrum file repositories will be downloaded
-by typing `make`, which currently includes 15,934 scores
-containing 18,556,930 sounding notes (some repositories are not
+by typing `make`, which currently includes 15,422 scores
+containing 17,441,119 sounding notes (some repositories are not
 notation based and contain only `**harm`, etc.).  The current size
-of all Humdrum files is 376MB.
+of all Humdrum files is 361.4MB.
 
 
 ## Summary ##
@@ -109,12 +109,15 @@ If the version of Linux you use is not in the list, either try one
 of the above commands or determine which package manager is used in
 your version of linux.
 
+This also applies to `git`, which would be installed in a similar
+manner as `make`, such as `sudo apt-get install git`.
+
 
 ### git caveat ###
 
-Note that [`git` 2.25.0](https://github.blog/2020-01-17-bring-your-monorepo-down-to-size-with-sparse-checkout)
-(2020) is the minimum version of `git` that can be used with this
-repository.  You can check your version of `git` with the command:
+Note that `git` 2.25.0 (2020) is the minimum version of `git` that
+can be used with this repository.  You can check your version of
+`git` with the command:
 
 ```bash
 git -v
@@ -126,7 +129,8 @@ A good reply would be something like this:
 git version 2.39.2 (Apple Git-143)
 ```
 
-Upgrade your version of `git` if it is less than version 2.25.
+Upgrade your version of `git` if it is less than version 2.25 before
+trying to download files for this repository.
 
 
 ## Downloading scores ##
@@ -177,7 +181,7 @@ directory also contains other lists of repository subsets that can be downloaded
 | `make popc2` | Polish Music in Open Access digital scores |
 | `make sonatas` | Classical piano sonatas of Beethoven (complete), Mozart (complete), and Haydn (selections) |
 | `make tasso` | Tasso in Music Project digital scores |
-| `make tonerow` | Tonerows used by Schoenberg, Berg and Webern |
+| `make tonerows` | Tonerows used by Schoenberg, Berg and Webern |
 
 
 
@@ -211,7 +215,7 @@ information about each source repository.  Here is the contents of
 
 ```tsv
 !!!source:             https://github.com/craigsapp/mozart-piano-sonatas
-!!!download-date:      Wed Mar  6 23:49:25 PST 2024
+!!!download-date:      Thu Mar  7 10:52:19 PST 2024
 !!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/44330d18
 !!!last-commit-date:   Sun Jun 18 10:32:56 2023
 !!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt 
@@ -226,16 +230,16 @@ information about each source repository.  Here is the contents of
 !!                was not available when the repository was downloaded.
 !!    **files   = Number of files in the copied directory.
 !!    **bytes   = Byte size of files copied to local directory.
-!!    **from    = The subdirectory in the repository lised in the source
-!!                refence record above that files were copied from.
+!!    **from    = The subdirectory in the repository listed in the source
+!!                reference record above that files were copied from.
 !!                A null token means the root of repository working directory.
 !!    **to      = The subdirectory in the repository lised in the source
-!!                refence record above that files were copied from.
+!!                reference record above that files were copied from.
 !!                A null token means the root of target directory.
 !!    **prefix  = Prefix string to add to copied filename (if any).
 !!    **suffix  = Suffix string to add to copied filename (if any).
 !!    **filter  = Copy only files with given PERL/JavaScript regex.
-!!    **xfilter = Exclude fils with the given PERL/JavaScript regex.
+!!    **xfilter = Exclude files with the given PERL/JavaScript regex.
 !!    **sar     = sed-like search and replacement for filename (before
 !!                prefix and suffix are added).  Multiple SAR entries
 !!                can be given, separated by semicolons (;).
@@ -349,7 +353,7 @@ the main download list:
 | 338,549| 210| 2.8MB|  〃  | [humdrum-haydn-quartets](https://github.com/musedata/humdrum-haydn-quartets) |
 | 157,809| 24| 2.2MB|  〃  | [humdrum-haydn-symphonies](https://github.com/musedata/humdrum-haydn-symphonies) |
 | 151,828| 82| 1.3MB|  〃  | [humdrum-mozart-quartets](https://github.com/musedata/humdrum-mozart-quartets) |
-| 2,231,622| 1,024| 29.2MB| [pl-wnifc](https://github.com/pl-wnifc) | [humdrum-chopin-first-editions](https://github.com/pl-wnifc/humdrum-chopin-first-editions) |
+| 1,115,811| 512| 14.6MB| [pl-wnifc](https://github.com/pl-wnifc) | [humdrum-chopin-first-editions](https://github.com/pl-wnifc/humdrum-chopin-first-editions) |
 | 11,817,127| 7,821| 280.5MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
 | 17,163| 84| 739.2KB| [polyrhythm-project](https://github.com/polyrhythm-project) | [rds-scores](https://github.com/polyrhythm-project/rds-scores) |
 | 66,040| 915| 987.8KB| [shanahdt](https://github.com/shanahdt) | [densmore](https://github.com/shanahdt/densmore) |
@@ -651,8 +655,8 @@ double counted in the totals at the end of the results.
 
 </details>
 
-The complete repository-download set contains 15,934 files
-with a total of 18,556,930 sounding notes and total size of 376MB.
+The complete repository-download set contains 15,422 files
+with a total of 17,441,119 sounding notes and total size of 361.4MB.
 
 
 ## Implementation notes ##

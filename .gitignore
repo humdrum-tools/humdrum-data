@@ -4,9 +4,14 @@
 *.zip
 .source
 err
+# Possible downloaded directories:
+1520s
+1520s-short
 bach
 beethoven
+cantopop
 chopin
+chorales-370
 corelli
 densmore
 early-music
@@ -14,12 +19,20 @@ haydn
 hummel
 jazz
 joplin
+jrp
+jrp-short
 mozart
+mysterium
 nifc
+nifc-short
 polyrhythm
+popc1
+popc2
+popc2-short
 scarlatti
 scriabin
 sonatas
 songs
+tasso
 tonerow
 ulenberg
