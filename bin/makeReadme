@@ -99,7 +99,7 @@ sub processOwnersRepositories {
 		next if $repoName =~ /^\s*$/;
 		next if !-d "$srcdir/$owner/$repoName";
 		my ($noteCount, $fileCount, $fileSize) = getStatsForRepo("$srcdir/$owner/.$repoName.info");
-	
+
 		$output .= "| ";
 
 		$output .= addCommas($noteCount);
@@ -324,28 +324,29 @@ To update files at a later date, it is currently best to run:
 make clean
 ```
 
-And then re-download the entire dataset again:
+to delete all downloaded repository files (any files you have in
+any local directories will not be deleted) And then re-download the
+entire dataset again, restored to their original local directories:
 
 ```bash
 make
 ```
 
-Or re-download a specific subset such as Classical-era piano
+Or re-download specific subsets such as the Classical-era piano
 [sonatas](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists/LIST-sonatas.tsv):
 
 ```bash
 make sonatas
 ```
 
-For more detailed download instructions and configuration
-possibilities, see below.
+Otherwise, See the following more detailed instructions for downloading.
 
 ## Preliminaries ##
 
 This repository uses the [git](https://en.wikipedia.org/wiki/Git)
 and [make](https://en.wikipedia.org/wiki/Make_(software)#Derivatives)
 commands, so they need to be installed on your computer before you
-can download the Humdrum files. The minimum version of git that can 
+can download the Humdrum files. The minimum version of git that can
 be used is 2.25 from 2020.
 
 
@@ -396,7 +397,7 @@ of the above commands or determine which package manager is used in
 your version of linux.
 
 This also applies to `git`, which would be installed in a similar
-manner as `make`, such as `sudo apt-get install git`.
+manner as `make`, such as `sudo apt-get install git` in Ubuntu.
 
 
 ### git caveat ###
@@ -424,13 +425,13 @@ trying to download files for this repository.
 First download this repository using git (although downloading from
 GitHub as a [ZIP
 file](https://github.com/humdrum-tools/humdrum-data/archive/refs/heads/main.zip)
-also works):
+also works), typing in the terminal:
 
 ```bash
 git clone https://github.com/humdrum-tools/humdrum-data
 ```
 
-This will create a directory in the current working directory called
+This will create a subdirectory in the current working directory called
 `humdrum-data`.  Next, move into the repository directory with this
 command:
 
@@ -439,7 +440,7 @@ cd humdrum-data
 ```
 
 To download all available Humdrum digital scores, type this command
-in the root directory of this repository:
+in the base directory of this repository:
 
 ```bash
 make
@@ -449,37 +450,37 @@ This will download all repositories found in the file
 [.lists/LIST.tsv](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists/LIST.tsv).
 The
 [.lists](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists)
-directory also contains other lists of repository subsets that can be downloaded:
+directory also contains other lists of repository subsets that can
+be downloaded individually if you do not want to download all files:
 
 {{LISTS}}
 
 
 ### Adding local files ###
 
-If you store your own files in a downloaded directory or a directory
-that you created, they will not be deleted when cleaning or updating
-a repository set with the `make` command.  This is accomplished by
-storing repository files as symbolic links, and only symbolic links
-will be deleted when changing the downloaded file structure. For
-example, if you have any of your own analysis files in
-`beethoven/piano/sonata`, they will remain after running `make
-clean`.  Running `make` will restore an update of any repository
-files in the same directory.
+If you store your own files in an existing local directory or a
+directory that you created, they will not be deleted when `make
+clean` is run.  This is accomplished by storing repository files
+as symbolic links, and only symbolic links will be deleted when
+changing the downloaded file structure. For example, if you have
+any of your own analysis files in `beethoven/piano/sonata`, they
+will remain after running `make clean`.  Running `make` will restore
+any updates for any repository files in the same directory.
 
 
 ### Source information ###
 
 Each local directory contains a file called `.info` that includes
 a hyperlink to the source GitHub repository for files in the
-directory.  If there are files from multiple repositories included
-in the same directory, there will be multiple `.info` files, such
+directory.  If there are files from multiple repositories merged
+into the same directory, there will be multiple `.info` files, such
 as `.info2` for a second merged repository directory, `.info3` for
 the third, and so on.
 
 For example, if you run `make sonatas`, a directory called
 `sonatas` will be created in the base directory of this repository
 with three .info files (including `.info2` and `.info3`), giving
-information about each source repository.  Here is the contents of 
+information about each source repository.  Below is the contents of
 `.info2` for the Mozart sonatas in the `sonatas` dataset:
 
 ```tsv
@@ -487,7 +488,7 @@ information about each source repository.  Here is the contents of
 !!!download-date:      Thu Mar  7 10:52:19 PST 2024
 !!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/44330d18
 !!!last-commit-date:   Sun Jun 18 10:32:56 2023
-!!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt 
+!!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt
 !!!repository-readme:  https://github.com/craigsapp/mozart-piano-sonatas/blob/main/README.md
 !! vim:                ts=39:nowrap
 !!
@@ -502,7 +503,7 @@ information about each source repository.  Here is the contents of
 !!    **from    = The subdirectory in the repository listed in the source
 !!                reference record above that files were copied from.
 !!                A null token means the root of repository working directory.
-!!    **to      = The subdirectory in the repository lised in the source
+!!    **to      = The subdirectory in the repository listed in the source
 !!                reference record above that files were copied from.
 !!                A null token means the root of target directory.
 !!    **prefix  = Prefix string to add to copied filename (if any).
@@ -522,42 +523,43 @@ There are six reference records in info files:
 
 | Reference key | Meaning |
 | ---------------- | ------- |
-| `source`             | URL for the repository on GitHub. |
-| `download-date`      | Date that the repository was downloaded to the local computer. |
-| `last-commit`        | URL to the specific state of the repository that was downloaded. |
+| `source`             | URL for the source repository for the Humdrum files on GitHub. |
+| `download-date`      | Date that the source repository was downloaded onto the local computer. |
+| `last-commit`        | URL to the specific version of the repository that was downloaded. |
 | `last-commit-date`   | Last commit date of the repository when it was downloaded. |
 | `repository-license` | URL to License information for the repository (if any).
 | `repository-readme`  | URL to Readme file for the repository (if any). |
 
 Humdrum data describing the number of notes, number of copied files,
 and the sizes of the file, will be added in the data section of the
-info files, as well as input parameters for normalizing filenames
-and including/excluding files within the copied directory files.
-In the above example there is a single directory of files, so there
-is only one line of data in the `.info` file.  Other repositories
-may have multiple directories of data that are copied, and each
-line of data in the info files will record information about each
-directory that was copied.
+info files below these reference records, as well as input parameters
+for normalizing filenames and including/excluding files within the
+copied directory files.  In the above example there is a single
+directory of files, so there is only one line of data in the `.info`
+file.  Other repositories may have multiple directories of data
+that are copied into different local directories, and each line of
+data in the info files will record information about each repository
+subdirectory that was copied.
 
 Note that the info file `sonatas/.info2` is the same as in the
-entire default dataset `mozart/piano/sonatas/.info`.  In the main
-downloadable dataset, these three repositories are stored in separate
-directories (`beethoven/piano/sonata`, `mozart/piano/sonata` and
-`haydn/piano/sonata`).  The `make sonatas` target demonstrates how
-to merge multiple repositories, as well as making the filenames
-unique by prefixing the source composer name to each filename (since
-filenames between these three repositories are not unique).  See
-the
+entire default dataset download for `mozart/piano/sonatas/.info`.
+In the main downloadable dataset, the three source repositories for
+`make sonatas` are stored in separate directories
+(`beethoven/piano/sonata`, `mozart/piano/sonata` and `haydn/piano/sonata`).
+The `make sonatas` target demonstrates how to merge multiple
+repositories, as well as making the filenames unique by prefixing
+the source composer name to each filename (since filenames between
+these three repositories are not unique).  See the
 [LIST-sonatas.tsv](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists/LIST-sonatas.tsv)
 for an example of how to do this using the `**prefix` parameter.
 
-On the GitHub webpage for the source of the files listed in the
-info files, there should be a README file describing the data set
-as well as any licensing information (Humdrum files should also
-contain reference records for this information, in particularly
-`YEC` (copyright notice) and `YEM` (license).  If one or both
-of these files are found, then their URLs will appear in the
-`repository-license` and `repository-readme` reference records
+On the GitHub webpage for the source repository webpage of files
+listed in the info files, there should be a README file describing
+the data set as well as any licensing information (Humdrum files
+should also contain reference records for this information, in
+particularly `YEC` (copyright notice) and `YEM` (license)).  If one
+or both of these files are found, then their URLs will appear in
+the `repository-license` and `repository-readme` reference records
 of an info file.
 
 
@@ -571,14 +573,10 @@ the main download list:
 You can create your own list of repositories to download by creating
 a file in the `.lists` directory, such as `.lists/LIST-mylist.tsv`.
 Then run `make mylist` to download your own curation of Humdrum
-files.  Alternatively, edit
+files downloaded from GitHub repositories.  Alternatively, edit
 [.lists/LIST.tsv](https://github.com/humdrum-tools/humdrum-data)
 to arrange the downloaded repositories in a directory organization
-of your choice (see the `**to` parameter below). If you change any
-of the existing LIST file, then you cannot do `git pull` to update
-any of the online lists.  Adding your own files will not have this
-limitation unless an online list is created with the same name in
-the future.
+of your choice (see the `**to` parameter below).
 
 Configuration parameters for downloading GitHub repositories to the
 local computer that the `LIST` files recognize:
@@ -587,23 +585,24 @@ Required parameters:
 
 | Spine | Meaning |
 | ----- | ------- |
-|  `**ghname` | The name of the owner account where the repository resides. |
+|  `**ghname` | The name of the owner account where the repository to download resides. |
 |  `**ghrepo` | The name of the repository to download from. |
-|  `**from`   | The name of the directory in the GitHub repository to copy from (this can be a null token if files are located in the root directory of the GitHub repository, but see the `**filter` parameter to exclude non-Humdrum files. |
-|  `**to`     | The name of the local directory into which the Humdrum files should be copied. |
+|  `**from`   | The name of the subdirectory in the GitHub repository to copy from (this can be a null token if files are located in the root directory of the GitHub repository, but see also the `**filter` parameter to exclude non-Humdrum files.
+|  `**to`     | The name of the local directory into which the Humdrum files should be copied (not allowed to be the base directory of this repository). |
 
 Optional parameters:
 
 | Spine | Meaning |
 | ----- | ------- |
-| `**prefix`  | A string that should be prefixed to each copied file.  This is useful when merging multiple files into a single local directory where filenames within the multiple sources are not unique. |
-| `**suffix`  | Similar to the prefix parameter, but added to the end of the copied file.  This is useful when the repository files do not have a file extension, and you want to append ".krn" to the end of each file. |
-| `**filter`  | Allow only files matching the given regular expression from being copied into the local directory from the downloaded repository. |
-| `**xfilter` | Exclude files matching the given regular expression from being copied into the local directory. |
+| `**prefix`  | A string that should be prefixed to each copied filename.  This is useful when merging multiple files into a single local directory where filenames within the multiple sources repositories that are do not have unique filename. |
+| `**suffix`  | Similar to the prefix parameter, but added to the end of the copied file.  This is useful when the repository files do not have a file extension, and you want to append ".krn" to the end of each filename. |
+| `**filter`  | Allow only files matching the given regular expression to be copied into the local directory from the downloaded repository. |
+| `**xfilter` | Exclude files matching the given regular expression from being copied into the local directory (such as `\.pdf$` to exclude PDF files). |
 | `**sar`     | A search-and-replace string to do more complicated renaming of copied files.  The form of the string should be like the `sed` command-line tool, such as `s/match/replace/g`. Multiple entries can be separated by a semi-colon (`;`). |
 
-The parameters can be placed in any order and optional ones can be omitted. See 
-example uses of these parameters in the sample `LIST` files found in the
+Parameters spines can be placed in any order and optional ones may
+be omitted. See example uses of these parameters in the sample
+`LIST` files found in the
 [.lists](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists)
 directory.
 
@@ -613,10 +612,11 @@ submit a request on the
 [issues](https://github.com/humdrum-tools/humdrum-data/issues) page
 of this repository, giving the necessary parameters described above.
 The final copy to the local directory structure should only contain
-valid Humdrum files (use the prefix, suffix, filter, xfiler and sar
-parameters for complicated cases, such as with the 
-[densmore](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists/LIST-densmore.tsv) 
-dataset).
+valid Humdrum files containing only the characters `[A-Za-z0-9._-]`,
+i.e. POSIX compliant names (use the prefix, suffix, filter, xfilter
+and sar to adjust if necessary). More complicated filtering and renaming
+can be found in the [densmore](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists/LIST-densmore.tsv)
+LIST file.
 
 
 ### Making your repositories more visible on GitHub ###
@@ -632,24 +632,24 @@ home page (near the top left, but below the "Settings" gear icon):
 In the above example, `humdrum` and `digital-scores` have been
 added to the `Topics` field.
 
-To search GitHub repositories by topic, do this search (by clicking on
+To search GitHub repositories by topic, do the following search (by clicking on
 the magnifying glass at the top of a repository page):
 
 <img width="595" alt="Screenshot 2024-02-28 at 10 22 06" src="https://github.com/humdrum-tools/humdrum-data/assets/3487289/e04c35c1-0621-4b3a-aedb-85426101b72f">
 
 In other words, type `topic:humdrum topic:digital-scores` to search by
-these two topics.  Here is the search results page:
+these two topics.  Here is the search results page for these two topics:
 
 <img width="747" alt="Screenshot 2024-02-28 at 10 27 22" src="https://github.com/humdrum-tools/humdrum/assets/3487289/1a922178-8e93-4ff7-8ee1-6fafe01e1f12">
 
-Here is a direct link to the search page for the humdrum + digital-scores topics:
+Here is a direct link to the search page for the `humdrum` + `digital-scores` topics:
 
 https://github.com/search?q=topic%3Ahumdrum%20topic%3Adigital-scores&type=repositories
 
 48 GitHub repositories are currently labeled with these topics.
 
-If you do this, I may encounter your repository and add it to the
-main repository list by myself. :wink:
+If you do this, your repository may be encountered and added it to the
+main repository without prompting. :wink:
 
 
 ## Updating downloaded files ##
@@ -674,6 +674,8 @@ make sonatas
 Note that running `make clean` will remove the data subsets as well
 as the full set, but any of your local files that may be intermingled
 with the repository files will be preserved by the updating process.
+Running `make` or any subset LIST such as `make sonatas` will restore
+updated versions of the files from GitHub.
 
 
 ### Archiving a current version of data ###
@@ -687,8 +689,9 @@ make joplin
 cp -RL joplin joplin-20240229
 ```
 
-The `joplin-20240229` directory will resolve symbolic links to the
-source files and will not be deleted when `make clean` is run.
+The `joplin-20240229` directory will have resolved symbolic links
+to the source files and will not be deleted when `make clean` is
+run.
 
 The `cp -RL` method is also useful if you want to copy of the Humdrum
 files outside of the `humdrum-data` directory.  All downloaded files
@@ -699,7 +702,8 @@ moving them within the `humdrum-data` directory (unless they are
 at the same directory depth as the copied source) will break these
 links.  Moving them within the repository should best be done by
 editing the LIST files used to download data, to create a rearrangement
-of the local file structure to your liking.
+of the local file structure to your liking (after running `make clean`
+to clean up the old local directory structure).
 
 
 ## Data errors ##
@@ -714,19 +718,21 @@ repository, which can be used to verify the digital score transcriptions.
 Files should not produce errors (and preferably not warnings) when
 checked with the [humdrum](https://humdrum.org/tool/humdrum) tools,
 that is also up to the maintainers of the source repositories.  The
-basic Humdrum structure should be correct for the full data set.
-Commented out repository directories in `.lists/LIST*.tsv` files
-typically indicates that there are problems in the Humdrum structure
-if one or more file in the source directory, so that directory or
-specific files are excluded from the downloads.
+basic Humdrum structure should be correct for the full data set
+(any invalid files are exclude with `*xfilter`).  Commented out
+repository directories in `.lists/LIST*.tsv` files typically indicates
+that there are problems in the Humdrum structure if one or more
+file in the source directory, so that directory or specific files
+are excluded from the downloads.
 
 
 ## Note counts ##
 
 The command `make nc` or `make note-counts` will produce a list of
 note, file, and file size counts for downloaded repositories, both
-the complete list and any subsets.  Duplicate files will not be
-double counted in the totals at the end of the results.
+the complete list and any subsets that have been downloaded.
+Duplicate files will not be double counted in the totals at the end
+of the results.
 
 <details>
 <summary> Click to view note counts for the full repository installation. </summary>
@@ -753,15 +759,16 @@ git clone --depth=1 --filter=blob:none --no-checkout <repository-url> <local-rep
 
 where `<repository-url>` is the URL to a GitHub-hosted repository,
 and `<local-repository-name>` is the location on the local computer
-to store the repository.  Here are the meanings of the options which
-download only a minimal size of the repository:
+to store the repository (downloaded repositories are stored in the
+`.source` subdirectory).  Here are the meanings of the options that
+download only a minimal footprint for a repository:
 
 
 | Option | Meaning |
 | ------ | ------- |
 | `--depth=1` |  This option specifies that only the latest commit and its parent commits (up to the specified depth, in this case, 1) will be cloned. It creates a shallow clone, which means you won't have the full history of the repository, but you'll save time and bandwidth by not downloading unnecessary historical data. |
 | `--filter=blob:none` | This option, introduced in Git 2.19, sets a partial clone filter, specifying that no file content (blobs) will be cloned initially. Instead, only the commit and tree objects are fetched. This helps further reduce the amount of data transferred during the cloning process. |
-| `--nocheckout` | This option prevents Git from checking out the working directory after the clone is complete. Typically, Git automatically checks out the latest commit after cloning, but with --nocheckout, you can defer this step. This can be useful when you want to save time and only fetch the repository metadata without checking out the actual files. |
+| `--no-checkout` | This option prevents `git` from checking out the working directory after the clone is complete. Typically, `git` automatically checks out the latest commit after cloning, but with --no-checkout, you can defer this step. This can be useful when you want to save time and only fetch the repository metadata without checking out the actual files. |
 
 Next, go inside of the downloaded repository and type this command:
 
@@ -780,14 +787,17 @@ Then download the specific directories from the online repository:
 ```bash
 git sparse-checkout add <source-directory>
 git read-tree -mu FETCH_HEAD
-git checkout-index -a --prefix=<source-directory>
+git checkout-index -a --prefix=<source-directory>/
 ```
+
+You can also set `$verboseQ = 1;` in the bin/getRepositoryDirectory script
+to see the download and installation commands for each downloaded repository.
 
 These commands are used to enable the sparse-checkout mode in `git`
 and configure which directories are made visible in the repository's
 working directory. Sparse-checkout is a feature that allows you to
-have a partial working directory by checking out only specific files
-or directories from the repository.
+have a partial working directory by checking out only specific
+directories from the repository rather than all of them.
 
 This method is a bit complicated, but ensures that only the desired
 directories are downloaded from the repository, and can avoid
@@ -803,7 +813,7 @@ to the `**to` parameter in the LIST file that is used.  Files from
 the downloaded repository will be symbolically linked to the local
 file structure, so the `humdrum-data` directory will maintain a minimal
 size, and the symbolic links are used to distinguish between local
-and repository files when running `make clean` to preserve any 
+and repository files when running `make clean` to preserve any
 local files.  You will have to manually delete any local files if you
 want to start from a fully clean state again.
 
@@ -812,12 +822,12 @@ merged into a single local directory (in which case there will be
 multiple `.info` files, one for each source repository with a number
 affixed to each additional `.info` file.  And it is also possible
 to copy repository directory files to multiple local directories
-if they can be separated by regular expressions using the FILTER,
-XFILE, and SAR parameters in LIST files.
+if they can be separated by regular expressions using the `**filter`,
+`**xfilter`, and `**sar` parameters in LIST files.
 
 ## Viewing music notation ##
 
-If the files contain `**kern` data (as most of the full dataset
+If downloaded files contain `**kern` data (as most of the full dataset
 file do), then you can copy the file and paste in Verovio Humdrum
 Viewer (VHV) (https://verovio.humdrum.org) to view the corresponding
 music notation for the file's contents.
@@ -831,7 +841,7 @@ cat file.krn | pbcopy
 Then paste into the text editor on VHV.
 
 On linux, it is more complicated to copy the contents of a file
-to the pasteboard/clipboard to paste into VHV, but typically in 
+to the pasteboard/clipboard to paste into VHV, but typically in
 one of these ways:
 
 ```bash
@@ -861,16 +871,16 @@ below.
 [KernScores](https://kern.humdrum.org) includes most of the
 repositories available with this interface, but there are smaller
 collections that are only available on kernScores (and not or not
-yet on Github).  
+yet on Github).
 
 * [Browse](https://kern.humdrum.org/browse?type=collection&l=/) kernScores
 
-There is also a "shortcuts" page which allows easier download on the 
+There is also a "shortcuts" page which allows easier download on the
 command line.  For example here is downloading of the first Bach chorale:
 
 ```bash
 humcat humdrum://chorales/chor001.krn > chor001.krn
-humcat humd://chorales/chor001.krn > chor001.krn
+humcat hum://chorales/chor001.krn > chor001.krn
 humcat h://chorales/chor001.krn > chor001.krn
 ```
 
@@ -907,8 +917,35 @@ without saving the data:
 humcat -s h://chorales | census -k
 ``
 
+Results:
+
+```
+HUMDRUM DATA
+
+Number of data tokens:     143712
+Number of null tokens:     34219
+Number of multiple-stops:  0
+Number of data records:    35928
+Number of comments:        7191
+Number of interpretations: 4800
+Number of records:         47919
+
+KERN DATA
+
+Number of note-heads:      86066
+Number of notes:           84624
+Longest note:              0
+Shortest note:             32
+Highest note:              aa
+Lowest note:               CC
+Number of rests:           783
+Maximum number of voices:  4
+Number of single barlines: 5291
+Number of double barlines: 370
+```
+
 You can also use `humcat` to download all works in a kernScores
-directory to separate files:
+directory into separate files:
 
 ```bash
 mkdir chorales
@@ -978,7 +1015,7 @@ curl https://data.josqu.in/Jos2721.krn | census -k
 curl https://data.tassomusic.org/Trm0047a.krn | census -k
 curl https://data.1520s-project.org/Wil2099.krn | census -k
 curl https://polishscores.org/?id=wtm--a-40-710-94.krn | census -k
-curl https://humdrum.nifc.pl/19xx:1.krn | census -k 
+curl https://humdrum.nifc.pl/19xx:1.krn | census -k
 ```
 
 `wget` examples:
@@ -988,7 +1025,7 @@ wget https://data.josqu.in/Jos2721.krn | census -k
 wget https://data.tassomusic.org/Trm0047a.krn | census -k
 wget https://data.1520-sproject.org/Wil2099.krn | census -k
 wget https://polishscores.org/?id=wtm--a-40-710-94.krn | census -k
-wget https://humdrum.nifc.pl/19xx:1.krn | census -k 
+wget https://humdrum.nifc.pl/19xx:1.krn | census -k
 ```
 
 
