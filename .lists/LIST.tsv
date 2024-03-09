@@ -2,70 +2,6 @@
 !!!ONB: Commented entries have Humdrum syntax errors and are not downloaded.
 !! vim: ts=39:nowrap
 **ghname	**ghrepo	**from	**to
-bel28kent	Mysterium	op01	scriabin/piano
-bel28kent	Mysterium	op02	scriabin/piano
-bel28kent	Mysterium	op03	scriabin/piano
-bel28kent	Mysterium	op04	scriabin/piano
-bel28kent	Mysterium	op05	scriabin/piano
-bel28kent	Mysterium	op06	scriabin/piano
-bel28kent	Mysterium	op07	scriabin/piano
-bel28kent	Mysterium	op09	scriabin/piano
-bel28kent	Mysterium	op10	scriabin/piano
-bel28kent	Mysterium	op11	scriabin/piano
-bel28kent	Mysterium	op12	scriabin/piano
-bel28kent	Mysterium	op13	scriabin/piano
-bel28kent	Mysterium	op14	scriabin/piano
-bel28kent	Mysterium	op15	scriabin/piano
-bel28kent	Mysterium	op16	scriabin/piano
-bel28kent	Mysterium	op17	scriabin/piano
-bel28kent	Mysterium	op18	scriabin/piano
-bel28kent	Mysterium	op19	scriabin/piano
-bel28kent	Mysterium	op21	scriabin/piano
-bel28kent	Mysterium	op22	scriabin/piano
-bel28kent	Mysterium	op23	scriabin/piano
-bel28kent	Mysterium	op25	scriabin/piano
-bel28kent	Mysterium	op27	scriabin/piano
-bel28kent	Mysterium	op28	scriabin/piano
-bel28kent	Mysterium	op30	scriabin/piano
-bel28kent	Mysterium	op31	scriabin/piano
-bel28kent	Mysterium	op32	scriabin/piano
-bel28kent	Mysterium	op33	scriabin/piano
-bel28kent	Mysterium	op34	scriabin/piano
-bel28kent	Mysterium	op35	scriabin/piano
-bel28kent	Mysterium	op36	scriabin/piano
-bel28kent	Mysterium	op37	scriabin/piano
-bel28kent	Mysterium	op38	scriabin/piano
-bel28kent	Mysterium	op39	scriabin/piano
-bel28kent	Mysterium	op40	scriabin/piano
-bel28kent	Mysterium	op41	scriabin/piano
-bel28kent	Mysterium	op42	scriabin/piano
-bel28kent	Mysterium	op44	scriabin/piano
-bel28kent	Mysterium	op45	scriabin/piano
-bel28kent	Mysterium	op46	scriabin/piano
-bel28kent	Mysterium	op47	scriabin/piano
-bel28kent	Mysterium	op48	scriabin/piano
-bel28kent	Mysterium	op49	scriabin/piano
-bel28kent	Mysterium	op51	scriabin/piano
-bel28kent	Mysterium	op52	scriabin/piano
-bel28kent	Mysterium	op53	scriabin/piano
-bel28kent	Mysterium	op56	scriabin/piano
-bel28kent	Mysterium	op57	scriabin/piano
-bel28kent	Mysterium	op58	scriabin/piano
-bel28kent	Mysterium	op59	scriabin/piano
-bel28kent	Mysterium	op61	scriabin/piano
-bel28kent	Mysterium	op62	scriabin/piano
-bel28kent	Mysterium	op63	scriabin/piano
-bel28kent	Mysterium	op64	scriabin/piano
-bel28kent	Mysterium	op65	scriabin/piano
-bel28kent	Mysterium	op66	scriabin/piano
-bel28kent	Mysterium	op67	scriabin/piano
-bel28kent	Mysterium	op68	scriabin/piano
-bel28kent	Mysterium	op69	scriabin/piano
-bel28kent	Mysterium	op70	scriabin/piano
-bel28kent	Mysterium	op71	scriabin/piano
-bel28kent	Mysterium	op72	scriabin/piano
-bel28kent	Mysterium	op73	scriabin/piano
-bel28kent	Mysterium	op74	scriabin/piano
 benory	1520s-project-scores	humdrum/Ano	early-music/anonymous-1520s
 benory	1520s-project-scores	humdrum/Bar	early-music/barra
 benory	1520s-project-scores	humdrum/Bau	early-music/bauldeweyn
@@ -97,14 +33,55 @@ benory	1520s-project-scores	humdrum/The	early-music/therache
 benory	1520s-project-scores	humdrum/Ver	early-music/verdelot
 benory	1520s-project-scores	humdrum/Vin	early-music/vinders
 benory	1520s-project-scores	humdrum/Wil	early-music/willaert
+ccarh	essen-folksong-collection	africa	songs/folksongs/essen/africa
+ccarh	essen-folksong-collection	america/mexico	songs/folksongs/essen/america/mexico
+ccarh	essen-folksong-collection	america/misc	songs/folksongs/essen/america/misc
+ccarh	essen-folksong-collection	america/usa	songs/folksongs/essen/america/usa
+ccarh	essen-folksong-collection	asia/china/han	songs/folksongs/essen/asia/china/han
+ccarh	essen-folksong-collection	asia/china/natmin	songs/folksongs/essen/asia/china/natmin
+ccarh	essen-folksong-collection	asia/china/shanxi	songs/folksongs/essen/asia/china/shanxi
+ccarh	essen-folksong-collection	asia/china/xinhua	songs/folksongs/essen/asia/china/xinhua
+ccarh	essen-folksong-collection	asia/misc	songs/folksongs/essen/asia/misc
+ccarh	essen-folksong-collection	europa/czech	songs/folksongs/essen/europa/czech
+ccarh	essen-folksong-collection	europa/danmark	songs/folksongs/essen/europa/danmark
+ccarh	essen-folksong-collection	europa/deutschl/allerkbd	songs/folksongs/essen/europa/deutschl/allerkbd
+ccarh	essen-folksong-collection	europa/deutschl/altdeu1	songs/folksongs/essen/europa/deutschl/altdeu1
+ccarh	essen-folksong-collection	europa/deutschl/altdeu2	songs/folksongs/essen/europa/deutschl/altdeu2
+ccarh	essen-folksong-collection	europa/deutschl/ballad	songs/folksongs/essen/europa/deutschl/ballad
+ccarh	essen-folksong-collection	europa/deutschl/boehme	songs/folksongs/essen/europa/deutschl/boehme
+ccarh	essen-folksong-collection	europa/deutschl/dva	songs/folksongs/essen/europa/deutschl/dva
+ccarh	essen-folksong-collection	europa/deutschl/erk	songs/folksongs/essen/europa/deutschl/erk
+ccarh	essen-folksong-collection	europa/deutschl/fink	songs/folksongs/essen/europa/deutschl/fink
+ccarh	essen-folksong-collection	europa/deutschl/kinder	songs/folksongs/essen/europa/deutschl/kinder
+ccarh	essen-folksong-collection	europa/deutschl/test	songs/folksongs/essen/europa/deutschl/test
+ccarh	essen-folksong-collection	europa/deutschl/variant	songs/folksongs/essen/europa/deutschl/variant
+ccarh	essen-folksong-collection	europa/deutschl/zuccal	songs/folksongs/essen/europa/deutschl/zuccal
+ccarh	essen-folksong-collection	europa/elsass	songs/folksongs/essen/europa/elsass
+ccarh	essen-folksong-collection	europa/england	songs/folksongs/essen/europa/england
+ccarh	essen-folksong-collection	europa/france	songs/folksongs/essen/europa/france
+ccarh	essen-folksong-collection	europa/italia	songs/folksongs/essen/europa/italia
+ccarh	essen-folksong-collection	europa/jugoslav	songs/folksongs/essen/europa/jugoslav
+ccarh	essen-folksong-collection	europa/lothring	songs/folksongs/essen/europa/lothring
+ccarh	essen-folksong-collection	europa/luxembrg	songs/folksongs/essen/europa/luxembrg
+ccarh	essen-folksong-collection	europa/magyar	songs/folksongs/essen/europa/magyar
+ccarh	essen-folksong-collection	europa/misc	songs/folksongs/essen/europa/misc
+ccarh	essen-folksong-collection	europa/nederlan	songs/folksongs/essen/europa/nederlan
+ccarh	essen-folksong-collection	europa/oesterrh	songs/folksongs/essen/europa/oesterrh
+ccarh	essen-folksong-collection	europa/polska	songs/folksongs/essen/europa/polska
+ccarh	essen-folksong-collection	europa/romania	songs/folksongs/essen/europa/romania
+ccarh	essen-folksong-collection	europa/rossiya	songs/folksongs/essen/europa/rossiya
+ccarh	essen-folksong-collection	europa/schweiz	songs/folksongs/essen/europa/schweiz
+ccarh	essen-folksong-collection	europa/sverige	songs/folksongs/essen/europa/sverige
+ccarh	essen-folksong-collection	europa/tirol	songs/folksongs/essen/europa/tirol
+ccarh	essen-folksong-collection	europa/ukraina	songs/folksongs/essen/europa/ukraina
 Computational-Cognitive-Musicology-Lab	CoCoPops	Billboard/Data	songs/pop/billboard
 craigsapp	bach-370-chorales	kern	bach/chorales-370
 craigsapp	beethoven-piano-sonatas	kern	beethoven/piano/sonata
 craigsapp	beethoven-string-quartets	kern	beethoven/quartet
 craigsapp	chopin-mazurkas	kern	chopin/mazurkas
 craigsapp	chopin-preludes	kern	chopin/preludes
-craigsapp	creighton-nova-scotia	kern	songs/monophonic/nova-scotia
-craigsapp	densmore-teton-sioux	kern	songs/monophonic/densmore/sioux
+craigsapp	creighton-nova-scotia	kern	songs/nova-scotia
+craigsapp	densmore-teton-sioux	kern	songs/densmore/sioux
 craigsapp	erk-liederschatz	kern	songs/harmonized/erk-liederschatz
 craigsapp	haydn-piano-sonatas	kern	haydn/piano
 craigsapp	hummel-preludes	kern	hummel/preludes
@@ -113,10 +90,10 @@ craigsapp	mozart-piano-sonatas	kern	mozart/piano/sonata
 craigsapp	scarlatti-keyboard-sonatas	kern	scarlatti/sonata
 humdrum-tools	bach-wtc	kern	bach/wtc
 humdrum-tools	barbershop	kern	songs/harmonized/barbershop
-humdrum-tools	child-ballads	kern	songs/monophonic/child-ballads
-humdrum-tools	foster-songs	kern	songs/monophonic/foster
-humdrum-tools	gershwin-songs	kern	songs/monophonic/gershwin
-humdrum-tools	schubert-songs	kern	songs/monophonic/schubert
+humdrum-tools	child-ballads	kern	songs/child-ballads
+humdrum-tools	foster-songs	kern	songs//foster
+humdrum-tools	gershwin-songs	kern	songs/gershwin
+humdrum-tools	schubert-songs	kern	songs/schubert
 humdrum-tools	tonerow	berg	tonerow/berg
 humdrum-tools	tonerow	schoenberg	tonerow/schoenberg
 humdrum-tools	tonerow	webern	tonerow/webern
@@ -135,7 +112,8 @@ josquin-research-project	Gas	.	early-music/gaspar
 josquin-research-project	Isa	.	early-music/isaac
 josquin-research-project	Jap	.	early-music/japart
 josquin-research-project	Mar	.	early-music/martini
-josquin-research-project	Mou	.	early-music/mouton
+!! No data in Mou directory (only symbolic links):
+!!josquin-research-project	Mou	.	early-music/mouton
 josquin-research-project	Obr	.	early-music/obrecht
 josquin-research-project	Oke	.	early-music/okeghem
 josquin-research-project	Ort	.	early-music/orto
@@ -143,6 +121,7 @@ josquin-research-project	Pip	.	early-music/pipelare
 josquin-research-project	Reg	.	early-music/regis
 josquin-research-project	Rue	.	early-music/larue
 josquin-research-project	Tin	.	early-music/tinctoris
+!! Files need to be uploaded to repsitory:
 !!musedata	humdrum-bach-chorales	kern	bach/chorales-185
 musedata	humdrum-bach-brandenburg	kern	bach/brandenburg
 musedata	humdrum-corelli	op1	corelli
@@ -177,6 +156,7 @@ pl-wnifc	humdrum-polish-scores	pl-wtm/kern	nifc/popc2/pl-wtm
 pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	nifc/popc2/pl-wumfc
 pl-wnifc	humdrum-polish-scores	s-uu/kern	nifc/popc2/s-uu
 polyrhythm-project	rds-scores	kern	polyrhythm/rds
+!! Humdrum validation errors:
 !!shanahdt	smt_jazz_2019	omnibook_kern	jazz/omnibook
 TassoInMusicProject	tasso-scores	Tam/kern	early-music/tasso
 TassoInMusicProject	tasso-scores	Tbv/kern	early-music/tasso
@@ -193,24 +173,24 @@ WolfgangDrescher	ulenberg-psalmen-davids	kern	ulenberg
 !! Repositories that need extra parameters:
 !!
 **ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**sar
-bel28kent	Mysterium	op08	scriabin/piano	.	.	.	scriabin-op08_no03.krn	.
 Computational-Cognitive-Musicology-Lab	CoCoPops	RollingStone/Data	songs/pop/rollingstone	.	.	.	\.md$	.
 Computational-Cognitive-Musicology-Lab	MCFlow	Humdrum	songs/rap/mcflow	.	.	.	\.md$	.
 jasonleeubc	Cantopop-corpus	.	songs/pop/cantonese	.	.krn	^C\d+$	.	s/^C/cpop-/
 josquin-research-project	Jos	.	early-music/josquin	.	.	.	^Jos2514	.
-shanahdt	densmore	Densmore/acoma	densmore/acoma	acoma	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-!!shanahdt	densmore	Densmore/british_columbia	densmore/bc	bc	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/cheyenne_and_arapaho	densmore/cheyenne	cheyenne	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/chippewa1	densmore/chippewa_a	chippewa_a	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/chippewa2	densmore/chippewa_a	chippewa_b	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/choctaw	densmore/choctaw	.	.	\.krn$	.	s/^(choct)(\d\d)([^\d].*)$/${1}0$2$3/; s/^(choct)(\d)([^\d].*)$/${1}00$2$2/;
-shanahdt	densmore	Densmore/maidu	densmore/maidu	maidu	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-shanahdt	densmore	Densmore/mandan	densmore/mandan	.	.	\.krn$	.	s/^mandan(\d\d\.)/mandan0$1/; s/^mandan(\d\.)/mandan00$1/
-shanahdt	densmore	Densmore/menominee	densmore/menomiee	menomiee	.krn	\.krn$	^Flute	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-!!shanahdt	densmore	Densmore/nootka	densmore/nootka	nootka	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-shanahdt	densmore	Densmore/northern_ute	densmore/northute	northute	.krn	\.krn$	^[DRU]	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-!!shanahdt	densmore	Densmore/papago	densmore/papago	papago	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-shanahdt	densmore	Densmore/pawnee	densmore/pawnee	.	.	\.krn$	.	s/^pawnee(\d\d\.)/pawnee0$1/; s/^pawnee(\d\.)/pawnee00$1/
-shanahdt	densmore	Densmore/seminole	densmore/seminole	seminole	.krn	\.krn$	^[AT]	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-shanahdt	densmore	Densmore/yuman	densmore/yuman	yuman	.krn	\.krn$	^(^F|No_12[45]_)	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/acoma	songs/densmore/acoma	acoma	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!! Humdrum validation errors:
+!!shanahdt	densmore	Densmore/british_columbia	songs/densmore/bc	bc	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/cheyenne_and_arapaho	songs/densmore/cheyenne	cheyenne	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/chippewa1	songs/densmore/chippewa_a	chippewa_a	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/chippewa2	songs/densmore/chippewa_a	chippewa_b	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/choctaw	songs/densmore/choctaw	.	.	\.krn$	.	s/^(choct)(\d\d)([^\d].*)$/${1}0$2$3/; s/^(choct)(\d)([^\d].*)$/${1}00$2$2/;
+shanahdt	densmore	Densmore/maidu	songs/densmore/maidu	maidu	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/mandan	songs/densmore/mandan	.	.	\.krn$	.	s/^mandan(\d\d\.)/mandan0$1/; s/^mandan(\d\.)/mandan00$1/
+shanahdt	densmore	Densmore/menominee	songs/densmore/menomiee	menomiee	.krn	\.krn$	^Flute	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!!shanahdt	densmore	Densmore/nootka	songs/densmore/nootka	nootka	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/northern_ute	songs/densmore/northute	northute	.krn	\.krn$	^[DRU]	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!!shanahdt	densmore	Densmore/papago	songs/densmore/papago	papago	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+shanahdt	densmore	Densmore/pawnee	songs/densmore/pawnee	.	.	\.krn$	.	s/^pawnee(\d\d\.)/pawnee0$1/; s/^pawnee(\d\.)/pawnee00$1/
+shanahdt	densmore	Densmore/seminole	songs/densmore/seminole	seminole	.krn	\.krn$	^[AT]	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/yuman	songs/densmore/yuman	yuman	.krn	\.krn$	^(^F|No_12[45]_)	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
 *-	*-	*-	*-	*-	*-	*-	*-

@@ -90,9 +90,7 @@ notecount:
 	@$(BINDIR)/getNoteCount
 
 
-ifeq (,$(filter %,$(NONLISTS)))
-%:
-	$(BINDIR)/processList .lists/LIST-$@.tsv
-endif
+%: $(if $(filter-out $(NONLISTS),$@), $(BINDIR)/processList .lists/LIST-$@.tsv)
+
 
 

@@ -15,10 +15,10 @@ and the
 directory gives example for downloading smaller datasets.
 
 By default all registered Humdrum file repositories will be downloaded
-by typing `make`, which currently includes 15,422 scores
-containing 17,441,119 sounding notes (some repositories are not
+by typing `make`, which currently includes 23,689 scores
+containing 17,641,955 sounding notes (some repositories are not
 notation based and contain only `**harm`, etc.).  The current size
-of all Humdrum files is 361.4MB.
+of all Humdrum files is 364.3MB.
 
 
 ## Summary ##
@@ -175,9 +175,9 @@ be downloaded individually if you do not want to download all files:
 | `make cantopop` | A corpus of Cantonese popular music, 2000–2020 |
 | `make chorales` | 370 J.S. Bach four-part harmonized chorales |
 | `make densmore` | Native American songs collected by Francis Densmore |
+| `make essen` | Essen Folksong Collection |
 | `make joplin` | Piano music by Scott Joplin |
 | `make jrp` | Josquin Research Project digital scores |
-| `make mysterium` | Mysterium: Piano music of Scriabin |
 | `make nifc` | Digital scores from The Fryderyk Chopin Institute (Chopin first editions (POPC1) and Polish Musical Heritage (1600-1900) in Open Access (POPC2)) |
 | `make popc2-short` | Polish Music in Open Access digital scores, ID only filenames |
 | `make popc2` | Polish Music in Open Access digital scores |
@@ -190,7 +190,7 @@ be downloaded individually if you do not want to download all files:
 
 If you want to update this meta-repository using `git`, type:
 
-``bash
+```bash
 git pull
 ```
 
@@ -227,16 +227,17 @@ make cu
 
 for short.
 
-This command will report any online repository which is more recent
-that the copy that you downloaded.  Currently you need to run:
+This command will report any online repositories that are more recent
+than the copy you downloaded.  Currently to update, you need to run:
 
 ```
 make clean
 make
 ```
 
-To download the updated repostory(s).  In the future, a system to
-only download repositories that have online updates may be implemented.
+Which will re-download all repositories, including ones that do not
+need updating.  In the future, a system to only download repositories
+that have online updates may be implemented.
 
 ### Adding local files ###
 
@@ -353,8 +354,8 @@ the main download list:
 
 | Notes | Files | Size | Repository owner | Repository name |
 | ----- | ----- | ---- | ---------------- | --------------- |
-| 244,083| 206| 2.5MB| [bel28kent](https://github.com/bel28kent) | [Mysterium](https://github.com/bel28kent/Mysterium) |
 | 321,175| 340| 3.1MB| [benory](https://github.com/benory) | [1520s-project-scores](https://github.com/benory/1520s-project-scores) |
+| 444,919| 8,473| 5.5MB| [ccarh](https://github.com/ccarh) | [essen-folksong-collection](https://github.com/ccarh/essen-folksong-collection) |
 | 145,084| 940| 12.9MB| [Computational-Cognitive-Musicology-Lab](https://github.com/Computational-Cognitive-Musicology-Lab) | [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops) |
 | 0| 124| 1.8MB|  〃  | [MCFlow](https://github.com/Computational-Cognitive-Musicology-Lab/MCFlow) |
 | 84,624| 370| 931.9KB| [craigsapp](https://github.com/craigsapp) | [bach-370-chorales](https://github.com/craigsapp/bach-370-chorales) |
@@ -394,7 +395,6 @@ the main download list:
 | 9,835| 22| 93.6KB|  〃  | [Jap](https://github.com/josquin-research-project/Jap) |
 | 499,288| 475| 6MB|  〃  | [Jos](https://github.com/josquin-research-project/Jos) |
 | 95,605| 122| 877.9KB|  〃  | [Mar](https://github.com/josquin-research-project/Mar) |
-| 0| 0| 0B|  〃  | [Mou](https://github.com/josquin-research-project/Mou) |
 | 23,603| 15| 233.1KB|  〃  | [Obr](https://github.com/josquin-research-project/Obr) |
 | 87,879| 98| 1.1MB|  〃  | [Oke](https://github.com/josquin-research-project/Oke) |
 | 52,863| 44| 681.8KB|  〃  | [Ort](https://github.com/josquin-research-project/Ort) |
@@ -595,14 +595,6 @@ of the results.
 54917	52	529.2KB	chopin/mazurkas
 18705	24	162.4KB	chopin/preludes
 146369	250	1.3MB	corelli
-10784	82	100.5KB	densmore/acoma
-3665	53	40.6KB	densmore/maidu
-3873	73	100.7KB	densmore/mandan
-7470	140	93.1KB	densmore/menomiee
-6184	110	85KB	densmore/northute
-4844	86	228.2KB	densmore/pawnee
-13718	243	167.7KB	densmore/seminole
-15249	128	171.8KB	densmore/yuman
 19851	10	190.3KB	early-music/agricola
 47922	86	742.9KB	early-music/anonymous
 6314	7	60.9KB	early-music/anonymous-1520s
@@ -688,33 +680,81 @@ of the results.
 137502	46	4.5MB	nifc/popc2/s-uu
 17163	84	739.2KB	polyrhythm/rds
 68489	65	707.4KB	scarlatti/sonata
-244083	206	2.5MB	scriabin/piano
+1824	38	25.2KB	songs/child-ballads
+10784	82	100.5KB	songs/densmore/acoma
+3665	53	40.6KB	songs/densmore/maidu
+3873	73	100.7KB	songs/densmore/mandan
+7470	140	93.1KB	songs/densmore/menomiee
+6184	110	85KB	songs/densmore/northute
+4844	86	228.2KB	songs/densmore/pawnee
+13718	243	167.7KB	songs/densmore/seminole
+16091	245	329.3KB	songs/densmore/sioux
+15249	128	171.8KB	songs/densmore/yuman
+136	1	1.2KB	songs/folksongs/essen/africa
+266	4	2.9KB	songs/folksongs/essen/america/mexico
+51	2	1.3KB	songs/folksongs/essen/america/misc
+333	7	5KB	songs/folksongs/essen/america/usa
+90225	1223	969.4KB	songs/folksongs/essen/asia/china/han
+14074	206	202KB	songs/folksongs/essen/asia/china/natmin
+37878	802	487KB	songs/folksongs/essen/asia/china/shanxi
+1183	10	11.4KB	songs/folksongs/essen/asia/china/xinhua
+760	5	5.5KB	songs/folksongs/essen/asia/misc
+1346	43	33.1KB	songs/folksongs/essen/europa/czech
+376	9	6.3KB	songs/folksongs/essen/europa/danmark
+5915	110	78.4KB	songs/folksongs/essen/europa/deutschl/allerkbd
+15136	309	198.8KB	songs/folksongs/essen/europa/deutschl/altdeu1
+15370	316	201.1KB	songs/folksongs/essen/europa/deutschl/altdeu2
+27664	687	467.9KB	songs/folksongs/essen/europa/deutschl/ballad
+40451	704	443.2KB	songs/folksongs/essen/europa/deutschl/boehme
+6074	106	77.6KB	songs/folksongs/essen/europa/deutschl/dva
+78764	1700	1001.8KB	songs/folksongs/essen/europa/deutschl/erk
+33085	566	359.8KB	songs/folksongs/essen/europa/deutschl/fink
+8393	213	117.1KB	songs/folksongs/essen/europa/deutschl/kinder
+533	12	6.4KB	songs/folksongs/essen/europa/deutschl/test
+901	26	14.9KB	songs/folksongs/essen/europa/deutschl/variant
+31802	616	380KB	songs/folksongs/essen/europa/deutschl/zuccal
+4496	91	56KB	songs/folksongs/essen/europa/elsass
+235	4	3KB	songs/folksongs/essen/europa/england
+626	14	10KB	songs/folksongs/essen/europa/france
+330	8	4.9KB	songs/folksongs/essen/europa/italia
+2607	115	66.2KB	songs/folksongs/essen/europa/jugoslav
+2956	71	45.2KB	songs/folksongs/essen/europa/lothring
+378	8	5.4KB	songs/folksongs/essen/europa/luxembrg
+1590	45	28.7KB	songs/folksongs/essen/europa/magyar
+1877	30	20.9KB	songs/folksongs/essen/europa/misc
+3756	85	59.4KB	songs/folksongs/essen/europa/nederlan
+5306	104	65.3KB	songs/folksongs/essen/europa/oesterrh
+917	25	15.7KB	songs/folksongs/essen/europa/polska
+1038	28	18.5KB	songs/folksongs/essen/europa/romania
+1310	37	23.1KB	songs/folksongs/essen/europa/rossiya
+4586	93	60KB	songs/folksongs/essen/europa/schweiz
+480	11	7.5KB	songs/folksongs/essen/europa/sverige
+1149	14	10.5KB	songs/folksongs/essen/europa/tirol
+566	13	8.9KB	songs/folksongs/essen/europa/ukraina
+4599	38	30.6KB	songs/foster
+7543	29	51.6KB	songs/gershwin
 14113	33	100.5KB	songs/harmonized/barbershop
 62741	232	538.2KB	songs/harmonized/erk-liederschatz
-1824	38	25.2KB	songs/monophonic/child-ballads
-16091	245	329.3KB	songs/monophonic/densmore/sioux
-4599	38	30.6KB	songs/monophonic/foster
-7543	29	51.6KB	songs/monophonic/gershwin
-8552	152	150.9KB	songs/monophonic/nova-scotia
-4842	35	59.9KB	songs/monophonic/schubert
+8552	152	150.9KB	songs/nova-scotia
 85477	739	9.4MB	songs/pop/billboard
 39729	105	805.6KB	songs/pop/cantonese
 59607	200	3.5MB	songs/pop/rollingstone
+4842	35	59.9KB	songs/schubert
 276	23	11.3KB	tonerow/berg
 504	42	21.5KB	tonerow/schoenberg
 252	21	10.9KB	tonerow/webern
 2612	50	78.7KB	ulenberg
 *-	*-	*-	*-
-!!!total-notes: 17440866
-!!!total-files: 15421
-!!!total-size: 376MB
+!!!total-notes: 17637005
+!!!total-files: 23594
+!!!total-size: 378.9MB
 
 ```
 
 </details>
 
-The complete repository-download set contains 15,422 files
-with a total of 17,441,119 sounding notes and total size of 361.4MB.
+The complete repository-download set contains 23,689 files
+with a total of 17,641,955 sounding notes and total size of 364.3MB.
 
 
 ## Implementation notes ##

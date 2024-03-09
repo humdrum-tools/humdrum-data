@@ -459,7 +459,7 @@ be downloaded individually if you do not want to download all files:
 
 If you want to update this meta-repository using `git`, type:
 
-``bash
+```bash
 git pull
 ```
 
@@ -496,16 +496,17 @@ make cu
 
 for short.
 
-This command will report any online repository which is more recent
-that the copy that you downloaded.  Currently you need to run:
+This command will report any online repositories that are more recent
+than the copy you downloaded.  Currently to update, you need to run:
 
 ```
 make clean
 make
 ```
 
-To download the updated repostory(s).  In the future, a system to
-only download repositories that have online updates may be implemented.
+Which will re-download all repositories, including ones that do not
+need updating.  In the future, a system to only download repositories
+that have online updates may be implemented.
 
 ### Adding local files ###
 
