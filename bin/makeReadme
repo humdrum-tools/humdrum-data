@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 # Creation Date: Sat Feb 24 17:06:20 PST 2024
 # Last Modified: Wed Mar  6 20:24:05 PST 2024
 # Filename:      bin/makeReadme
@@ -288,7 +288,7 @@ __DATA__
 # Humdrum Data #
 
 The `humdrum-data` repository manages collections of
-[Humdrum](https://humdrum.org) files found in other
+[Humdrum](https://www.humdrum.org) files found in other
 [GitHub](https://github.com) repositories.
 
 You can design your own local directory structure, or choose
@@ -769,7 +769,7 @@ also include scans of the source editions, such as the
 repository, which can be used to verify the digital score transcriptions.
 
 Files should not produce errors (and preferably not warnings) when
-checked with the [humdrum](https://humdrum.org/tool/humdrum) tools,
+checked with the [humdrum](https://www.humdrum.org/tool/humdrum) tools,
 that is also up to the maintainers of the source repositories.  The
 basic Humdrum structure should be correct for the full data set
 (any invalid files are exclude with `*xfilter`).  Commented out
@@ -944,7 +944,7 @@ which is converted into a kernScores URL internal to the
 [humcat](https://extras.humdrum.org/man/humcat) tool.
 
 Here is an example use of `humcat` to download a file without saving
-it, using the [key](https//humdrum.org/tool/key) Humdrum tool:
+it, using the [key](https//www.humdrum.org/tool/key) Humdrum tool:
 
 ```bash
 humcat h://chorales/chor001.krn | key
@@ -968,7 +968,7 @@ without saving the data:
 
 ```bash
 humcat -s h://chorales | census -k
-``
+```
 
 Results:
 
@@ -1061,7 +1061,7 @@ brew install wget
 
 The downloaded data can be piped directly to Humdrum tools as the
 file is being downloaded, such as with the
-[census](https://humdrum.org/tool/census) tool::
+[census](https://www.humdrum.org/tool/census) tool::
 
 ```bash
 curl https://data.josqu.in/Jos2721.krn | census -k

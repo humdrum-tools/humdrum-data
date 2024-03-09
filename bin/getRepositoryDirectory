@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 # Creation Date: Tue Feb 20 00:54:47 PST 2024
 # Last Modified: Mon Mar  4 00:40:11 PST 2024
 # Filename:      bin/getRepositoryDirectory
@@ -106,7 +106,7 @@ my $GITHUB = "";
 # directory would be $REPODIR/$GITHUB/kern, where $REPODIR is ".source",
 # $GITHUB is "craigsapp/mozart-piano-sonatas" and "/kern" is the
 # directory within the repository containing Humdrum files to copy.
-# This wil be set from the --from command-line parameter.
+# This will be set from the --from command-line parameter.
 my $REPO_SUBDIR = "";
 
 # -t: $TARGDIR: Path from the local base directory files should be
@@ -120,15 +120,6 @@ my $PREFIX = "";
 
 # --suffix: SUFFIX: string to add to copied filename ends.
 my $SUFFIX = "";
-
-# --sar: SAR: regular expression to search and replace for in filename.
-# The substitution string should be formatted in a manner similar
-# to sed: "s/search/replace/flags", where "search" can be a PERL
-# regular expression, "replace" is the replacement string, which can
-# include capture groups, such as $1, and "flags" are similar to sed,
-# such as "g" for a global replacement or "gi" for a global replament
-# that ignore letter case.
-my $SAR = "";
 
 # --filter: FILTER: A PERL regular expression to select filenames
 # from the originating repository to the local copy of the Humdrum
@@ -148,10 +139,26 @@ my $FILTER = "";
 
 # --xfilter: XFILTER: A PERL regular expression to deselect filenames
 # from the originating repository to the local copy of the Humdrum
-# files.  For example, to select remove files from a repository
+# files.  For example, to remove files from a repository
 # directory that do not start with the letter F:
 #    --xfilter "^F"
 my $XFILTER = "";
+
+# --content: CONTENT: A PERL regular expression to select filenames
+# from the originating repository to the local copy of the Humdrum
+# files if the file has the given content on any line.  For example,
+# to select files from a repository that have the Nocturne genre:
+#    --content "^!!!AGN:.*Nocturne"
+my $CONTENT = "";
+
+# --sar: SAR: regular expression to search and replace for in filename.
+# The substitution string should be formatted in a manner similar
+# to sed: "s/search/replace/flags", where "search" can be a PERL
+# regular expression, "replace" is the replacement string, which can
+# include capture groups, such as $1, and "flags" are similar to sed,
+# such as "g" for a global replacement or "gi" for a global replament
+# that ignore letter case.
+my $SAR = "";
 
 
 ###########################################################################
@@ -188,17 +195,18 @@ my $BRANCH = "";
 ###########################################################################
 
 
-# Process command-ine options:
+# Process command-line options:
 Getopt::Long::Configure("bundling");
 GetOptions (
-   "g|github=s"                         => \$GITHUB,      # Github user/repo.
-   "s|source|source-directory|from|f=s" => \$REPO_SUBDIR, # Source subdirectory in repository to copy files from.
-   "t|target|target-directory|to=s"     => \$TARGDIR,     # Target directory in this repo to copy into.
-	"sar=s"                              => \$SAR,         # Search-and-replace for filenames to rename them in target.
-	"suffix=s"                           => \$SUFFIX,      # Suffix string to append to target filename.
+	"g|github=s"                         => \$GITHUB,      # Github user/repo.
+	"s|source|source-directory|from|f=s" => \$REPO_SUBDIR, # Source subdirectory in repository to copy files from.
+	"t|target|target-directory|to=s"     => \$TARGDIR,     # Target directory in this repo to copy into.
 	"prefix=s"                           => \$PREFIX,      # Prefix stiring to append to target filename.
+	"suffix=s"                           => \$SUFFIX,      # Suffix string to append to target filename.
 	"filter=s"                           => \$FILTER,      # Filter to link only certain source files to target directory.
-	"xfilter=s"                          => \$XFILTER      # Filter out certain source files.
+	"xfilter=s"                          => \$XFILTER,     # Filter out certain source files.
+	"content=s"                          => \$CONTENT,     # Filter to link only files with line matching regular expression.
+	"sar=s"                              => \$SAR          # Search-and-replace for filenames to rename them in target.
 );
 
 # Do basic error checks on and preparations of the input parameters:
@@ -362,7 +370,7 @@ print IFILE<<"EOT";
 !!!download-date:      $downloadDate
 !!!last-commit:        $lastCommitUrl
 !!!last-commit-date:   $lastCommitDate
-!!!repository-license: $repositoryLicense 
+!!!repository-license: $repositoryLicense
 !!!repository-readme:  $repositoryReadme
 !! vim:                ts=39:nowrap
 !!
@@ -385,6 +393,8 @@ print IFILE<<"EOT";
 !!    **suffix  = Suffix string to add to copied filename (if any).
 !!    **filter  = Copy only files with given PERL/JavaScript regex.
 !!    **xfilter = Exclude files with the given PERL/JavaScript regex.
+!!    **content = Include files with contents that match the given
+!!                PERL/JavaScript regex.
 !!    **sar     = sed-like search and replacement for filename (before
 !!                prefix and suffix are added).  Multiple SAR entries
 !!                can be given, separated by semicolons (;).
@@ -403,7 +413,7 @@ EOT
 sub getLocalTime {
 	my $epoch_time = time;
 	my ($sec, $min, $hour, $mday, $mon, $year) = (localtime($epoch_time))[0..5];
-	my $formatted_date = sprintf("%04d-%02d-%02d %02d:%02d:%02d %s", $year + 1900, 
+	my $formatted_date = sprintf("%04d-%02d-%02d %02d:%02d:%02d %s", $year + 1900,
 		$mon + 1, $mday, $hour, $min, $sec, strftime('%z', localtime($epoch_time)));
 	return $formatted_date;
 }
@@ -448,7 +458,7 @@ sub checkoutRootDirectory {
 ##     ls-tree" is used to find the index hash of the directory.  "git
 ##     read-tree" in conjunction with "get sparse-checkout" also downloads
 ##     the root directory files (which make contain sizeable files) in
-##     addition to the desired directory.  See checkoutRootDirector() for
+##     addition to the desired directory.  See checkoutRootDirectory() for
 ##     downloading files for the root directory.  Using the "git ls-tree"
 ##     system in conjunction with "git fetch" will only download the desired
 ##     files in the given subdirectory rather than also downloading files
@@ -484,7 +494,7 @@ sub checkoutSubdirectory {
 	while (my $line = <$stderr_capture>) {
 		# Sorts of messages that are not interesting to see:
 		#   From https://github.com/craigsapp/densmore-teton-sioux
- 		#   * branch            cb8b36528d59c7303bd37ff57b90b83ab1f70a68 -> FETCH_HEAD
+		#   * branch            cb8b36528d59c7303bd37ff57b90b83ab1f70a68 -> FETCH_HEAD
 		if ($line =~ /branch.*FETCH_HEAD/) {
 			$branchInfo .= $line;
 			next;
@@ -733,9 +743,9 @@ sub linkRepositoryFilesToLocalDirectory {
 	my $relativePath = $toSubdir;
 	$relativePath =~ s/[^\/]+/../g;
 
-	# Create a list of the files (and directories) in the source subdir repository
-	# which need to be linked to the target directory.
-	#
+	# Create a list of the files (including directory path to
+	# file) in the source subdir repository which need to be
+	# linked to the target directory.
 	my @files = sort glob("$srcdir/*");
 	return if @files == 0;
 
@@ -743,7 +753,7 @@ sub linkRepositoryFilesToLocalDirectory {
 	# the repository has removed files, and also it is not necessary to relink
 	# files that are already set up properly in the target directory.
 	# Here I just delete all of the links related to the currently processing
-	# GitHub repository subdirector, and recreate new symbolic links.  This
+	# GitHub repository subdirectory, and recreate new symbolic links.  This
 	# will cause problems if multiple repository sources are placed in the same
 	# target directory.
 	clearOldLinks($srcdir, $toSubdir, $relativePath);
@@ -753,7 +763,7 @@ sub linkRepositoryFilesToLocalDirectory {
 	# the target directory.
 	createInfoFileLink($srcdir, $toSubdir, $relativePath);
 
-	# Now iterate through the souce files and create links in the target directory:
+	# Now iterate through the source files and create links in the target directory:
 	my $noteCount = 0;
 	$FileCount = 0;
 	$FileSize  = 0;
@@ -801,6 +811,28 @@ sub linkRepositoryFilesToLocalDirectory {
 				if ($targname !~ /$filter_qr/) {
 					next;
 				}
+			}
+		}
+
+		# Apply the $CONTENT input parameter to include only wanted files:
+		if ($CONTENT ne "") {
+			# Check to see if the input regular expression is valid, and ignore it otherwise
+			# after printing a warning message that it is invalid.
+			my $filter_qr =  eval { qr/$CONTENT/; };
+			if ($@) {
+				warn "Invalid search pattern: $filter_qr Error message: $@";
+			} else {
+				open (CFILE, $file) or die "Cannot read file $file\n";
+				chomp(my @lines = <CFILE>);
+				close CFILE;
+				my $found = 0;
+				foreach my $line (@lines) {
+					if ($line =~ /$filter_qr/) {
+						$found = 1;
+						last;
+					}
+				}
+				next if !$found;
 			}
 		}
 
@@ -979,6 +1011,8 @@ sub storeDirectoryInfo {
 	$filter = "." if $filter eq "";
 	my $xfilter = $XFILTER;
 	$xfilter = "." if $xfilter eq "";
+	my $content = $CONTENT;
+	$content = "." if $content eq "";
 	my $sar = $SAR;
 	$sar = "." if $sar eq "";
 
@@ -1004,8 +1038,8 @@ sub storeDirectoryInfo {
 		}
 	}
 	if ($exinterp < 0) {
-		$contents[@contents] = "**sound\t**files\t**bytes\t**branch\t**from\t**to\t**prefix\t**suffix\t**filter\t**xfilter\t**sar";
-		$contents[@contents] = "*-\t*-\t*-\t*-\t*-\t*\t*-\t*-\t*-\t*-\t*-";
+		$contents[@contents] = "**sound\t**files\t**bytes\t**branch\t**from\t**to\t**prefix\t**suffix\t**filter\t**xfilter\t**content\t**sar";
+		$contents[@contents] = "*-\t*-\t*-\t*-\t*-\t*\t*-\t*-\t*-\t*-\t*-\t*-";
 	}
 
 	if (!$found) {
@@ -1053,6 +1087,7 @@ sub storeDirectoryInfo {
 			$line .= "\t$suffix";
 			$line .= "\t$filter";
 			$line .= "\t$xfilter";
+			$line .= "\t$content";
 			$line .= "\t$sar";
 
 			$contents[$#contents] = "$line\n$contents[$#contents]";

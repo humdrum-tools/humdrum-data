@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 # Creation Date: Sat Feb 17 20:17:18 PST 2024
 # Last Modified: Wed Feb 28 03:24:25 PST 2024
 # Filename:      bin/getNoteCount
@@ -15,10 +15,13 @@ use Getopt::Long;
 use Cwd;
 use File::Basename;
 
+# File extensions that will be checked for note counts:
+my $EXT = "krn|hum|mns|mens|rap|pc|harm";
+
 my $REPODIR = ".source";
 
-# %hashes == keep track of MD5 sums of files to avoid double-counting notes in the total count.
-my %hashes;
+# %Hashes == keep track of MD5 sums of files to avoid double-counting notes in the total count.
+my %Hashes;
 
 # Also keep track of the total files size for unique symbolically linked files.
 my $totalFileSize = 0;
@@ -32,10 +35,10 @@ my $realQ  = 0; # Count notes only in non-symbolic link files.
 
 Getopt::Long::Configure("bundling");
 GetOptions (
-   "F|no-directory-names" => \$dhideQ,
-   "C|no-file-count"      => \$fhideQ,
-   "N|no-note-count"      => \$nhideQ,
-   "S|no-file-sizes"      => \$shideQ,
+	"F|no-directory-names" => \$dhideQ,
+	"C|no-file-count"      => \$fhideQ,
+	"N|no-note-count"      => \$nhideQ,
+	"S|no-file-sizes"      => \$shideQ,
 	"t|total"              => \$totalQ,
 	"r|real"               => \$realQ
 );
@@ -183,9 +186,8 @@ sub countNotes {
 	for (my $i=0; $i<@files; $i++) {
 		my $file = $files[$i];
 
-		# Allow only .krn, .hum, .rap, .pc, .harm file extensions.
-		# Add other extensions here.
-		next if $file !~ /\.(krn|hum|rap|pc|harm)$/;
+		# Allow only file extentions in the $EXT list.
+		next if $file !~ /\.($EXT)$/;
 
 		# Get MD5 checksum for identifying duplicate files:
 		my $command1 = "$md5sum -q \"$dir/$file\"";
@@ -194,8 +196,8 @@ sub countNotes {
 		# Do not add multiple counts of the same file
 		# in different locations to the total sum:
 		my $unique = 1;
-		$unique = 0 if $hashes{$hash} !~ /^\s*$/;
-		$hashes{$hash} = 1;
+		$unique = 0 if $Hashes{$hash} !~ /^\s*$/;
+		$Hashes{$hash} = 1;
 
 		# Add size of file if unique:
 		$localSize += getFileSizeInBytes("$dir/$file");
@@ -223,7 +225,6 @@ sub countNotes {
 	}
 
 	$totalFileSize += $localSize;
-
 	if ($fsum > 0) {
 		my $size = getTotalSize($localSize);
 		printInfo($nsum, $fsum, $dir, $size, 0);
@@ -233,7 +234,6 @@ sub countNotes {
 	$ufcount += $ufsum;
 
 	my @dirs = getDirectories("$dir");
-
 	for (my $i=0; $i<@dirs; $i++) {
 		my $subdir = $dirs[$i];
 		($uncount, $ufcount) = countNotes("$dir/$subdir", $uncount, $ufcount);
@@ -298,9 +298,8 @@ sub getFiles {
 	while (my $file = readdir(DIR)) {
 		next if $file =~ /^\./;    # ignore files that start with ".".
 
-		# Allow only .krn, .hum, .rap, .cp, .harm file extensions.
-		# Add other extensions here.
-		next if $file !~ /\.(krn|hum|rap|pc|harm)$/;
+		# Allow only file extensions given in $EXT:
+		next if $file !~ /\.($EXT)$/;
 
 		my $fullpath = "$dir/$file";
 		next if -d $fullpath;

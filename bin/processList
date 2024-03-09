@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 # Creation Date: Tue Feb 20 02:48:16 PST 2024
 # Last Modified: Tue Feb 20 02:48:19 PST 2024
 # Filename:      processList
@@ -14,12 +14,14 @@
 #       craigsapp	beethoven-piano-sonatas	kern	beethoven/piano/sonatas
 #       craigsapp	mozart-piano-sonatas	kern	mozart/piano/sonatas
 #       *-		*-			*-	*-
-# Also:
-#    **filter  == Only process files that match regular expression.
-#    **Xfilter == Exclude files that match regular expression.
-#    **prefix  == text to prefix to filenames.
-#    **sar     == Regular expression search and replace for filename.
-#    **suffix  == text to append to filenames.
+#
+# Optional parameter spines:
+#    **prefix   == text to prefix to filenames.
+#    **suffix   == text to append to filenames.
+#    **filter   == Only process files that match regular expression.
+#    **xfilter  == Exclude files that match regular expression.
+#    **content  == Only process files that match regular expression in the file contents.
+#    **sar      == Regular expression search and replace for filename.
 #
 
 use strict;
@@ -67,21 +69,23 @@ foreach my $line (@contents) {
 	my $ghrepo   = ""; # name of the repository
 	my $from     = ""; # directory in the repository to copy from
 	my $to       = ""; # directory in this repository to copy to
-	my $sar      = ""; # filename renaming sar
 	my $prefix   = ""; # prefix stirng to add to filename
 	my $suffix   = ""; # suffix string to add to filename
 	my $filter   = ""; # filter to select filenames
 	my $xfilter  = ""; # xfilter to deselect filenames
+	my $content  = ""; # content to select filenames by matched content
+	my $sar      = ""; # filename renaming sar
 
 	my $ghname   = $parameters[$header{"ghname"}]  if $header{"ghname"}  !~ /^\s*$/;
 	my $ghrepo   = $parameters[$header{"ghrepo"}]  if $header{"ghrepo"}  !~ /^\s*$/;
 	my $from     = $parameters[$header{"from"}]    if $header{"from"}    !~ /^\s*$/;
 	my $to       = $parameters[$header{"to"}]      if $header{"to"}      !~ /^\s*$/;
-	my $sar      = $parameters[$header{"sar"}]     if $header{"sar"}     !~ /^\s*$/;
 	my $prefix   = $parameters[$header{"prefix"}]  if $header{"prefix"}  !~ /^\s*$/;
 	my $suffix   = $parameters[$header{"suffix"}]  if $header{"suffix"}  !~ /^\s*$/;
 	my $filter   = $parameters[$header{"filter"}]  if $header{"filter"}  !~ /^\s*$/;
 	my $xfilter  = $parameters[$header{"xfilter"}] if $header{"xfilter"} !~ /^\s*$/;
+	my $content  = $parameters[$header{"content"}] if $header{"content"} !~ /^\s*$/;
+	my $sar      = $parameters[$header{"sar"}]     if $header{"sar"}     !~ /^\s*$/;
 
 	#warn "Parameters: ", join("\t", @parameters), "\n";
 	#warn "REPO NAME :    ghname $header{'ghname'} :: $ghname\n";
@@ -90,7 +94,9 @@ foreach my $line (@contents) {
 	#warn "FROM FIELD:    from   $header{'from'} :: $prefix\n";
 	#warn "TO   FIELD:    to     $header{'to'} ::$suffix\n";
 	#warn "FILTER FIELD:  filter $header{'filter'} ::$filter\n";
-	#warn "FXILTER FIELD: xfilter $header{'xfilter'} ::$xfilter\n";
+	#warn "XFILTER FIELD: xfilter $header{'xfilter'} ::$xfilter\n";
+	#warn "CONTENT FIELD: content $header{'content'} ::$content\n";
+	#warn "SAR FIELD:     sar     $header{'sar'} ::$sar\n";
 
 	# Remove null tokens:
 	$ghname    = "" if $ghname    eq ".";
@@ -99,9 +105,10 @@ foreach my $line (@contents) {
 	$to        = "" if $to        eq ".";
 	$prefix    = "" if $prefix    eq ".";
 	$suffix    = "" if $suffix    eq ".";
-	$sar       = "" if $sar       eq ".";
 	$filter    = "" if $filter    eq ".";
 	$xfilter   = "" if $xfilter   eq ".";
+	$content   = "" if $content   eq ".";
+	$sar       = "" if $sar       eq ".";
 
 	if ($ghname eq "" or $ghrepo eq "") {
 		my $xline = $line;
@@ -114,22 +121,25 @@ foreach my $line (@contents) {
 
 	my $prefixOption  = "";
 	my $suffixOption  = "";
-	my $sarOption     = "";
 	my $filterOption  = "";
 	my $xfilterOption = "";
+	my $contentOption = "";
+	my $sarOption     = "";
 
 	if ($prefix)  { $prefixOption  = " --prefix \'"  . $prefix  . "\' "; }
 	if ($suffix)  { $suffixOption  = " --suffix \'"  . $suffix  . "\' "; }
-	if ($sar)     { $sarOption     = " --sar \'"     . $sar     . "\' "; }
 	if ($filter)  { $filterOption  = " --filter \'"  . $filter  . "\' "; }
 	if ($xfilter) { $xfilterOption = " --xfilter \'" . $xfilter . "\' "; }
+	if ($content) { $contentOption = " --content \'" . $content . "\' "; }
+	if ($sar)     { $sarOption     = " --sar \'"     . $sar     . "\' "; }
 
 	my $command = "bin/getRepositoryDirectory --github \"$ghname/$ghrepo\" --from \"$from\" --to \"$to\"";
 	$command .= $prefixOption;
 	$command .= $suffixOption;
-	$command .= $sarOption;
 	$command .= $filterOption;
 	$command .= $xfilterOption;
+	$command .= $contentOption;
+	$command .= $sarOption;
 	$command =~ s/  */ /g;
 	# warn "##################################################################\n";
 	warn "$command\n";

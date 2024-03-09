@@ -82,7 +82,6 @@ craigsapp	chopin-mazurkas	kern	chopin/mazurkas
 craigsapp	chopin-preludes	kern	chopin/preludes
 craigsapp	creighton-nova-scotia	kern	songs/nova-scotia
 craigsapp	densmore-teton-sioux	kern	songs/densmore/sioux
-craigsapp	erk-liederschatz	kern	songs/harmonized/erk-liederschatz
 craigsapp	haydn-piano-sonatas	kern	haydn/piano
 craigsapp	hummel-preludes	kern	hummel/preludes
 craigsapp	joplin	kern	joplin
@@ -166,31 +165,41 @@ TassoInMusicProject	tasso-scores	Tri/kern	early-music/tasso
 TassoInMusicProject	tasso-scores	Trm/kern	early-music/tasso
 TassoInMusicProject	tasso-scores	Trt/kern	early-music/tasso
 TassoInMusicProject	tasso-scores	Tsg/kern	early-music/tasso
-WolfgangDrescher	lassus-geistliche-psalmen	kern	early-music/lassus
-WolfgangDrescher	ulenberg-psalmen-davids	kern	ulenberg
 *-	*-	*-	*-
 !!
 !! Repositories that need extra parameters:
 !!
-**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**sar
-Computational-Cognitive-Musicology-Lab	CoCoPops	RollingStone/Data	songs/pop/rollingstone	.	.	.	\.md$	.
-Computational-Cognitive-Musicology-Lab	MCFlow	Humdrum	songs/rap/mcflow	.	.	.	\.md$	.
-jasonleeubc	Cantopop-corpus	.	songs/pop/cantonese	.	.krn	^C\d+$	.	s/^C/cpop-/
-josquin-research-project	Jos	.	early-music/josquin	.	.	.	^Jos2514	.
-shanahdt	densmore	Densmore/acoma	songs/densmore/acoma	acoma	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-!! Humdrum validation errors:
-!!shanahdt	densmore	Densmore/british_columbia	songs/densmore/bc	bc	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/cheyenne_and_arapaho	songs/densmore/cheyenne	cheyenne	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/chippewa1	songs/densmore/chippewa_a	chippewa_a	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/chippewa2	songs/densmore/chippewa_a	chippewa_b	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/choctaw	songs/densmore/choctaw	.	.	\.krn$	.	s/^(choct)(\d\d)([^\d].*)$/${1}0$2$3/; s/^(choct)(\d)([^\d].*)$/${1}00$2$2/;
-shanahdt	densmore	Densmore/maidu	songs/densmore/maidu	maidu	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-shanahdt	densmore	Densmore/mandan	songs/densmore/mandan	.	.	\.krn$	.	s/^mandan(\d\d\.)/mandan0$1/; s/^mandan(\d\.)/mandan00$1/
-shanahdt	densmore	Densmore/menominee	songs/densmore/menomiee	menomiee	.krn	\.krn$	^Flute	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-!!shanahdt	densmore	Densmore/nootka	songs/densmore/nootka	nootka	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-shanahdt	densmore	Densmore/northern_ute	songs/densmore/northute	northute	.krn	\.krn$	^[DRU]	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-!!shanahdt	densmore	Densmore/papago	songs/densmore/papago	papago	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-shanahdt	densmore	Densmore/pawnee	songs/densmore/pawnee	.	.	\.krn$	.	s/^pawnee(\d\d\.)/pawnee0$1/; s/^pawnee(\d\.)/pawnee00$1/
-shanahdt	densmore	Densmore/seminole	songs/densmore/seminole	seminole	.krn	\.krn$	^[AT]	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-shanahdt	densmore	Densmore/yuman	songs/densmore/yuman	yuman	.krn	\.krn$	^(^F|No_12[45]_)	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar
+craigsapp	erk-liederschatz	kern	songs/harmonized/liederschatz	.	.	.	.	.	s/erk/liederschatz-/
+Computational-Cognitive-Musicology-Lab	CoCoPops	RollingStone/Data	songs/pop/rollingstone	.	.	.	\.md$	.	.
+Computational-Cognitive-Musicology-Lab	MCFlow	Humdrum	songs/rap/mcflow	.	.	.	\.md$	.	.
+jasonleeubc	Cantopop-corpus	.	songs/pop/cantonese	.	.krn	^C\d+$	.	.	s/^C/cpop-/
+josquin-research-project	Jos	.	early-music/josquin	.	.	.	^Jos2514	.	.
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	songs/psalms/gomolka	.	.krn	melodiae-na-psalterz-polski	.	.	s/^(.*)(\d\d\d)_(.*)/gomolka-$2/
+!! Some problems with AGN in some of the Nocturne files:
+!!pl-wnifc	humdrum-chopin-first-editions	kern	chopin/nocturne	nocturne-	.	.	.	^!!!AGN:.*Nocturne	.
+pl-wnifc	humdrum-chopin-first-editions	kern	chopin/etude	etude-	.	^(010|025)	.	^!!!AGN:.*Etude	.
+pl-wnifc	humdrum-chopin-first-editions	kern	chopin/waltz	waltz-	.	^(018|034|042|064|069|070)	.	.	.
+pl-wnifc	humdrum-chopin-first-editions	kern	chopin/polonaise	polonaise-	.	.	.	^!!!AGN:.*Polonaise	.
+pl-wnifc	humdrum-chopin-first-editions	kern	chopin/scherzo	scherzo-	.	^(020|031|039|054)	.	.	.
+pl-wnifc	humdrum-chopin-first-editions	kern	chopin/ballade	ballade-	.	^(023|038|047|052)	.	.	.
+SEILSdataset	SEILSdataset	SEILSdataset/SEILS_diplomatic_OMRgroundTruth/choral	mensural/seils/chorals	.	.	\.mns$	.	.	.
+shanahdt	densmore	Densmore/acoma	songs/densmore/acoma	acoma	.krn	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!! Humdrum validation errors when prefixed with "!!":
+!!shanahdt	densmore	Densmore/british_columbia	songs/densmore/bc	bc	.	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/cheyenne_and_arapaho	songs/densmore/cheyenne	cheyenne	.	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/chippewa1	songs/densmore/chippewa_a	chippewa_a	.	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/chippewa2	songs/densmore/chippewa_a	chippewa_b	.	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/choctaw	songs/densmore/choctaw	.	.	\.krn$	.	.	s/^(choct)(\d\d)([^\d].*)$/${1}0$2$3/; s/^(choct)(\d)([^\d].*)$/${1}00$2$2/;
+shanahdt	densmore	Densmore/maidu	songs/densmore/maidu	maidu	.krn	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/mandan	songs/densmore/mandan	.	.	\.krn$	.	.	s/^mandan(\d\d\.)/mandan0$1/; s/^mandan(\d\.)/mandan00$1/
+shanahdt	densmore	Densmore/menominee	songs/densmore/menomiee	menomiee	.krn	\.krn$	^Flute	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!!shanahdt	densmore	Densmore/nootka	songs/densmore/nootka	nootka	.krn	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/northern_ute	songs/densmore/northute	northute	.krn	\.krn$	^[DRU]	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!!shanahdt	densmore	Densmore/papago	songs/densmore/papago	papago	.	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+shanahdt	densmore	Densmore/pawnee	songs/densmore/pawnee	.	.	\.krn$	.	.	s/^pawnee(\d\d\.)/pawnee0$1/; s/^pawnee(\d\.)/pawnee00$1/
+shanahdt	densmore	Densmore/seminole	songs/densmore/seminole	seminole	.krn	\.krn$	^[AT]	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/yuman	songs/densmore/yuman	yuman	.krn	\.krn$	^(^F|No_12[45]_)	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+WolfgangDrescher	lassus-geistliche-psalmen	kern	songs/psalms/lasso	lasso-0	.	.	.	.	.
+WolfgangDrescher	ulenberg-psalmen-davids	kern	songs/psalms/ulenberg	ulenberg-	.	.	.	.	.
 *-	*-	*-	*-	*-	*-	*-	*-

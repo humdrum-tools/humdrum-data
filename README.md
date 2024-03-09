@@ -2,7 +2,7 @@
 # Humdrum Data #
 
 The `humdrum-data` repository manages collections of
-[Humdrum](https://humdrum.org) files found in other
+[Humdrum](https://www.humdrum.org) files found in other
 [GitHub](https://github.com) repositories.
 
 You can design your own local directory structure, or choose
@@ -15,10 +15,10 @@ and the
 directory gives example for downloading smaller datasets.
 
 By default all registered Humdrum file repositories will be downloaded
-by typing `make`, which currently includes 23,689 scores
-containing 17,641,955 sounding notes (some repositories are not
+by typing `make`, which currently includes 23,720 scores
+containing 17,643,235 sounding notes (some repositories are not
 notation based and contain only `**harm`, etc.).  The current size
-of all Humdrum files is 364.3MB.
+of all Humdrum files is 364.7MB.
 
 
 ## Summary ##
@@ -181,6 +181,8 @@ be downloaded individually if you do not want to download all files:
 | `make nifc` | Digital scores from The Fryderyk Chopin Institute (Chopin first editions (POPC1) and Polish Musical Heritage (1600-1900) in Open Access (POPC2)) |
 | `make popc2-short` | Polish Music in Open Access digital scores, ID only filenames |
 | `make popc2` | Polish Music in Open Access digital scores |
+| `make psalms` | Psalm settings |
+| `make seils` | SEILS dataset |
 | `make sonatas` | Classical piano sonatas of Beethoven (complete), Mozart (complete), and Haydn (selections) |
 | `make tasso` | Tasso in Music Project digital scores |
 | `make tonerows` | Tonerows used by Schoenberg, Berg and Webern |
@@ -354,7 +356,7 @@ the main download list:
 
 | Notes | Files | Size | Repository owner | Repository name |
 | ----- | ----- | ---- | ---------------- | --------------- |
-| 321,175| 340| 3.1MB| [benory](https://github.com/benory) | [1520s-project-scores](https://github.com/benory/1520s-project-scores) |
+| 322,455| 341| 3.1MB| [benory](https://github.com/benory) | [1520s-project-scores](https://github.com/benory/1520s-project-scores) |
 | 444,919| 8,473| 5.5MB| [ccarh](https://github.com/ccarh) | [essen-folksong-collection](https://github.com/ccarh/essen-folksong-collection) |
 | 145,084| 940| 12.9MB| [Computational-Cognitive-Musicology-Lab](https://github.com/Computational-Cognitive-Musicology-Lab) | [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops) |
 | 0| 124| 1.8MB|  〃  | [MCFlow](https://github.com/Computational-Cognitive-Musicology-Lab/MCFlow) |
@@ -410,6 +412,7 @@ the main download list:
 | 1,115,811| 512| 14.6MB| [pl-wnifc](https://github.com/pl-wnifc) | [humdrum-chopin-first-editions](https://github.com/pl-wnifc/humdrum-chopin-first-editions) |
 | 11,817,127| 7,821| 280.5MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
 | 17,163| 84| 739.2KB| [polyrhythm-project](https://github.com/polyrhythm-project) | [rds-scores](https://github.com/polyrhythm-project/rds-scores) |
+| 0| 30| 379.3KB| [SEILSdataset](https://github.com/SEILSdataset) | [SEILSdataset](https://github.com/SEILSdataset/SEILSdataset) |
 | 66,040| 915| 987.8KB| [shanahdt](https://github.com/shanahdt) | [densmore](https://github.com/shanahdt/densmore) |
 | 316,292| 501| 6.2MB| [TassoInMusicProject](https://github.com/TassoInMusicProject) | [tasso-scores](https://github.com/TassoInMusicProject/tasso-scores) |
 | 13,018| 50| 268.7KB| [WolfgangDrescher](https://github.com/WolfgangDrescher) | [lassus-geistliche-psalmen](https://github.com/WolfgangDrescher/lassus-geistliche-psalmen) |
@@ -562,7 +565,7 @@ also include scans of the source editions, such as the
 repository, which can be used to verify the digital score transcriptions.
 
 Files should not produce errors (and preferably not warnings) when
-checked with the [humdrum](https://humdrum.org/tool/humdrum) tools,
+checked with the [humdrum](https://www.humdrum.org/tool/humdrum) tools,
 that is also up to the maintainers of the source repositories.  The
 basic Humdrum structure should be correct for the full data set
 (any invalid files are exclude with `*xfilter`).  Commented out
@@ -591,9 +594,14 @@ of the results.
 92207	96	825.9KB	bach/wtc
 259692	103	2.5MB	beethoven/piano/sonata
 234252	71	3.2MB	beethoven/quartet
+39597	8	487KB	chopin/ballade
+82354	42	1MB	chopin/etude
 1115811	512	14.6MB	chopin/first-editions
 54917	52	529.2KB	chopin/mazurkas
+105488	23	1.2MB	chopin/polonaise
 18705	24	162.4KB	chopin/preludes
+44541	8	604.8KB	chopin/scherzo
+55263	27	598.9KB	chopin/waltz
 146369	250	1.3MB	corelli
 19851	10	190.3KB	early-music/agricola
 47922	86	742.9KB	early-music/anonymous
@@ -626,7 +634,6 @@ of the results.
 499288	475	6MB	early-music/josquin
 200915	172	2MB	early-music/larue
 1582	1	13.6KB	early-music/lasantier
-13018	50	268.7KB	early-music/lassus
 18962	16	159.7KB	early-music/lheritier
 4167	3	33.5KB	early-music/lupi
 6207	7	54.2KB	early-music/lupus
@@ -640,7 +647,7 @@ of the results.
 6012	4	108.4KB	early-music/regis
 766	2	7.4KB	early-music/renaldo
 30933	28	312.5KB	early-music/richafort
-20234	32	339.7KB	early-music/senfl
+21514	33	361.1KB	early-music/senfl
 7902	12	75.2KB	early-music/sermisy
 9049	9	83.5KB	early-music/silva
 316292	501	6.2MB	early-music/tasso
@@ -734,27 +741,29 @@ of the results.
 4599	38	30.6KB	songs/foster
 7543	29	51.6KB	songs/gershwin
 14113	33	100.5KB	songs/harmonized/barbershop
-62741	232	538.2KB	songs/harmonized/erk-liederschatz
+62741	232	538.2KB	songs/harmonized/liederschatz
 8552	152	150.9KB	songs/nova-scotia
 85477	739	9.4MB	songs/pop/billboard
 39729	105	805.6KB	songs/pop/cantonese
 59607	200	3.5MB	songs/pop/rollingstone
+27682	151	713.7KB	songs/psalms/gomolka
+13018	50	268.7KB	songs/psalms/lasso
+2612	50	78.7KB	songs/psalms/ulenberg
 4842	35	59.9KB	songs/schubert
 276	23	11.3KB	tonerow/berg
 504	42	21.5KB	tonerow/schoenberg
 252	21	10.9KB	tonerow/webern
-2612	50	78.7KB	ulenberg
 *-	*-	*-	*-
-!!!total-notes: 17637005
-!!!total-files: 23594
-!!!total-size: 378.9MB
+!!!total-notes: 17638285
+!!!total-files: 23625
+!!!total-size: 383.9MB
 
 ```
 
 </details>
 
-The complete repository-download set contains 23,689 files
-with a total of 17,641,955 sounding notes and total size of 364.3MB.
+The complete repository-download set contains 23,720 files
+with a total of 17,643,235 sounding notes and total size of 364.7MB.
 
 
 ## Implementation notes ##
@@ -901,7 +910,7 @@ which is converted into a kernScores URL internal to the
 [humcat](https://extras.humdrum.org/man/humcat) tool.
 
 Here is an example use of `humcat` to download a file without saving
-it, using the [key](https//humdrum.org/tool/key) Humdrum tool:
+it, using the [key](https//www.humdrum.org/tool/key) Humdrum tool:
 
 ```bash
 humcat h://chorales/chor001.krn | key
@@ -925,7 +934,7 @@ without saving the data:
 
 ```bash
 humcat -s h://chorales | census -k
-``
+```
 
 Results:
 
@@ -1018,7 +1027,7 @@ brew install wget
 
 The downloaded data can be piped directly to Humdrum tools as the
 file is being downloaded, such as with the
-[census](https://humdrum.org/tool/census) tool::
+[census](https://www.humdrum.org/tool/census) tool::
 
 ```bash
 curl https://data.josqu.in/Jos2721.krn | census -k

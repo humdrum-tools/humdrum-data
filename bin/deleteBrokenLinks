@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 # Creation Date: Wed Feb 21 22:04:35 PST 2024
 # Last Modified: Wed Feb 21 22:04:38 PST 2024
 # Filename:      deleteBokenLinks

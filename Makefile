@@ -10,7 +10,7 @@
 ##                GitHub repositories.
 ##
 ## Usage:
-##     all:       Download complete list of Humdrum files.
+##     default:   Download complete list of Humdrum files.
 ##     clear:     Delete all downloaded Humdrum files. (Does not
 ##                   delete any local files.)
 ##     nc:        Generate a list of note counts for each download directory
@@ -45,42 +45,41 @@
 ## "make mylist"
 ##
 
-# Make targets that should not be checked against existing files or directories.
-# This list if for potentially existing directories which are downloaded.
-.PHONY: 1520s 1520s-short bach beethoven cantopop chopin chorales-370 corelli \
-	densmore early-music haydn hummel jazz joplin jrp jrp-short mozart \
-	mysterium nifc nifc-short polyrhythm popc1 popc2 popc2-short scarlatti \
-	scriabin sonatas songs tasso tonerow ulenberg
-
 # List of targets that should not be processed by %:
-NONLISTS := all check-update clean cu nc ncs note-count note-counts notecount \
+NONLISTS := check-update clean cu nc ncs note-count note-counts notecount \
 	notecounts readme
+
+.DEFAULT_GOAL := %
+
 
 # Location of scripts used in this makefile:
 BINDIR=bin
 
+# Locaion of the LIST files:
+LISTDIR=.lists
+
 
 ###########################################################################
 
-# Download the entire Humdrum dataset.
-all:
-	$(BINDIR)/processList .lists/LIST.tsv
 
-
+# Remove downloaded repositories and links to file in them:
 clean:
 	-rm -rf .source
 	$(BINDIR)/deleteBrokenLinks
 
 
+# See if any online repositories have been updated:
 cu: check-update
 check-update:
 	$(BINDIR)/checkIfNeedUpdates -v
 
 
+# Create the README.md file in the root directory:
 readme:
 	$(BINDIR)/makeReadme > README.md
 
 
+# Count number of notes in local directories (symbolic links only):
 ncs: notecount
 nc: notecount
 note-count: notecount
@@ -90,7 +89,12 @@ notecount:
 	@$(BINDIR)/getNoteCount
 
 
-%: $(if $(filter-out $(NONLISTS),$@), $(BINDIR)/processList .lists/LIST-$@.tsv)
-
+# Downlod the entire dataset or specific subsets:
+%:
+	@if [[ ! " $(NONLISTS) " =~ " $@ " && "$@" != "%" ]]; then \
+		"$(BINDIR)/processList" ".lists/LIST-$@.tsv"; \
+	elif [[ "$@" == "%" ]]; then \
+		$(BINDIR)/processList .lists/LIST.tsv; \
+	fi
 
 

@@ -1,0 +1,35 @@
+!!!OTL: SEILS dataset
+!! vim: ts=70:nowrap
+**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**sar
+SEILSdataset	SEILSdataset	SEILSdataset/SEILS_diplomatic_OMRgroundTruth/choral	seils/chorals	.	.	\.mns$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_diplomatic_OMRgroundTruth/particellas_codified	seils/particellas	.	.	\.mns$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Alberti	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Bardi	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Belli	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Bertani	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Correggio	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/DaLocca	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Eremita	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Fiorino	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Gabrielli	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Giovanelli	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Ingegneri	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Isnardi	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Luzzaschi	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Macque	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Manara	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Marenzio	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Massiano	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Mileville	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Mosto	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Perue	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Pigna	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Porta	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Spontone	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Stabile	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Strigio	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Vecci	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Virchi	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Wert	seils/kern	.	.	\.krn$	.	.
+!!SEILSdataset	SEILSdataset	SEILSdataset/SEILS_with_annotations/Zoilo	seils/kern	.	.	\.krn$	.	.
+*-	*-	*-	*-	*-	*-	*-	*-	*-

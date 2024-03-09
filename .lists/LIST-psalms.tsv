@@ -1,0 +1,12 @@
+!!!OTL: Psalm settings
+!! vim: ts=30:nowrap
+**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**sar
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	psalms/gomolka	.	.krn	melodiae-na-psalterz-polski	.	s/^(.*)(\d\d\d)_(.*)/gomolka-$2/
+WolfgangDrescher	lassus-geistliche-psalmen	kern	psalms/lasso	lasso-0	.	.	.	.
+WolfgangDrescher	ulenberg-psalmen-davids	kern	psalms/ulenberg	ulenberg-	.	.	.	.
+*-	*-	*-	*-	*-	*-	*-	*-	*-
+!! There are 150 psalms.  The gomolka list has some insertions and deletions, so they
+!! do not (yet) match the source psalm number.  Psalms of David are 50 of these, but
+!! Numbers vary accounding to the Bible version, so it would be good to match numbers
+!! across files in different subdirectories based on the 150 psalms from some version
+!! of the Bible.

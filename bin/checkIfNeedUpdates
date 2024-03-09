@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 # Creation Date: Fri Mar  8 16:01:24 PST 2024
 # Last Modified: Fri Mar  8 19:23:16 PST 2024
 # Filename:      bin/checkForUpdates
@@ -155,7 +155,7 @@ sub processRepo {
 ##
 ## getRepos -- Return a list of repositories in the current directory.
 ##    The repositories with have a .git subdirectory as well as an
-##    info file in the input directory.
+##    info file in the specified directory.
 ##
 
 sub getRepos {
