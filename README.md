@@ -186,6 +186,57 @@ be downloaded individually if you do not want to download all files:
 | `make tonerows` | Tonerows used by Schoenberg, Berg and Webern |
 
 
+### Updating this meta-repository ###
+
+If you want to update this meta-repository using `git`, type:
+
+``bash
+git pull
+```
+
+If you have changed any files, check to see if you want to keep
+the changes; otherwise, type:
+
+```bash
+git checkout
+```
+
+To remove local changes (which will not change untracked files you
+may have created in the repository).  Then you will be able to run
+`git pull` to update the meta-repository.  This could possibly
+include updates to `.lists/LIST.tsv` to add new repositories and/or
+new LIST files for subsets of data.  Also, enhances features and
+bug fixes to the `Makefile` and scripts in the `bin` directory may
+be available through `git pull`.
+
+### Checking if downloaded repositories need updating ###
+
+To check if any of the downloaded repositories have been updated
+on GitHub since you last downloaded the repositories, use the
+command:
+
+```bash
+make check-update
+```
+
+or
+
+```bash
+make cu
+```
+
+for short.
+
+This command will report any online repository which is more recent
+that the copy that you downloaded.  Currently you need to run:
+
+```
+make clean
+make
+```
+
+To download the updated repostory(s).  In the future, a system to
+only download repositories that have online updates may be implemented.
 
 ### Adding local files ###
 
@@ -216,9 +267,9 @@ information about each source repository.  Below is the contents of
 
 ```tsv
 !!!source:             https://github.com/craigsapp/mozart-piano-sonatas
-!!!download-date:      Thu Mar  7 10:52:19 PST 2024
+!!!download-date:      2024-03-08 17:42:34 -0800
 !!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/44330d18
-!!!last-commit-date:   Sun Jun 18 10:32:56 2023
+!!!last-commit-date:   2023-06-18 10:32:56 -0700
 !!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt
 !!!repository-readme:  https://github.com/craigsapp/mozart-piano-sonatas/blob/main/README.md
 !! vim:                ts=39:nowrap
@@ -226,15 +277,16 @@ information about each source repository.  Below is the contents of
 !! Directories downloaded from this repository are listed below.
 !!
 !! Meaning of the spines:
-!!    **sound   = Number of sounding notes in the copied files. If a
-!!                null token, then the Humdrum Extras notecount tool
+!!    **sound   = Number of sounding notes in the copied files. If entry
+!!                is a null token, then the Humdrum Extras notecount tool
 !!                was not available when the repository was downloaded.
 !!    **files   = Number of files in the copied directory.
-!!    **bytes   = Byte size of files copied to local directory.
-!!    **from    = The subdirectory in the repository listed in the source
-!!                reference record above that files were copied from.
+!!    **bytes   = Size of files copied to local directory in bytes.
+!!    **branch  = Repository branch from which files were copied.
+!!    **from    = The subdirectory in the download repository listed in the
+!!                "source" reference record above that files were copied from.
 !!                A null token means the root of repository working directory.
-!!    **to      = The subdirectory in the repository listed in the source
+!!    **to      = The subdirectory in the repository lised in the source
 !!                reference record above that files were copied from.
 !!                A null token means the root of target directory.
 !!    **prefix  = Prefix string to add to copied filename (if any).
@@ -245,9 +297,9 @@ information about each source repository.  Below is the contents of
 !!                prefix and suffix are added).  Multiple SAR entries
 !!                can be given, separated by semicolons (;).
 !!
-**sound	**files	**bytes	**from	**to	**prefix	**suffix	**filter	**xfilter	**sar
-96637	69	996160	kern	mozart/piano/sonata	.	.	.	.	.
-*-	*-	*-	*-	*-	*-	*-	*-	*-	*-
+**sound	**files	**bytes	**branch	**from	**to	**prefix	**suffix	**filter	**xfilter	**sar
+96637	69	996160	main	kern	mozart/piano/sonata	.	.	.	.	.
+*-	*-	*-	*-	*-	*	*-	*-	*-	*-	*-
 ```
 
 There are six reference records in info files:

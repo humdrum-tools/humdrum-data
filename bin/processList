@@ -25,15 +25,17 @@
 use strict;
 
 # Ignore non-lists in case they get here via the Makefile:
-return "" if $ARGV[0] =~ /LIST-note-counts.tsv/;
-return "" if $ARGV[0] =~ /LIST-notecounts.tsv/;
-return "" if $ARGV[0] =~ /LIST-note-count.tsv/;
-return "" if $ARGV[0] =~ /LIST-notecount.tsv/;
-return "" if $ARGV[0] =~ /LIST-nc.tsv/;
-return "" if $ARGV[0] =~ /LIST-ncs.tsv/;
-return "" if $ARGV[0] =~ /LIST-readme.tsv/;
-return "" if $ARGV[0] =~ /LIST-clear.tsv/;
-return "" if $ARGV[0] =~ /LIST-all.tsv/;
+exit(0) if $ARGV[0] =~ /LIST-note-counts.tsv/;
+exit(0) if $ARGV[0] =~ /LIST-notecounts.tsv/;
+exit(0) if $ARGV[0] =~ /LIST-note-count.tsv/;
+exit(0) if $ARGV[0] =~ /LIST-notecount.tsv/;
+exit(0) if $ARGV[0] =~ /LIST-nc.tsv/;
+exit(0) if $ARGV[0] =~ /LIST-ncs.tsv/;
+exit(0) if $ARGV[0] =~ /LIST-readme.tsv/;
+exit(0) if $ARGV[0] =~ /LIST-clear.tsv/;
+exit(0) if $ARGV[0] =~ /LIST-cu.tsv/;
+exit(0) if $ARGV[0] =~ /LIST-check-update.tsv/;
+exit(0) if $ARGV[0] =~ /LIST-all.tsv/;
 
 my @contents = <>;
 chomp @contents;

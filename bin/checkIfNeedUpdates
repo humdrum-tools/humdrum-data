@@ -1,0 +1,197 @@
+#!/usr/bin/env perl
+#
+# Programmer:    Craig Stuart Sapp <craig.stanford.edu>
+# Creation Date: Fri Mar  8 16:01:24 PST 2024
+# Last Modified: Fri Mar  8 19:23:16 PST 2024
+# Filename:      bin/checkForUpdates
+# Syntax:        perl 5
+#
+# Description:   List repositories that have been updated online since
+#                they were downloaded.
+#
+#                -v option is for use with "make check-update".
+#
+
+use strict;
+use Getopt::Long;
+use Time::Local;
+
+# check if git command can be used:
+chomp (my $git = `which git`);
+if (!$git) {
+	die "git command not found\n";
+}
+
+# $verboseQ: Print human-readable versus short report for data processing:
+my $verboseQ = 0;
+
+# $REPODIR: The directory where local copies of the repositories are stored.
+my $REPODIR = ".source";
+
+# @NeedUpdate: List of repositories which have been changed since
+# files were downloaded from the repository.
+my @NeedUpdate;
+
+# @LastCommit: List of most recent commits on GitHub for repositories
+# given in @NeedUpdate list.
+my @LastCommit;
+
+# @LastDownload: List of download dates for each repository
+# given in @NeedUpdate list.
+my @DownloadDate;
+
+
+# Handle command-line options:
+Getopt::Long::Configure("bundling");
+GetOptions (
+	"v|verbose" => \$verboseQ,
+	"s|source-directory" => \$REPODIR
+);
+
+
+my @OWNERS = getOwners($REPODIR);
+foreach my $owner (@OWNERS) {
+	processOwner($REPODIR, $owner);
+}
+
+if ($verboseQ) {
+	if (@NeedUpdate == 0) {
+		print "Up to date.\n";
+	} else {
+		print "These repositories have been updated online since they were downloaded:\n";
+		for (my $i=0; $i<@NeedUpdate; $i++) {
+			my $repo         = $NeedUpdate[$i];
+			my $commitDate   = $LastCommit[$i];
+			my $downloadDate = $DownloadDate[$i];
+			print("https://github.com/$repo, downloaded $downloadDate, updated $commitDate\n");
+		}
+	}
+} else {
+	if (@NeedUpdate > 0) {
+		# Create a single-line list of repositories that need updating:
+		print join(" ", @NeedUpdate), "\n";
+	}
+}
+
+exit(0);
+
+
+###########################################################################
+
+
+##############################
+##
+## processOwner --
+##
+
+sub processOwner {
+	my ($basedir, $owner) = @_;
+	my @repos = getRepos("$basedir/$owner");
+	foreach my $repo (@repos) {
+		processRepo($basedir, $owner, $repo);
+	}
+}
+
+
+
+##############################
+##
+## processRepo --
+##
+
+sub processRepo {
+	my ($basedir, $owner, $repo) = @_;
+	my $downloadDate;
+	my $lastRepoDate;
+	my $infoFile = "$basedir/$owner/.$repo.info";
+	open(IFILE, "$infoFile") or die "Cannot find $infoFile\n";
+	chomp(my @contents = <IFILE>);
+	close(IFILE);
+	my %headings;
+	my $branch;
+	foreach my $line (@contents) {
+		next if $line =~ /^\s*$/;
+		if ($line =~ /^\*\*/) {
+			my @fields = split(/\t+/, $line);
+			for (my $i=0; $i<@fields; $i++) {
+				my $field = $fields[$i];
+				$field =~ s/^\*\*//;
+				$headings{$field} = $i;
+			}
+		}
+		next if $line =~ /^\*/;
+		if ($line =~ /^!!!([^!:]+)\s*:\s*(.*)\s*$/) {
+			my $key = $1;
+			my $value = $2;
+			$downloadDate = $value if $key eq "download-date";
+			$lastRepoDate = $value if $key eq "last-commit-date";
+		}
+		next if $line =~ /^\!/;
+		next if $line =~ /^=/;
+		if ($branch eq "") {
+			# Only one branch assumed.
+			my @data = split(/\t+/, $line);
+			my $branch = $data[$headings{"branch"}];
+		}
+	}
+	die "Cannot find download-date in $infoFile\n"    if !$downloadDate;
+	die "Cannot find last-commit-date in $infoFile\n" if !$lastRepoDate;
+
+	chomp(my $originLatestCommitDate = `$git -C "$basedir/$owner/$repo" show -s --format="%ci" $branch`);
+	die "Cannot find last commit date of repository https://github.com/$owner/$repo" if $originLatestCommitDate eq "";
+
+	# If $lastRepoDate is not equal to $originLatestCommitDate, then the repo should be updated.
+	# Individual files in separate subdirectories are not checked.
+	if ($lastRepoDate ne $originLatestCommitDate) {
+		$NeedUpdate[@NeedUpdate] = "$owner/$repo";
+		$DownloadDate[@DownloadDate] = $downloadDate;
+		$LastCommit[@LastCommit] = $originLatestCommitDate;
+	}
+}
+
+
+
+##############################
+##
+## getRepos -- Return a list of repositories in the current directory.
+##    The repositories with have a .git subdirectory as well as an
+##    info file in the input directory.
+##
+
+sub getRepos {
+	my ($dir) = @_;
+	opendir(DIR, $dir) or die "Cannot read owner directory $dir\n";
+	my @output;
+	while (my $file = readdir(DIR)) {
+		next if $file =~ /^\./;
+		next if !-d "$dir/$file";
+		next if !-d "$dir/$file/.git";
+		next if !-e "$dir/.$file.info";
+		$output[@output] = $file;
+	}
+	closedir(DIR);
+	return sort @output;
+}
+
+
+
+##############################
+##
+## getOwners -- Get list of repository owners.
+##
+
+sub getOwners {
+	my ($basedir) = @_;
+	opendir(DIR, $basedir) or die "Cannot read base directory $basedir\n";
+	my @output;
+	while (my $file = readdir(DIR)) {
+		next if $file =~ /^\./;
+		next if !-d "$basedir/$file";
+		$output[@output] = $file;
+	}
+	closedir(DIR);
+	return sort @output;
+}
+
+
+

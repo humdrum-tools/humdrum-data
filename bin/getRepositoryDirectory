@@ -31,10 +31,11 @@
 
 use strict;
 
-# Packages used in this script (should be installed by defualt with perl):
+# Packages used in this script (should be installed by default with PERL core modules):
 use Getopt::Long;       # For handling command-line options.
 use Cwd;                # For resolving symbolic link relative paths.
-use POSIX qw/strftime/; # For getting the current date.
+use POSIX qw/strftime/; # Dealing with UTC
+
 
 my $verboseQ = 0;
 
@@ -341,18 +342,18 @@ sub createInfoFileForRepository {
 	my $readme_url_base  = "$GITHUB_RAW/$GITHUB/$BRANCH";
 
 	my $source = $GITHUB_URL;
-	chomp (my $commitHash = `$git --git-dir="$repopath/.git" log -n 1 --format=%H --date=local`);
+	chomp (my $commitHash = `$git --git-dir="$repopath/.git" log -n 1 --format="%H"`);
 	my $commitHashShort = $commitHash;
 	if ($commitHash =~ /^(.{8})/) {
 		$commitHashShort = $1;
 	}
-	my $lastCommitUrl = "$GITHUB_URL/tree/$commitHashShort";
-	my $downloadDate = strftime("%a %b %e %H:%M:%S %Z %Y", localtime());
+	my $lastCommitUrl     = "$GITHUB_URL/tree/$commitHashShort";
+	my $downloadDate      = getLocalTime();
 	my $repositoryLicense = getLicense($license_url_base);
 	my $repositoryReadme  = getReadme($readme_url_base);
 	$repositoryLicense    = "$GITHUB_URL/blob/$BRANCH/$repositoryLicense" if $repositoryLicense;
 	$repositoryReadme     = "$GITHUB_URL/blob/$BRANCH/$repositoryReadme"  if $repositoryReadme;
-	chomp (my $lastCommitDate = `$git --git-dir="$repopath/.git" log -n 1 --format="%cd" --date=local`);
+	chomp (my $lastCommitDate = `$git --git-dir="$repopath/.git" log -n 1 --format="%ci"`);
 
 	open (IFILE, ">$filepath") or die "Cannot write info to $filepath\n";
 
@@ -368,13 +369,14 @@ print IFILE<<"EOT";
 !! Directories downloaded from this repository are listed below.
 !!
 !! Meaning of the spines:
-!!    **sound   = Number of sounding notes in the copied files. If a
-!!                null token, then the Humdrum Extras notecount tool
+!!    **sound   = Number of sounding notes in the copied files. If entry
+!!                is a null token, then the Humdrum Extras notecount tool
 !!                was not available when the repository was downloaded.
 !!    **files   = Number of files in the copied directory.
-!!    **bytes   = Byte size of files copied to local directory.
+!!    **bytes   = Size of files copied to local directory in bytes.
+!!    **branch  = Repository branch from which files were copied.
 !!    **from    = The subdirectory in the download repository listed in the
-!!                source reference record above that files were copied from.
+!!                "source" reference record above that files were copied from.
 !!                A null token means the root of repository working directory.
 !!    **to      = The subdirectory in the repository lised in the source
 !!                reference record above that files were copied from.
@@ -389,6 +391,21 @@ print IFILE<<"EOT";
 !!
 EOT
 	close IFILE;
+}
+
+
+
+##############################
+##
+## getLocalTime -- in UTC.
+##
+
+sub getLocalTime {
+	my $epoch_time = time;
+	my ($sec, $min, $hour, $mday, $mon, $year) = (localtime($epoch_time))[0..5];
+	my $formatted_date = sprintf("%04d-%02d-%02d %02d:%02d:%02d %s", $year + 1900, 
+		$mon + 1, $mday, $hour, $min, $sec, strftime('%z', localtime($epoch_time)));
+	return $formatted_date;
 }
 
 
@@ -987,8 +1004,8 @@ sub storeDirectoryInfo {
 		}
 	}
 	if ($exinterp < 0) {
-		$contents[@contents] = "**sound\t**files\t**bytes\t**from\t**to\t**prefix\t**suffix\t**filter\t**xfilter\t**sar";
-		$contents[@contents] = "*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-";
+		$contents[@contents] = "**sound\t**files\t**bytes\t**branch\t**from\t**to\t**prefix\t**suffix\t**filter\t**xfilter\t**sar";
+		$contents[@contents] = "*-\t*-\t*-\t*-\t*-\t*\t*-\t*-\t*-\t*-\t*-";
 	}
 
 	if (!$found) {
@@ -1014,6 +1031,9 @@ sub storeDirectoryInfo {
 			} else {
 				$line .= ".";
 			}
+
+			$line .= "\t";
+			$line .= $BRANCH;
 
 			$line .= "\t";
 			if ($fromSubdir eq "") {
