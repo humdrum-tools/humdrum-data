@@ -579,13 +579,13 @@ sub checkoutSubdirectory {
 
 sub getId {
 	my ($repopath, $thing, $entry) = @_;
-	chomp(my @contents = `(cd $repopath && $git ls-tree $thing)`);
+	chomp(my @contents = `$git -C "$repopath" ls-tree "$thing"`);
 	foreach my $line (@contents) {
 		my @data = split(/\s+/, $line);
 		next if @data < 4;
 		my $hash = $data[2];
 		my $name = $data[3];
-		if ($entry eq $name) {
+		if ($name eq $entry) {
 			return $hash;
 		}
 	}
@@ -1201,7 +1201,7 @@ sub getDefaultBranch {
 
 sub deleteUnwantedFiles {
 	my $repoRoot = "$REPODIR/$GITHUB";
-	chomp(my @index = `(git -C "$repoRoot" ls-tree HEAD)`);
+	chomp(my @index = `($git -C "$repoRoot" ls-tree HEAD)`);
 	my %allowed;
 	foreach my $line (@index) {
 		next if ($line !~ /^\d+\s+(blob|tree)\s+[^\s]+\t+(.*)/);
