@@ -1,39 +1,40 @@
 # Support scripts for the Humdrum-data repository #
 
 [processList](processList)
-:       This script parses LIST files and prepares options from
-	the data spines in LIST files into command-line options for
-	the [getRepositoryDirectory](getRepositoryDirectory) script
-	that does the actual downloading of an online repository
-	subdirectory.  The `make` or `make tonerows` commands run
-	this script, for example.
+:       This script parses LIST files, extracting data spines and
+	converting them into command-line options for the
+	[getRepositoryDirectory](getRepositoryDirectory) script,
+	which is responsible for downloading specific subdirectories
+	from online repositories. It is invoked by the `make` or
+	`make tonerows` commands.
 
 [getRepositoryDirectory](getRepositoryDirectory)
-:       Manages downloading of a specific directory of a
-	specific GitHub repository, with options to rename files
-	for the local copy, and include or exclude files from the
-	downloaded repository.  This is a helper script for
-	[processList](processList).
+:       Manages the download process for a specified directory of
+	a GitHub repository, providing options to rename local
+	files, and include or exclude files from the downloaded
+	repository. This script acts as a helper for the
+	[processList](processList) script.
 
 [deleteBrokenLinks](deleteBrokenLinks)
-:       This is a helper script for the `make clean` process.
-	I recursively checks the local file structure for broken
-	links (cause by deleting downloaded repositories), and
-	deletes empty local directories.  Non-symbolic linked files
-	are not affected by this script, so any files you create
-	in this repository will not be deleted.  After running `make
-	clean`, typically `make` would be run to restore updated
-	files in the local directory structure.
+:       A helper script for the `make clean` process that
+	recursively scans the local file structure for broken links
+	(resulting from deleted repositories) and removes empty
+	local directories.  Non-symbolic linked files remain
+	unaffected, ensuring that any user-created files in the
+	repository are not deleted. After executing `make clean`,
+	run `make` to restore updated files in the local directory
+	structure (for the full dataset, or commands such as `make
+	sonatas` to re-download data subsets that you have previous
+	installed).
 
 [checkIfNeedUpdates](checkIfNeedUpdates)
-:	Used by `make check-update` (`make cu`).  This script
+:       Utilized by `make check-update` (`make cu`), this script
 	identifies downloaded repositories that have been updated
-	on GitHub since they were downloaded.   This is useful
-	if you want to keep your local copies up to date with the
-	online sources.  If there are online changes, you can type
-	`make clean` and them `make` (or `make <subset>` according
-	to the subsets that you have downloaded (for example 
-	`make sonatas` to download the `sonatas` data subset.
+	on GitHub since their initial download. Useful for keeping
+	local copies synchronized with online sources.  Run `make clean`
+	followed by `make` (or `make <subset>` based on previously
+	downloaded data subsets, e.g., `make sonatas`) to incorporate
+	online changes to the Humdrum files.
 
 [getNoteCount](getNoteCount)
 :       Used by `make note-counts` (`make nc`).  This script
@@ -48,12 +49,13 @@
 	checksums for files that it counts.
 
 [makeReadme](makeReadme)
-:       A script that creates the README.md file in the base directory
-	of this repository.  Normally run by the maintainer of the
-	`humdrum-data` repository and not by the general user (unless
-	you really want to).  It automatically generates statistics
-	about downloaded repositories and data subsets that can be
-	downloaded from LIST files.
+:       A script for generating the `README.md` file in the base
+	directory of this repository. Typically run by the
+	`humdrum-data` repository maintainer, it automatically
+	compiles statistics about downloaded repositories and
+	available data subsets from LIST files. While not necessary
+	for general users, it can be executed if desired, offering
+	insights into the repository's current content and usage.
 
 
 
