@@ -1,4 +1,4 @@
-!!!OTL: SEILS dataset
+!!!OTL: SEILS dataset of Renaissance music
 !! vim: ts=70:nowrap
 **ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**sar
 SEILSdataset	SEILSdataset	SEILSdataset/SEILS_diplomatic_OMRgroundTruth/choral	seils/chorals	.	.	\.mns$	.	.
