@@ -189,7 +189,7 @@ sub getStatsForRepo {
 sub makeLists {
 	my @files = sort  {
 		lc($a) cmp lc($b) || $a cmp $b; # case insensitive sort
-	} glob(".lists/LIST-*.tsv");
+	} glob(".lists/LIST-*.txt");
 	my $output = "";
 	$output .= "| Make target | Description |\n";
 	$output .= "| ----------- | ----------- |\n";
@@ -199,7 +199,7 @@ sub makeLists {
 		my $description = getDescription($file);
 		my $target = $file;
 		$target =~ s/^(.lists\/)?LIST-//;
-		$target =~ s/.tsv$//;
+		$target =~ s/.txt$//;
 		$output .= "| `make $target` | $description |\n";
 	}
 	return $output;
@@ -337,7 +337,7 @@ during this process.
 
 If you have downloaded specific subsets of data, such as the `sonatas`
 dataset of Classical-era piano
-[sonatas](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists/LIST-sonatas.tsv),
+[sonatas](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists/LIST-sonatas.txt),
 then you will have to re-download them after `make clean` as well:
 
 ```bash
@@ -452,7 +452,7 @@ make
 ```
 
 This will download all repositories found in the file
-[.lists/LIST.tsv](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists/LIST.tsv).
+[.lists/LIST.txt](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists/LIST.txt).
 The
 [.lists](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists)
 directory also contains other lists of data subsets that can
@@ -503,7 +503,7 @@ git pull
 
 to update the meta-repository.  This could possibly include additions
 to
-[`.lists/LIST.tsv`](https://github.com/humdrum-tools/humdrum-data/blob/.lists/LIST.tsv]
+[`.lists/LIST.txt`](https://github.com/humdrum-tools/humdrum-data/blob/.lists/LIST.txt]
 or new LIST files for data subsets.  Also, enhancements and bug
 fixes to the `Makefile` and scripts in the `bin` directory may be
 available through an update using `git pull`.
@@ -635,7 +635,7 @@ The `make sonatas` target demonstrates how to merge multiple
 repositories, as well as making the filenames unique by prefixing
 the source composer name to each filename (since filenames between
 these three repositories are not unique).  See the
-[LIST-sonatas.tsv](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists/LIST-sonatas.tsv)
+[LIST-sonatas.txt](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists/LIST-sonatas.txt)
 for an example of how to do this using the `**prefix` parameter.
 
 On the GitHub webpage for the source repository webpage of files
@@ -656,10 +656,10 @@ the main download list:
 {{REPO_LIST}}
 
 You can create your own list of repositories to download by creating
-a file in the `.lists` directory, such as `.lists/LIST-mylist.tsv`.
+a file in the `.lists` directory, such as `.lists/LIST-mylist.txt`.
 Then run `make mylist` to download your own curation of Humdrum
 files downloaded from GitHub repositories.  Alternatively, edit
-[.lists/LIST.tsv](https://github.com/humdrum-tools/humdrum-data)
+[.lists/LIST.txt](https://github.com/humdrum-tools/humdrum-data)
 to arrange the downloaded repositories in a directory organization
 of your choice (see the `**to` parameter below).
 
@@ -700,7 +700,7 @@ The final copy to the local directory structure should only contain
 valid Humdrum files containing only the characters `[A-Za-z0-9._-]`,
 i.e. POSIX compliant names (use the prefix, suffix, filter, xfilter
 and sar to adjust if necessary). More complicated filtering and renaming
-can be found in the [densmore](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists/LIST-densmore.tsv)
+can be found in the [densmore](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists/LIST-densmore.txt)
 LIST file.
 
 
@@ -805,7 +805,7 @@ checked with the [humdrum](https://www.humdrum.org/tool/humdrum) tools,
 that is also up to the maintainers of the source repositories.  The
 basic Humdrum structure should be correct for the full data set
 (any invalid files are exclude with `*xfilter`).  Commented out
-repository directories in `.lists/LIST*.tsv` files typically indicates
+repository directories in `.lists/LIST*.txt` files typically indicates
 that there are problems in the Humdrum structure if one or more
 file in the source directory, so that directory or specific files
 are excluded from the downloads.

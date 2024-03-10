@@ -17,9 +17,9 @@
 
 ## Downloading LIST datasets ##
 
-To download a particular dataset, such as for `LIST-sonatas.tsv`,
+To download a particular dataset, such as for `LIST-sonatas.txt`,
 type `make sonatas` in the base directory of this repository.  Running
-the `make` command will download Humdrum files from the `LIST.tsv`
+the `make` command will download Humdrum files from the `LIST.txt`
 file (complete set).
 
 ## Updating downloaded files ##

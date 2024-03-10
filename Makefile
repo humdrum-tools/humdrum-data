@@ -21,7 +21,7 @@
 ##
 ## In addition the % target is used to download subsets of Humdrum
 ## files.  The allowed targets are based on the filenames in
-## .lists/LIST-*.tsv.  Example list targets:
+## .lists/LIST-*.txt.  Example list targets:
 ##
 ##      make              Download complete set of files.
 ##      make 1520s-short  The 1520s Project digital scores, ID only filenames
@@ -39,8 +39,8 @@
 ##      make tasso        Tasso in Music Project digital scores
 ##      make tonerow      Tonerows used by Schoenberg, Berg and Webern
 ##
-## You can create your own .lists/LIST-*.tsv file(s) and run with make.  For
-## exaple, create a file called .lists/LIST-mylist.tsv based on other examples
+## You can create your own .lists/LIST-*.txt file(s) and run with make.  For
+## exaple, create a file called .lists/LIST-mylist.txt based on other examples
 ## in that directory, and then you can compile the list with the command
 ## "make mylist"
 ##
@@ -92,9 +92,9 @@ notecount:
 # Downlod the entire dataset or specific subsets:
 %:
 	@if [[ ! " $(NONLISTS) " =~ " $@ " && "$@" != "%" ]]; then \
-		"$(BINDIR)/processList" ".lists/LIST-$@.tsv"; \
+		"$(BINDIR)/processList" ".lists/LIST-$@.txt"; \
 	elif [[ "$@" == "%" ]]; then \
-		$(BINDIR)/processList .lists/LIST.tsv; \
+		$(BINDIR)/processList .lists/LIST.txt; \
 	fi
 
 
