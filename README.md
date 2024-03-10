@@ -1,24 +1,25 @@
 
 # Humdrum Data #
 
-The `humdrum-data` repository manages collections of
-[Humdrum](https://www.humdrum.org) files found in other
-[GitHub](https://github.com) repositories.
+Welcome to the **Humdrum Data** meta-repository – your gateway to
+a rich collection of [Humdrum](https://www.humdrum.org) files sourced
+from various GitHub repositories.  This platform allows you to
+download and manage diverse datasets of musical scores on your local
+computer, providing a flexible structure for finding and doing
+computational research with pre-existing datasets.  You can also
+contribute your own Humdrum datasets by posting them on GitHub and
+submitting a
+[request](https://github.com/humdrum-tools/humdrum-data/issues) for
+them to be added to this meta-repository.
 
-You can design your own local directory structure, or choose
-subsets of the complete downloadable dataset.  See the "Adding more
-repositories/data subsets" section below for more information.  The current
-full download list and local directory mappings can be found in
-[.lists/LIST.tsv](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists/LIST.tsv),
-and the
-[.lists](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists)
-directory gives example for downloading smaller datasets.
+Whether you're a seasoned Unix user or a newcomer, this
+repository simplifies the process of acquiring Humdrum files for
+your musical endeavors. This introduction guides you through essential
+information, instructions for installation, and tips on customizing
+your dataset downloads.
 
-By default all registered Humdrum file repositories will be downloaded
-by typing `make`, which currently includes 23,720 scores
-containing 17,643,235 sounding notes (some repositories are not
-notation based and contain only `**harm`, etc.).  The current size
-of all Humdrum files is 364.7MB.
+Currently this repository manages 23,720 files containing
+17,643,235 sounding notes, with a total file size of 364.7MB.
 
 
 ## Summary ##
@@ -32,28 +33,32 @@ cd humdrum-data
 make
 ```
 
-To update files at a later date, it is currently best to run:
+To stay up-do-date, you can run `make check-update` (or `make cu` for short)
+to see if any online repositories have changed since you last downloaded them.
+Then, to update all repositories, run in the terminal:
+
 
 ```bash
 make clean
-```
-
-to delete all downloaded repository files (any files you have in
-any local directories will not be deleted) And then re-download the
-entire dataset again, restored to their original local directories:
-
-```bash
 make
 ```
 
-Or re-download specific subsets such as the Classical-era piano
-[sonatas](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists/LIST-sonatas.tsv):
+This will delete all downloaded repository files (any files you have in
+any local directories will not be deleted) and then re-download the
+entire dataset again, restored to their original local directories.
+Any of your own files in the local directory structure will be preserved
+during this process.
+
+If you have downloaded specific subsets of data, such as the `sonatas`
+dataset of Classical-era piano
+[sonatas](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists/LIST-sonatas.tsv),
+then you will have to re-download them after `make clean` as well:
 
 ```bash
 make sonatas
 ```
 
-Otherwise, See the following more detailed instructions for downloading.
+Otherwise, see the following documentation more detailed instructions for downloading.
 
 ## Preliminaries ##
 
@@ -164,8 +169,9 @@ This will download all repositories found in the file
 [.lists/LIST.tsv](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists/LIST.tsv).
 The
 [.lists](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists)
-directory also contains other lists of repository subsets that can
-be downloaded individually if you do not want to download all files:
+directory also contains other lists of data subsets that can
+be downloaded individually if you do want specific datasets only, or alternate
+arrangements of the complete dataset.
 
 | Make target | Description |
 | ----------- | ----------- |
@@ -182,55 +188,68 @@ be downloaded individually if you do not want to download all files:
 | `make popc2-short` | Polish Music in Open Access digital scores, ID only filenames |
 | `make popc2` | Polish Music in Open Access digital scores |
 | `make psalms` | Psalm settings |
-| `make seils` | SEILS dataset |
+| `make seils` | SEILS dataset of Renaissance music |
 | `make sonatas` | Classical piano sonatas of Beethoven (complete), Mozart (complete), and Haydn (selections) |
 | `make tasso` | Tasso in Music Project digital scores |
 | `make tonerows` | Tonerows used by Schoenberg, Berg and Webern |
 
 
+
 ### Updating this meta-repository ###
 
-If you want to update this meta-repository using `git`, type:
+To update this meta-repository using `git`, type:
 
 ```bash
 git pull
 ```
 
-If you have changed any files, check to see if you want to keep
-the changes; otherwise, type:
+Otherwise, if you downloaded as a ZIP file, re-download a new ZIP file from
+the repository's [homepage](https://github.com/humdrum-tools/humdrum-data)  on GitHub.
+
+If you have changed any files of the repository files (LIST in
+`.lists` or scripts in `bin`, then check to see what files you have changed:
+
+```bash
+git status
+```
+
+And to see the change in contets of the files:
+
+```bash
+git diff
+```
+
+If you have changes you do not want to keep, type:
 
 ```bash
 git checkout
 ```
 
-To remove local changes (which will not change untracked files you
-may have created in the repository).  Then you will be able to run
-`git pull` to update the meta-repository.  This could possibly
-include updates to `.lists/LIST.tsv` to add new repositories and/or
-new LIST files for subsets of data.  Also, enhances features and
-bug fixes to the `Makefile` and scripts in the `bin` directory may
-be available through `git pull`.
+to remove any local changes (this will not change **untracked** files you
+may have add to the local directory).
+
+Then you will be able to run:
+
+```bash
+git pull
+```
+
+to update the meta-repository.  This could possibly include additions
+to
+[`.lists/LIST.tsv`](https://github.com/humdrum-tools/humdrum-data/blob/.lists/LIST.tsv]
+or new LIST files for data subsets.  Also, enhancements and bug
+fixes to the `Makefile` and scripts in the `bin` directory may be
+available through an update using `git pull`.
+
 
 ### Checking if downloaded repositories need updating ###
 
 To check if any of the downloaded repositories have been updated
 on GitHub since you last downloaded the repositories, use the
-command:
-
-```bash
-make check-update
-```
-
-or
-
-```bash
-make cu
-```
-
-for short.
-
-This command will report any online repositories that are more recent
-than the copy you downloaded.  Currently to update, you need to run:
+command, type `make check-update` or `make cu` for short.  This
+command will report any online repositories that are more recent
+than the copy you downloaded.  Currently to update, you need to
+run:
 
 ```
 make clean
@@ -240,6 +259,7 @@ make
 Which will re-download all repositories, including ones that do not
 need updating.  In the future, a system to only download repositories
 that have online updates may be implemented.
+
 
 ### Adding local files ###
 
@@ -252,6 +272,18 @@ any of your own analysis files in `beethoven/piano/sonata`, they
 will remain after running `make clean`.  Running `make` will restore
 any updates for any repository files in the same directory.
 
+Any edits you make to the downloaded repsitories will be lost
+if you type `make clean` unless you copy the file first, such as
+in the Beethoven sonatas directory:
+
+```bash
+cp -L sonata01-1.krn my-sonata01-1.krn
+```
+
+The `-L` option will conver the symbolic link from the
+downloaded repository into a real file, and real files are
+not deleted by `make clean`.
+
 
 ### Source information ###
 
@@ -262,11 +294,11 @@ into the same directory, there will be multiple `.info` files, such
 as `.info2` for a second merged repository directory, `.info3` for
 the third, and so on.
 
-For example, if you run `make sonatas`, a directory called
-`sonatas` will be created in the base directory of this repository
-with three .info files (including `.info2` and `.info3`), giving
-information about each source repository.  Below is the contents of
-`.info2` for the Mozart sonatas in the `sonatas` dataset:
+For example, if you run `make sonatas`, a directory called `sonatas`
+will be created in the base directory of this repository with three
+.info files (including `.info2` and `.info3`), giving information
+about each source repository.  Below is the contents of `.info2`
+for the Mozart sonatas in the `sonatas` dataset:
 
 ```tsv
 !!!source:             https://github.com/craigsapp/mozart-piano-sonatas
@@ -561,7 +593,7 @@ When there are data errors in downloaded files, contact the repository
 owner to get them to fix the problem.  This is typically done by
 going to the issues page for the source repository.  Some repositories
 also include scans of the source editions, such as the
-[mozart-piano-sonatas](https://github.com/craig-sapp/mozart-piano-sonatas/tree/main/reference-edition)
+[mozart-piano-sonatas](https://github.com/craigsapp/mozart-piano-sonatas/tree/main/reference-edition)
 repository, which can be used to verify the digital score transcriptions.
 
 Files should not produce errors (and preferably not warnings) when
