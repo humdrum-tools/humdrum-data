@@ -765,7 +765,7 @@ When there are data errors in downloaded files, contact the repository
 owner to get them to fix the problem.  This is typically done by
 going to the issues page for the source repository.  Some repositories
 also include scans of the source editions, such as the
-[mozart-piano-sonatas](https://github.com/craig-sapp/mozart-piano-sonatas/tree/main/reference-edition)
+[mozart-piano-sonatas](https://github.com/craigsapp/mozart-piano-sonatas/tree/main/reference-edition)
 repository, which can be used to verify the digital score transcriptions.
 
 Files should not produce errors (and preferably not warnings) when
