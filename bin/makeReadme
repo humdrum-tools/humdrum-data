@@ -377,7 +377,7 @@ entire dataset again, restored to their original local directories.
 Any of your own files in the local directory structure will be preserved
 during this process.
 
-If you have downloaded specific subsets of data, such as the `sonatas`
+If you have downloaded specific data subsets, such as the `sonatas`
 dataset of Classical-era piano
 [sonatas](https://github.com/humdrum-tools/humdrum-data/blob/main/.lists/LIST-sonatas.txt),
 then you will have to re-download them after `make clean` as well:
