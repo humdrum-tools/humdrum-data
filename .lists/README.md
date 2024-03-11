@@ -25,15 +25,23 @@ file (complete set).
 ## Updating downloaded files ##
 
 If you want to make sure that you have the most recent versions of
-any dataset, first type:
+any dataset, you can run `make check-update` to check for any updates
+of the online GitHub repositories since you last downloaded them.
+
+To remove all local copies of online repsositories in
+preparation for updating, first type:
 
 ```bash
 make clean
 ```
 
-And then type the make command to install the desired data set, such as `make`
-to download the complete dataset, or `make sonatas` to download the Classical
-piano sonata dataset.
+And then type the make command to install the desired dataset(2),
+such as `make` to download the complete dataset, or `make sonatas`
+to download the Classical piano sonata dataset.
+
+This process will not remove any of your locally created files, and after 
+running `make` to redownload the reposities, they will be placed back into the
+original directory structure in which your local files may reside.
 
 
 
