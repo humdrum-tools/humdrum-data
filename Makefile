@@ -32,7 +32,6 @@
 ##      make joplin       Piano music by Scott Joplin
 ##      make jrp          Josquin Research Project digital scores
 ##      make mysterium    Mysterium: Piano music of Scriabin
-##      make nifc         Digital scores from The Fryderyk Chopin Institute (Chopin first editions (POPC1) and Polish Musical Heritage (1600-1900) in Open Access (POPC2))
 ##      make popc2-short  Polish Music in Open Access digital scores, ID only filenames
 ##      make popc2        Polish Music in Open Access digital scores
 ##      make sonatas      Classical piano sonatas of Beethoven (complete), Mozart (complete), and Haydn (selections)
@@ -47,7 +46,7 @@
 
 # List of targets that should not be processed by %:
 NONLISTS := check-update clean cu nc ncs note-count note-counts notecount \
-	notecounts readme
+	notecounts readme pc timp make-lists
 
 .DEFAULT_GOAL := %
 
@@ -87,6 +86,25 @@ note-counts: notecount
 notecounts: notecount
 notecount:
 	@$(BINDIR)/getNoteCount
+
+
+# Generate complicated LIST files:
+make-lists: pc timp timp-year
+
+
+# Create/update the polish-composers LIST:
+pc:
+	$(BINDIR)/makePolishCommposerList > .lists/LIST-polish-composers.txt
+
+
+# Create/update the tasso-composer LIST:
+timp:
+	$(BINDIR)/makeTassoComposerList > .lists/LIST-tasso-composers.txt
+
+
+# Create/update the tasso-publication-year LIST:
+timp-year:
+	$(BINDIR)/makeTassoYearList > .lists/LIST-tasso-publication-year.txt
 
 
 # Downlod the entire dataset or specific subsets:

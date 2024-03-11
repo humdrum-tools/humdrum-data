@@ -15,13 +15,19 @@ use Getopt::Long;
 use Cwd;
 use File::Basename;
 
-# File extensions that will be checked for note counts:
+# $EXT: File extensions that will be checked for note counts:
 my $EXT = "krn|hum|mns|mens|rap|pc|harm";
 
+# $REPODIR: Location of downloaded repositories.
 my $REPODIR = ".source";
 
-# %Hashes == keep track of MD5 sums of files to avoid double-counting notes in the total count.
+# %Hashes: Keep track of MD5 sums of files to avoid double-counting notes in the total count.
 my %Hashes;
+
+# %RepoCount: Counts of notes/files/sizes by repository.
+my %RepoCountNotes;
+my %RepoCountFiles;
+my %RepoFileSize;
 
 # Also keep track of the total files size for unique symbolically linked files.
 my $totalFileSize = 0;
@@ -31,7 +37,8 @@ my $fhideQ = 0; # Do not list file counts in output.
 my $nhideQ = 0; # Do not list note counts in output.
 my $shideQ = 0; # Do not list file sizes in output.
 my $totalQ = 0; # Give only the total note an file counts in output.
-my $realQ  = 0; # Count notes only in non-symbolic link files.
+my $repoQ  = 0; # Count notes by repository.
+my $realQ  = 0; # Count notes only in non-symbolic link files if true.
 
 Getopt::Long::Configure("bundling");
 GetOptions (
@@ -40,6 +47,7 @@ GetOptions (
 	"N|no-note-count"      => \$nhideQ,
 	"S|no-file-sizes"      => \$shideQ,
 	"t|total"              => \$totalQ,
+	"repo|repository"      => \$repoQ,
 	"r|real"               => \$realQ
 );
 
@@ -74,10 +82,31 @@ if (!$totalQ) {
 	print "$noteCount\t$fileCount\n";
 }
 
+if ($repoQ) {
+	printRepositoryStats();
+}
+
 exit(0);
 
 
 ###########################################################################
+
+##############################
+##
+## printRepositoryStats --
+##
+
+sub printRepositoryStats {
+	my @keys = sort keys %RepoCountNotes;
+	foreach my $key (@keys) {
+		print "!!repo:\t";
+		print "$RepoCountNotes{$key}\t";
+		print "$RepoCountFiles{$key}\t";
+		print "$RepoFileSize{$key}\t";
+		print "$key\n";
+	}
+}
+
 
 
 ##############################
@@ -196,11 +225,24 @@ sub countNotes {
 		# Do not add multiple counts of the same file
 		# in different locations to the total sum:
 		my $unique = 1;
-		$unique = 0 if $Hashes{$hash} !~ /^\s*$/;
+		if ($Hashes{$hash} !~ /^\s*$/) {
+			# Files has already been previously processed.
+			$unique = 0;
+		}
 		$Hashes{$hash} = 1;
 
-		# Add size of file if unique:
-		$localSize += getFileSizeInBytes("$dir/$file");
+		my $repoId = "";
+		if ($unique) {
+			$repoId = getRepoIdFromSymbolicLink("$dir/$file");
+			$RepoFileSize{$repoId} = 0 if $RepoFileSize{$repoId} eq "";
+			$RepoCountFiles{$repoId} = 0 if $RepoCountFiles{$repoId} eq "";
+			$RepoCountNotes{$repoId} = 0 if $RepoCountNotes{$repoId} eq "";
+		}
+
+		# Get size of file
+		my $fileSize = getFileSizeInBytes("$dir/$file");
+		$localSize += $fileSize;
+		$RepoFileSize{$repoId} += $fileSize if $unique;
 
 		# Run the Humdrum Extras notecount tool on the file:
 		my $command2 = "$notecount -s \"$dir/$file\" | cut -f 1";
@@ -218,10 +260,12 @@ sub countNotes {
 		# Add note counts to sums:
 		$nsum += $result;
 		$unsum += $result if $unique;
+		$RepoCountNotes{$repoId} += $result if $unique;
 
 		# Add file counts to sums:
 		$fsum++;
 		$ufsum++ if $unique;
+		$RepoCountFiles{$repoId} += 1 if $unique;
 	}
 
 	$totalFileSize += $localSize;
@@ -247,19 +291,13 @@ sub countNotes {
 ##############################
 ##
 ## getFileSizeInBytes -- Return the size of the file linked from the
-##     input file.  
+##     input file.
 ##
 
 sub getFileSizeInBytes {
 	my ($file) = @_;
 	return 0 if !-e $file;
-	return 0 if !-l $file;
-	my $link = readlink($file);
-	$link =~ s/^[\/.]+source\///;
-	my $realFile = "$REPODIR/$link";
-	return 0 if -l $realFile;
-	return 0 if !-e $realFile;
-	return -s $realFile;
+	return -s $file;
 }
 
 
@@ -282,6 +320,24 @@ sub getDirectories {
 		$output[@output] = $file;
 	}
 	return sort @output;
+}
+
+
+
+##############################
+##
+## getRepoIdFromSymbolicLink -- Return a owner/repository
+##    string of a symoblic link of the input file.
+##    return empty string if not a symbolic link.
+##
+
+sub getRepoIdFromSymbolicLink {
+	my ($file) = @_;
+	return "" if !-e $file;
+	return "" if !-l $file;
+	my $link = readlink($file);
+	return "" if $link !~ /$REPODIR\/(.*?)\/(.*?)\//;
+	return "$1/$2";
 }
 
 

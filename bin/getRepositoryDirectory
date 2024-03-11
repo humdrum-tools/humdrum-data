@@ -73,6 +73,14 @@ if ($gitVersion =~ /version (\d+)\.(\d+)/) {
 	}
 }
 
+my $md5sum = `which md5`; # for MacOS
+chomp $md5sum;
+if ($md5sum =~ /^\s*$/) {
+	$md5sum = `which md5sum`; # for Linux/unix
+	chomp $md5sum;
+}
+die "Cannot find md5sum command-line tool for checksums\n" if $md5sum =~ /^\s*$/;
+
 # Install Humdrum Extract (https://github.com/humdrum-tools/humdrum-tools, or
 # https://github.com/craigsapp/humextra if you want to include notecounts in
 # .info files.
@@ -252,11 +260,18 @@ sub prepareRepository {
 	}
 
 	if ($REPO_SUBDIR eq "") {
+		# Currently not checking if files downloaded to base directory
+		# so redownload regarless of it is has already been prepare.
 		checkoutRootDirectory("$REPODIR/$GITHUB");
 	} else {
-		checkoutSubdirectory("$REPODIR/$GITHUB", $REPO_SUBDIR);
+		# Only download if not downloaded already:
+		if (!-d "$REPODIR/$GITHUB/$REPO_SUBDIR") {
+			checkoutSubdirectory("$REPODIR/$GITHUB", $REPO_SUBDIR);
+		}
 	}
 
+	# A copy of the files are annoyingly left in the base directory,
+	# so delete any files in the base directory that should not be there:
 	deleteUnwantedFiles();
 
 	# Ensure the directory where the repository files will be stored exists:
@@ -715,6 +730,8 @@ sub getReadme {
 	return "";
 }
 
+
+
 ##############################
 ##
 ## linkRepositoryFilesToLocalDirectory -- After the GitHub repository
@@ -947,38 +964,43 @@ sub createInfoFileLink {
 	# $targdir      = Path to local files copied from repository, such as beethoven/piano/sonatas
 	# $relativePath = Relative path from the target to .source directory for doing symbolic links, such as ../../../
 
-	my @infos = (); # list of .info files in target directory already.
-
 	# Fill in the list of .info files in target directory
 	# .info is used instead of .info1, since most target directories will have only one source.
-	$infos[@infos] = ".info" if -e "$targdir/.info";
-	my $counter = 2;
-	# .info numbers must be successive:
-	while (-e "$targdir/.info$counter") {
-		$infos[@infos] = ".info$counter";
-		$counter++;
+	my $repoInfo = "$REPODIR/$GITHUB_OWNER/.$GITHUB_REPO.info";
+	my $testHash;
+	if (-r "$repoInfo") {
+		chomp($testHash = `$md5sum -q "$repoInfo"`);
+	} else {
+		die "Cannot find repo info file $repoInfo\n";
 	}
 
-	# Search for any .info file that include a symbolic link to the $srcdir already:
-	my $fullpath = "$relativePath/$srcdir";
-	for (my $i=0; $i<@infos; $i++) {
-		my $link = getSymbolicLink("$targdir/$infos[$i]");
-		my $position = index($link, $srcdir);
-		if ($position >= 0) {
-			# Already a link to the desired .info file.
-			return;
+	my $counter = 1;
+
+	# Check if any pre-existing .info file matches to repository info file:
+	if (-r "$targdir/.info") {
+		chomp(my $hash = `$md5sum -q "$targdir/.info"`);
+		return if $hash eq $testHash;
+		$counter++;
+	}
+	# .info numbers must be successive:
+	while (1) {
+		if (-r "$targdir/.info$counter") {
+			chomp(my $hash = `$md5sum -q "$targdir/.info$counter"`);
+			return if $hash eq $testHash;
+			$counter++;
+		} else {
+			last;
 		}
 	}
 
 	# Create a new .info file for the new source repository:
-	my $number = @infos;
-	$number++;
-	$number = "" if $number <= 1;
-	my $infoFilename = ".info$number";
+	my $number = $counter;
+	$number = "" if $number == 1;
+	my $infoFilename = "$targdir/.info$number";
 	my $linkSource = "$relativePath/$REPODIR/$GITHUB_OWNER/.$GITHUB_REPO.info";
 
-	if (!symlink($linkSource, "$targdir/$infoFilename")) {
-		warn "PROBLEM LINKING $infoFilename IN $targdir \n";
+	if (!symlink($linkSource, "$infoFilename")) {
+		warn "PROBLEM LINKING $linkSource TO $infoFilename \n";
 	}
 
 }
@@ -1002,6 +1024,10 @@ sub storeDirectoryInfo {
 	chomp(my @contents = <IFILE>);
 	close IFILE;
 
+	# Check if the from/to directories have already been processed
+	# and return if so:
+	return if checkForDuplication($fromSubdir, $toSubdir, @contents);
+
 	# Search backwards in file contents for prior entry for this $fromSubdir/$toSubdir pair:
 	my $prefix = $PREFIX;
 	$prefix = "." if $prefix eq "";
@@ -1018,6 +1044,7 @@ sub storeDirectoryInfo {
 
 	my $found = 0;
 	my $exinterp = -1;
+
 	for (my $i = $#contents; $i>=0; $i--) {
 		my $line = $contents[$i];
 		if ($line =~ /^\*\*/) {
@@ -1041,7 +1068,6 @@ sub storeDirectoryInfo {
 		$contents[@contents] = "**sound\t**files\t**bytes\t**branch\t**from\t**to\t**prefix\t**suffix\t**filter\t**xfilter\t**content\t**sar";
 		$contents[@contents] = "*-\t*-\t*-\t*-\t*-\t*\t*-\t*-\t*-\t*-\t*-\t*-";
 	}
-
 	if (!$found) {
 		my $line = "";
 		if (!$found) {
@@ -1097,6 +1123,48 @@ sub storeDirectoryInfo {
 			close IFILE;
 		}
 	}
+}
+
+
+
+##############################
+##
+## checkForDuplication -- If the same $fromSubdir and $toSubdir are 
+##     found in the input @contents already, then return true; otherwise,
+##     return false.
+##
+
+sub checkForDuplication {
+	my ($fromSubdir, $toSubdir, @contents) = @_;
+	my %heading;
+	
+	my $interpIndex = -1;
+	foreach my $line (@contents) {
+		if ($interpIndex < 0 and $line !~ /^\*\*/) {
+			next;
+		}
+		if ($line =~ /^\*\*/) {
+			my @data = split(/\t+/, $line);
+			for (my $i=0; $i<@data; $i++) {
+				my $parameter = $data[$i];
+				$parameter =~ s/^\*\*//;
+				$heading{$parameter} = $i;
+			}
+			next;
+		}
+		next if $line =~ /^[!*]/;
+		next if $line =~ /^\s*$/;
+		last if $line =~ /^\*-\t/;
+		my @data = split(/\t+/, $line);
+		my $from = $data[$heading{"from"}];
+		my $to   = $data[$heading{"to"}];
+		die "Strange problem: to is empty\n" if $to eq ".";
+		if ($from eq $fromSubdir and $to eq $toSubdir) {
+			return 1;
+		}
+	}
+
+	return 0;
 }
 
 

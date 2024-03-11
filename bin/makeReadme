@@ -2,11 +2,11 @@
 #
 # Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 # Creation Date: Sat Feb 24 17:06:20 PST 2024
-# Last Modified: Sat Mar  9 17:19:19 PST 2024
+# Last Modified: Sun Mar 10 12:01:07 PDT 2024
 # Filename:      bin/makeReadme
 # Syntax:        perl 5
 #
-# Description:   Create readme for this repository. The README.md file in
+# Description:   Create readme for this repository.  The README.md file in
 #                root directory is created by typing "make readme" in the
 #                root directory of this repository (mostly intended to be
 #                run by the humdrum-data maintainers and not general users).
@@ -14,37 +14,57 @@
 
 use strict;
 
-my $TotalNoteCount = 0; # Number of notes in all of the downloadable repositories.
-my $TotalFileCount = 0; # Number of files in all of the downloadable repositories.
-my $TotalFileSize  = 0; # Size of all Humdrum files (unique symbolically linked file).
-
 # Create a list of datasets that can be downloaded
 # from files in the .lists directory:
 my $LISTS = makeLists();
 
-# Count notes by local directory:
-my $NOTE_COUNTS = `make note-counts`;
+# Count notes by local directory, also keeping track
+# by downloaded repository:
+my $NOTE_COUNTS = `bin/getNoteCount --repo`;
 
-# make a list of
-my $REPO_LIST = makeRepoList();
+warn "==============================================\n";
+warn "$NOTE_COUNTS\n";
+warn "==============================================\n";
+
+# Prepare demo info file:
+die "Cannot find demo .info file\n" if !-r "mozart/piano/sonata/.info";
+chomp(my $DEMO_INFO = `cat mozart/piano/sonata/.info`);
+
+# Get total counts for all repositories:
+my ($noteCount, $fileCount, $fileSize) = getCountInfo($NOTE_COUNTS);
+
+my %RepoInfo = getNoteCountDataByRepository($NOTE_COUNTS);
+
+$NOTE_COUNTS = removeRepoInfo($NOTE_COUNTS);
+
+warn "++++++++++++++++++++++++++++++++++++++++++++++\n";
+warn "$NOTE_COUNTS\n";
+warn "++++++++++++++++++++++++++++++++++++++++++++++\n";
+
+die "Problem: no repository counts\n" if $noteCount <= 0;
+
+$noteCount = addCommas($noteCount);
+$fileCount = addCommas($fileCount);
+$fileSize  = formatBytes($fileSize);
+
+# Make a list of downloaded repositories:
+my $REPO_LIST = makeRepoList(%RepoInfo);
 
 # Load the textual contents of the readme from
 # the bottom of this script:
 my @data = <DATA>;
 my $output = join("", @data);
 
-$TotalNoteCount = addCommas($TotalNoteCount);
-$TotalFileCount = addCommas($TotalFileCount);
-$TotalFileSize  = formatBytes($TotalFileSize);
 
 # Fill in information lists and statistics in the readme
 # about the Humdrum data repositories managed by this repository:
-$output =~ s/\{\{\s*LISTS\s*\}\}/$LISTS/g;
-$output =~ s/\{\{\s*NOTE_COUNTS\s*\}\}/$NOTE_COUNTS/g;
+$output =~ s/\{\{\s*LISTS?\s*\}\}/$LISTS/g;
+$output =~ s/\{\{\s*NOTE_COUNTS?\s*\}\}/$NOTE_COUNTS/g;
 $output =~ s/\{\{\s*REPO_LIST\s*\}\}/$REPO_LIST/g;
-$output =~ s/\{\{\s*file-?count\s*\}\}/$TotalFileCount/g;
-$output =~ s/\{\{\s*note-?count\s*\}\}/$TotalNoteCount/g;
-$output =~ s/\{\{\s*file-?size\s*\}\}/$TotalFileSize/g;
+$output =~ s/\{\{\s*DEMO_INFO\s*\}\}/$DEMO_INFO/g;
+$output =~ s/\{\{\s*file-?counts?\s*\}\}/$fileCount/g;
+$output =~ s/\{\{\s*note-?counts?\s*\}\}/$noteCount/g;
+$output =~ s/\{\{\s*file-?sizes?\s*\}\}/$fileSize/g;
 
 print $output;
 
@@ -55,11 +75,56 @@ exit(0);
 
 ##############################
 ##
+## removeRepoInfo --
+## Remove links like:
+##     !!repo:	146369	250	1349988	musedata/humdrum-corelli
+##
+
+sub removeRepoInfo {
+	my ($input) = @_;
+	my @lines = split(/\n/, $input);
+	my @output;
+	foreach my $line (@lines) {
+		next if $line =~ /^!!+repo:/;
+		$output[@output] = $line;
+	}
+	my $string = join("\n", @output), "\n";
+	return $string;
+}
+
+
+
+##############################
+##
+## getTotalCountInfo --
+##
+
+sub getCountInfo {
+	my ($noteData) = @_;
+	my @lines = split(/\n/, $noteData);
+	my %headers;
+	my $noteCount = 0;
+	my $fileCount = 0;
+	my $fileSize = 0;
+	foreach my $line (@lines) {
+		next if $line !~ /^!!+repo:\s*(\d+)\s+(\d+)\s+(.*?)\s*$/;
+		$noteCount += $1;
+		$fileCount += $2;
+		$fileSize  += $3;
+	}
+	return ($noteCount, $fileCount, $fileSize);
+}
+
+
+
+##############################
+##
 ## makeRepoList -- Create a markdown table of repositories from
 ##     which files are copied (sorted by repository owners).
 ##
 
 sub makeRepoList {
+	my %repoInfo = @_;
 	my $srcdir = ".source";
 	my @files = sort  {
 		lc($a) cmp lc($b) || $a cmp $b; # case insensitive sort
@@ -73,9 +138,32 @@ sub makeRepoList {
 		$owner =~ s/.*\///;
 		next if $owner =~ /^\./;
 		next if $owner =~ /^\s*$/;
-		$output .= processOwnersRepositories($srcdir, $owner);
+		$output .= processOwnersRepositories($srcdir, $owner, %repoInfo);
 	}
 	return $output;
+}
+
+
+
+##############################
+##
+## getNoteCountDataByRepository --
+##
+## Example entry:
+##   !!repo:	7543	29	52848	humdrum-tools/gershwin-songs
+##
+
+sub getNoteCountDataByRepository {
+	my ($data) = @_;
+	my @lines = split(/\n/, $data);
+	my %output;
+	foreach my $line (@lines) {
+		next if $line !~ /^!!repo:\s*(\d+)\s+(\d+)\s+(\d+)\s+(.*?)\s*$/;
+		my $values = "$1 $2 $3";
+		my $repoId = $4;
+		$output{$repoId} = $values;
+	}
+	return %output;
 }
 
 
@@ -87,7 +175,7 @@ sub makeRepoList {
 ##
 
 sub processOwnersRepositories {
-	my ($srcdir, $owner) = @_;
+	my ($srcdir, $owner, %repoInfo) = @_;
 	my @repodirs = sort glob("$srcdir/$owner/*");
 	my $output = "";
 	my $startedQ = 0;
@@ -98,7 +186,15 @@ sub processOwnersRepositories {
 		next if $repoName =~ /^\./;
 		next if $repoName =~ /^\s*$/;
 		next if !-d "$srcdir/$owner/$repoName";
-		my ($noteCount, $fileCount, $fileSize) = getStatsForRepo("$srcdir/$owner/.$repoName.info");
+		my $entry = $repoInfo{"$owner/$repoName"};
+		my $noteCount = "";
+		my $fileCount = "";
+		my $fileSize = "";
+		if ($entry =~ /(\d+)\s+(\d+)\s+(\d+)/) {
+			$noteCount = $1;
+			$fileCount = $2;
+			$fileSize = $3;
+		}
 
 		$output .= "| ";
 
@@ -123,60 +219,6 @@ sub processOwnersRepositories {
 		$output .= " |\n";
 	}
 	return $output;
-}
-
-
-
-##############################
-##
-## getStatsForRepo -- Get note counts, file counts and file sizes
-##    which are precalculated in info files for repository.  There
-##    can be cases where the same directory in the repository is copied
-##    to multiple locations in the local directory, structure, so suppress
-##    counting duplicates (there can be different subsets of files copied
-##    copied to different local directories, and this function will not
-##    handle those case, taking on the first entry for the source directory.
-##
-
-sub getStatsForRepo {
-	my ($infofile) = @_;
-	open IFILE, $infofile or die "Cannot read $infofile\n";
-	chomp(my @contents = <IFILE>);
-	close IFILE;
-	my %used;
-	my %info;
-	my %index;
-	my $noteCount = 0;
-	my $fileCount = 0;
-	my $fileSize  = 0;
-	foreach my $line (@contents) {
-		next if $line =~ /^\s*$/;
-		next if $line =~ /^!/;
-		if ($line =~ /^\*\*/) {
-			my @fields = split(/\t+/, $line);
-			for (my $i=0; $i<@fields; $i++) {
-				my $field = $fields[$i];
-				$field =~ s/^\*\*//;
-				$index{$field} = $i;
-			}
-		}
-		next if $line =~ /^\*/;
-		my @data = split(/\t+/, $line);
-		my $from = $data[$index{"from"}];
-		$used{$from}++;
-		next if $used{$from} > 1;
-		my $sound = $data[$index{"sound"}];
-		my $files = $data[$index{"files"}];
-		my $bytes = $data[$index{"bytes"}];
-		$noteCount += $sound if $sound =~ /^\s*\d+\s*$/;
-		$fileCount += $files if $files =~ /^\s*\d+\s*$/;
-		$fileSize  += $bytes if $bytes =~ /^\s*\d+\s*$/;
-	}
-
-	$TotalNoteCount += $noteCount;
-	$TotalFileCount += $fileCount;
-	$TotalFileSize  += $fileSize;
-	return ($noteCount, $fileCount, $fileSize);
 }
 
 
@@ -300,7 +342,7 @@ them to be added to this meta-repository.
 
 Whether you're a seasoned Unix user or a newcomer, this
 repository simplifies the process of acquiring Humdrum files for
-your musical endeavors. This introduction guides you through essential
+your musical endeavors.  This introduction guides you through essential
 information, instructions for installation, and tips on customizing
 your dataset downloads.
 
@@ -351,7 +393,7 @@ Otherwise, see the following documentation more detailed instructions for downlo
 This repository uses the [git](https://en.wikipedia.org/wiki/Git)
 and [make](https://en.wikipedia.org/wiki/Make_(software)#Derivatives)
 commands, so they need to be installed on your computer before you
-can download the Humdrum files. The minimum version of git that can
+can download the Humdrum files.  The minimum version of git that can
 be used is 2.25 from 2020.
 
 
@@ -471,7 +513,7 @@ git pull
 ```
 
 Otherwise, if you downloaded as a ZIP file, re-download a new ZIP file from
-the repository's [homepage](https://github.com/humdrum-tools/humdrum-data)  on GitHub.
+the repository's [homepage](https://github.com/humdrum-tools/humdrum-data) on GitHub.
 
 If you have changed any files of the repository files (LIST in
 `.lists` or scripts in `bin`, then check to see what files you have changed:
@@ -534,7 +576,7 @@ If you store your own files in an existing local directory or a
 directory that you created, they will not be deleted when `make
 clean` is run.  This is accomplished by storing repository files
 as symbolic links, and only symbolic links will be deleted when
-changing the downloaded file structure. For example, if you have
+changing the downloaded file structure.  For example, if you have
 any of your own analysis files in `beethoven/piano/sonata`, they
 will remain after running `make clean`.  Running `make` will restore
 any updates for any repository files in the same directory.
@@ -568,40 +610,7 @@ about each source repository.  Below is the contents of `.info2`
 for the Mozart sonatas in the `sonatas` dataset:
 
 ```tsv
-!!!source:             https://github.com/craigsapp/mozart-piano-sonatas
-!!!download-date:      2024-03-08 17:42:34 -0800
-!!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/44330d18
-!!!last-commit-date:   2023-06-18 10:32:56 -0700
-!!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt
-!!!repository-readme:  https://github.com/craigsapp/mozart-piano-sonatas/blob/main/README.md
-!! vim:                ts=39:nowrap
-!!
-!! Directories downloaded from this repository are listed below.
-!!
-!! Meaning of the spines:
-!!    **sound   = Number of sounding notes in the copied files. If entry
-!!                is a null token, then the Humdrum Extras notecount tool
-!!                was not available when the repository was downloaded.
-!!    **files   = Number of files in the copied directory.
-!!    **bytes   = Size of files copied to local directory in bytes.
-!!    **branch  = Repository branch from which files were copied.
-!!    **from    = The subdirectory in the download repository listed in the
-!!                "source" reference record above that files were copied from.
-!!                A null token means the root of repository working directory.
-!!    **to      = The subdirectory in the repository lised in the source
-!!                reference record above that files were copied from.
-!!                A null token means the root of target directory.
-!!    **prefix  = Prefix string to add to copied filename (if any).
-!!    **suffix  = Suffix string to add to copied filename (if any).
-!!    **filter  = Copy only files with given PERL/JavaScript regex.
-!!    **xfilter = Exclude files with the given PERL/JavaScript regex.
-!!    **sar     = sed-like search and replacement for filename (before
-!!                prefix and suffix are added).  Multiple SAR entries
-!!                can be given, separated by semicolons (;).
-!!
-**sound	**files	**bytes	**branch	**from	**to	**prefix	**suffix	**filter	**xfilter	**sar
-96637	69	996160	main	kern	mozart/piano/sonata	.	.	.	.	.
-*-	*-	*-	*-	*-	*	*-	*-	*-	*-	*-
+{{DEMO_INFO}}
 ```
 
 There are six reference records in info files:
@@ -686,7 +695,7 @@ Optional parameters:
 | `**sar`     | A search-and-replace string to do more complicated renaming of copied files.  The form of the string should be like the `sed` command-line tool, such as `s/match/replace/g`. Multiple entries can be separated by a semi-colon (`;`). |
 
 Parameters spines can be placed in any order and optional ones may
-be omitted. See example uses of these parameters in the sample
+be omitted.  See example uses of these parameters in the sample
 `LIST` files found in the
 [.lists](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists)
 directory.
@@ -699,7 +708,7 @@ of this repository, giving the necessary parameters described above.
 The final copy to the local directory structure should only contain
 valid Humdrum files containing only the characters `[A-Za-z0-9._-]`,
 i.e. POSIX compliant names (use the prefix, suffix, filter, xfilter
-and sar to adjust if necessary). More complicated filtering and renaming
+and sar to adjust if necessary).  More complicated filtering and renaming
 can be found in the [densmore](https://github.com/humdrum-tools/humdrum-data/tree/main/.lists/LIST-densmore.txt)
 LIST file.
 
@@ -708,7 +717,7 @@ LIST file.
 
 As a side note, it is useful to add the [topic
 tags](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics)
-`humdrum` and `digital-scores` to your repository. To add *topics* to your
+`humdrum` and `digital-scores` to your repository.  To add *topics* to your
 repository, click on the gear icon next to the About section on the repository
 home page (near the top left, but below the "Settings" gear icon):
 
@@ -851,9 +860,9 @@ download only a minimal footprint for a repository:
 
 | Option | Meaning |
 | ------ | ------- |
-| `--depth=1` |  This option specifies that only the latest commit and its parent commits (up to the specified depth, in this case, 1) will be cloned. It creates a shallow clone, which means you won't have the full history of the repository, but you'll save time and bandwidth by not downloading unnecessary historical data. |
-| `--filter=blob:none` | This option, introduced in Git 2.19, sets a partial clone filter, specifying that no file content (blobs) will be cloned initially. Instead, only the commit and tree objects are fetched. This helps further reduce the amount of data transferred during the cloning process. |
-| `--no-checkout` | This option prevents `git` from checking out the working directory after the clone is complete. Typically, `git` automatically checks out the latest commit after cloning, but with --no-checkout, you can defer this step. This can be useful when you want to save time and only fetch the repository metadata without checking out the actual files. |
+| `--depth=1` |  This option specifies that only the latest commit and its parent commits (up to the specified depth, in this case, 1) will be cloned.  It creates a shallow clone, which means you won't have the full history of the repository, but you'll save time and bandwidth by not downloading unnecessary historical data. |
+| `--filter=blob:none` | This option, introduced in Git 2.19, sets a partial clone filter, specifying that no file content (blobs) will be cloned initially.  Instead, only the commit and tree objects are fetched.  This helps further reduce the amount of data transferred during the cloning process. |
+| `--no-checkout` | This option prevents `git` from checking out the working directory after the clone is complete.  Typically, `git` automatically checks out the latest commit after cloning, but with --no-checkout, you can defer this step.  This can be useful when you want to save time and only fetch the repository metadata without checking out the actual files. |
 
 Next, go inside of the downloaded repository and type this command:
 
@@ -880,7 +889,7 @@ to see the download and installation commands for each downloaded repository.
 
 These commands are used to enable the sparse-checkout mode in `git`
 and configure which directories are made visible in the repository's
-working directory. Sparse-checkout is a feature that allows you to
+working directory.  Sparse-checkout is a feature that allows you to
 have a partial working directory by checking out only specific
 directories from the repository rather than all of them.
 
@@ -993,7 +1002,7 @@ In this case the `-s` option is used to preserve segments (separate
 sections of data that start with an exclusive interpretation and
 end with a spine terminator).  Without the `-s` the `humcat` tool
 will merge a files into a single long (set) of spines (or there
-will be an error if the spine counts are not the same). I add the
+will be an error if the spine counts are not the same).  I add the
 `s` to `.krns` to indicate the the multiple works are stored in the
 file.  Here is an example of using the multi-file download method
 without saving the data:
@@ -1068,7 +1077,7 @@ The colon cannot/should not be used on MacOS (without difficulty)
 so an alternate method is shown for downloading the Polish score,
 where `19xx:1` means the first score from the 20th century dataset
 (these numbers are mostly consecutive, but there are some gaps in
-the accession numbers). The Polish ID `wtm--a-40-710-94` means that
+the accession numbers).  The Polish ID `wtm--a-40-710-94` means that
 the (paper) source score for the digital score is from the [Warsaw
 Music Society](https://warszawskietowarzystwomuzyczne.pl/biblioteka)
 and `a-40-710-94` is (based on) the call number for the score in

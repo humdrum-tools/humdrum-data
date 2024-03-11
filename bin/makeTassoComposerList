@@ -1,0 +1,105 @@
+#!/usr/bin/env perl
+#
+# Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+# Creation Date: Sun Mar 10 18:07:17 PDT 2024
+# Last Modified: Sun Mar 10 18:07:19 PDT 2024
+# Filename:      bin/makeTassoComposerList
+# Syntax:        perl 5
+#rvim:           ts=3:nowrap
+#
+# Description:   Convert TiMP organization from genre to composer.
+#
+
+use strict;
+
+die "Cannot find tasso files\n" if !-d "tasso";
+
+my @dirs = sort glob("tasso/*");
+
+my %composers = getComposerList(@dirs);
+
+my @keys = sort keys %composers;
+
+print "!!!OTL: Tasso in Music Project data organized by composer\n";
+print "!! vi", "m: ";
+print "ts=25:nowrap\n";
+print "**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar\n";
+
+foreach my $key (@keys) {
+	printComposerEntries($key, $composers{$key});
+}
+
+print "*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\n";
+
+exit(0);
+
+###########################################################################
+
+##############################
+##
+## printComposerEntries -- 
+##
+
+sub printComposerEntries {
+	my ($composer, $genres) = @_;
+	my $comp = lc($composer);
+	my @subdirs = split(/\s+/, $genres);
+	my $ghname  = "TassoInMusicProject";
+	my $ghrepo  = "tasso-scores";
+	my $from;
+	my $to      = "tasso-composers/$comp";
+	my $prefix  = ".";
+	my $suffix  = ".";
+	my $filter  = "--${composer}_";
+	my $xfilter = ".";
+	my $content = ".";
+	my $sar     = ".";
+	foreach my $genre (@subdirs) {
+		$from = "$genre/kern";
+		print "$ghname\t$ghrepo\t$from\t$to\t$prefix\t$suffix\t$filter\t$xfilter\t$content\t$sar\n";
+	}
+}
+
+
+
+##############################
+##
+## getComposerList -- Generate a list of composers and genres they have.
+##
+## Example filename:
+##     Tsg19106a-Misera_non_credea_cha_gli_occhi_miei--Wert_1586.krn@
+##
+
+sub getComposerList {
+	my (@genresDirs) = @_;
+	my %output;
+	foreach my $subdir (@genresDirs) {
+		my $genre = $subdir;
+		$genre =~ s/.*\///;
+		next if $genre =~ /^\./;
+		next if !-d $subdir;
+		if (!-d "$subdir") {
+			warn "NOT A DIRECTORY: $subdir\n";
+			next;
+		}
+		my @files = sort glob("$subdir/*.krn");
+		foreach my $file (@files) {
+			my $composer = "";
+			my $filebase = $file;
+			$filebase =~ s/.*\///;
+			next if $filebase !~ /--([^-]+)_\d/;
+			$composer = $1;
+			if (!$output{$composer}) {
+				$output{$composer} = $genre;
+				next;
+			}
+			if ($output{$composer} !~ /\b$genre\b/) {
+				$output{$composer} .= " $genre";
+			}
+		}
+	}
+	return %output;
+}
+
+
+

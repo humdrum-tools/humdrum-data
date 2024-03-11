@@ -57,5 +57,29 @@
 	for general users, it can be executed if desired, offering
 	insights into the repository's current content and usage.
 
+[makePolishComposerList](makePolishComposerList)
+:       A script for reorganizing POP2 scores from library
+	sigla to composer, for maintenance use only and run with
+	the command `make pc`.  This will update the
+	`.lists/LIST-polish-composers.txt` file, from which the
+	entries for polish composers in .lists/LIST.txt are copied
+	(with a change in the local directory from `polish-composers`
+	to `polish`).
+
+[makeTassoComposerList](makeTassoComposerList)
+:	Create script to organize Tasso in Music Project dataset
+	by composer (in `tasso-composers` directory).  This script
+	will update the `.lists/LIST-tasso-composers.txt` file
+	when new composers are added to TiMP.  This LIST file is
+	adjusted for the `LIST.txt` file for storing the files in
+	the `early-music` directory.
+	
+
+[makeTassoYearList](makeTassoYearList)
+:	Create script to organize Tasso in Music Project dataset
+	by publication year (in `tasso-years` directory).  This script
+	will update the `.lists/LIST-tasso-composers.txt` file
+	when new composers are added to TiMP.
+
 
 

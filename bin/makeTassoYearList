@@ -1,0 +1,108 @@
+#!/usr/bin/env perl
+#
+# Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+# Creation Date: Sun Mar 10 18:07:17 PDT 2024
+# Last Modified: Sun Mar 10 19:26:29 PDT 2024
+# Filename:      bin/makeTassoYearList
+# Syntax:        perl 5
+#rvim:           ts=3:nowrap
+#
+# Description:   Convert TiMP organization from genre to 
+#                publication year.
+#
+# NB:            First run "make tasso" to download data organized
+#                by poetic genre.
+#
+
+use strict;
+
+die "Cannot find tasso files\n" if !-d "tasso";
+
+my @dirs = sort glob("tasso/*");
+
+my %years = getYearList(@dirs);
+
+my @keys = sort keys %years;
+
+print "!!!OTL: Tasso in Music Project data organized by publication date\n";
+print "!! vi", "m: ";
+print "ts=25:nowrap\n";
+print "**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar\n";
+
+foreach my $key (@keys) {
+	printYearEntries($key, $years{$key});
+}
+
+print "*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\n";
+
+exit(0);
+
+###########################################################################
+
+##############################
+##
+## printYearEntries -- 
+##
+
+sub printYearEntries {
+	my ($year, $genres) = @_;
+	my @subdirs = split(/\s+/, $genres);
+	my $ghname  = "TassoInMusicProject";
+	my $ghrepo  = "tasso-scores";
+	my $from;
+	my $to      = "tasso-years/$year";
+	my $prefix  = ".";
+	my $suffix  = ".";
+	my $filter  = "_$year";
+	my $xfilter = ".";
+	my $content = ".";
+	my $sar     = ".";
+	foreach my $genre (@subdirs) {
+		$from = "$genre/kern";
+		print "$ghname\t$ghrepo\t$from\t$to\t$prefix\t$suffix\t$filter\t$xfilter\t$content\t$sar\n";
+	}
+}
+
+
+
+##############################
+##
+## getYearList -- Generate a list of years and genres they have.
+##
+## Example filename:
+##     Tsg19106a-Misera_non_credea_cha_gli_occhi_miei--Wert_1586.krn@
+##
+
+sub getYearList {
+	my (@genresDirs) = @_;
+	my %output;
+	foreach my $subdir (@genresDirs) {
+		my $genre = $subdir;
+		$genre =~ s/.*\///;
+		next if $genre =~ /^\./;
+		next if !-d $subdir;
+		if (!-d "$subdir") {
+			warn "NOT A DIRECTORY: $subdir\n";
+			next;
+		}
+		my @files = sort glob("$subdir/*.krn");
+		foreach my $file (@files) {
+			my $year = "";
+			my $filebase = $file;
+			$filebase =~ s/.*\///;
+			next if $filebase !~ /_(\d{4}[^.]*)/;
+			$year = $1;
+			if (!$output{$year}) {
+				$output{$year} = $genre;
+				next;
+			}
+			if ($output{$year} !~ /\b$genre\b/) {
+				$output{$year} .= " $genre";
+			}
+		}
+	}
+	return %output;
+}
+
+
+

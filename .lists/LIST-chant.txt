@@ -1,0 +1,6 @@
+!!!OTL: Chant-based scores
+!! vim:  ts=24:nowrap
+**ghname	**ghrepo	**from	**to
+humdrum-tools	liber-usualis	kern	chant/liber-usualis-selections
+humdrum-tools	liber-usualis-ddmal	kern	chant/liber-usualis-ddmal
+*-	*-	*-	*-

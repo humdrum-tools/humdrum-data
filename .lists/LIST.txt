@@ -76,16 +76,12 @@ ccarh	essen-folksong-collection	europa/tirol	songs/folksongs/essen/europa/tirol
 ccarh	essen-folksong-collection	europa/ukraina	songs/folksongs/essen/europa/ukraina
 Computational-Cognitive-Musicology-Lab	CoCoPops	Billboard/Data	songs/pop/billboard
 craigsapp	bach-370-chorales	kern	bach/chorales-370
-craigsapp	beethoven-piano-sonatas	kern	beethoven/piano/sonata
-craigsapp	beethoven-string-quartets	kern	beethoven/quartet
 craigsapp	chopin-mazurkas	kern	chopin/mazurkas
 craigsapp	chopin-preludes	kern	chopin/preludes
 craigsapp	creighton-nova-scotia	kern	songs/nova-scotia
 craigsapp	densmore-teton-sioux	kern	songs/densmore/sioux
-craigsapp	haydn-piano-sonatas	kern	haydn/piano
 craigsapp	hummel-preludes	kern	hummel/preludes
 craigsapp	joplin	kern	joplin
-craigsapp	mozart-piano-sonatas	kern	mozart/piano/sonata
 craigsapp	scarlatti-keyboard-sonatas	kern	scarlatti/sonata
 humdrum-tools	bach-wtc	kern	bach/wtc
 humdrum-tools	barbershop	kern	songs/harmonized/barbershop
@@ -97,6 +93,8 @@ humdrum-tools	tonerow	berg	tonerow/berg
 humdrum-tools	tonerow	schoenberg	tonerow/schoenberg
 humdrum-tools	tonerow	webern	tonerow/webern
 humdrum-tools	inventions	kern	bach/inventions
+humdrum-tools	liber-usualis	kern	songs/chant/liber-usualis-selections
+humdrum-tools	liber-usualis-ddmal	kern	songs/chant/liber-usualis-ddmal
 josquin-research-project	Agr	.	early-music/agricola
 josquin-research-project	Ano	.	early-music/anonymous
 josquin-research-project	Bin	.	early-music/binchois
@@ -131,46 +129,20 @@ musedata	humdrum-corelli	op6	corelli
 musedata	humdrum-haydn-quartets	kern	haydn/quartet
 musedata	humdrum-mozart-quartets	kern	mozart/quartet
 musedata	humdrum-haydn-symphonies	kern	haydn/symphony
-pl-wnifc	humdrum-chopin-first-editions	kern	chopin/first-editions
-pl-wnifc	humdrum-chopin-first-editions	kern	nifc/popc1
-pl-wnifc	humdrum-polish-scores	a-wn/kern	nifc/popc2/a-wn
-pl-wnifc	humdrum-polish-scores	ch-gmu/kern	nifc/popc2/ch-gmu
-pl-wnifc	humdrum-polish-scores	d-b/kern	nifc/popc2/d-b
-pl-wnifc	humdrum-polish-scores	d-bnu/kern	nifc/popc2/d-bnu
-pl-wnifc	humdrum-polish-scores	d-dl/kern	nifc/popc2/d-dl
-pl-wnifc	humdrum-polish-scores	d-hs/kern	nifc/popc2/d-hs
-pl-wnifc	humdrum-polish-scores	d-mbs/kern	nifc/popc2/d-mbs
-pl-wnifc	humdrum-polish-scores	pl-cz/kern	nifc/popc2/pl-cz
-pl-wnifc	humdrum-polish-scores	pl-gd/kern	nifc/popc2/pl-dg
-pl-wnifc	humdrum-polish-scores	pl-kc/kern	nifc/popc2/pl-kc
-pl-wnifc	humdrum-polish-scores	pl-kj/kern	nifc/popc2/pl-kj
-pl-wnifc	humdrum-polish-scores	pl-kk/kern	nifc/popc2/pl-kk
-pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	nifc/popc2/pl-kozmk
-pl-wnifc	humdrum-polish-scores	pl-sa/kern	nifc/popc2/pl-sa
-pl-wnifc	humdrum-polish-scores	pl-stab/kern	nifc/popc2/pl-stab
-pl-wnifc	humdrum-polish-scores	pl-wn/kern	nifc/popc2/pl-wn
-pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	nifc/popc2/pl-wnifc
-pl-wnifc	humdrum-polish-scores	pl-wru/kern	nifc/popc2/pl-wru
-pl-wnifc	humdrum-polish-scores	pl-wtm/kern	nifc/popc2/pl-wtm
-pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	nifc/popc2/pl-wumfc
-pl-wnifc	humdrum-polish-scores	s-uu/kern	nifc/popc2/s-uu
 polyrhythm-project	rds-scores	kern	polyrhythm/rds
 !! Humdrum validation errors:
 !!shanahdt	smt_jazz_2019	omnibook_kern	jazz/omnibook
-TassoInMusicProject	tasso-scores	Tam/kern	early-music/tasso
-TassoInMusicProject	tasso-scores	Tbv/kern	early-music/tasso
-TassoInMusicProject	tasso-scores	Tco/kern	early-music/tasso
-TassoInMusicProject	tasso-scores	Tec/kern	early-music/tasso
-TassoInMusicProject	tasso-scores	Tri/kern	early-music/tasso
-TassoInMusicProject	tasso-scores	Trm/kern	early-music/tasso
-TassoInMusicProject	tasso-scores	Trt/kern	early-music/tasso
-TassoInMusicProject	tasso-scores	Tsg/kern	early-music/tasso
 *-	*-	*-	*-
 !!
 !! Repositories that need extra parameters:
 !!
 **ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar
 craigsapp	erk-liederschatz	kern	songs/harmonized/liederschatz	.	.	.	.	.	s/erk/liederschatz-/
+craigsapp	Musikalisches-Wuerfelspiel	.	mozart/dice	.	.	\.krn$	.	.	.
+craigsapp	mozart-piano-sonatas	kern	mozart/piano/sonata	mozart-	.	.	.	.	.
+craigsapp	beethoven-piano-sonatas	kern	beethoven/piano/sonata	beethoven-	.	.	.	.	.
+craigsapp	haydn-piano-sonatas	kern	haydn/piano	haydn-	.	.	.	.	.
+craigsapp	beethoven-string-quartets	kern	beethoven/quartet	beethoven-	.	.	.	.	.
 Computational-Cognitive-Musicology-Lab	CoCoPops	RollingStone/Data	songs/pop/rollingstone	.	.	.	\.md$	.	.
 Computational-Cognitive-Musicology-Lab	MCFlow	Humdrum	songs/rap/mcflow	.	.	.	\.md$	.	.
 jasonleeubc	Cantopop-corpus	.	songs/pop/cantonese	.	.krn	^C\d+$	.	.	s/^C/cpop-/
@@ -183,6 +155,498 @@ pl-wnifc	humdrum-chopin-first-editions	kern	chopin/waltz	waltz-	.	^(018|034|042|
 pl-wnifc	humdrum-chopin-first-editions	kern	chopin/polonaise	polonaise-	.	.	.	^!!!AGN:.*Polonaise	.
 pl-wnifc	humdrum-chopin-first-editions	kern	chopin/scherzo	scherzo-	.	^(020|031|039|054)	.	.	.
 pl-wnifc	humdrum-chopin-first-editions	kern	chopin/ballade	ballade-	.	^(023|038|047|052)	.	.	.
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/a-s	.	.	_a-s--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/abersbach-jan-jiri	.	.	_abersbach-jan-jiri--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/andrychowicz-j	.	.	_andrychowicz-j--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/anerio-giovanni-francesco	.	.	_anerio-giovanni-francesco--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/anonim	.	.	_anonim--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/anonim	.	.	_anonim--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/anonim	.	.	_anonim--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-stab/kern	polish/anonim	.	.	_anonim--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/anonim	.	.	_anonim--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/anonim	.	.	_anonim--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/anonim	.	.	_anonim--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/asola-giovanni-matteo	.	.	_asola-giovanni-matteo--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/astorga-emanuele-d	.	.	_astorga-emanuele-d--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/bach-johann-christian	.	.	_bach-johann-christian--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/badarzewska-tekla	.	.	_badarzewska-tekla--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/barcicki-jan	.	.	_barcicki-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/bauer	.	.	_bauer--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/bauer-joseph-anton	.	.	_bauer-joseph-anton--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/bauerfeind-wladyslaw	.	.	_bauerfeind-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/bazylik-cyprian	.	.	_bazylik-cyprian--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/beethoven-ludwig-van	.	.	_beethoven-ludwig-van--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/bellinzani-paolo-benedetto	.	.	_bellinzani-paolo-benedetto--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/bencini	.	.	_bencini--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/beyer-ferdinand	.	.	_beyer-ferdinand--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/biandra-giovanni-pietro	.	.	_biandra-giovanni-pietro--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/binder-christlieb-siegmund	.	.	_binder-christlieb-siegmund--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/boczkowski-jerzy	.	.	_boczkowski-jerzy--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/boczkowski-kazimierz	.	.	_boczkowski-kazimierz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/bogoimski-tadeusz	.	.	_bogoimski-tadeusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/bogunski-baltazar	.	.	_bogunski-baltazar--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/bohdanowicz-bazyli	.	.	_bohdanowicz-bazyli--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/boieldieu-adrien	.	.	_boieldieu-adrien--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/bolehovsky-josef	.	.	_bolehovsky-josef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/borek-krzysztof	.	.	_borek-krzysztof--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/borimius-jan	.	.	_borimius-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/bortnjanskij-dmitrij-stepanovic	.	.	_bortnjanskij-dmitrij-stepanovic--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/braun-jan	.	.	_braun-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/brentner-johann-joseph-ignaz	.	.	_brentner-johann-joseph-ignaz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/brioschi-antonio	.	.	_brioschi-antonio--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/brixi-frantisek-xaver	.	.	_brixi-frantisek-xaver--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/brixi-viktorin	.	.	_brixi-viktorin--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/brykner-jerzy	.	.	_brykner-jerzy--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/brzezinska-filipina	.	.	_brzezinska-filipina--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/brzezinska-filipina	.	.	_brzezinska-filipina--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/brzowska-jadwiga	.	.	_brzowska-jadwiga--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wru/kern	polish/buchner-philipp-friedrich	.	.	_buchner-philipp-friedrich--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/buhler-franz	.	.	_buhler-franz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/bulakowski-stefan	.	.	_bulakowski-stefan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/cadeac-pierre	.	.	_cadeac-pierre--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/caderski-piotr	.	.	_caderski-piotr--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/caldara-antonio	.	.	_caldara-antonio--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/cardilli-jacopo-antonio	.	.	_cardilli-jacopo-antonio--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/casali-giovanni-battista	.	.	_casali-giovanni-battista--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/certon-pierre	.	.	_certon-pierre--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/cherubini-luigi	.	.	_cherubini-luigi--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/chodkiewicz-zofia	.	.	_chodkiewicz-zofia--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	a-wn/kern	polish/chopin-fryderyk	.	.	_chopin-fryderyk--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	ch-gmu/kern	polish/chopin-fryderyk	.	.	_chopin-fryderyk--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/chwalibog-izydor-konstanty	.	.	_chwalibog-izydor-konstanty--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/constanzi	.	.	_constanzi--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/conti	.	.	_conti--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/costanzi-giovanni-battista	.	.	_costanzi-giovanni-battista--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/cramer-johann-baptist	.	.	_cramer-johann-baptist--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/croce-giovanni	.	.	_croce-giovanni--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/cwiklicz-boleslaw-jan	.	.	_cwiklicz-boleslaw-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/cybulski-izydor-jozef	.	.	_cybulski-izydor-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/cybulski-izydor-jozef	.	.	_cybulski-izydor-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/czajkowski-konstanty	.	.	_czajkowski-konstanty--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/czerny-carl	.	.	_czerny-carl--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/damse-jozef	.	.	_damse-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/damse-jozef	.	.	_damse-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/damse-jozef	.	.	_damse-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/damse-jozef	.	.	_damse-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/danielski-florian	.	.	_danielski-florian--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/danik-jan-ignac	.	.	_danik-jan-ignac--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/danka	.	.	_danka--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/dankowski-adalbert	.	.	_dankowski-adalbert--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/dankowski-adalbert	.	.	_dankowski-adalbert--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-stab/kern	polish/dankowski-adalbert	.	.	_dankowski-adalbert--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/daubeck-jozef	.	.	_daubeck-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/de-majo-gian-francesco	.	.	_de-majo-gian-francesco--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/dembowska-konstancja	.	.	_dembowska-konstancja--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/dietrich-moritz	.	.	_dietrich-moritz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/dittersdorf-carl-ditters-von	.	.	_dittersdorf-carl-ditters-von--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/dobrzynski-ignacy-feliks	.	.	_dobrzynski-ignacy-feliks--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/dobrzynski-ignacy-feliks	.	.	_dobrzynski-ignacy-feliks--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/dobrzynski-ignacy-feliks	.	.	_dobrzynski-ignacy-feliks--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/dobrzynski-ignacy-feliks	.	.	_dobrzynski-ignacy-feliks--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/elsner-jozef	.	.	_elsner-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/elsner-jozef	.	.	_elsner-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/elsner-jozef	.	.	_elsner-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/elsner-jozef	.	.	_elsner-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/engel-jan	.	.	_engel-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/ett-caspar	.	.	_ett-caspar--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/fertner-karol	.	.	_fertner-karol--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/fierszewicz-daniel	.	.	_fierszewicz-daniel--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/figulenti	.	.	_figulenti--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/filipowicz-p	.	.	_filipowicz-p--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/fils-anton	.	.	_fils-anton--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/fischietti-giovanni	.	.	_fischietti-giovanni--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/fitelberg-grzegorz	.	.	_fitelberg-grzegorz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/flasza-tomasz	.	.	_flasza-tomasz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/fleming-jan	.	.	_fleming-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/flori-georg	.	.	_flori-georg--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	s-uu/kern	polish/forster-kaspar	.	.	_forster-kaspar--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/fuchs	.	.	_fuchs--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/fuhrer-robert	.	.	_fuhrer-robert--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/g-b-b	.	.	_g-b-b--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/gabrieli-andrea	.	.	_gabrieli-andrea--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/gabussi-giulio-cesare	.	.	_gabussi-giulio-cesare--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/gall-jan-karol	.	.	_gall-jan-karol--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/gall-jan-karol	.	.	_gall-jan-karol--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/gallus-iacobus	.	.	_gallus-iacobus--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/gawara-walentyn	.	.	_gawara-walentyn--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/geiger-konstanze	.	.	_geiger-konstanze--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/geistlener-barbara	.	.	_geistlener-barbara--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/gimeshoffer	.	.	_gimeshoffer--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/gizycka-zamoyska-ludmila	.	.	_gizycka-zamoyska-ludmila--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/goetz-gieczynski-cyryl	.	.	_goetz-gieczynski-cyryl--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/golabek-jakub	.	.	_golabek-jakub--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/golabek-jakub	.	.	_golabek-jakub--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/gold-artur	.	.	_gold-artur--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/gomolka-mikolaj	.	.	_gomolka-mikolaj--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/gorczycki-grzegorz-gerwazy	.	.	_gorczycki-grzegorz-gerwazy--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/gorczycki-grzegorz-gerwazy	.	.	_gorczycki-grzegorz-gerwazy--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/gorczycki-grzegorz-gerwazy	.	.	_gorczycki-grzegorz-gerwazy--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/gostowski	.	.	_gostowski--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/gotschalk-filip	.	.	_gotschalk-filip--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/goudimel-claude	.	.	_goudimel-claude--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/grabowski-stanislaw	.	.	_grabowski-stanislaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/graun-carl-heinrich	.	.	_graun-carl-heinrich--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/grem-tomasz	.	.	_grem-tomasz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/grim-jozef	.	.	_grim-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/grose-michael-ehregott	.	.	_grose-michael-ehregott--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/grossmann-ludwik	.	.	_grossmann-ludwik--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/gruberski-eugenjusz	.	.	_gruberski-eugenjusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/guami-gioseffo	.	.	_guami-gioseffo--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/guglielmi-pietro-alessandro	.	.	_guglielmi-pietro-alessandro--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/habermann-jan-piotr	.	.	_habermann-jan-piotr--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/handel-georg-friedrich	.	.	_handel-georg-friedrich--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/hanel	.	.	_hanel--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/haser-august-ferdinand	.	.	_haser-august-ferdinand--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/haslinger	.	.	_haslinger--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/hasse-johann-adolf	.	.	_hasse-johann-adolf--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/haydn-joseph	.	.	_haydn-joseph--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/haydn-joseph	.	.	_haydn-joseph--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/haydn-joseph	.	.	_haydn-joseph--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/hepner	.	.	_hepner--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/herissant-jehan	.	.	_herissant-jehan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/hermanowski-a	.	.	_hermanowski-a--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/hertz-michal	.	.	_hertz-michal--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/hey-stawicki-michal	.	.	_hey-stawicki-michal--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/hlonowski-j	.	.	_hlonowski-j--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/hoffmeister-franz-anton	.	.	_hoffmeister-franz-anton--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/hofmann-leopold	.	.	_hofmann-leopold--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	d-hs/kern	polish/holland-jan-dawid	.	.	_holland-jan-dawid--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/holland-jan-dawid	.	.	_holland-jan-dawid--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/holzbauer-ignaz	.	.	_holzbauer-ignaz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/ingegneri-marc-antonio	.	.	_ingegneri-marc-antonio--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/isaac-heinrich	.	.	_isaac-heinrich--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/isouard-nicolas	.	.	_isouard-nicolas--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/jachet-de-mantua	.	.	_jachet-de-mantua--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/jacotin	.	.	_jacotin--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/janicki-mikolaj	.	.	_janicki-mikolaj--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/janicki-mikolaj	.	.	_janicki-mikolaj--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/janiewicz-feliks	.	.	_janiewicz-feliks--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/janisch	.	.	_janisch--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/jansa-leopold	.	.	_jansa-leopold--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/jarecki-henryk	.	.	_jarecki-henryk--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/jarecki-jozef	.	.	_jarecki-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/jarecki-jozef	.	.	_jarecki-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	d-b/kern	polish/jarzebski-adam	.	.	_jarzebski-adam--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/jeric	.	.	_jeric--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/joteyko-tadeusz	.	.	_joteyko-tadeusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/joteyko-tadeusz	.	.	_joteyko-tadeusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/just-franciszek-kasper	.	.	_just-franciszek-kasper--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/kagan-jakub	.	.	_kagan-jakub--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/kalous-vaclav	.	.	_kalous-vaclav--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/kamienski-antoni	.	.	_kamienski-antoni--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/kaminski-f	.	.	_kaminski-f--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/kaminski-p	.	.	_kaminski-p--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/karasinski-adam-jozef	.	.	_karasinski-adam-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/karlowicz-mieczyslaw	.	.	_karlowicz-mieczyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/kaspar	.	.	_kaspar--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/kasprzykowski-ignacy	.	.	_kasprzykowski-ignacy--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/katski-antoni	.	.	_katski-antoni--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/katski-apolinary	.	.	_katski-apolinary--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kj/kern	polish/katski-apolinary	.	.	_katski-apolinary--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/katski-apolinary	.	.	_katski-apolinary--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/katski-apolinary	.	.	_katski-apolinary--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/kazynski-wiktor	.	.	_kazynski-wiktor--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/kedzierski-x-a	.	.	_kedzierski-x-a--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/kellerer-christophorus	.	.	_kellerer-christophorus--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/kietlinski-albert	.	.	_kietlinski-albert--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/klakowski	.	.	_klakowski--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/klemczynski-julian	.	.	_klemczynski-julian--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/kobierkowicz-jozef	.	.	_kobierkowicz-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/kobierkowicz-jozef	.	.	_kobierkowicz-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/komorowski-ignacy-marceli	.	.	_komorowski-ignacy-marceli--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/konigsperger-marianus	.	.	_konigsperger-marianus--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/koperski-maksymilian	.	.	_koperski-maksymilian--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/kosciuszko-tadeusz	.	.	_kosciuszko-tadeusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/kosciuszko-tadeusz	.	.	_kosciuszko-tadeusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/kotowicz	.	.	_kotowicz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/kottritsch-franciszek	.	.	_kottritsch-franciszek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/kottritsch-franciszek	.	.	_kottritsch-franciszek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/kozlowski-jozef	.	.	_kozlowski-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/kozlowski-jozef	.	.	_kozlowski-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/kranowski-igo	.	.	_kranowski-igo--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/krassowski	.	.	_krassowski--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/kraszewski-jozef-ignacy	.	.	_kraszewski-jozef-ignacy--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/kraus-jozef	.	.	_kraus-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/kraus-lambert	.	.	_kraus-lambert--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/kreith	.	.	_kreith--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/krener-jan	.	.	_krener-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/kreutzer	.	.	_kreutzer--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/krogulski-jozef-wladyslaw	.	.	_krogulski-jozef-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/krogulski-jozef-wladyslaw	.	.	_krogulski-jozef-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/krogulski-jozef-wladyslaw	.	.	_krogulski-jozef-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/krogulski-wladyslaw	.	.	_krogulski-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/krolikiewicz-napoleon	.	.	_krolikiewicz-napoleon--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/krupinski-wiktor	.	.	_krupinski-wiktor--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/krysta-jozef	.	.	_krysta-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/krzewdzienski-pawel	.	.	_krzewdzienski-pawel--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/krzykowski-f	.	.	_krzykowski-f--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/kuci-mateusz	.	.	_kuci-mateusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/kurpinski-karol-kazimierz	.	.	_kurpinski-karol-kazimierz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/kurpinski-karol-kazimierz	.	.	_kurpinski-karol-kazimierz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/kurpinski-karol-kazimierz	.	.	_kurpinski-karol-kazimierz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/kuttricz-lania	.	.	_kuttricz-lania--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/lachner-ignaz	.	.	_lachner-ignaz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/lada-kazimierz	.	.	_lada-kazimierz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/lampugnani-giovanni-battista	.	.	_lampugnani-giovanni-battista--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/lasso-ferdinand-di	.	.	_lasso-ferdinand-di--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/lasso-orlando-di	.	.	_lasso-orlando-di--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/lasso-rudolph-di	.	.	_lasso-rudolph-di--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/laube-antonin	.	.	_laube-antonin--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/lawina-swietochowski-jerzy	.	.	_lawina-swietochowski-jerzy--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/lechleitner-ferdinand-simon	.	.	_lechleitner-ferdinand-simon--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/lessel-franciszek	.	.	_lessel-franciszek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/lessel-franciszek	.	.	_lessel-franciszek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/lessel-franciszek	.	.	_lessel-franciszek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/leszczynski-wladyslaw	.	.	_leszczynski-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/leszczynski-wladyslaw	.	.	_leszczynski-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/lewandowski-leopold-leon	.	.	_lewandowski-leopold-leon--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/lewandowski-leopold-leon	.	.	_lewandowski-leopold-leon--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/lheritier-jean	.	.	_lheritier-jean--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/lidauer-wladyslaw	.	.	_lidauer-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/lilius-franciszek	.	.	_lilius-franciszek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/linowski-jozef	.	.	_linowski-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/lipski-stanislaw	.	.	_lipski-stanislaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/lobmann-j	.	.	_lobmann-j--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/lodwigowski-edward-stefan	.	.	_lodwigowski-edward-stefan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/loos-karel	.	.	_loos-karel--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/lubelczyk-jakub	.	.	_lubelczyk-jakub--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/lubomirska-ludwika	.	.	_lubomirska-ludwika--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/lubomirski-kazimierz	.	.	_lubomirski-kazimierz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/lubomirski-kazimierz	.	.	_lubomirski-kazimierz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/lubowski-jozef	.	.	_lubowski-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/lukaszewicz-maciej	.	.	_lukaszewicz-maciej--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/luna-georgius	.	.	_luna-georgius--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/luython-carl	.	.	_luython-carl--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/m-m	.	.	_m-m--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/maader-ludwik	.	.	_maader-ludwik--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/maintzer-franz	.	.	_maintzer-franz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/majewska-j	.	.	_majewska-j--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/maldere-pierre-van	.	.	_maldere-pierre-van--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/malik-jan	.	.	_malik-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-gd/kern	polish/marenzio-luca	.	.	_marenzio-luca--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/marenzio-luca	.	.	_marenzio-luca--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/marescalchi-luigi	.	.	_marescalchi-luigi--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/massaino-tiburzio	.	.	_massaino-tiburzio--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/maszynski-piotr	.	.	_maszynski-piotr--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/mathieu	.	.	_mathieu--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-stab/kern	polish/matuszkiewicz-franciszek	.	.	_matuszkiewicz-franciszek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/maxylewicz-wincenty	.	.	_maxylewicz-wincenty--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/mehul-etienne-nicolas	.	.	_mehul-etienne-nicolas--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/mel-rinaldo-del	.	.	_mel-rinaldo-del--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/merlini	.	.	_merlini--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-gd/kern	polish/mielczewski-marcin	.	.	_mielczewski-marcin--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/mikuli-karol	.	.	_mikuli-karol--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/mine-jacques-claude-adolphe	.	.	_mine-jacques-claude-adolphe--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/miskiewicz-maciej-arnulf	.	.	_miskiewicz-maciej-arnulf--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/mlynarski-emil	.	.	_mlynarski-emil--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/modzelewski-michal	.	.	_modzelewski-michal--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/monczynski-roman	.	.	_monczynski-roman--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/monfreulle-roza-eleonora	.	.	_monfreulle-roza-eleonora--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/moniuszko-stanislaw	.	.	_moniuszko-stanislaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/moniuszko-stanislaw	.	.	_moniuszko-stanislaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/moniuszko-stanislaw	.	.	_moniuszko-stanislaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/monte-philippe-de	.	.	_monte-philippe-de--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/morales-cristobal-de	.	.	_morales-cristobal-de--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/morawski-jozef-bernard	.	.	_morawski-jozef-bernard--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/moulu-pierre	.	.	_moulu-pierre--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/mouton-jean	.	.	_mouton-jean--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/mrozowski-tadeusz	.	.	_mrozowski-tadeusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/mrozowski-tadeusz	.	.	_mrozowski-tadeusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/mucman-boleslaw	.	.	_mucman-boleslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/musialowski-jan	.	.	_musialowski-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/myslivecek-josef	.	.	_myslivecek-josef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/namieyski-jan	.	.	_namieyski-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/namyslowski-karol	.	.	_namyslowski-karol--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/namyslowski-karol	.	.	_namyslowski-karol--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/naumann-johann-gottlieb	.	.	_naumann-johann-gottlieb--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/neumann	.	.	_neumann--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/neumann-wawrzyniec	.	.	_neumann-wawrzyniec--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/nidecki-tomasz	.	.	_nidecki-tomasz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/niewiadomski-stanislaw	.	.	_niewiadomski-stanislaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/noskowski-zygmunt	.	.	_noskowski-zygmunt--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/noskowski-zygmunt	.	.	_noskowski-zygmunt--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/noskowski-zygmunt	.	.	_noskowski-zygmunt--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/nowakiewicz-kazimierz	.	.	_nowakiewicz-kazimierz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-stab/kern	polish/nowakiewicz-kazimierz	.	.	_nowakiewicz-kazimierz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/nowakowski-jozef	.	.	_nowakowski-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/nowakowski-jozef	.	.	_nowakowski-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/nowakowski-jozef	.	.	_nowakowski-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/nowicki-ludwik	.	.	_nowicki-ludwik--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/nowicki-ludwik	.	.	_nowicki-ludwik--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/oginski-michal-kleofas	.	.	_oginski-michal-kleofas--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/orda-napoleon	.	.	_orda-napoleon--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/orgas-annibale	.	.	_orgas-annibale--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/orlowski-antoni	.	.	_orlowski-antoni--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/orlowski-michal	.	.	_orlowski-michal--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/osmanski-wojciech	.	.	_osmanski-wojciech--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/ostrowski-jan	.	.	_ostrowski-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-gd/kern	polish/pacelli-asprilio	.	.	_pacelli-asprilio--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/pacelli-asprilio	.	.	_pacelli-asprilio--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/pachulski-henryk	.	.	_pachulski-henryk--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/paderewski-ignacy-jan	.	.	_paderewski-ignacy-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/palestrina-giovanni-pierluigi-da	.	.	_palestrina-giovanni-pierluigi-da--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/paszkiewicz-andrzej	.	.	_paszkiewicz-andrzej--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/pausch-eugen	.	.	_pausch-eugen--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-gd/kern	polish/pekiel-bartlomiej	.	.	_pekiel-bartlomiej--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/pekiel-bartlomiej	.	.	_pekiel-bartlomiej--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/pergolesi-giovanni-battista	.	.	_pergolesi-giovanni-battista--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/pichl-vaclav	.	.	_pichl-vaclav--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/pichler-johann-melchior	.	.	_pichler-johann-melchior--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/piotrowski-aleksander	.	.	_piotrowski-aleksander--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/piotrowski-franciszek	.	.	_piotrowski-franciszek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/pitoni-giuseppe-ottavio	.	.	_pitoni-giuseppe-ottavio--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/pleyel-ignace	.	.	_pleyel-ignace--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/pokorny-franz-xaver	.	.	_pokorny-franz-xaver--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/porta-costanzo	.	.	_porta-costanzo--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/potocka-emilia	.	.	_potocka-emilia--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/pottier-matthias	.	.	_pottier-matthias--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/puchalski	.	.	_puchalski--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/pugnani-gaetano	.	.	_pugnani-gaetano--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/pych-leopold	.	.	_pych-leopold--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	d-bnu/kern	polish/radziwill-antoni-henryk	.	.	_radziwill-antoni-henryk--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	d-dl/kern	polish/radziwill-antoni-henryk	.	.	_radziwill-antoni-henryk--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/raszek-waclaw	.	.	_raszek-waclaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/raszek-waclaw	.	.	_raszek-waclaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-stab/kern	polish/raszek-waclaw	.	.	_raszek-waclaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/rathgeber-johann-valentin	.	.	_rathgeber-johann-valentin--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/ratti-lorenzo	.	.	_ratti-lorenzo--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/renner-josef	.	.	_renner-josef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/rhein-carolo-de	.	.	_rhein-carolo-de--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/riccieri-giovanni-antonio	.	.	_riccieri-giovanni-antonio--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/richling	.	.	_richling--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/righini-vincenzo	.	.	_righini-vincenzo--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/rodowski-aleksander	.	.	_rodowski-aleksander--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-stab/kern	polish/rodowski-aleksander	.	.	_rodowski-aleksander--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/rossini-gioachino	.	.	_rossini-gioachino--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/rossochalski	.	.	_rossochalski--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/rothe	.	.	_rothe--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-gd/kern	polish/rozycki-jacek	.	.	_rozycki-jacek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/rozycki-jacek	.	.	_rozycki-jacek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/rozycki-ludomir	.	.	_rozycki-ludomir--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/rudkowski-mateusz	.	.	_rudkowski-mateusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/ruffo-vincenzo	.	.	_ruffo-vincenzo--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/ruggiero	.	.	_ruggiero--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/ruth-christian-joseph	.	.	_ruth-christian-joseph--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/rychling-wincenty-waclaw	.	.	_rychling-wincenty-waclaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/rygall-ignacy	.	.	_rygall-ignacy--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/rzepko-adolf	.	.	_rzepko-adolf--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/sabino-ippolito	.	.	_sabino-ippolito--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/sacchini-antonio	.	.	_sacchini-antonio--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/salepico-josquino	.	.	_salepico-josquino--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/salieri-antonio	.	.	_salieri-antonio--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/samin-vulfran	.	.	_samin-vulfran--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	d-b/kern	polish/scacchi-marco	.	.	_scacchi-marco--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kj/kern	polish/scacchi-marco	.	.	_scacchi-marco--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	s-uu/kern	polish/scacchi-marco	.	.	_scacchi-marco--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/schall-claus-nielsen	.	.	_schall-claus-nielsen--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/schiedermayr-johann-baptist	.	.	_schiedermayr-johann-baptist--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/scholenberger	.	.	_scholenberger--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/schopf	.	.	_schopf--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/schwertzer-j	.	.	_schwertzer-j--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/scigalski-franciszek	.	.	_scigalski-franciszek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/sebastian-z-felsztyna	.	.	_sebastian-z-felsztyna--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/senfl-ludwig	.	.	_senfl-ludwig--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/sieprawski-pawel	.	.	_sieprawski-pawel--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/sieroslawski-jozef	.	.	_sieroslawski-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/singenberger-johann-baptist	.	.	_singenberger-johann-baptist--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/siwinski-andrzej	.	.	_siwinski-andrzej--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/sloczynski-wojciech	.	.	_sloczynski-wojciech--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/smacierzynski	.	.	_smacierzynski--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/smietanski-emil-wladyslaw	.	.	_smietanski-emil-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-gd/kern	polish/sokol-andrzej	.	.	_sokol-andrzej--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/sonnenfeld-adolf-gustaw	.	.	_sonnenfeld-adolf-gustaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kj/kern	polish/sowinski-wojciech	.	.	_sowinski-wojciech--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/sowinski-wojciech	.	.	_sowinski-wojciech--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/sowinski-wojciech	.	.	_sowinski-wojciech--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-gd/kern	polish/stabile-annibale	.	.	_stabile-annibale--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/stachowicz-damian	.	.	_stachowicz-damian--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/staromiejski-j	.	.	_staromiejski-j--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/statkowski-tadeusz	.	.	_statkowski-tadeusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/stefani-jan	.	.	_stefani-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/stefani-jan	.	.	_stefani-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/stefani-jan	.	.	_stefani-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/stefani-jan	.	.	_stefani-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/stefani-jozef	.	.	_stefani-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/stefani-jozef	.	.	_stefani-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/stefani-jozef	.	.	_stefani-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/stefani-jozef	.	.	_stefani-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/stefani-p	.	.	_stefani-p--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/stojowski-zygmunt	.	.	_stojowski-zygmunt--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/stojowski-zygmunt	.	.	_stojowski-zygmunt--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/stolle	.	.	_stolle--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/stolpe-alojzy	.	.	_stolpe-alojzy--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/studzinski-karol	.	.	_studzinski-karol--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/studzinski-kazimierz	.	.	_studzinski-kazimierz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/studzinski-piotr	.	.	_studzinski-piotr--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/studzinski-wincenty	.	.	_studzinski-wincenty--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/studzinski-wincenty	.	.	_studzinski-wincenty--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/szadek-tomasz	.	.	_szadek-tomasz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/szarzynski-stanislaw-sylwester	.	.	_szarzynski-stanislaw-sylwester--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/szczurowski-jacek	.	.	_szczurowski-jacek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/szlagorski-walenty	.	.	_szlagorski-walenty--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/szymanowska-maria	.	.	_szymanowska-maria--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/szymanowska-maria	.	.	_szymanowska-maria--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/szymanowski-karol	.	.	_szymanowski-karol--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/szymanowski-karol	.	.	_szymanowski-karol--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/tarnowski-adam	.	.	_tarnowski-adam--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/teichmann-antoni	.	.	_teichmann-antoni--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/terzago-bernardino	.	.	_terzago-bernardino--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/toeschi-carl-joseph	.	.	_toeschi-carl-joseph--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/troschel	.	.	_troschel--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/troschel-wilhelm	.	.	_troschel-wilhelm--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/troschel-wilhelm	.	.	_troschel-wilhelm--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/turczynski-paschalis	.	.	_turczynski-paschalis--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/turowicz-ksawery	.	.	_turowicz-ksawery--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/tymolski-fabian	.	.	_tymolski-fabian--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/unicki	.	.	_unicki--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/vanhal-johann-baptist	.	.	_vanhal-johann-baptist--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/vinci-leonardo	.	.	_vinci-leonardo--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-gd/kern	polish/virchi-paolo	.	.	_virchi-paolo--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/vogel	.	.	_vogel--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/volckmer-augustin	.	.	_volckmer-augustin--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	d-mbs/kern	polish/waclaw-z-szamotul	.	.	_waclaw-z-szamotul--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/waclaw-z-szamotul	.	.	_waclaw-z-szamotul--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kozmzk/kern	polish/walczynski-franciszek	.	.	_walczynski-franciszek--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/wanski-jan	.	.	_wanski-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/wanski-jan	.	.	_wanski-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/wanski-jan	.	.	_wanski-jan--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/went-johann-nepomuk	.	.	_went-johann-nepomuk--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kj/kern	polish/wieniawski-henryk	.	.	_wieniawski-henryk--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/wieniawski-henryk	.	.	_wieniawski-henryk--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/wieniawski-jozef	.	.	_wieniawski-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/wieniawski-jozef	.	.	_wieniawski-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/wiltberger-august	.	.	_wiltberger-august--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/winter-peter-von	.	.	_winter-peter-von--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/witt-franz-xaver	.	.	_witt-franz-xaver--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/wolff-edward	.	.	_wolff-edward--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/woloszko-andrzej	.	.	_woloszko-andrzej--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/worobecki-jozef	.	.	_worobecki-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/wronowicz-maciej-h	.	.	_wronowicz-maciej-h--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/wronski-adam	.	.	_wronski-adam--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-stab/kern	polish/wygrzywalski-jozef	.	.	_wygrzywalski-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wtm/kern	polish/wysocki-kasper-napoleon	.	.	_wysocki-kasper-napoleon--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/zajaczkowski-roman	.	.	_zajaczkowski-roman--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/zandtfelder-nicolaus-joseph-ignatius	.	.	_zandtfelder-nicolaus-joseph-ignatius--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/zangl-johann-baptist	.	.	_zangl-johann-baptist--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kj/kern	polish/zarebski-juliusz	.	.	_zarebski-juliusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/zarebski-juliusz	.	.	_zarebski-juliusz--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/zarzycki-aleksander	.	.	_zarzycki-aleksander--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/zebrowski-marcin-jozef	.	.	_zebrowski-marcin-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-stab/kern	polish/zebrowski-marcin-jozef	.	.	_zebrowski-marcin-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/zeidler-jozef	.	.	_zeidler-jozef--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kj/kern	polish/zelenski-wladyslaw	.	.	_zelenski-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wn/kern	polish/zelenski-wladyslaw	.	.	_zelenski-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/zelenski-wladyslaw	.	.	_zelenski-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wumfc/kern	polish/zelenski-wladyslaw	.	.	_zelenski-wladyslaw--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-sa/kern	polish/ziegler	.	.	_ziegler--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/zieleniewicz-mathias	.	.	_zieleniewicz-mathias--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kc/kern	polish/zielenski-mikolaj	.	.	_zielenski-mikolaj--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-cz/kern	polish/zientarski-romuald-teodor	.	.	_zientarski-romuald-teodor--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-wnifc/kern	polish/zientarski-romuald-teodor	.	.	_zientarski-romuald-teodor--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	polish/zlotaszewski-jozef	.	.	_zlotaszewski-jozef--	.	.	s/_.*?--/_/
+!! Other pl-wnifc links:
+pl-wnifc	humdrum-polish-scores	pl-gd/kern	early-music/marenzio	.	.	_marenzio-luca--	.	.	s/_.*?--/_/
+pl-wnifc	humdrum-polish-scores	pl-kk/kern	early-music/marenzio	.	.	_marenzio-luca--	.	.	s/_.*?--/_/
 SEILSdataset	SEILSdataset	SEILSdataset/SEILS_diplomatic_OMRgroundTruth/choral	mensural/seils/chorals	.	.	\.mns$	.	.	.
 shanahdt	densmore	Densmore/acoma	songs/densmore/acoma	acoma	.krn	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
 !! Humdrum validation errors when prefixed with "!!":
@@ -200,6 +664,172 @@ shanahdt	densmore	Densmore/northern_ute	songs/densmore/northute	northute	.krn	\.
 shanahdt	densmore	Densmore/pawnee	songs/densmore/pawnee	.	.	\.krn$	.	.	s/^pawnee(\d\d\.)/pawnee0$1/; s/^pawnee(\d\.)/pawnee00$1/
 shanahdt	densmore	Densmore/seminole	songs/densmore/seminole	seminole	.krn	\.krn$	^[AT]	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
 shanahdt	densmore	Densmore/yuman	songs/densmore/yuman	yuman	.krn	\.krn$	^(^F|No_12[45]_)	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/agostini	.	.	--Agostini_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/albano	.	.	--Albano_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/alberti	.	.	--Alberti_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/asola	.	.	--Asola_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/bacchini	.	.	--Bacchini_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/baccusi	.	.	--Baccusi_	.	.	.
+TassoInMusicProject	tasso-scores	Tam/kern	early-music/balsamino	.	.	--Balsamino_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/barbarino	.	.	--Barbarino_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/bellanda	.	.	--Bellanda_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/bellasio	.	.	--Bellasio_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/bellaver	.	.	--Bellaver_	.	.	.
+TassoInMusicProject	tasso-scores	Tbv/kern	early-music/belli	.	.	--Belli_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/belli	.	.	--Belli_	.	.	.
+TassoInMusicProject	tasso-scores	Tam/kern	early-music/benedetti	.	.	--Benedetti_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/benedetti	.	.	--Benedetti_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/billi	.	.	--Billi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/bonelli	.	.	--Bonelli_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/bonini	.	.	--Bonini_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/borelli	.	.	--Borelli_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/borsaro	.	.	--Borsaro_	.	.	.
+TassoInMusicProject	tasso-scores	Tam/kern	early-music/boschetti	.	.	--Boschetti_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/boschetti	.	.	--Boschetti_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/bozi	.	.	--Bozi_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/camarella	.	.	--Camarella_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/cancineo	.	.	--Cancineo_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/cantino	.	.	--Cantino_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/capilupi	.	.	--Capilupi_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/caprioli	.	.	--Caprioli_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/castro	.	.	--Castro_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/cavatoni	.	.	--Cavatoni_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/cerbello	.	.	--Cerbello_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/cifra	.	.	--Cifra_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/cirullo	.	.	--Cirullo_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/civita	.	.	--Civita_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/clemsee	.	.	--Clemsee_	.	.	.
+TassoInMusicProject	tasso-scores	Tec/kern	early-music/coma	.	.	--Coma_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/corfini	.	.	--Corfini_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/cortellini	.	.	--Cortellini_	.	.	.
+TassoInMusicProject	tasso-scores	Tam/kern	early-music/dindia	.	.	--DIndia_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/dindia	.	.	--DIndia_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/dindia	.	.	--DIndia_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/dallacasa	.	.	--DallaCasa_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/dallagostena	.	.	--DallaGostena_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/dellarota	.	.	--DellaRota_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/dentice	.	.	--Dentice_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/dentice	.	.	--Dentice_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/dering	.	.	--Dering_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/dicostanzo	.	.	--DiCostanzo_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/dragoni	.	.	--Dragoni_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/duc	.	.	--Duc_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/dueto	.	.	--Dueto_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/effrem	.	.	--Effrem_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/eredi	.	.	--Eredi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/eremita	.	.	--Eremita_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/feliciani	.	.	--Feliciani_	.	.	.
+TassoInMusicProject	tasso-scores	Tri/kern	early-music/felis	.	.	--Felis_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/felis	.	.	--Felis_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/felix	.	.	--Felix_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/ferrabosco	.	.	--Ferrabosco_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/ferro	.	.	--Ferro_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/fonghetti	.	.	--Fonghetti_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/fontanelli	.	.	--Fontanelli_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/fornaci	.	.	--Fornaci_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/gabella	.	.	--Gabella_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/gallo	.	.	--Gallo_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/garzi	.	.	--Garzi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/gastoldi	.	.	--Gastoldi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/genvino	.	.	--Genvino_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/gesualdo	.	.	--Gesualdo_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/gherardini	.	.	--Gherardini_	.	.	.
+TassoInMusicProject	tasso-scores	Tam/kern	early-music/ghizzolo	.	.	--Ghizzolo_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/ghizzolo	.	.	--Ghizzolo_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/giovannelli	.	.	--Giovannelli_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/giramo	.	.	--Giramo_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/guami	.	.	--Guami_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/guami	.	.	--Guami_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/guelfi	.	.	--Guelfi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/hassler	.	.	--Hassler_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/hodemont	.	.	--Hodemont_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/ilverso	.	.	--IlVerso_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/ilverso	.	.	--IlVerso_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/ingegneri	.	.	--Ingegneri_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/isnardi	.	.	--Isnardi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/lambardi	.	.	--Lambardi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/landi	.	.	--Landi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/luzzaschi	.	.	--Luzzaschi_	.	.	.
+TassoInMusicProject	tasso-scores	Tam/kern	early-music/macigni	.	.	--Macigni_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/macigni	.	.	--Macigni_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/macque	.	.	--Macque_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/malpigli	.	.	--Malpigli_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/malvezzi	.	.	--Malvezzi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/mancini	.	.	--Mancini_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/marenzio	.	.	--Marenzio_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/marenzio	.	.	--Marenzio_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/marini	.	.	--Marini_	.	.	.
+TassoInMusicProject	tasso-scores	Tam/kern	early-music/marotta	.	.	--Marotta_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/masnelli	.	.	--Masnelli_	.	.	.
+TassoInMusicProject	tasso-scores	Tam/kern	early-music/massaino	.	.	--Massaino_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/massaino	.	.	--Massaino_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/massaino	.	.	--Massaino_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/mazza	.	.	--Mazza_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/mazzocchi	.	.	--Mazzocchi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/mel	.	.	--Mel_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/meldert	.	.	--Meldert_	.	.	.
+TassoInMusicProject	tasso-scores	Tam/kern	early-music/melli	.	.	--Melli_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/merulo	.	.	--Merulo_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/milleville	.	.	--Milleville_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/molinaro	.	.	--Molinaro_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/monte	.	.	--Monte_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/montella	.	.	--Montella_	.	.	.
+TassoInMusicProject	tasso-scores	Tco/kern	early-music/monteverdi	.	.	--Monteverdi_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/monteverdi	.	.	--Monteverdi_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/montverdi	.	.	--Montverdi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/naldi	.	.	--Naldi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/nanino	.	.	--Nanino_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/nanterni	.	.	--Nanterni_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/narducci	.	.	--Narducci_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/negri	.	.	--Negri_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/nenna	.	.	--Nenna_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/nielsen	.	.	--Nielsen_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/pallavicino	.	.	--Pallavicino_	.	.	.
+TassoInMusicProject	tasso-scores	Trt/kern	early-music/persone	.	.	--Persone_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/philips	.	.	--Philips_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/pordenon	.	.	--Pordenon_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/porta	.	.	--Porta_	.	.	.
+TassoInMusicProject	tasso-scores	Tam/kern	early-music/porto	.	.	--Porto_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/pozzo	.	.	--Pozzo_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/preti	.	.	--Preti_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/priuli	.	.	--Priuli_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/raval	.	.	--Raval_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/recalchi	.	.	--Recalchi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/ricci	.	.	--Ricci_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/ricci	.	.	--Ricci_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/roccia	.	.	--Roccia_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/roinci	.	.	--Roinci_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/sabbatini	.	.	--Sabbatini_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/salzilli	.	.	--Salzilli_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/santini	.	.	--Santini_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/saracini	.	.	--Saracini_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/scozzese	.	.	--Scozzese_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/serafico	.	.	--Serafico_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/spano	.	.	--Spano_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/stefani	.	.	--Stefani_	.	.	.
+TassoInMusicProject	tasso-scores	Tri/kern	early-music/stivori	.	.	--Stivori_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/stivori	.	.	--Stivori_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/striggio	.	.	--Striggio_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/torelli	.	.	--Torelli_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/torscianello	.	.	--Torscianello_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/tosone	.	.	--Tosone_	.	.	.
+TassoInMusicProject	tasso-scores	Tec/kern	early-music/tresti	.	.	--Tresti_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/tresti	.	.	--Tresti_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/vecchi	.	.	--Vecchi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/vecoli	.	.	--Vecoli_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/veggio	.	.	--Veggio_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/verdonck	.	.	--Verdonck_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/verso	.	.	--Verso_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/vignali	.	.	--Vignali_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/villani	.	.	--Villani_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/vinci	.	.	--Vinci_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/virchi	.	.	--Virchi_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/vittori	.	.	--Vittori_	.	.	.
+TassoInMusicProject	tasso-scores	Tec/kern	early-music/wert	.	.	--Wert_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/wert	.	.	--Wert_	.	.	.
+TassoInMusicProject	tasso-scores	Tsg/kern	early-music/wert	.	.	--Wert_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/zanotti	.	.	--Zanotti_	.	.	.
+TassoInMusicProject	tasso-scores	Trm/kern	early-music/zenaro	.	.	--Zenaro_	.	.	.
 WolfgangDrescher	lassus-geistliche-psalmen	kern	songs/psalms/lasso	lasso-0	.	.	.	.	.
 WolfgangDrescher	ulenberg-psalmen-davids	kern	songs/psalms/ulenberg	ulenberg-	.	.	.	.	.
 *-	*-	*-	*-	*-	*-	*-	*-

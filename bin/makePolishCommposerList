@@ -1,0 +1,104 @@
+#!/usr/bin/env perl
+#
+# Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
+# Creation Date: Sat Mar  9 23:50:11 PST 2024
+# Last Modified: Sun Mar 10 01:19:29 PDT 2024
+# Filename:      bin/makePolishComposerList
+# Syntax:        perl 5
+# vim:           ts=3:nowrap
+#
+# Description:   Convert POPC2 organization from library to composer.
+#
+
+use strict;
+
+die "Cannot find POPC2 files\n" if !-d "popc2";
+
+my @dirs = sort glob("popc2/*-*");
+
+my %composers = getComposerList(@dirs);
+
+my @keys = sort keys %composers;
+
+print "!!!OTL: Composers represented in Polish archives\n";
+print "!! vi", "m: ";
+print "ts=55:nowrap\n";
+print "**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar\n";
+
+foreach my $key (@keys) {
+	printComposerEntries($key, $composers{$key});
+}
+
+print "*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\t*-\n";
+
+exit(0);
+
+###########################################################################
+
+##############################
+##
+## printComposerEntries -- 
+##
+
+sub printComposerEntries {
+	my ($composer, $sigla) = @_;
+	my @subdirs = split(/\s+/, $sigla);
+	my $ghname  = "pl-wnifc";
+	my $ghrepo  = "humdrum-polish-scores";
+	my $from;
+	my $to      = "polish-composers/$composer";
+	my $prefix  = ".";
+	my $suffix  = ".";
+	my $filter  = "_$composer--";
+	my $xfilter = ".";
+	my $content = ".";
+	my $sar = "s/_.*?--/_/";
+	foreach my $sig (@subdirs) {
+		$from = "$sig/kern";
+		print "$ghname\t$ghrepo\t$from\t$to\t$prefix\t$suffix\t$filter\t$xfilter\t$content\t$sar\n";
+	}
+}
+
+
+
+##############################
+##
+## getComposerList -- Generate a list of the composers and the
+## libraries their scores are found in.
+##
+## Example filename:
+##     popc2/pl-cz/pl-cz--d-ii-27_elsner-jozef--gloria-et-honore.krn
+##
+
+sub getComposerList {
+	my @sigla = @_;
+	my %output;
+	foreach my $siglum (@sigla) {
+		if (!-d $siglum) {
+			warn "NOT A DIRECTORY: $siglum\n";
+			next;
+		}
+		my @files = sort glob("$siglum/*.krn");
+		foreach my $file (@files) {
+			my $sig = $file;
+			$sig =~ s/^popc2\///;
+			$sig =~ s/\/.*//;
+			next if $sig !~ /-/;
+			my $filename = $file;
+			$filename =~ s/.*\///;
+			next if $file !~ /_(.*?)--/;
+			my $composer = $1;
+			if (!$output{$composer}) {
+				$output{$composer} = $sig;
+				next;
+			}
+			if ($output{$composer} !~ /\b$sig\b/) {
+				$output{$composer} .= " $sig";
+			}
+		}
+	}
+	return %output;
+}
+
+
+
