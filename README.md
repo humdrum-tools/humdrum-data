@@ -18,8 +18,8 @@ your musical endeavors.  This introduction guides you through essential
 information, instructions for installation, and tips on customizing
 your dataset downloads.
 
-Currently this repository manages 25,275 files containing
-17,200,510 sounding notes, with a total file size of 362.5MB.
+Currently this repository manages 25,679 files containing
+17,989,078 sounding notes, with a total file size of 373.2MB.
 
 
 ## Summary ##
@@ -306,7 +306,7 @@ for the Mozart sonatas in the `sonatas` dataset:
 
 ```tsv
 !!!source:             https://github.com/craigsapp/mozart-piano-sonatas
-!!!download-date:      2024-03-11 13:52:22 -0700
+!!!download-date:      2024-03-11 18:54:39 -0700
 !!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/44330d18
 !!!last-commit-date:   2023-06-18 10:32:56 -0700
 !!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt
@@ -450,7 +450,7 @@ the main download list:
 | 338,549| 210| 2.8MB|  〃  | [humdrum-haydn-quartets](https://github.com/musedata/humdrum-haydn-quartets) |
 | 157,809| 24| 2.2MB|  〃  | [humdrum-haydn-symphonies](https://github.com/musedata/humdrum-haydn-symphonies) |
 | 151,828| 82| 1.3MB|  〃  | [humdrum-mozart-quartets](https://github.com/musedata/humdrum-mozart-quartets) |
-| 327,243| 108| 3.9MB| [pl-wnifc](https://github.com/pl-wnifc) | [humdrum-chopin-first-editions](https://github.com/pl-wnifc/humdrum-chopin-first-editions) |
+| 1,115,811| 512| 14.6MB| [pl-wnifc](https://github.com/pl-wnifc) | [humdrum-chopin-first-editions](https://github.com/pl-wnifc/humdrum-chopin-first-editions) |
 | 11,817,127| 7,821| 280.5MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
 | 17,163| 84| 739.2KB| [polyrhythm-project](https://github.com/polyrhythm-project) | [rds-scores](https://github.com/polyrhythm-project/rds-scores) |
 | 0| 30| 379.3KB| [SEILSdataset](https://github.com/SEILSdataset) | [SEILSdataset](https://github.com/SEILSdataset/SEILSdataset) |
@@ -637,6 +637,7 @@ of the results.
 234252	71	3.2MB	beethoven/quartet
 39597	8	487KB	chopin/ballade
 82354	42	1MB	chopin/etude
+1115811	512	14.6MB	chopin/first-editions
 54917	52	529.2KB	chopin/mazurkas
 105488	23	1.2MB	chopin/polonaise
 18705	24	162.4KB	chopin/preludes
@@ -1319,15 +1320,15 @@ of the results.
 504	42	21.5KB	tonerow/schoenberg
 252	21	10.9KB	tonerow/webern
 *-	*-	*-	*-
-!!!total-notes: 17200510
-!!!total-files: 25275
-!!!total-size: 366.2MB
+!!!total-notes: 17989078
+!!!total-files: 25679
+!!!total-size: 380.9MB
 ```
 
 </details>
 
-The complete repository-download set contains 25,275 files
-with a total of 17,200,510 sounding notes and total size of 362.5MB.
+The complete repository-download set contains 25,679 files
+with a total of 17,989,078 sounding notes and total size of 373.2MB.
 
 
 ## Implementation notes ##

@@ -22,10 +22,6 @@ my $LISTS = makeLists();
 # by downloaded repository:
 my $NOTE_COUNTS = `bin/getNoteCount --repo`;
 
-warn "==============================================\n";
-warn "$NOTE_COUNTS\n";
-warn "==============================================\n";
-
 # Prepare demo info file:
 die "Cannot find demo .info file\n" if !-r "mozart/piano/sonata/.info";
 chomp(my $DEMO_INFO = `cat mozart/piano/sonata/.info`);
@@ -36,10 +32,6 @@ my ($noteCount, $fileCount, $fileSize) = getCountInfo($NOTE_COUNTS);
 my %RepoInfo = getNoteCountDataByRepository($NOTE_COUNTS);
 
 $NOTE_COUNTS = removeRepoInfo($NOTE_COUNTS);
-
-warn "++++++++++++++++++++++++++++++++++++++++++++++\n";
-warn "$NOTE_COUNTS\n";
-warn "++++++++++++++++++++++++++++++++++++++++++++++\n";
 
 die "Problem: no repository counts\n" if $noteCount <= 0;
 

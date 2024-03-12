@@ -148,6 +148,7 @@ Computational-Cognitive-Musicology-Lab	MCFlow	Humdrum	songs/rap/mcflow	.	.	.	\.m
 jasonleeubc	Cantopop-corpus	.	songs/pop/cantonese	.	.krn	^C\d+$	.	.	s/^C/cpop-/
 josquin-research-project	Jos	.	early-music/josquin	.	.	.	^Jos2514	.	.
 pl-wnifc	humdrum-polish-scores	pl-wn/kern	songs/psalms/gomolka	.	.krn	melodiae-na-psalterz-polski	.	.	s/^(.*)(\d\d\d)_(.*)/gomolka-$2/
+pl-wnifc	humdrum-chopin-first-editions	kern	chopin/first-editions	.	.	.	.	.	.
 !! Some problems with AGN in some of the Nocturne files:
 !!pl-wnifc	humdrum-chopin-first-editions	kern	chopin/nocturne	nocturne-	.	.	.	^!!!AGN:.*Nocturne	.
 pl-wnifc	humdrum-chopin-first-editions	kern	chopin/etude	etude-	.	^(010|025)	.	^!!!AGN:.*Etude	.
