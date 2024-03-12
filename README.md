@@ -240,7 +240,7 @@ git pull
 
 to update the meta-repository.  This could possibly include additions
 to
-[`.lists/LIST.txt`](https://github.com/humdrum-tools/humdrum-data/blob/.lists/LIST.txt]
+[`.lists/LIST.txt`](https://github.com/humdrum-tools/humdrum-data/blob/.lists/LIST.txt)
 or new LIST files for data subsets.  Also, enhancements and bug
 fixes to the `Makefile` and scripts in the `bin` directory may be
 available through an update using `git pull`.
