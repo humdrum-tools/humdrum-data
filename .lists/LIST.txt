@@ -83,6 +83,7 @@ craigsapp	densmore-teton-sioux	kern	songs/densmore/sioux
 craigsapp	hummel-preludes	kern	hummel/preludes
 craigsapp	joplin	kern	joplin
 craigsapp	scarlatti-keyboard-sonatas	kern	scarlatti/sonata
+hleveillegauvin	KernScores	artofphrasing/kern	songs/trumpet/artofphrasing
 humdrum-tools	bach-wtc	kern	bach/wtc
 humdrum-tools	barbershop	kern	songs/harmonized/barbershop
 humdrum-tools	child-ballads	kern	songs/child-ballads
@@ -133,6 +134,7 @@ polyrhythm-project	rds-scores	kern	polyrhythm/rds
 !! Humdrum validation errors:
 !!shanahdt	smt_jazz_2019	omnibook_kern	jazz/omnibook
 *-	*-	*-	*-
+
 !!
 !! Repositories that need extra parameters:
 !!
@@ -145,6 +147,9 @@ craigsapp	haydn-piano-sonatas	kern	haydn/piano	haydn-	.	.	.	.	.
 craigsapp	beethoven-string-quartets	kern	beethoven/quartet	beethoven-	.	.	.	.	.
 Computational-Cognitive-Musicology-Lab	CoCoPops	RollingStone/Data	songs/pop/rollingstone	.	.	.	\.md$	.	.
 Computational-Cognitive-Musicology-Lab	MCFlow	Humdrum	songs/rap/mcflow	.	.	.	\.md$	.	.
+DDMAL	Flexible_harmonic_chorale_annotations	kernData	early-music/praetorius	.	.	Praetorius	.	.	s/^Chorales_//; s/P/p/g; s/_/-/g;
+hleveillegauvin	KernScores	JazzTrumpet/kern	songs/trumpet/jazz	.	.	.	.	.	s/[']//g
+hleveillegauvin	KernScores	JazzTrumpet/kern	songs/jazz/trumpet	.	.	.	.	.	s/[']//g
 jasonleeubc	Cantopop-corpus	.	songs/pop/cantonese	.	.krn	^C\d+$	.	.	s/^C/cpop-/
 josquin-research-project	Jos	.	early-music/josquin	.	.	.	^Jos2514	.	.
 pl-wnifc	humdrum-polish-scores	pl-wn/kern	songs/psalms/gomolka	.	.krn	melodiae-na-psalterz-polski	.	.	s/^(.*)(\d\d\d)_(.*)/gomolka-$2/
