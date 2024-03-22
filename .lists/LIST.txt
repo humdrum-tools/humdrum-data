@@ -75,6 +75,7 @@ ccarh	essen-folksong-collection	europa/sverige	songs/folksongs/essen/europa/sver
 ccarh	essen-folksong-collection	europa/tirol	songs/folksongs/essen/europa/tirol
 ccarh	essen-folksong-collection	europa/ukraina	songs/folksongs/essen/europa/ukraina
 Computational-Cognitive-Musicology-Lab	CoCoPops	Billboard/Data	songs/pop/billboard
+craigsapp	art-of-the-fugue	kern	bach/art-of-the-fugue
 craigsapp	bach-370-chorales	kern	bach/chorales-370
 craigsapp	chopin-mazurkas	kern	chopin/mazurkas
 craigsapp	chopin-preludes	kern	chopin/preludes
@@ -83,7 +84,7 @@ craigsapp	densmore-teton-sioux	kern	songs/densmore/sioux
 craigsapp	hummel-preludes	kern	hummel/preludes
 craigsapp	joplin	kern	joplin
 craigsapp	scarlatti-keyboard-sonatas	kern	scarlatti/sonata
-hleveillegauvin	KernScores	artofphrasing/kern	songs/trumpet/artofphrasing
+hleveillegauvin	KernScores	artofphrasing	songs/trumpet/artofphrasing
 humdrum-tools	bach-wtc	kern	bach/wtc
 humdrum-tools	barbershop	kern	songs/harmonized/barbershop
 humdrum-tools	child-ballads	kern	songs/child-ballads
@@ -139,17 +140,17 @@ polyrhythm-project	rds-scores	kern	polyrhythm/rds
 !! Repositories that need extra parameters:
 !!
 **ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar
-craigsapp	erk-liederschatz	kern	songs/harmonized/liederschatz	.	.	.	.	.	s/erk/liederschatz-/
-craigsapp	Musikalisches-Wuerfelspiel	.	mozart/dice	.	.	\.krn$	.	.	.
-craigsapp	mozart-piano-sonatas	kern	mozart/piano/sonata	mozart-	.	.	.	.	.
 craigsapp	beethoven-piano-sonatas	kern	beethoven/piano/sonata	beethoven-	.	.	.	.	.
-craigsapp	haydn-piano-sonatas	kern	haydn/piano	haydn-	.	.	.	.	.
 craigsapp	beethoven-string-quartets	kern	beethoven/quartet	beethoven-	.	.	.	.	.
+craigsapp	erk-liederschatz	kern	songs/harmonized/liederschatz	.	.	.	.	.	s/erk/liederschatz-/
+craigsapp	haydn-piano-sonatas	kern	haydn/piano	haydn-	.	.	.	.	.
+craigsapp	mozart-piano-sonatas	kern	mozart/piano/sonata	mozart-	.	.	.	.	.
+craigsapp	Musikalisches-Wuerfelspiel	.	mozart/dice	.	.	\.krn$	.	.	.
 Computational-Cognitive-Musicology-Lab	CoCoPops	RollingStone/Data	songs/pop/rollingstone	.	.	.	\.md$	.	.
 Computational-Cognitive-Musicology-Lab	MCFlow	Humdrum	songs/rap/mcflow	.	.	.	\.md$	.	.
 DDMAL	Flexible_harmonic_chorale_annotations	kernData	early-music/praetorius	.	.	Praetorius	.	.	s/^Chorales_//; s/P/p/g; s/_/-/g;
-hleveillegauvin	KernScores	JazzTrumpet/kern	songs/trumpet/jazz	.	.	.	.	.	s/[']//g
-hleveillegauvin	KernScores	JazzTrumpet/kern	songs/jazz/trumpet	.	.	.	.	.	s/[']//g
+hleveillegauvin	KernScores	JazzTrumpet/kern	songs/trumpet/jazz	.	.	.	.	.	s/\x{27}//g
+hleveillegauvin	KernScores	JazzTrumpet/kern	songs/jazz/trumpet	.	.	.	.	.	s/\x{27}//g
 jasonleeubc	Cantopop-corpus	.	songs/pop/cantonese	.	.krn	^C\d+$	.	.	s/^C/cpop-/
 josquin-research-project	Jos	.	early-music/josquin	.	.	.	^Jos2514	.	.
 pl-wnifc	humdrum-polish-scores	pl-wn/kern	songs/psalms/gomolka	.	.krn	melodiae-na-psalterz-polski	.	.	s/^(.*)(\d\d\d)_(.*)/gomolka-$2/

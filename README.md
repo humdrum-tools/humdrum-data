@@ -18,8 +18,8 @@ your musical endeavors.  This introduction guides you through essential
 information, instructions for installation, and tips on customizing
 your dataset downloads.
 
-Currently this repository manages 25,679 files containing
-17,989,078 sounding notes, with a total file size of 373.2MB.
+Currently this repository manages 25,877 files containing
+17,981,095 sounding notes, with a total file size of 372.4MB.
 
 
 ## Summary ##
@@ -306,7 +306,7 @@ for the Mozart sonatas in the `sonatas` dataset:
 
 ```tsv
 !!!source:             https://github.com/craigsapp/mozart-piano-sonatas
-!!!download-date:      2024-03-11 18:54:39 -0700
+!!!download-date:      2024-03-21 23:16:05 -0700
 !!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/44330d18
 !!!last-commit-date:   2023-06-18 10:32:56 -0700
 !!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt
@@ -394,11 +394,12 @@ the main download list:
 
 | Notes | Files | Size | Repository owner | Repository name |
 | ----- | ----- | ---- | ---------------- | --------------- |
-| 327,266| 345| 3.2MB| [benory](https://github.com/benory) | [1520s-project-scores](https://github.com/benory/1520s-project-scores) |
+| 332,507| 349| 3.3MB| [benory](https://github.com/benory) | [1520s-project-scores](https://github.com/benory/1520s-project-scores) |
 | 440,222| 8,379| 5.4MB| [ccarh](https://github.com/ccarh) | [essen-folksong-collection](https://github.com/ccarh/essen-folksong-collection) |
 | 145,084| 939| 12.9MB| [Computational-Cognitive-Musicology-Lab](https://github.com/Computational-Cognitive-Musicology-Lab) | [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops) |
 | 0| 124| 1.8MB|  〃  | [MCFlow](https://github.com/Computational-Cognitive-Musicology-Lab/MCFlow) |
 | 1,482| 1| 15.7KB| [craigsapp](https://github.com/craigsapp) | [Musikalisches-Wuerfelspiel](https://github.com/craigsapp/Musikalisches-Wuerfelspiel) |
+| 4,833| 4| 46.7KB|  〃  | [art-of-the-fugue](https://github.com/craigsapp/art-of-the-fugue) |
 | 84,624| 370| 931.9KB|  〃  | [bach-370-chorales](https://github.com/craigsapp/bach-370-chorales) |
 | 259,692| 103| 2.5MB|  〃  | [beethoven-piano-sonatas](https://github.com/craigsapp/beethoven-piano-sonatas) |
 | 234,252| 71| 3.2MB|  〃  | [beethoven-string-quartets](https://github.com/craigsapp/beethoven-string-quartets) |
@@ -412,6 +413,8 @@ the main download list:
 | 68,545| 47| 558KB|  〃  | [joplin](https://github.com/craigsapp/joplin) |
 | 96,637| 69| 972.8KB|  〃  | [mozart-piano-sonatas](https://github.com/craigsapp/mozart-piano-sonatas) |
 | 68,489| 65| 707.4KB|  〃  | [scarlatti-keyboard-sonatas](https://github.com/craigsapp/scarlatti-keyboard-sonatas) |
+| 43,274| 201| 231KB| [DDMAL](https://github.com/DDMAL) | [Flexible_harmonic_chorale_annotations](https://github.com/DDMAL/Flexible_harmonic_chorale_annotations) |
+| 3,419| 22| 33.3KB| [hleveillegauvin](https://github.com/hleveillegauvin) | [KernScores](https://github.com/hleveillegauvin/KernScores) |
 | 92,207| 96| 825.9KB| [humdrum-tools](https://github.com/humdrum-tools) | [bach-wtc](https://github.com/humdrum-tools/bach-wtc) |
 | 14,113| 33| 100.5KB|  〃  | [barbershop](https://github.com/humdrum-tools/barbershop) |
 | 1,824| 38| 25.2KB|  〃  | [child-ballads](https://github.com/humdrum-tools/child-ballads) |
@@ -436,7 +439,7 @@ the main download list:
 | 102,339| 110| 1.9MB|  〃  | [Gas](https://github.com/josquin-research-project/Gas) |
 | 10,297| 5| 105.3KB|  〃  | [Isa](https://github.com/josquin-research-project/Isa) |
 | 9,835| 22| 93.6KB|  〃  | [Jap](https://github.com/josquin-research-project/Jap) |
-| 499,288| 475| 6MB|  〃  | [Jos](https://github.com/josquin-research-project/Jos) |
+| 499,289| 475| 6MB|  〃  | [Jos](https://github.com/josquin-research-project/Jos) |
 | 95,605| 122| 877.9KB|  〃  | [Mar](https://github.com/josquin-research-project/Mar) |
 | 23,603| 15| 233.1KB|  〃  | [Obr](https://github.com/josquin-research-project/Obr) |
 | 87,879| 98| 1.1MB|  〃  | [Oke](https://github.com/josquin-research-project/Oke) |
@@ -451,7 +454,7 @@ the main download list:
 | 157,809| 24| 2.2MB|  〃  | [humdrum-haydn-symphonies](https://github.com/musedata/humdrum-haydn-symphonies) |
 | 151,828| 82| 1.3MB|  〃  | [humdrum-mozart-quartets](https://github.com/musedata/humdrum-mozart-quartets) |
 | 1,115,811| 512| 14.6MB| [pl-wnifc](https://github.com/pl-wnifc) | [humdrum-chopin-first-editions](https://github.com/pl-wnifc/humdrum-chopin-first-editions) |
-| 11,817,127| 7,821| 280.5MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
+| 11,752,376| 7,788| 279.4MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
 | 17,163| 84| 739.2KB| [polyrhythm-project](https://github.com/polyrhythm-project) | [rds-scores](https://github.com/polyrhythm-project/rds-scores) |
 | 0| 30| 379.3KB| [SEILSdataset](https://github.com/SEILSdataset) | [SEILSdataset](https://github.com/SEILSdataset/SEILSdataset) |
 | 65,787| 915| 987.8KB| [shanahdt](https://github.com/shanahdt) | [densmore](https://github.com/shanahdt/densmore) |
@@ -629,6 +632,7 @@ of the results.
 
 ```
 **notes	**files	**size	**directory
+4833	4	46.7KB	bach/art-of-the-fugue
 103866	21	1MB	bach/brandenburg
 84624	370	931.9KB	bach/chorales-370
 8266	15	60.5KB	bach/inventions
@@ -745,12 +749,12 @@ of the results.
 3930	7	31KB	early-music/jacotin
 12814	9	108.9KB	early-music/janmaistre
 9835	22	93.6KB	early-music/japart
-499288	475	6MB	early-music/josquin
+499289	475	6MB	early-music/josquin
 834	7	41.2KB	early-music/lambardi
 377	1	7.4KB	early-music/landi
 200915	172	2MB	early-music/larue
 1582	1	13.6KB	early-music/lasantier
-18962	16	159.7KB	early-music/lheritier
+20696	17	175.3KB	early-music/lheritier
 4167	3	33.5KB	early-music/lupi
 6207	7	54.2KB	early-music/lupus
 3459	5	71.7KB	early-music/luzzaschi
@@ -797,6 +801,7 @@ of the results.
 2186	2	41.5KB	early-music/porta
 630	1	10.1KB	early-music/porto
 1486	2	28.3KB	early-music/pozzo
+43274	201	231KB	early-music/praetorius
 644	1	11.4KB	early-music/preti
 1745	2	33.5KB	early-music/priuli
 1292	1	21.8KB	early-music/raval
@@ -812,7 +817,7 @@ of the results.
 549	1	10.3KB	early-music/santini
 171	1	5.6KB	early-music/saracini
 905	1	17.3KB	early-music/scozzese
-23809	35	400.3KB	early-music/senfl
+27316	38	460.1KB	early-music/senfl
 107	1	6.5KB	early-music/serafico
 7902	12	75.2KB	early-music/sermisy
 10187	10	92.8KB	early-music/silva
@@ -1037,7 +1042,7 @@ of the results.
 5083	1	91.8KB	polish/krzewdzienski-pawel
 1960	1	33KB	polish/krzykowski-f
 53437	21	1.2MB	polish/kuci-mateusz
-72624	39	1.4MB	polish/kurpinski-karol-kazimierz
+7873	6	184KB	polish/kurpinski-karol-kazimierz
 2388	1	32.6KB	polish/kuttricz-lania
 2218	3	44.3KB	polish/lachner-ignaz
 2371	2	42KB	polish/lada-kazimierz
@@ -1308,6 +1313,7 @@ of the results.
 7543	29	51.6KB	songs/gershwin
 14113	33	100.5KB	songs/harmonized/barbershop
 62741	232	538.2KB	songs/harmonized/liederschatz
+2446	9	16.7KB	songs/jazz/trumpet
 8552	152	150.9KB	songs/nova-scotia
 85477	739	9.4MB	songs/pop/billboard
 39729	105	805.6KB	songs/pop/cantonese
@@ -1316,19 +1322,21 @@ of the results.
 13018	50	268.7KB	songs/psalms/lasso
 2612	50	78.7KB	songs/psalms/ulenberg
 4842	35	59.9KB	songs/schubert
+973	13	16.6KB	songs/trumpet/artofphrasing
+2446	9	16.7KB	songs/trumpet/jazz
 276	23	11.3KB	tonerow/berg
 504	42	21.5KB	tonerow/schoenberg
 252	21	10.9KB	tonerow/webern
 *-	*-	*-	*-
-!!!total-notes: 17989078
-!!!total-files: 25679
-!!!total-size: 380.9MB
+!!!total-notes: 17981095
+!!!total-files: 25877
+!!!total-size: 380.1MB
 ```
 
 </details>
 
-The complete repository-download set contains 25,679 files
-with a total of 17,989,078 sounding notes and total size of 373.2MB.
+The complete repository-download set contains 25,877 files
+with a total of 17,981,095 sounding notes and total size of 372.4MB.
 
 
 ## Implementation notes ##
