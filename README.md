@@ -18,8 +18,8 @@ your musical endeavors.  This introduction guides you through essential
 information, instructions for installation, and tips on customizing
 your dataset downloads.
 
-Currently this repository manages 25,877 files containing
-17,981,095 sounding notes, with a total file size of 372.4MB.
+Currently this repository manages 25,920 files containing
+18,062,637 sounding notes, with a total file size of 373.8MB.
 
 
 ## Summary ##
@@ -306,7 +306,7 @@ for the Mozart sonatas in the `sonatas` dataset:
 
 ```tsv
 !!!source:             https://github.com/craigsapp/mozart-piano-sonatas
-!!!download-date:      2024-03-21 23:16:05 -0700
+!!!download-date:      2024-03-24 13:46:27 -0700
 !!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/44330d18
 !!!last-commit-date:   2023-06-18 10:32:56 -0700
 !!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt
@@ -399,7 +399,7 @@ the main download list:
 | 145,084| 939| 12.9MB| [Computational-Cognitive-Musicology-Lab](https://github.com/Computational-Cognitive-Musicology-Lab) | [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops) |
 | 0| 124| 1.8MB|  〃  | [MCFlow](https://github.com/Computational-Cognitive-Musicology-Lab/MCFlow) |
 | 1,482| 1| 15.7KB| [craigsapp](https://github.com/craigsapp) | [Musikalisches-Wuerfelspiel](https://github.com/craigsapp/Musikalisches-Wuerfelspiel) |
-| 4,833| 4| 46.7KB|  〃  | [art-of-the-fugue](https://github.com/craigsapp/art-of-the-fugue) |
+| 21,624| 14| 197.8KB|  〃  | [art-of-the-fugue](https://github.com/craigsapp/art-of-the-fugue) |
 | 84,624| 370| 931.9KB|  〃  | [bach-370-chorales](https://github.com/craigsapp/bach-370-chorales) |
 | 259,692| 103| 2.5MB|  〃  | [beethoven-piano-sonatas](https://github.com/craigsapp/beethoven-piano-sonatas) |
 | 234,252| 71| 3.2MB|  〃  | [beethoven-string-quartets](https://github.com/craigsapp/beethoven-string-quartets) |
@@ -454,7 +454,7 @@ the main download list:
 | 157,809| 24| 2.2MB|  〃  | [humdrum-haydn-symphonies](https://github.com/musedata/humdrum-haydn-symphonies) |
 | 151,828| 82| 1.3MB|  〃  | [humdrum-mozart-quartets](https://github.com/musedata/humdrum-mozart-quartets) |
 | 1,115,811| 512| 14.6MB| [pl-wnifc](https://github.com/pl-wnifc) | [humdrum-chopin-first-editions](https://github.com/pl-wnifc/humdrum-chopin-first-editions) |
-| 11,752,376| 7,788| 279.4MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
+| 11,817,127| 7,821| 280.5MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
 | 17,163| 84| 739.2KB| [polyrhythm-project](https://github.com/polyrhythm-project) | [rds-scores](https://github.com/polyrhythm-project/rds-scores) |
 | 0| 30| 379.3KB| [SEILSdataset](https://github.com/SEILSdataset) | [SEILSdataset](https://github.com/SEILSdataset/SEILSdataset) |
 | 65,787| 915| 987.8KB| [shanahdt](https://github.com/shanahdt) | [densmore](https://github.com/shanahdt/densmore) |
@@ -632,7 +632,7 @@ of the results.
 
 ```
 **notes	**files	**size	**directory
-4833	4	46.7KB	bach/art-of-the-fugue
+21624	14	197.8KB	bach/art-of-the-fugue
 103866	21	1MB	bach/brandenburg
 84624	370	931.9KB	bach/chorales-370
 8266	15	60.5KB	bach/inventions
@@ -1042,7 +1042,7 @@ of the results.
 5083	1	91.8KB	polish/krzewdzienski-pawel
 1960	1	33KB	polish/krzykowski-f
 53437	21	1.2MB	polish/kuci-mateusz
-7873	6	184KB	polish/kurpinski-karol-kazimierz
+72624	39	1.4MB	polish/kurpinski-karol-kazimierz
 2388	1	32.6KB	polish/kuttricz-lania
 2218	3	44.3KB	polish/lachner-ignaz
 2371	2	42KB	polish/lada-kazimierz
@@ -1328,15 +1328,15 @@ of the results.
 504	42	21.5KB	tonerow/schoenberg
 252	21	10.9KB	tonerow/webern
 *-	*-	*-	*-
-!!!total-notes: 17981095
-!!!total-files: 25877
-!!!total-size: 380.1MB
+!!!total-notes: 18062637
+!!!total-files: 25920
+!!!total-size: 381.4MB
 ```
 
 </details>
 
-The complete repository-download set contains 25,877 files
-with a total of 17,981,095 sounding notes and total size of 372.4MB.
+The complete repository-download set contains 25,920 files
+with a total of 18,062,637 sounding notes and total size of 373.8MB.
 
 
 ## Implementation notes ##
