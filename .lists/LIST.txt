@@ -77,6 +77,7 @@ ccarh	essen-folksong-collection	europa/ukraina	songs/folksongs/essen/europa/ukra
 Computational-Cognitive-Musicology-Lab	CoCoPops	Billboard/Data	songs/pop/billboard
 craigsapp	art-of-the-fugue	kern	bach/art-of-the-fugue
 craigsapp	bach-370-chorales	kern	bach/chorales-370
+craigsapp	bach-musical-offering	kern	bach/musical-offering
 craigsapp	chopin-mazurkas	kern	chopin/mazurkas
 craigsapp	chopin-preludes	kern	chopin/preludes
 craigsapp	creighton-nova-scotia	kern	songs/nova-scotia
