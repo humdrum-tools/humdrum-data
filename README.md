@@ -18,8 +18,8 @@ your musical endeavors.  This introduction guides you through essential
 information, instructions for installation, and tips on customizing
 your dataset downloads.
 
-Currently this repository manages 25,926 files containing
-18,071,495 sounding notes, with a total file size of 373.9MB.
+Currently this repository manages 25,945 files containing
+18,089,153 sounding notes, with a total file size of 374.1MB.
 
 
 ## Summary ##
@@ -306,7 +306,7 @@ for the Mozart sonatas in the `sonatas` dataset:
 
 ```tsv
 !!!source:             https://github.com/craigsapp/mozart-piano-sonatas
-!!!download-date:      2024-03-28 08:14:00 -0700
+!!!download-date:      2024-03-31 15:36:23 -0700
 !!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/44330d18
 !!!last-commit-date:   2023-06-18 10:32:56 -0700
 !!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt
@@ -399,8 +399,9 @@ the main download list:
 | 145,084| 939| 12.9MB| [Computational-Cognitive-Musicology-Lab](https://github.com/Computational-Cognitive-Musicology-Lab) | [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops) |
 | 0| 124| 1.8MB|  〃  | [MCFlow](https://github.com/Computational-Cognitive-Musicology-Lab/MCFlow) |
 | 1,482| 1| 15.7KB| [craigsapp](https://github.com/craigsapp) | [Musikalisches-Wuerfelspiel](https://github.com/craigsapp/Musikalisches-Wuerfelspiel) |
-| 30,482| 20| 297.9KB|  〃  | [art-of-the-fugue](https://github.com/craigsapp/art-of-the-fugue) |
+| 30,482| 20| 298.5KB|  〃  | [art-of-the-fugue](https://github.com/craigsapp/art-of-the-fugue) |
 | 84,624| 370| 953.9KB|  〃  | [bach-370-chorales](https://github.com/craigsapp/bach-370-chorales) |
+| 8,347| 4| 82.9KB|  〃  | [bach-musical-offering](https://github.com/craigsapp/bach-musical-offering) |
 | 259,692| 103| 2.5MB|  〃  | [beethoven-piano-sonatas](https://github.com/craigsapp/beethoven-piano-sonatas) |
 | 234,252| 71| 3.2MB|  〃  | [beethoven-string-quartets](https://github.com/craigsapp/beethoven-string-quartets) |
 | 54,917| 52| 529.2KB|  〃  | [chopin-mazurkas](https://github.com/craigsapp/chopin-mazurkas) |
@@ -420,7 +421,7 @@ the main download list:
 | 1,824| 38| 25.2KB|  〃  | [child-ballads](https://github.com/humdrum-tools/child-ballads) |
 | 4,599| 38| 30.6KB|  〃  | [foster-songs](https://github.com/humdrum-tools/foster-songs) |
 | 7,543| 29| 51.6KB|  〃  | [gershwin-songs](https://github.com/humdrum-tools/gershwin-songs) |
-| 8,266| 15| 60.5KB|  〃  | [inventions](https://github.com/humdrum-tools/inventions) |
+| 17,577| 30| 151.6KB|  〃  | [inventions](https://github.com/humdrum-tools/inventions) |
 | 9,145| 60| 76.7KB|  〃  | [liber-usualis](https://github.com/humdrum-tools/liber-usualis) |
 | 338,788| 1,995| 8.5MB|  〃  | [liber-usualis-ddmal](https://github.com/humdrum-tools/liber-usualis-ddmal) |
 | 4,842| 35| 59.9KB|  〃  | [schubert-songs](https://github.com/humdrum-tools/schubert-songs) |
@@ -632,10 +633,11 @@ of the results.
 
 ```
 **notes	**files	**size	**directory
-30482	20	297.9KB	bach/art-of-the-fugue
+30482	20	298.5KB	bach/art-of-the-fugue
 103866	21	1MB	bach/brandenburg
 84624	370	953.9KB	bach/chorales-370
-8266	15	60.5KB	bach/inventions
+17577	30	151.6KB	bach/inventions
+8347	4	82.9KB	bach/musical-offering
 92207	96	825.9KB	bach/wtc
 259692	103	2.5MB	beethoven/piano/sonata
 234252	71	3.2MB	beethoven/quartet
@@ -1328,15 +1330,15 @@ of the results.
 504	42	21.5KB	tonerow/schoenberg
 252	21	10.9KB	tonerow/webern
 *-	*-	*-	*-
-!!!total-notes: 18071495
-!!!total-files: 25926
-!!!total-size: 381.5MB
+!!!total-notes: 18089153
+!!!total-files: 25945
+!!!total-size: 381.7MB
 ```
 
 </details>
 
-The complete repository-download set contains 25,926 files
-with a total of 18,071,495 sounding notes and total size of 373.9MB.
+The complete repository-download set contains 25,945 files
+with a total of 18,089,153 sounding notes and total size of 374.1MB.
 
 
 ## Implementation notes ##
