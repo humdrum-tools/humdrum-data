@@ -132,6 +132,7 @@ musedata	humdrum-corelli	op6	corelli
 musedata	humdrum-haydn-quartets	kern	haydn/quartet
 musedata	humdrum-mozart-quartets	kern	mozart/quartet
 musedata	humdrum-haydn-symphonies	kern	haydn/symphony
+musedata	vivaldi	op01/kern	vivaldi/op01
 polyrhythm-project	rds-scores	kern	polyrhythm/rds
 !! Humdrum validation errors:
 !!shanahdt	smt_jazz_2019	omnibook_kern	jazz/omnibook

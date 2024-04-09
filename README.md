@@ -18,8 +18,8 @@ your musical endeavors.  This introduction guides you through essential
 information, instructions for installation, and tips on customizing
 your dataset downloads.
 
-Currently this repository manages 25,945 files containing
-18,089,153 sounding notes, with a total file size of 374.1MB.
+Currently this repository manages 25,990 files containing
+18,107,194 sounding notes, with a total file size of 374.3MB.
 
 
 ## Summary ##
@@ -340,6 +340,7 @@ for the Mozart sonatas in the `sonatas` dataset:
 !!
 **sound	**files	**bytes	**branch	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar
 96637	69	996160	main	kern	mozart/piano/sonata	mozart-	.	.	.	.	.
+96637	0	0	main	kern	mozart/piano/sonata	mozart-	.	.	.	.	.
 *-	*-	*-	*-	*-	*	*-	*-	*-	*-	*-	*-
 ```
 
@@ -454,6 +455,7 @@ the main download list:
 | 338,549| 210| 2.8MB|  〃  | [humdrum-haydn-quartets](https://github.com/musedata/humdrum-haydn-quartets) |
 | 157,809| 24| 2.2MB|  〃  | [humdrum-haydn-symphonies](https://github.com/musedata/humdrum-haydn-symphonies) |
 | 151,828| 82| 1.3MB|  〃  | [humdrum-mozart-quartets](https://github.com/musedata/humdrum-mozart-quartets) |
+| 18,041| 45| 275.2KB|  〃  | [vivaldi](https://github.com/musedata/vivaldi) |
 | 1,115,811| 512| 14.6MB| [pl-wnifc](https://github.com/pl-wnifc) | [humdrum-chopin-first-editions](https://github.com/pl-wnifc/humdrum-chopin-first-editions) |
 | 11,817,127| 7,821| 280.5MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
 | 17,163| 84| 739.2KB| [polyrhythm-project](https://github.com/polyrhythm-project) | [rds-scores](https://github.com/polyrhythm-project/rds-scores) |
@@ -1329,16 +1331,17 @@ of the results.
 276	23	11.3KB	tonerow/berg
 504	42	21.5KB	tonerow/schoenberg
 252	21	10.9KB	tonerow/webern
+18041	45	275.2KB	vivaldi/op01
 *-	*-	*-	*-
-!!!total-notes: 18089153
-!!!total-files: 25945
-!!!total-size: 381.7MB
+!!!total-notes: 18107194
+!!!total-files: 25990
+!!!total-size: 382MB
 ```
 
 </details>
 
-The complete repository-download set contains 25,945 files
-with a total of 18,089,153 sounding notes and total size of 374.1MB.
+The complete repository-download set contains 25,990 files
+with a total of 18,107,194 sounding notes and total size of 374.3MB.
 
 
 ## Implementation notes ##
