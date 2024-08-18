@@ -18,8 +18,8 @@ your musical endeavors.  This introduction guides you through essential
 information, instructions for installation, and tips on customizing
 your dataset downloads.
 
-Currently this repository manages 25,990 files containing
-18,107,194 sounding notes, with a total file size of 374.3MB.
+Currently this repository manages 26,150 files containing
+18,300,581 sounding notes, with a total file size of 378.9MB.
 
 
 ## Summary ##
@@ -306,9 +306,9 @@ for the Mozart sonatas in the `sonatas` dataset:
 
 ```tsv
 !!!source:             https://github.com/craigsapp/mozart-piano-sonatas
-!!!download-date:      2024-03-31 15:36:23 -0700
-!!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/44330d18
-!!!last-commit-date:   2023-06-18 10:32:56 -0700
+!!!download-date:      2024-08-17 19:50:38 -0700
+!!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/71b5b1f2
+!!!last-commit-date:   2024-06-06 23:51:39 -0700
 !!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt
 !!!repository-readme:  https://github.com/craigsapp/mozart-piano-sonatas/blob/main/README.md
 !! vim:                ts=39:nowrap
@@ -339,8 +339,7 @@ for the Mozart sonatas in the `sonatas` dataset:
 !!                can be given, separated by semicolons (;).
 !!
 **sound	**files	**bytes	**branch	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar
-96637	69	996160	main	kern	mozart/piano/sonata	mozart-	.	.	.	.	.
-96637	0	0	main	kern	mozart/piano/sonata	mozart-	.	.	.	.	.
+96635	69	1027353	main	kern	mozart/piano/sonata	mozart-	.	.	.	.	.
 *-	*-	*-	*-	*-	*	*-	*-	*-	*-	*-	*-
 ```
 
@@ -395,14 +394,14 @@ the main download list:
 
 | Notes | Files | Size | Repository owner | Repository name |
 | ----- | ----- | ---- | ---------------- | --------------- |
-| 332,507| 349| 3.3MB| [benory](https://github.com/benory) | [1520s-project-scores](https://github.com/benory/1520s-project-scores) |
+| 386,688| 399| 3.8MB| [benory](https://github.com/benory) | [1520s-project-scores](https://github.com/benory/1520s-project-scores) |
 | 440,222| 8,379| 5.4MB| [ccarh](https://github.com/ccarh) | [essen-folksong-collection](https://github.com/ccarh/essen-folksong-collection) |
 | 145,084| 939| 12.9MB| [Computational-Cognitive-Musicology-Lab](https://github.com/Computational-Cognitive-Musicology-Lab) | [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops) |
 | 0| 124| 1.8MB|  〃  | [MCFlow](https://github.com/Computational-Cognitive-Musicology-Lab/MCFlow) |
 | 1,482| 1| 15.7KB| [craigsapp](https://github.com/craigsapp) | [Musikalisches-Wuerfelspiel](https://github.com/craigsapp/Musikalisches-Wuerfelspiel) |
-| 30,482| 20| 298.5KB|  〃  | [art-of-the-fugue](https://github.com/craigsapp/art-of-the-fugue) |
-| 84,624| 370| 953.9KB|  〃  | [bach-370-chorales](https://github.com/craigsapp/bach-370-chorales) |
-| 8,347| 4| 82.9KB|  〃  | [bach-musical-offering](https://github.com/craigsapp/bach-musical-offering) |
+| 30,482| 20| 299.3KB|  〃  | [art-of-the-fugue](https://github.com/craigsapp/art-of-the-fugue) |
+| 84,624| 370| 1004.5KB|  〃  | [bach-370-chorales](https://github.com/craigsapp/bach-370-chorales) |
+| 10,850| 6| 112.7KB|  〃  | [bach-musical-offering](https://github.com/craigsapp/bach-musical-offering) |
 | 259,692| 103| 2.5MB|  〃  | [beethoven-piano-sonatas](https://github.com/craigsapp/beethoven-piano-sonatas) |
 | 234,252| 71| 3.2MB|  〃  | [beethoven-string-quartets](https://github.com/craigsapp/beethoven-string-quartets) |
 | 54,917| 52| 529.2KB|  〃  | [chopin-mazurkas](https://github.com/craigsapp/chopin-mazurkas) |
@@ -413,8 +412,8 @@ the main download list:
 | 35,349| 25| 376.4KB|  〃  | [haydn-piano-sonatas](https://github.com/craigsapp/haydn-piano-sonatas) |
 | 3,320| 24| 53.4KB|  〃  | [hummel-preludes](https://github.com/craigsapp/hummel-preludes) |
 | 68,545| 47| 558KB|  〃  | [joplin](https://github.com/craigsapp/joplin) |
-| 96,637| 69| 972.8KB|  〃  | [mozart-piano-sonatas](https://github.com/craigsapp/mozart-piano-sonatas) |
-| 68,489| 65| 707.4KB|  〃  | [scarlatti-keyboard-sonatas](https://github.com/craigsapp/scarlatti-keyboard-sonatas) |
+| 96,635| 69| 1003.3KB|  〃  | [mozart-piano-sonatas](https://github.com/craigsapp/mozart-piano-sonatas) |
+| 68,489| 65| 739.7KB|  〃  | [scarlatti-keyboard-sonatas](https://github.com/craigsapp/scarlatti-keyboard-sonatas) |
 | 43,274| 201| 231KB| [DDMAL](https://github.com/DDMAL) | [Flexible_harmonic_chorale_annotations](https://github.com/DDMAL/Flexible_harmonic_chorale_annotations) |
 | 3,419| 22| 33.3KB| [hleveillegauvin](https://github.com/hleveillegauvin) | [KernScores](https://github.com/hleveillegauvin/KernScores) |
 | 92,207| 96| 825.9KB| [humdrum-tools](https://github.com/humdrum-tools) | [bach-wtc](https://github.com/humdrum-tools/bach-wtc) |
@@ -422,7 +421,7 @@ the main download list:
 | 1,824| 38| 25.2KB|  〃  | [child-ballads](https://github.com/humdrum-tools/child-ballads) |
 | 4,599| 38| 30.6KB|  〃  | [foster-songs](https://github.com/humdrum-tools/foster-songs) |
 | 7,543| 29| 51.6KB|  〃  | [gershwin-songs](https://github.com/humdrum-tools/gershwin-songs) |
-| 17,577| 30| 151.6KB|  〃  | [inventions](https://github.com/humdrum-tools/inventions) |
+| 17,577| 30| 152.8KB|  〃  | [inventions](https://github.com/humdrum-tools/inventions) |
 | 9,145| 60| 76.7KB|  〃  | [liber-usualis](https://github.com/humdrum-tools/liber-usualis) |
 | 338,788| 1,995| 8.5MB|  〃  | [liber-usualis-ddmal](https://github.com/humdrum-tools/liber-usualis-ddmal) |
 | 4,842| 35| 59.9KB|  〃  | [schubert-songs](https://github.com/humdrum-tools/schubert-songs) |
@@ -435,13 +434,13 @@ the main download list:
 | 33,458| 68| 363.9KB|  〃  | [Bus](https://github.com/josquin-research-project/Bus) |
 | 10,941| 27| 101KB|  〃  | [Com](https://github.com/josquin-research-project/Com) |
 | 7,608| 5| 164.1KB|  〃  | [Das](https://github.com/josquin-research-project/Das) |
-| 34,742| 37| 684.9KB|  〃  | [Duf](https://github.com/josquin-research-project/Duf) |
+| 34,742| 37| 685KB|  〃  | [Duf](https://github.com/josquin-research-project/Duf) |
 | 1,150| 2| 16.3KB|  〃  | [Fry](https://github.com/josquin-research-project/Fry) |
 | 5,895| 5| 111.3KB|  〃  | [Fva](https://github.com/josquin-research-project/Fva) |
 | 102,339| 110| 1.9MB|  〃  | [Gas](https://github.com/josquin-research-project/Gas) |
 | 10,297| 5| 105.3KB|  〃  | [Isa](https://github.com/josquin-research-project/Isa) |
 | 9,835| 22| 93.6KB|  〃  | [Jap](https://github.com/josquin-research-project/Jap) |
-| 499,289| 475| 6MB|  〃  | [Jos](https://github.com/josquin-research-project/Jos) |
+| 499,273| 475| 6.1MB|  〃  | [Jos](https://github.com/josquin-research-project/Jos) |
 | 95,605| 122| 877.9KB|  〃  | [Mar](https://github.com/josquin-research-project/Mar) |
 | 23,603| 15| 233.1KB|  〃  | [Obr](https://github.com/josquin-research-project/Obr) |
 | 87,879| 98| 1.1MB|  〃  | [Oke](https://github.com/josquin-research-project/Oke) |
@@ -455,10 +454,10 @@ the main download list:
 | 338,549| 210| 2.8MB|  〃  | [humdrum-haydn-quartets](https://github.com/musedata/humdrum-haydn-quartets) |
 | 157,809| 24| 2.2MB|  〃  | [humdrum-haydn-symphonies](https://github.com/musedata/humdrum-haydn-symphonies) |
 | 151,828| 82| 1.3MB|  〃  | [humdrum-mozart-quartets](https://github.com/musedata/humdrum-mozart-quartets) |
-| 18,041| 45| 275.2KB|  〃  | [vivaldi](https://github.com/musedata/vivaldi) |
+| 23,143| 46| 438.4KB|  〃  | [vivaldi](https://github.com/musedata/vivaldi) |
 | 1,115,811| 512| 14.6MB| [pl-wnifc](https://github.com/pl-wnifc) | [humdrum-chopin-first-editions](https://github.com/pl-wnifc/humdrum-chopin-first-editions) |
-| 11,817,127| 7,821| 280.5MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
-| 17,163| 84| 739.2KB| [polyrhythm-project](https://github.com/polyrhythm-project) | [rds-scores](https://github.com/polyrhythm-project/rds-scores) |
+| 11,948,746| 7,928| 284.2MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
+| 17,163| 84| 734.4KB| [polyrhythm-project](https://github.com/polyrhythm-project) | [rds-scores](https://github.com/polyrhythm-project/rds-scores) |
 | 0| 30| 379.3KB| [SEILSdataset](https://github.com/SEILSdataset) | [SEILSdataset](https://github.com/SEILSdataset/SEILSdataset) |
 | 65,787| 915| 987.8KB| [shanahdt](https://github.com/shanahdt) | [densmore](https://github.com/shanahdt/densmore) |
 | 312,859| 495| 6.1MB| [TassoInMusicProject](https://github.com/TassoInMusicProject) | [tasso-scores](https://github.com/TassoInMusicProject/tasso-scores) |
@@ -635,11 +634,11 @@ of the results.
 
 ```
 **notes	**files	**size	**directory
-30482	20	298.5KB	bach/art-of-the-fugue
+30482	20	299.3KB	bach/art-of-the-fugue
 103866	21	1MB	bach/brandenburg
-84624	370	953.9KB	bach/chorales-370
-17577	30	151.6KB	bach/inventions
-8347	4	82.9KB	bach/musical-offering
+84624	370	1004.5KB	bach/chorales-370
+17577	30	152.8KB	bach/inventions
+10850	6	112.7KB	bach/musical-offering
 92207	96	825.9KB	bach/wtc
 259692	103	2.5MB	beethoven/piano/sonata
 234252	71	3.2MB	beethoven/quartet
@@ -657,14 +656,14 @@ of the results.
 193	1	5KB	early-music/albano
 493	1	9.8KB	early-music/alberti
 47922	86	742.9KB	early-music/anonymous
-6314	7	60.9KB	early-music/anonymous-1520s
+19615	25	212.9KB	early-music/anonymous-1520s
 567	1	11.1KB	early-music/asola
 1007	1	17.2KB	early-music/bacchini
 3613	9	77.2KB	early-music/baccusi
 15732	17	281.2KB	early-music/balsamino
 391	1	7.9KB	early-music/barbarino
 561	1	4.6KB	early-music/barra
-7030	7	71.4KB	early-music/bauldeweyn
+9552	8	92.8KB	early-music/bauldeweyn
 446	1	8.8KB	early-music/bellanda
 2329	5	45.2KB	early-music/bellasio
 735	1	13.5KB	early-music/bellaver
@@ -696,7 +695,7 @@ of the results.
 484	1	10.4KB	early-music/clemsee
 551	1	10.6KB	early-music/coma
 10941	27	101KB	early-music/compere
-4481	4	38.5KB	early-music/conseil
+4481	4	38.4KB	early-music/conseil
 1200	1	23KB	early-music/corfini
 2269	4	45.5KB	early-music/cortellini
 618	1	10.8KB	early-music/dallacasa
@@ -710,19 +709,19 @@ of the results.
 1057	1	19.1KB	early-music/dragoni
 991	1	19.5KB	early-music/duc
 9192	12	162.9KB	early-music/dueto
-34742	37	684.9KB	early-music/dufay
+34742	37	685KB	early-music/dufay
 1107	1	20KB	early-music/effrem
 547	1	5.3KB	early-music/erasmus
 15726	19	334.6KB	early-music/eredi
 692	1	12.5KB	early-music/eremita
-551	1	5.3KB	early-music/fage
+1937	2	17KB	early-music/fage
 2081	2	37.6KB	early-music/feliciani
 6400	8	120.9KB	early-music/felis
 880	2	18KB	early-music/felix
 885	1	15.5KB	early-music/ferrabosco
 666	1	14.9KB	early-music/ferro
-25926	23	267.1KB	early-music/festa-costanzo
-2080	4	18KB	early-music/festa-sebastiano
+25926	23	266.6KB	early-music/festa-costanzo
+3466	5	30KB	early-music/festa-sebastiano
 6571	6	117.7KB	early-music/fevin-antoine
 261	1	5.6KB	early-music/fonghetti
 639	1	14.1KB	early-music/fontanelli
@@ -731,7 +730,7 @@ of the results.
 2772	4	54.7KB	early-music/gabella
 1394	1	25.7KB	early-music/gallo
 289	1	6.9KB	early-music/garzi
-5049	3	54KB	early-music/gascongne
+9894	8	105.2KB	early-music/gascongne
 102339	110	1.9MB	early-music/gaspar
 3601	4	64.7KB	early-music/gastoldi
 667	1	12.3KB	early-music/genvino
@@ -740,7 +739,7 @@ of the results.
 3645	5	81.1KB	early-music/ghizzolo
 4932	6	90.5KB	early-music/giovannelli
 991	1	18.6KB	early-music/giramo
-15531	9	139.5KB	early-music/gombert
+15531	9	139.3KB	early-music/gombert
 1646	4	34.3KB	early-music/guami
 261	1	5.9KB	early-music/guelfi
 4426	3	72.4KB	early-music/hassler
@@ -749,18 +748,18 @@ of the results.
 754	2	16.8KB	early-music/ingegneri
 10297	5	105.3KB	early-music/isaac
 2019	2	38.1KB	early-music/isnardi
-17296	16	160.9KB	early-music/jachetofmantua
-3930	7	31KB	early-music/jacotin
-12814	9	108.9KB	early-music/janmaistre
+17296	16	160.6KB	early-music/jachetofmantua
+3930	7	30.8KB	early-music/jacotin
+13364	10	112.7KB	early-music/janmaistre
 9835	22	93.6KB	early-music/japart
-499289	475	6MB	early-music/josquin
+499273	475	6.1MB	early-music/josquin
 834	7	41.2KB	early-music/lambardi
 377	1	7.4KB	early-music/landi
 200915	172	2MB	early-music/larue
 1582	1	13.6KB	early-music/lasantier
-20696	17	175.3KB	early-music/lheritier
-4167	3	33.5KB	early-music/lupi
-6207	7	54.2KB	early-music/lupus
+25710	20	215.8KB	early-music/lheritier
+4167	3	33.4KB	early-music/lupi
+7909	8	67.2KB	early-music/lupus
 3459	5	71.7KB	early-music/luzzaschi
 1946	4	38.3KB	early-music/macigni
 1593	5	37.2KB	early-music/macque
@@ -785,8 +784,8 @@ of the results.
 1580	3	33.7KB	early-music/montella
 4019	6	82.4KB	early-music/monteverdi
 864	1	16.4KB	early-music/montverdi
-8338	8	74.1KB	early-music/moulu
-19751	21	189.3KB	early-music/mouton
+9617	9	84.3KB	early-music/moulu
+20060	22	191.5KB	early-music/mouton
 1002	1	17.5KB	early-music/naldi
 682	4	19.9KB	early-music/nanino
 232	1	5.7KB	early-music/nanterni
@@ -813,7 +812,7 @@ of the results.
 6012	4	108.4KB	early-music/regis
 766	2	7.4KB	early-music/renaldo
 1349	3	31KB	early-music/ricci
-30933	28	312.5KB	early-music/richafort
+33395	29	333.8KB	early-music/richafort
 228	1	7.4KB	early-music/roccia
 576	1	10.3KB	early-music/roinci
 183	1	4.6KB	early-music/sabbatini
@@ -821,10 +820,10 @@ of the results.
 549	1	10.3KB	early-music/santini
 171	1	5.6KB	early-music/saracini
 905	1	17.3KB	early-music/scozzese
-27316	38	460.1KB	early-music/senfl
+34207	43	575.4KB	early-music/senfl
 107	1	6.5KB	early-music/serafico
-7902	12	75.2KB	early-music/sermisy
-10187	10	92.8KB	early-music/silva
+12339	15	123KB	early-music/sermisy
+11365	11	102.1KB	early-music/silva
 518	1	11KB	early-music/spano
 120	1	6KB	early-music/stefani
 1534	3	29.3KB	early-music/stivori
@@ -838,17 +837,17 @@ of the results.
 274	1	7.2KB	early-music/vecchi
 1063	2	20.8KB	early-music/vecoli
 1401	1	23.9KB	early-music/veggio
-31127	42	264.9KB	early-music/verdelot
+37233	48	314.5KB	early-music/verdelot
 2133	1	34.8KB	early-music/verdonck
 516	1	9.2KB	early-music/verso
 2065	2	36.2KB	early-music/vignali
 452	1	9.1KB	early-music/villani
 603	1	12KB	early-music/vinci
-4870	3	43.4KB	early-music/vinders
+4870	3	43.3KB	early-music/vinders
 6109	7	112.4KB	early-music/virchi
 749	1	14.8KB	early-music/vittori
 7851	8	142.5KB	early-music/wert
-52053	60	521.2KB	early-music/willaert
+52866	61	526.7KB	early-music/willaert
 2776	3	55.2KB	early-music/zanotti
 3128	7	58KB	early-music/zenaro
 35349	25	376.4KB	haydn/piano
@@ -857,23 +856,23 @@ of the results.
 3320	24	53.4KB	hummel/preludes
 68545	47	558KB	joplin
 1482	1	15.7KB	mozart/dice
-96637	69	972.8KB	mozart/piano/sonata
+96635	69	1003.3KB	mozart/piano/sonata
 151828	82	1.3MB	mozart/quartet
 711	2	9.6KB	polish/a-s
 1692	2	65.6KB	polish/abersbach-jan-jiri
 1911	2	21.6KB	polish/andrychowicz-j
 7669	6	426KB	polish/anerio-giovanni-francesco
-1178431	2033	27.4MB	polish/anonim
-12766	23	550.9KB	polish/asola-giovanni-matteo
+1220127	2105	28.4MB	polish/anonim
+12769	23	550.9KB	polish/asola-giovanni-matteo
 1671	1	27.9KB	polish/astorga-emanuele-d
-12296	6	191.9KB	polish/bach-johann-christian
-8471	7	128.6KB	polish/badarzewska-tekla
-2664	6	37.7KB	polish/barcicki-jan
-18876	7	330.5KB	polish/bauer
+12297	6	191.9KB	polish/bach-johann-christian
+8469	7	128.6KB	polish/badarzewska-tekla
+2666	6	37.7KB	polish/barcicki-jan
+18882	7	330.5KB	polish/bauer
 1494	1	15.1KB	polish/bauer-joseph-anton
 7191	5	70.7KB	polish/bauerfeind-wladyslaw
-1729	8	68.7KB	polish/bazylik-cyprian
-2471	1	23.3KB	polish/beethoven-ludwig-van
+1730	8	68.7KB	polish/bazylik-cyprian
+2475	1	23.3KB	polish/beethoven-ludwig-van
 3706	4	134KB	polish/bellinzani-paolo-benedetto
 1712	1	31.4KB	polish/bencini
 2273	1	29.7KB	polish/beyer-ferdinand
@@ -881,57 +880,57 @@ of the results.
 9215	6	190.7KB	polish/binder-christlieb-siegmund
 6290	6	79KB	polish/boczkowski-jerzy
 7182	3	170.5KB	polish/boczkowski-kazimierz
-13598	5	357.4KB	polish/bogoimski-tadeusz
+13599	5	357.4KB	polish/bogoimski-tadeusz
 39007	7	900.9KB	polish/bogunski-baltazar
 6520	4	138.6KB	polish/bohdanowicz-bazyli
 356	1	4.3KB	polish/boieldieu-adrien
-60931	21	1.7MB	polish/bolehovsky-josef
-7225	9	232.9KB	polish/borek-krzysztof
+60933	21	1.7MB	polish/bolehovsky-josef
+7226	9	232.9KB	polish/borek-krzysztof
 968	1	39.8KB	polish/borimius-jan
 249	1	7.9KB	polish/bortnjanskij-dmitrij-stepanovic
 4939	1	61.5KB	polish/braun-jan
-13155	10	263.7KB	polish/brentner-johann-joseph-ignaz
+13154	10	263.7KB	polish/brentner-johann-joseph-ignaz
 3284	4	61.5KB	polish/brioschi-antonio
-20348	5	470KB	polish/brixi-frantisek-xaver
-9610	2	235.8KB	polish/brixi-viktorin
-37388	26	682.7KB	polish/brykner-jerzy
+20346	5	470KB	polish/brixi-frantisek-xaver
+9611	2	235.8KB	polish/brixi-viktorin
+37384	26	682.7KB	polish/brykner-jerzy
 1681	3	27.6KB	polish/brzezinska-filipina
 2228	5	28.2KB	polish/brzowska-jadwiga
-43126	24	792.5KB	polish/buchner-philipp-friedrich
+43126	24	792.9KB	polish/buchner-philipp-friedrich
 180	1	4.3KB	polish/buhler-franz
 15384	13	355.9KB	polish/bulakowski-stefan
 7558	10	240.3KB	polish/cadeac-pierre
 272	1	5.7KB	polish/caderski-piotr
 1095	1	19.2KB	polish/caldara-antonio
 101	1	3.3KB	polish/cardilli-jacopo-antonio
-16077	17	334.6KB	polish/casali-giovanni-battista
+16079	17	334.6KB	polish/casali-giovanni-battista
 17570	18	498KB	polish/certon-pierre
-27178	4	1012.9KB	polish/cherubini-luigi
+27177	4	1012.9KB	polish/cherubini-luigi
 1217	2	22.6KB	polish/chodkiewicz-zofia
-75968	6	5.1MB	polish/chopin-fryderyk
+92659	7	5.9MB	polish/chopin-fryderyk
 2462	6	35.5KB	polish/chwalibog-izydor-konstanty
-7730	9	247.9KB	polish/constanzi
+7731	9	247.9KB	polish/constanzi
 4346	2	76.1KB	polish/conti
-10843	18	302.1KB	polish/costanzi-giovanni-battista
-3271	1	36.9KB	polish/cramer-johann-baptist
+10842	18	302.1KB	polish/costanzi-giovanni-battista
+3273	1	36.9KB	polish/cramer-johann-baptist
 410	4	17.9KB	polish/croce-giovanni
 5132	11	83.9KB	polish/cwiklicz-boleslaw-jan
 6605	10	162.4KB	polish/cybulski-izydor-jozef
 1873	1	45.2KB	polish/czajkowski-konstanty
 557	1	13.5KB	polish/czerny-carl
-55590	12	1.9MB	polish/damse-jozef
-2408	2	28.2KB	polish/danielski-florian
+55636	12	1.9MB	polish/damse-jozef
+2415	2	28.2KB	polish/danielski-florian
 18580	9	365.5KB	polish/danik-jan-ignac
-20208	9	505KB	polish/danka
-417972	149	11.3MB	polish/dankowski-adalbert
+20210	9	505KB	polish/danka
+418111	149	11.3MB	polish/dankowski-adalbert
 7032	2	128.1KB	polish/daubeck-jozef
 2630	1	37.9KB	polish/de-majo-gian-francesco
 181	1	2.4KB	polish/dembowska-konstancja
 3461	2	28.2KB	polish/dietrich-moritz
 7902	4	138.9KB	polish/dittersdorf-carl-ditters-von
-218271	56	5MB	polish/dobrzynski-ignacy-feliks
-545663	142	16.7MB	polish/elsner-jozef
-78177	29	2MB	polish/engel-jan
+218292	56	5MB	polish/dobrzynski-ignacy-feliks
+546136	142	16.7MB	polish/elsner-jozef
+78173	29	2MB	polish/engel-jan
 129	1	5.9KB	polish/ett-caspar
 18728	4	422.1KB	polish/fertner-karol
 305	2	25.2KB	polish/fierszewicz-daniel
@@ -943,7 +942,7 @@ of the results.
 82	1	3.7KB	polish/flasza-tomasz
 36561	9	803.2KB	polish/fleming-jan
 496	4	18.5KB	polish/flori-georg
-133532	44	4.4MB	polish/forster-kaspar
+133544	44	4.4MB	polish/forster-kaspar
 281	1	9.2KB	polish/fuchs
 1743	6	56.9KB	polish/fuhrer-robert
 856	1	13.9KB	polish/g-b-b
@@ -959,16 +958,16 @@ of the results.
 77421	15	2MB	polish/goetz-gieczynski-cyryl
 9547	6	173.1KB	polish/golabek-jakub
 8618	10	108.8KB	polish/gold-artur
-27682	151	713.7KB	polish/gomolka-mikolaj
-41191	65	1.6MB	polish/gorczycki-grzegorz-gerwazy
+27681	151	713.7KB	polish/gomolka-mikolaj
+41199	65	1.6MB	polish/gorczycki-grzegorz-gerwazy
 1795	2	35.3KB	polish/gostowski
-65211	33	1.3MB	polish/gotschalk-filip
+65213	33	1.3MB	polish/gotschalk-filip
 6891	8	204.1KB	polish/goudimel-claude
 5424	1	87.6KB	polish/grabowski-stanislaw
 22608	9	376.9KB	polish/graun-carl-heinrich
 2373	1	25KB	polish/grem-tomasz
-3869	15	66.3KB	polish/grim-jozef
-1088	1	15.2KB	polish/grose-michael-ehregott
+3870	15	66.3KB	polish/grim-jozef
+1090	1	15.2KB	polish/grose-michael-ehregott
 1793	2	18.3KB	polish/grossmann-ludwik
 1096	1	19.9KB	polish/gruberski-eugenjusz
 605	4	21.9KB	polish/guami-gioseffo
@@ -976,19 +975,19 @@ of the results.
 4236	3	88KB	polish/habermann-jan-piotr
 298	1	7.9KB	polish/handel-georg-friedrich
 1718	6	26.6KB	polish/hanel
-8186	20	201.8KB	polish/haser-august-ferdinand
+8198	20	201.8KB	polish/haser-august-ferdinand
 5935	8	159KB	polish/haslinger
 45605	15	786.4KB	polish/hasse-johann-adolf
-20476	23	392.9KB	polish/haydn-joseph
-3194	10	40.4KB	polish/hepner
+20481	23	392.9KB	polish/haydn-joseph
+3203	10	40.4KB	polish/hepner
 2756	3	85.2KB	polish/herissant-jehan
 7222	3	122.9KB	polish/hermanowski-a
-98664	71	1.7MB	polish/hertz-michal
+98712	71	1.7MB	polish/hertz-michal
 576	2	28.6KB	polish/hey-stawicki-michal
 294	2	10.2KB	polish/hlonowski-j
-753	2	8.5KB	polish/hoffmeister-franz-anton
-27475	9	719.3KB	polish/hofmann-leopold
-23405	40	382KB	polish/holland-jan-dawid
+755	2	8.5KB	polish/hoffmeister-franz-anton
+27478	9	719.3KB	polish/hofmann-leopold
+23406	40	382.4KB	polish/holland-jan-dawid
 4773	2	132.4KB	polish/holzbauer-ignaz
 192	1	5.7KB	polish/ingegneri-marc-antonio
 530	1	12KB	polish/isaac-heinrich
@@ -996,57 +995,57 @@ of the results.
 5718	5	201.3KB	polish/jachet-de-mantua
 3400	2	75KB	polish/jacotin
 3333	4	41.8KB	polish/janicki-mikolaj
-36070	17	693.5KB	polish/janiewicz-feliks
+36084	17	693.6KB	polish/janiewicz-feliks
 3154	1	30.2KB	polish/janisch
 5008	1	198.2KB	polish/jansa-leopold
 1664	2	19KB	polish/jarecki-henryk
 5769	8	66.5KB	polish/jarecki-jozef
-37871	28	722.2KB	polish/jarzebski-adam
+37873	28	722.2KB	polish/jarzebski-adam
 2971	5	65.5KB	polish/jeric
 30669	26	417.1KB	polish/joteyko-tadeusz
-35669	15	959.7KB	polish/just-franciszek-kasper
-9035	11	105.4KB	polish/kagan-jakub
-34169	8	965.9KB	polish/kalous-vaclav
+35689	15	959.7KB	polish/just-franciszek-kasper
+9036	11	105.4KB	polish/kagan-jakub
+34167	8	965.9KB	polish/kalous-vaclav
 2921	5	29.6KB	polish/kamienski-antoni
 4934	2	109KB	polish/kaminski-f
 3161	1	32.5KB	polish/kaminski-p
 6083	4	59.1KB	polish/karasinski-adam-jozef
 70665	15	2.6MB	polish/karlowicz-mieczyslaw
 4476	6	111.6KB	polish/kaspar
-7978	12	226.5KB	polish/kasprzykowski-ignacy
+7981	12	226.5KB	polish/kasprzykowski-ignacy
 16723	5	195.2KB	polish/katski-antoni
-77047	20	1021.8KB	polish/katski-apolinary
+77050	20	1021.8KB	polish/katski-apolinary
 1630	1	25.9KB	polish/kazynski-wiktor
-203	1	3.2KB	polish/kedzierski-x-a
+204	1	3.2KB	polish/kedzierski-x-a
 2292	1	35.6KB	polish/kellerer-christophorus
 550	1	12.4KB	polish/kietlinski-albert
-22059	9	569KB	polish/klakowski
+22063	9	569KB	polish/klakowski
 4490	3	55.5KB	polish/klemczynski-julian
 19735	14	420.9KB	polish/kobierkowicz-jozef
 217	1	4.8KB	polish/komorowski-ignacy-marceli
-10521	7	187.8KB	polish/konigsperger-marianus
-78815	24	2.3MB	polish/koperski-maksymilian
-2706	4	31.2KB	polish/kosciuszko-tadeusz
+10519	7	187.8KB	polish/konigsperger-marianus
+78852	24	2.3MB	polish/koperski-maksymilian
+2706	4	31.3KB	polish/kosciuszko-tadeusz
 14258	6	266.1KB	polish/kotowicz
 15469	18	362.6KB	polish/kottritsch-franciszek
-83780	25	3MB	polish/kozlowski-jozef
+83796	25	3MB	polish/kozlowski-jozef
 1032	1	9.1KB	polish/kranowski-igo
 1940	1	29.2KB	polish/krassowski
 1251	1	11.4KB	polish/kraszewski-jozef-ignacy
 1951	1	38.6KB	polish/kraus-jozef
-11326	8	288.7KB	polish/kraus-lambert
+11327	8	288.7KB	polish/kraus-lambert
 2010	4	39.8KB	polish/kreith
 771	2	31.2KB	polish/krener-jan
-509	1	13.9KB	polish/kreutzer
-63948	41	1.4MB	polish/krogulski-jozef-wladyslaw
+508	1	13.9KB	polish/kreutzer
+63949	41	1.4MB	polish/krogulski-jozef-wladyslaw
 1421	1	14KB	polish/krogulski-wladyslaw
 1181	3	14.3KB	polish/krolikiewicz-napoleon
 4326	9	68.8KB	polish/krupinski-wiktor
 1217	1	10.4KB	polish/krysta-jozef
 5083	1	91.8KB	polish/krzewdzienski-pawel
 1960	1	33KB	polish/krzykowski-f
-53437	21	1.2MB	polish/kuci-mateusz
-72624	39	1.4MB	polish/kurpinski-karol-kazimierz
+53445	21	1.2MB	polish/kuci-mateusz
+72628	39	1.4MB	polish/kurpinski-karol-kazimierz
 2388	1	32.6KB	polish/kuttricz-lania
 2218	3	44.3KB	polish/lachner-ignaz
 2371	2	42KB	polish/lada-kazimierz
@@ -1055,32 +1054,32 @@ of the results.
 6598	33	217.5KB	polish/lasso-orlando-di
 606	4	20.2KB	polish/lasso-rudolph-di
 1643	1	25.1KB	polish/laube-antonin
-2042	2	27.1KB	polish/lawina-swietochowski-jerzy
-126867	51	2.7MB	polish/lechleitner-ferdinand-simon
-43113	21	1.2MB	polish/lessel-franciszek
+2046	2	27.1KB	polish/lawina-swietochowski-jerzy
+126868	51	2.7MB	polish/lechleitner-ferdinand-simon
+43120	21	1.2MB	polish/lessel-franciszek
 6103	7	158.3KB	polish/leszczynski-wladyslaw
 1663	3	20.2KB	polish/lewandowski-leopold-leon
 1127	1	23.1KB	polish/lheritier-jean
 786	1	8.6KB	polish/lidauer-wladyslaw
-24075	36	684.1KB	polish/lilius-franciszek
+24075	36	684.2KB	polish/lilius-franciszek
 626	1	6.7KB	polish/linowski-jozef
 4194	3	83.2KB	polish/lipski-stanislaw
 1058	4	25.2KB	polish/lobmann-j
-9090	50	178KB	polish/lodwigowski-edward-stefan
-2391	1	56.3KB	polish/loos-karel
+9092	50	178KB	polish/lodwigowski-edward-stefan
+2389	1	56.3KB	polish/loos-karel
 180	1	7.7KB	polish/lubelczyk-jakub
 614	1	17.5KB	polish/lubomirska-ludwika
 6043	4	72.7KB	polish/lubomirski-kazimierz
 6493	1	69.4KB	polish/lubowski-jozef
 4773	3	97.4KB	polish/lukaszewicz-maciej
-251380	92	5.1MB	polish/luna-georgius
+251382	92	5.1MB	polish/luna-georgius
 4215	8	169.5KB	polish/luython-carl
-2322	4	53.8KB	polish/m-m
-115600	46	2.8MB	polish/maader-ludwik
+2324	4	53.8KB	polish/m-m
+115604	46	2.8MB	polish/maader-ludwik
 286	3	24.3KB	polish/maintzer-franz
 203	1	2.5KB	polish/majewska-j
-6821	3	134.1KB	polish/maldere-pierre-van
-4870	4	98.9KB	polish/malik-jan
+6823	3	134.1KB	polish/maldere-pierre-van
+4883	4	98.9KB	polish/malik-jan
 111249	170	3MB	polish/marenzio-luca
 14363	6	274.3KB	polish/marescalchi-luigi
 651	5	25.6KB	polish/massaino-tiburzio
@@ -1091,15 +1090,15 @@ of the results.
 235	1	3.5KB	polish/mehul-etienne-nicolas
 405	3	11.9KB	polish/mel-rinaldo-del
 645	1	8.4KB	polish/merlini
-15367	4	461.5KB	polish/mielczewski-marcin
-24054	16	423.7KB	polish/mikuli-karol
+15366	4	461.6KB	polish/mielczewski-marcin
+24058	16	423.5KB	polish/mikuli-karol
 2315	1	35.4KB	polish/mine-jacques-claude-adolphe
 204	1	18.3KB	polish/miskiewicz-maciej-arnulf
 28399	11	394.5KB	polish/mlynarski-emil
 5788	1	67.8KB	polish/modzelewski-michal
 1917	1	32.3KB	polish/monczynski-roman
 581	1	7.4KB	polish/monfreulle-roza-eleonora
-807010	413	17.4MB	polish/moniuszko-stanislaw
+807976	413	17.4MB	polish/moniuszko-stanislaw
 501	4	20.3KB	polish/monte-philippe-de
 6189	5	222.2KB	polish/morales-cristobal-de
 3226	2	87.9KB	polish/morawski-jozef-bernard
@@ -1111,14 +1110,14 @@ of the results.
 2347	3	36.9KB	polish/myslivecek-josef
 16535	5	323.3KB	polish/namieyski-jan
 4753	6	57.2KB	polish/namyslowski-karol
-8576	4	173.2KB	polish/naumann-johann-gottlieb
+8580	4	173.2KB	polish/naumann-johann-gottlieb
 7839	4	165.3KB	polish/neumann
 19956	11	448.2KB	polish/neumann-wawrzyniec
 557	1	5.3KB	polish/nidecki-tomasz
 860	1	13.4KB	polish/niewiadomski-stanislaw
-205821	108	4.4MB	polish/noskowski-zygmunt
-61065	26	1.9MB	polish/nowakiewicz-kazimierz
-15844	19	218.6KB	polish/nowakowski-jozef
+205875	108	4.4MB	polish/noskowski-zygmunt
+61075	26	1.9MB	polish/nowakiewicz-kazimierz
+15855	19	218.6KB	polish/nowakowski-jozef
 4750	2	62.4KB	polish/nowicki-ludwik
 11367	16	151.1KB	polish/oginski-michal-kleofas
 3407	2	31.2KB	polish/orda-napoleon
@@ -1129,114 +1128,114 @@ of the results.
 1928	3	20.5KB	polish/ostrowski-jan
 9924	9	283.8KB	polish/pacelli-asprilio
 424	1	7.1KB	polish/pachulski-henryk
-317461	139	12.5MB	polish/paderewski-ignacy-jan
-20673	46	603.3KB	polish/palestrina-giovanni-pierluigi-da
+317511	139	12.5MB	polish/paderewski-ignacy-jan
+20672	46	603.3KB	polish/palestrina-giovanni-pierluigi-da
 1030	3	32.6KB	polish/paszkiewicz-andrzej
-11803	7	249.2KB	polish/pausch-eugen
-57851	56	1.9MB	polish/pekiel-bartlomiej
-15263	12	307.7KB	polish/pergolesi-giovanni-battista
+11805	7	249.2KB	polish/pausch-eugen
+57849	56	1.9MB	polish/pekiel-bartlomiej
+15264	12	307.7KB	polish/pergolesi-giovanni-battista
 3476	1	38KB	polish/pichl-vaclav
 4575	5	93.6KB	polish/pichler-johann-melchior
-4738	4	58.5KB	polish/piotrowski-aleksander
+4741	4	58.5KB	polish/piotrowski-aleksander
 2657	1	51.8KB	polish/piotrowski-franciszek
 1212	2	29.5KB	polish/pitoni-giuseppe-ottavio
-23916	14	412.4KB	polish/pleyel-ignace
+23929	14	412.4KB	polish/pleyel-ignace
 2500	1	44.8KB	polish/pokorny-franz-xaver
 150	2	5.5KB	polish/porta-costanzo
 2006	1	23.9KB	polish/potocka-emilia
 449	3	16.7KB	polish/pottier-matthias
 181	1	2.5KB	polish/puchalski
 10730	15	172.4KB	polish/pugnani-gaetano
-42026	18	1.1MB	polish/pych-leopold
+42029	18	1.1MB	polish/pych-leopold
 1263	3	19.2KB	polish/radziwill-antoni-henryk
-378762	129	11.2MB	polish/raszek-waclaw
+428713	141	12.6MB	polish/raszek-waclaw
 12742	6	239.2KB	polish/rathgeber-johann-valentin
 230	1	10.5KB	polish/ratti-lorenzo
 6479	7	115.2KB	polish/renner-josef
-3798	1	72.5KB	polish/rhein-carolo-de
-3221	3	57.4KB	polish/riccieri-giovanni-antonio
+3792	1	72.5KB	polish/rhein-carolo-de
+3220	3	57.4KB	polish/riccieri-giovanni-antonio
 4959	17	112.7KB	polish/richling
-38403	8	1.1MB	polish/righini-vincenzo
-153159	57	3.1MB	polish/rodowski-aleksander
+38402	8	1.1MB	polish/righini-vincenzo
+153265	57	3.1MB	polish/rodowski-aleksander
 1458	2	16.5KB	polish/rossini-gioachino
 1053	1	13.4KB	polish/rossochalski
 195	1	6.7KB	polish/rothe
 10506	12	344.2KB	polish/rozycki-jacek
-45269	26	683.1KB	polish/rozycki-ludomir
+45273	26	683.1KB	polish/rozycki-ludomir
 234	1	6.2KB	polish/rudkowski-mateusz
 6744	5	224.4KB	polish/ruffo-vincenzo
 1925	1	65.6KB	polish/ruggiero
-12996	5	211.6KB	polish/ruth-christian-joseph
-277	1	6.8KB	polish/rychling-wincenty-waclaw
-51945	35	1MB	polish/rygall-ignacy
+12998	5	211.6KB	polish/ruth-christian-joseph
+1964	12	42.1KB	polish/rychling-wincenty-waclaw
+51961	35	1MB	polish/rygall-ignacy
 23681	12	442.3KB	polish/rzepko-adolf
 2889	5	74.4KB	polish/sabino-ippolito
-7716	3	129KB	polish/sacchini-antonio
+7719	3	129KB	polish/sacchini-antonio
 145	1	4.3KB	polish/salepico-josquino
-5337	2	177.1KB	polish/salieri-antonio
+5351	2	177.1KB	polish/salieri-antonio
 2754	4	85.2KB	polish/samin-vulfran
-14712	9	355.9KB	polish/scacchi-marco
+28706	11	607.8KB	polish/scacchi-marco
 533	1	7KB	polish/schall-claus-nielsen
 1425	1	16.2KB	polish/schiedermayr-johann-baptist
 1103	1	22.5KB	polish/scholenberger
 1073	2	26.9KB	polish/schopf
 145	1	4.5KB	polish/schwertzer-j
-160273	51	4.3MB	polish/scigalski-franciszek
+160298	51	4.3MB	polish/scigalski-franciszek
 2849	5	103.4KB	polish/sebastian-z-felsztyna
 666	1	17.9KB	polish/senfl-ludwig
 3817	1	86.6KB	polish/sieprawski-pawel
 750	1	7.5KB	polish/sieroslawski-jozef
 2332	13	72.4KB	polish/singenberger-johann-baptist
-24600	24	648.3KB	polish/siwinski-andrzej
-29861	11	974.8KB	polish/sloczynski-wojciech
+24596	24	648.3KB	polish/siwinski-andrzej
+29871	11	1002.3KB	polish/sloczynski-wojciech
 113	1	5.8KB	polish/smacierzynski
-247998	74	2.5MB	polish/smietanski-emil-wladyslaw
+248165	74	2.5MB	polish/smietanski-emil-wladyslaw
 604	2	6.6KB	polish/sokol-andrzej
 1428	1	12.8KB	polish/sonnenfeld-adolf-gustaw
-269683	97	6.4MB	polish/sowinski-wojciech
+269736	97	6.4MB	polish/sowinski-wojciech
 47459	63	1.1MB	polish/stabile-annibale
 1141	1	26.9KB	polish/stachowicz-damian
-35202	8	674.9KB	polish/staromiejski-j
+35201	8	674.9KB	polish/staromiejski-j
 6249	1	163.3KB	polish/statkowski-tadeusz
-5890	5	99.5KB	polish/stefani-jan
-862654	459	17.4MB	polish/stefani-jozef
+5894	5	99.5KB	polish/stefani-jan
+863126	459	17.4MB	polish/stefani-jozef
 858	2	11.6KB	polish/stefani-p
-64700	33	1.1MB	polish/stojowski-zygmunt
-4878	4	97.2KB	polish/stolle
+64698	33	1.1MB	polish/stojowski-zygmunt
+4876	4	97.2KB	polish/stolle
 842	1	12.5KB	polish/stolpe-alojzy
 3295	7	96.9KB	polish/studzinski-karol
 593	1	12.7KB	polish/studzinski-kazimierz
-16851	10	345.5KB	polish/studzinski-piotr
+21340	19	462.7KB	polish/studzinski-piotr
 10576	8	226.6KB	polish/studzinski-wincenty
 10137	9	309.9KB	polish/szadek-tomasz
 2363	1	58.3KB	polish/szarzynski-stanislaw-sylwester
-43259	22	888.2KB	polish/szczurowski-jacek
-10454	19	256.5KB	polish/szlagorski-walenty
+43261	22	888.2KB	polish/szczurowski-jacek
+10467	19	256.5KB	polish/szlagorski-walenty
 52132	40	714.6KB	polish/szymanowska-maria
-41212	30	704.5KB	polish/szymanowski-karol
+41220	30	704.5KB	polish/szymanowski-karol
 1282	4	22.2KB	polish/tarnowski-adam
 1244	1	16.7KB	polish/teichmann-antoni
 2558	2	63.1KB	polish/terzago-bernardino
 16187	6	323.3KB	polish/toeschi-carl-joseph
 122	1	4.8KB	polish/troschel
-44550	34	658.2KB	polish/troschel-wilhelm
+44557	34	658.2KB	polish/troschel-wilhelm
 1329	1	121.4KB	polish/turczynski-paschalis
 219	1	3.9KB	polish/turowicz-ksawery
 3244	6	33.6KB	polish/tymolski-fabian
 926	1	9.1KB	polish/unicki
 560	2	7.7KB	polish/vanhal-johann-baptist
-1760	1	27.3KB	polish/vinci-leonardo
+1756	1	27.3KB	polish/vinci-leonardo
 914	1	27.5KB	polish/virchi-paolo
-135672	21	3.4MB	polish/vogel
-439348	126	12.5MB	polish/volckmer-augustin
+135674	21	3.4MB	polish/vogel
+439365	126	12.5MB	polish/volckmer-augustin
 1042	2	25.2KB	polish/waclaw-z-szamotul
-19061	106	371.5KB	polish/walczynski-franciszek
-17204	11	377.5KB	polish/wanski-jan
+19060	106	371.5KB	polish/walczynski-franciszek
+17197	11	377.5KB	polish/wanski-jan
 3657	4	72.3KB	polish/went-johann-nepomuk
-108604	38	2.2MB	polish/wieniawski-henryk
+108615	38	2.2MB	polish/wieniawski-henryk
 22628	7	406.4KB	polish/wieniawski-jozef
 1793	5	52.9KB	polish/wiltberger-august
-751	2	9.2KB	polish/winter-peter-von
+757	2	9.2KB	polish/winter-peter-von
 635	2	19.4KB	polish/witt-franz-xaver
 2491	1	25.7KB	polish/wolff-edward
 5167	1	85.6KB	polish/woloszko-andrzej
@@ -1245,21 +1244,21 @@ of the results.
 9205	4	73.6KB	polish/wronski-adam
 13713	6	355.5KB	polish/wygrzywalski-jozef
 31540	30	318.3KB	polish/wysocki-kasper-napoleon
-7307	4	183.1KB	polish/zajaczkowski-roman
+7306	4	183.1KB	polish/zajaczkowski-roman
 346	1	34KB	polish/zandtfelder-nicolaus-joseph-ignatius
 3035	6	61.1KB	polish/zangl-johann-baptist
-67882	19	1.1MB	polish/zarebski-juliusz
+67884	19	1.1MB	polish/zarebski-juliusz
 2013	1	25.6KB	polish/zarzycki-aleksander
-151019	71	3.4MB	polish/zebrowski-marcin-jozef
-100967	32	3.1MB	polish/zeidler-jozef
-305081	155	5.6MB	polish/zelenski-wladyslaw
+151022	71	3.4MB	polish/zebrowski-marcin-jozef
+100999	32	3.1MB	polish/zeidler-jozef
+305170	155	5.6MB	polish/zelenski-wladyslaw
 4896	3	64KB	polish/ziegler
 5912	10	139.8KB	polish/zieleniewicz-mathias
-71795	108	841.4KB	polish/zielenski-mikolaj
-4147	12	74.8KB	polish/zientarski-romuald-teodor
+71795	108	842.2KB	polish/zielenski-mikolaj
+4154	12	74.8KB	polish/zientarski-romuald-teodor
 500	1	13.8KB	polish/zlotaszewski-jozef
-17163	84	739.2KB	polyrhythm/rds
-68489	65	707.4KB	scarlatti/sonata
+17163	84	734.4KB	polyrhythm/rds
+68489	65	739.7KB	scarlatti/sonata
 338788	1995	8.5MB	songs/chant/liber-usualis-ddmal
 9145	60	76.7KB	songs/chant/liber-usualis-selections
 1824	38	25.2KB	songs/child-ballads
@@ -1322,7 +1321,7 @@ of the results.
 85477	739	9.4MB	songs/pop/billboard
 39729	105	805.6KB	songs/pop/cantonese
 59607	200	3.5MB	songs/pop/rollingstone
-27682	151	713.7KB	songs/psalms/gomolka
+27681	151	713.7KB	songs/psalms/gomolka
 13018	50	268.7KB	songs/psalms/lasso
 2612	50	78.7KB	songs/psalms/ulenberg
 4842	35	59.9KB	songs/schubert
@@ -1331,17 +1330,17 @@ of the results.
 276	23	11.3KB	tonerow/berg
 504	42	21.5KB	tonerow/schoenberg
 252	21	10.9KB	tonerow/webern
-18041	45	275.2KB	vivaldi/op01
+23143	46	438.4KB	vivaldi/op01
 *-	*-	*-	*-
-!!!total-notes: 18107194
-!!!total-files: 25990
-!!!total-size: 382MB
+!!!total-notes: 18300581
+!!!total-files: 26150
+!!!total-size: 386.5MB
 ```
 
 </details>
 
-The complete repository-download set contains 25,990 files
-with a total of 18,107,194 sounding notes and total size of 374.3MB.
+The complete repository-download set contains 26,150 files
+with a total of 18,300,581 sounding notes and total size of 378.9MB.
 
 
 ## Implementation notes ##
