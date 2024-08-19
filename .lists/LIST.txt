@@ -122,7 +122,7 @@ josquin-research-project	Reg	.	early-music/regis
 josquin-research-project	Rue	.	early-music/larue
 josquin-research-project	Tin	.	early-music/tinctoris
 !! Files need to be uploaded to repsitory:
-!!musedata	humdrum-bach-chorales	kern	bach/chorales-185
+musedata	humdrum-bach-chorales-185	kern	bach/chorales-185
 musedata	humdrum-bach-brandenburg	kern	bach/brandenburg
 musedata	humdrum-corelli	op1	corelli
 musedata	humdrum-corelli	op3	corelli
