@@ -2,7 +2,8 @@
 !!!ONB: Commented entries have Humdrum syntax errors and are not downloaded.
 !! vim: ts=39:nowrap
 **ghname	**ghrepo	**from	**to
-benory	1520s-project-scores	humdrum/Ano	early-music/anonymous-1520s
+benory	1520s-project-scores	humdrum/Any	early-music/anonymous-1520s
+benory	1520s-project-scores	humdrum/Arc	early-music/arcadelt
 benory	1520s-project-scores	humdrum/Bar	early-music/barra
 benory	1520s-project-scores	humdrum/Bau	early-music/bauldeweyn
 benory	1520s-project-scores	humdrum/Bis	early-music/bisegueria
