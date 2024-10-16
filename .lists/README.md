@@ -12,7 +12,7 @@
 | `**suffix`  | Suffix string to add to copied filename (if any). |
 | `**filter`  | Copy only files with given PERL/JavaScript regex. |
 | `**xfilter` | Exclude any files with the given PERL/JavaScript regex. |
-| `**content` | Copy only files that have content that matches the give PERL/JavaScript regex. |
+| `**content` | Only copy files that have content matching the given PERL/JavaScript regex. |
 | `**sar`     | sed-like search and replacement for filename (before prefix and suffix are added).  Multiple SAR entries can be given, separated by semicolons (`;`). |
 
 ## Downloading LIST datasets ##

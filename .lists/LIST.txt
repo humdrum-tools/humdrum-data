@@ -153,6 +153,9 @@ Computational-Cognitive-Musicology-Lab	MCFlow	Humdrum	songs/rap/mcflow	.	.	.	\.m
 DDMAL	Flexible_harmonic_chorale_annotations	kernData	early-music/praetorius	.	.	Praetorius	.	.	s/^Chorales_//; s/P/p/g; s/_/-/g;
 hleveillegauvin	KernScores	JazzTrumpet/kern	songs/trumpet/jazz	.	.	.	.	.	s/\x{27}//g
 hleveillegauvin	KernScores	JazzTrumpet/kern	songs/jazz/trumpet	.	.	.	.	.	s/\x{27}//g
+Computational-Cognitive-Musicology-Lab	Star-Wars-Thematic-Corpus	SequelTriologyThemeFiles/Krns	songs/starwars	sequel-	.	\.krn$	.	.	s/^(\d[a-z]?)_(.*)/0${1}_$2/; s/[()]//g; s/_+/_/g; s/_-_/-/g;
+Computational-Cognitive-Musicology-Lab	Star-Wars-Thematic-Corpus	PrequelTriologyThemeFiles/Krns	songs/starwars	prequel-	.	\.krn$	.	.	s/^(\d[a-z]?)_(.*)/0${1}_$2/; s/[()]//g; s/_+/_/g; s/_-_/-/g;
+Computational-Cognitive-Musicology-Lab	Star-Wars-Thematic-Corpus	OriginalTriologyThemeFiles/Krns	songs/starwars	original-	.	\.krn$	4_Leias_Theme_Basic\.krn	.	s/^(\d[a-z]?)_(.*)/0${1}_$2/; s/[()]//g; s/_+/_/g; s/_-_/-/g;
 jasonleeubc	Cantopop-corpus	.	songs/pop/cantonese	.	.krn	^C\d+$	.	.	s/^C/cpop-/
 josquin-research-project	Jos	.	early-music/josquin	.	.	.	^Jos2514	.	.
 pl-wnifc	humdrum-polish-scores	pl-wn/kern	songs/psalms/gomolka	.	.krn	melodiae-na-psalterz-polski	.	.	s/^(.*)(\d\d\d)_(.*)/gomolka-$2/
@@ -841,4 +844,4 @@ TassoInMusicProject	tasso-scores	Trm/kern	early-music/zanotti	.	.	--Zanotti_	.	.
 TassoInMusicProject	tasso-scores	Trm/kern	early-music/zenaro	.	.	--Zenaro_	.	.	.
 WolfgangDrescher	lassus-geistliche-psalmen	kern	songs/psalms/lasso	lasso-0	.	.	.	.	.
 WolfgangDrescher	ulenberg-psalmen-davids	kern	songs/psalms/ulenberg	ulenberg-	.	.	.	.	.
-*-	*-	*-	*-	*-	*-	*-	*-
+*-	*-	*-	*-	*-	*-	*-	*-	*-	*-

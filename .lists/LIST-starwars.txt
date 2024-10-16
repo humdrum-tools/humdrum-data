@@ -1,0 +1,7 @@
+!!!OTL: Star Wars themes
+!! vim: ts=40:nowrap
+**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar
+Computational-Cognitive-Musicology-Lab	Star-Wars-Thematic-Corpus	SequelTriologyThemeFiles/Krns	starwars	sequel-	.	\.krn$	.	.	s/^(\d[a-z]?)_(.*)/0${1}_$2/; s/[()]//g; s/_+/_/g; s/_-_/-/g;
+Computational-Cognitive-Musicology-Lab	Star-Wars-Thematic-Corpus	PrequelTriologyThemeFiles/Krns	starwars	prequel-	.	\.krn$	.	.	s/^(\d[a-z]?)_(.*)/0${1}_$2/; s/[()]//g; s/_+/_/g; s/_-_/-/g;
+Computational-Cognitive-Musicology-Lab	Star-Wars-Thematic-Corpus	OriginalTriologyThemeFiles/Krns	starwars	original-	.	\.krn$	4_Leias_Theme_Basic\.krn	.	s/^(\d[a-z]?)_(.*)/0${1}_$2/; s/[()]//g; s/_+/_/g; s/_-_/-/g;
+*-	*-	*-	*-	*-	*-	*-	*-	*-	*-

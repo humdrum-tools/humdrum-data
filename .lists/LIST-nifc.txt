@@ -1,4 +1,4 @@
-!!!OTL: Digital scores from The Fryderyk Chopin Institute (Chopin first editions (POPC1) and Polish Musical Heritage (1600-1900) in Open Access (POPC2))
+!!!OTL: Digital scores from The Fryderyk Chopin Institute (Chopin first editions (POPC1) and Polish Musical Heritage (1600-1900) (POPC2))
 !! vim: ts=30:nowrap
 **ghname	**ghrepo	**from	**to
 pl-wnifc	humdrum-chopin-first-editions	kern	popc1

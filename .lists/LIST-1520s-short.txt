@@ -1,37 +1,36 @@
 !!!OTL: The 1520s Project digital scores, ID only filenames
-!!!ONB:  When a new composer directory is added to the repository,
-!!!ONB2: that directory will need to be added to the below list.
+!!!ONB1:  When a new composer directory is added to the repository, that directory will need to be added to the list below.
 !! vim: ts=27:nowrap
-**ghname	**ghrepo	**from	**to	**suffix	**sar
-benory	1520s-project-scores	humdrum/Ano	1520s-short/Ano	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Bar	1520s-short/Bar	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Bau	1520s-short/Bau	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Bis	1520s-short/Bis	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Cha	1520s-short/Cha	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Con	1520s-short/Con	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Era	1520s-short/Era	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Fsc	1520s-short/Fsc	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Fss	1520s-short/Fss	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Fva	1520s-short/Fva	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Gom	1520s-short/Gom	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Gsc	1520s-short/Gsc	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Jac	1520s-short/Jac	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Jan	1520s-short/Jan	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Jom	1520s-short/Jom	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Lfg	1520s-short/Lfg	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Lhe	1520s-short/Lhe	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Lpi	1520s-short/Lpi	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Lps	1520s-short/Lps	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Lsa	1520s-short/Lsa	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Mlu	1520s-short/Mlu	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Mou	1520s-short/Mou	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Ren	1520s-short/Ren	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Ric	1520s-short/Ric	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Ser	1520s-short/Ser	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Sil	1520s-short/Sil	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Snf	1520s-short/Snf	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/The	1520s-short/The	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Ver	1520s-short/Ver	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Vin	1520s-short/Vin	.krn	s/-.*//
-benory	1520s-project-scores	humdrum/Wil	1520s-short/Wil	.krn	s/-.*//
-*-	*-	*-	*-	*-	*-
+**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar
+benory	1520s-project-scores	humdrum/Ano	1520s-short/Ano	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Bar	1520s-short/Bar	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Bau	1520s-short/Bau	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Bis	1520s-short/Bis	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Cha	1520s-short/Cha	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Con	1520s-short/Con	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Era	1520s-short/Era	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Fsc	1520s-short/Fsc	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Fss	1520s-short/Fss	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Fva	1520s-short/Fva	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Gom	1520s-short/Gom	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Gsc	1520s-short/Gsc	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Jac	1520s-short/Jac	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Jan	1520s-short/Jan	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Jom	1520s-short/Jom	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Lfg	1520s-short/Lfg	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Lhe	1520s-short/Lhe	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Lpi	1520s-short/Lpi	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Lps	1520s-short/Lps	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Lsa	1520s-short/Lsa	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Mlu	1520s-short/Mlu	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Mou	1520s-short/Mou	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Ren	1520s-short/Ren	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Ric	1520s-short/Ric	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Ser	1520s-short/Ser	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Sil	1520s-short/Sil	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Snf	1520s-short/Snf	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/The	1520s-short/The	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Ver	1520s-short/Ver	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Vin	1520s-short/Vin	.	.krn	.	.	.	s/-.*//
+benory	1520s-project-scores	humdrum/Wil	1520s-short/Wil	.	.krn	.	.	.	s/-.*//
+*-	*-	*-	*-	*-	*-	*-	*-	*-	*-

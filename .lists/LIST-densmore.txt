@@ -1,21 +1,21 @@
 !!!OTL: Native American songs collected by Francis Densmore
 !!!ONB: Commented entries have Humdrum syntax errors and are not downloaded.
 !! vim: ts=30:nowrap
-**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**sar
-craigsapp	densmore-teton-sioux	kern	densmore/sioux	.	.	.	.	.
-shanahdt	densmore	Densmore/acoma	densmore/acoma	acoma	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-!!shanahdt	densmore	Densmore/british_columbia	densmore/bc	bc	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/cheyenne_and_arapaho	densmore/cheyenne	cheyenne	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/chippewa1	densmore/chippewa_a	chippewa_a	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/chippewa2	densmore/chippewa_a	chippewa_b	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-!!shanahdt	densmore	Densmore/choctaw	densmore/choctaw	.	.	\.krn$	.	s/^(choct)(\d\d)([^\d].*)$/${1}0$2$3/; s/^(choct)(\d)([^\d].*)$/${1}00$2$2/;
-shanahdt	densmore	Densmore/maidu	densmore/maidu	maidu	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-shanahdt	densmore	Densmore/mandan	densmore/mandan	.	.	\.krn$	.	s/^mandan(\d\d\.)/mandan0$1/; s/^mandan(\d\.)/mandan00$1/
-shanahdt	densmore	Densmore/menominee	densmore/menomiee	menomiee	.krn	\.krn$	^Flute	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-!!shanahdt	densmore	Densmore/nootka	densmore/nootka	nootka	.krn	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-shanahdt	densmore	Densmore/northern_ute	densmore/northute	northute	.krn	\.krn$	^[DRU]	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-!!shanahdt	densmore	Densmore/papago	densmore/papago	papago	.	\.krn$	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
-shanahdt	densmore	Densmore/pawnee	densmore/pawnee	.	.	\.krn$	.	s/^pawnee(\d\d\.)/pawnee0$1/; s/^pawnee(\d\.)/pawnee00$1/
-shanahdt	densmore	Densmore/seminole	densmore/seminole	seminole	.krn	\.krn$	^[AT]	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-shanahdt	densmore	Densmore/yuman	densmore/yuman	yuman	.krn	\.krn$	^(^F|No_12[45]_)	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
-*-	*-	*-	*-	*-	*-	*-	*-	*-
+**ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar
+craigsapp	densmore-teton-sioux	kern	densmore/sioux	.	.	.	.	.	.
+shanahdt	densmore	Densmore/acoma	densmore/acoma	acoma	.krn	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!!shanahdt	densmore	Densmore/british_columbia	densmore/bc	bc	.	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/cheyenne_and_arapaho	densmore/cheyenne	cheyenne	.	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/chippewa1	densmore/chippewa_a	chippewa_a	.	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/chippewa2	densmore/chippewa_a	chippewa_b	.	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+!!shanahdt	densmore	Densmore/choctaw	densmore/choctaw	.	.	\.krn$	.	.	s/^(choct)(\d\d)([^\d].*)$/${1}0$2$3/; s/^(choct)(\d)([^\d].*)$/${1}00$2$2/;
+shanahdt	densmore	Densmore/maidu	densmore/maidu	maidu	.krn	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/mandan	densmore/mandan	.	.	\.krn$	.	.	s/^mandan(\d\d\.)/mandan0$1/; s/^mandan(\d\.)/mandan00$1/
+shanahdt	densmore	Densmore/menominee	densmore/menomiee	menomiee	.krn	\.krn$	^Flute	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!!shanahdt	densmore	Densmore/nootka	densmore/nootka	nootka	.krn	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/northern_ute	densmore/northute	northute	.krn	\.krn$	^[DRU]	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+!!shanahdt	densmore	Densmore/papago	densmore/papago	papago	.	\.krn$	.	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/
+shanahdt	densmore	Densmore/pawnee	densmore/pawnee	.	.	\.krn$	.	.	s/^pawnee(\d\d\.)/pawnee0$1/; s/^pawnee(\d\.)/pawnee00$1/
+shanahdt	densmore	Densmore/seminole	densmore/seminole	seminole	.krn	\.krn$	^[AT]	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+shanahdt	densmore	Densmore/yuman	densmore/yuman	yuman	.krn	\.krn$	^(^F|No_12[45]_)	.	s/[(),]//g; s/^No_(.*?)_(.*)/$1-$2/; s/^-//; s/^(\d\d)[_-](.*)/0$1-$2/; s/^(\d)[_-](.*)/00$1-$2/; s/-.*//
+*-	*-	*-	*-	*-	*-	*-	*-	*-	*-

@@ -1,7 +1,6 @@
 !!!OTL: Composers represented in Tasso in Music project dataset
 !! vim: ts=25:nowrap
 **ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar
-
 TassoInMusicProject	tasso-scores	Trm/kern	tasso-composer/agostini	.	.	--Agostini_	.	.	.
 TassoInMusicProject	tasso-scores	Trm/kern	tasso-composer/albano	.	.	--Albano_	.	.	.
 TassoInMusicProject	tasso-scores	Trm/kern	tasso-composer/alberti	.	.	--Alberti_	.	.	.
@@ -168,5 +167,4 @@ TassoInMusicProject	tasso-scores	Trm/kern	tasso-composer/wert	.	.	--Wert_	.	.	.
 TassoInMusicProject	tasso-scores	Tsg/kern	tasso-composer/wert	.	.	--Wert_	.	.	.
 TassoInMusicProject	tasso-scores	Trm/kern	tasso-composer/zanotti	.	.	--Zanotti_	.	.	.
 TassoInMusicProject	tasso-scores	Trm/kern	tasso-composer/zenaro	.	.	--Zenaro_	.	.	.
-
 *-	*-	*-	*-	*-	*-	*-	*-	*-	*-
