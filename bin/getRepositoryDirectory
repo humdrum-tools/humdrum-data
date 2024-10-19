@@ -2,7 +2,7 @@
 #
 # Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 # Creation Date: Tue Feb 20 00:54:47 PST 2024
-# Last Modified: Mon Mar  4 00:40:11 PST 2024
+# Last Modified: Thu Oct 17 04:02:34 CEST 2024
 # Filename:      bin/getRepositoryDirectory
 # URL:           https://github.com/humdrum-tools/humdrum-data/tree/main/bin/getRepositoryDirectory
 # Syntax:        perl 5
@@ -36,7 +36,6 @@ use Getopt::Long;       # For handling command-line options.
 use Cwd;                # For resolving symbolic link relative paths.
 use POSIX qw/strftime/; # Dealing with UTC
 
-
 my $verboseQ = 0;
 
 # Number of copied file:
@@ -53,8 +52,17 @@ my $FileSize  = 0;
 # Either curl or wget is required for this script:
 chomp(my $curl = `which curl`);
 chomp(my $wget = `which wget`);
+chomp(my $awk = `which awk`);
+
 if (!$curl and !$wget) {
 	die "Either curl or wget command needs to be available\n";
+}
+
+if (!$awk) {
+	chomp($awk = `which gawk`);
+}
+if (!$awk) {
+	die "Cannot find awk or gawk command";
 }
 
 chomp (my $git = `which git`);
@@ -62,7 +70,7 @@ if (!$git) {
 	die "git command not found\n";
 }
 
-chomp(my $gitVersion = `$git -v`);
+chomp(my $gitVersion = `$git --version`);
 if ($gitVersion =~ /version (\d+)\.(\d+)/) {
 	my $major = $1;
 	my $minor = $2;
@@ -76,8 +84,7 @@ if ($gitVersion =~ /version (\d+)\.(\d+)/) {
 my $md5sum = `which md5`; # for MacOS
 chomp $md5sum;
 if ($md5sum =~ /^\s*$/) {
-	$md5sum = `which md5sum`; # for Linux/unix
-	chomp $md5sum;
+	chomp($md5sum = `which md5sum`); # for Linux/unix; also need to use add "awk '{print $1}" afterwards
 }
 die "Cannot find md5sum command-line tool for checksums\n" if $md5sum =~ /^\s*$/;
 
@@ -590,16 +597,22 @@ sub checkoutSubdirectory {
 ##
 ## getId -- get index ID of subdirectory to download into
 ##     the repository from the remote host for the repository.
+## Example:
+##    040000 tree 5155b846278b23f06e4b9cd32e8f54e0f28db700	filename
+## Filename is after first tab on line.  Other fields are separated by spaces.
 ##
 
 sub getId {
 	my ($repopath, $thing, $entry) = @_;
 	chomp(my @contents = `$git -C "$repopath" ls-tree "$thing"`);
 	foreach my $line (@contents) {
-		my @data = split(/\s+/, $line);
-		next if @data < 4;
-		my $hash = $data[2];
-		my $name = $data[3];
+		my @data1 = split(/\t/, $line);
+		next if @data1 < 2;
+		my $name = $data1[1];
+		my $startline = $data1[0];
+		my @data2 = split(/\s+/, $startline);
+		next if @data2 < 3;
+		my $hash = $data2[2];
 		if ($name eq $entry) {
 			return $hash;
 		}
@@ -758,12 +771,21 @@ sub linkRepositoryFilesToLocalDirectory {
 	# to the source directory.  This enables the humdrum-data directory to be
 	# moved in the local file system without breaking the symbolic links.
 	my $relativePath = $toSubdir;
-	$relativePath =~ s/[^\/]+/../g;
+	$relativePath =~ s/[^\/ ]+/../g;
 
 	# Create a list of the files (including directory path to
 	# file) in the source subdir repository which need to be
 	# linked to the target directory.
-	my @files = sort glob("$srcdir/*");
+	
+	my @files;
+	opendir(my $dir_handle, $srcdir) or die "Cannot open directory: $srcdir\n";
+	while (my $file = readdir($dir_handle)) {
+		next if $file =~ /^\./;
+		my $relative_path = "$srcdir/$file";
+		next if -d $relative_path;
+		$files[@files] = $relative_path;
+	}
+	closedir($dir_handle);
 	return if @files == 0;
 
 	# Improve later by checking for symbolic links that need to to remove (when
@@ -969,7 +991,11 @@ sub createInfoFileLink {
 	my $repoInfo = "$REPODIR/$GITHUB_OWNER/.$GITHUB_REPO.info";
 	my $testHash;
 	if (-r "$repoInfo") {
-		chomp($testHash = `$md5sum -q "$repoInfo"`);
+		if ($md5sum eq "md5sum") {
+			chomp($testHash = `$md5sum "$repoInfo" | $awk '{print $1}'`);
+		} else {
+			chomp($testHash = `$md5sum -q "$repoInfo"`);
+		}
 	} else {
 		die "Cannot find repo info file $repoInfo\n";
 	}
@@ -978,14 +1004,24 @@ sub createInfoFileLink {
 
 	# Check if any pre-existing .info file matches to repository info file:
 	if (-r "$targdir/.info") {
-		chomp(my $hash = `$md5sum -q "$targdir/.info"`);
+		my $hash;
+		if ($md5sum eq "md5sum") {
+			chomp($hash = `$md5sum "$targdir/.info" | $awk '{print $1}'`);
+		} else {
+			chomp($hash = `$md5sum -q "$targdir/.info"`);
+		}
 		return if $hash eq $testHash;
 		$counter++;
 	}
 	# .info numbers must be successive:
 	while (1) {
 		if (-r "$targdir/.info$counter") {
-			chomp(my $hash = `$md5sum -q "$targdir/.info$counter"`);
+			my $hash;
+			if ($md5sum eq "md5sum") {
+				chomp(my $hash = `$md5sum "$targdir/.info$counter" | $awk '{print $1}'`);
+			} else {
+				chomp(my $hash = `$md5sum -q "$targdir/.info$counter"`);
+			}
 			return if $hash eq $testHash;
 			$counter++;
 		} else {
@@ -1099,14 +1135,14 @@ sub storeDirectoryInfo {
 			if ($fromSubdir eq "") {
 				$line .= ".";
 			} else {
-				$line .= $fromSubdir;
+				$line .= "$fromSubdir";
 			}
 
 			$line .= "\t";
 			if ($toSubdir eq "") {
 				$line .= ".";
 			} else {
-				$line .= $toSubdir;
+				$line .= "$toSubdir";
 			}
 
 			$line .= "\t$prefix";

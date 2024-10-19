@@ -157,7 +157,7 @@ hleveillegauvin	KernScores	JazzTrumpet/kern	songs/jazz/trumpet	.	.	.	.	.	s/\x{27
 Computational-Cognitive-Musicology-Lab	Star-Wars-Thematic-Corpus	SequelTriologyThemeFiles/Krns	songs/starwars	sequel-	.	\.krn$	.	.	s/^(\d[a-z]?)_(.*)/0${1}_$2/; s/[()]//g; s/_+/_/g; s/_-_/-/g;
 Computational-Cognitive-Musicology-Lab	Star-Wars-Thematic-Corpus	PrequelTriologyThemeFiles/Krns	songs/starwars	prequel-	.	\.krn$	.	.	s/^(\d[a-z]?)_(.*)/0${1}_$2/; s/[()]//g; s/_+/_/g; s/_-_/-/g;
 Computational-Cognitive-Musicology-Lab	Star-Wars-Thematic-Corpus	OriginalTriologyThemeFiles/Krns	songs/starwars	original-	.	\.krn$	4_Leias_Theme_Basic\.krn	.	s/^(\d[a-z]?)_(.*)/0${1}_$2/; s/[()]//g; s/_+/_/g; s/_-_/-/g;
-jasonleeubc	Cantopop-corpus	.	songs/pop/cantonese	.	.krn	^C\d+$	.	.	s/^C/cpop-/
+jasonleeubc	Cantopop-corpus	Humdrum-files	songs/pop/cantonese	.	.	.	.	.	.
 josquin-research-project	Jos	.	early-music/josquin	.	.	.	^Jos2514	.	.
 pl-wnifc	humdrum-polish-scores	pl-wn/kern	songs/psalms/gomolka	.	.krn	melodiae-na-psalterz-polski	.	.	s/^(.*)(\d\d\d)_(.*)/gomolka-$2/
 pl-wnifc	humdrum-chopin-first-editions	kern	chopin/first-editions	.	.	.	.	.	.

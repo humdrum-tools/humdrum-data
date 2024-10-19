@@ -446,7 +446,7 @@ can be used with this repository.  You can check your version of
 `git` with the command:
 
 ```bash
-git -v
+git --version
 ```
 
 A good reply would be something like this:

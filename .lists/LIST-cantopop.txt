@@ -1,5 +1,5 @@
 !!!OTL: A corpus of Cantonese popular music, 2000–2020
 !! vim: ts=16:nowrap
 **ghname	**ghrepo	**from	**to	**prefix	**suffix	**filter	**xfilter	**content	**sar
-jasonleeubc	Cantopop-corpus	.	cantopop	.	.krn	^C\d+$	.	.	s/^C/cpop-/
+jasonleeubc	Cantopop-corpus	Humdrum-files	cantopop	.	.	.	.	.	.
 *-	*-	*-	*-	*-	*-	*-	*-	*-	*-
