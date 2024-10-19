@@ -81,12 +81,13 @@ if ($gitVersion =~ /version (\d+)\.(\d+)/) {
 	}
 }
 
-my $md5sum = `which md5`; # for MacOS
-chomp $md5sum;
+chomp(my $md5sum = `which md5 2> /dev/null`); # for MacOS
 if ($md5sum =~ /^\s*$/) {
-	chomp($md5sum = `which md5sum`); # for Linux/unix; also need to use add "awk '{print $1}" afterwards
+	chomp($md5sum = `which md5sum 2> /dev/null`); # for Linux/unix; also need to use add "awk '{print $1}" afterwards
 }
 die "Cannot find md5sum command-line tool for checksums\n" if $md5sum =~ /^\s*$/;
+exit(1);
+
 
 # Install Humdrum Extract (https://github.com/humdrum-tools/humdrum-tools, or
 # https://github.com/craigsapp/humextra if you want to include notecounts in
@@ -991,7 +992,7 @@ sub createInfoFileLink {
 	my $repoInfo = "$REPODIR/$GITHUB_OWNER/.$GITHUB_REPO.info";
 	my $testHash;
 	if (-r "$repoInfo") {
-		if ($md5sum eq "md5sum") {
+		if ($md5sum =~ /md5sum$/) {
 			chomp($testHash = `$md5sum "$repoInfo" | $awk '{print $1}'`);
 		} else {
 			chomp($testHash = `$md5sum -q "$repoInfo"`);
@@ -1005,7 +1006,7 @@ sub createInfoFileLink {
 	# Check if any pre-existing .info file matches to repository info file:
 	if (-r "$targdir/.info") {
 		my $hash;
-		if ($md5sum eq "md5sum") {
+		if ($md5sum =~ /md5sum$/) {
 			chomp($hash = `$md5sum "$targdir/.info" | $awk '{print $1}'`);
 		} else {
 			chomp($hash = `$md5sum -q "$targdir/.info"`);
@@ -1017,7 +1018,7 @@ sub createInfoFileLink {
 	while (1) {
 		if (-r "$targdir/.info$counter") {
 			my $hash;
-			if ($md5sum eq "md5sum") {
+			if ($md5sum =~ /md5sum$/) {
 				chomp(my $hash = `$md5sum "$targdir/.info$counter" | $awk '{print $1}'`);
 			} else {
 				chomp(my $hash = `$md5sum -q "$targdir/.info$counter"`);
