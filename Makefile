@@ -1,7 +1,7 @@
 ##
 ## Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 ## Creation Date: Sun Feb 25 21:38:46 PST 2024
-## Last Modified: Fri Mar  8 19:01:46 PST 2024
+## Last Modified: Mon Jan 13 02:45:38 PST 2025
 ## Filename:      Makefile
 ## URL:           http://github.com/humdrum-tools/humdrum-data/tree/main/Makefile
 ## Syntax:        GNU Makefile
@@ -39,10 +39,12 @@
 ##      make tonerow      Tonerows used by Schoenberg, Berg and Webern
 ##
 ## You can create your own .lists/LIST-*.txt file(s) and run with make.  For
-## exaple, create a file called .lists/LIST-mylist.txt based on other examples
+## example, create a file called .lists/LIST-mylist.txt based on other examples
 ## in that directory, and then you can compile the list with the command
 ## "make mylist"
 ##
+
+SHELL := /bin/sh
 
 # List of targets that should not be processed by %:
 NONLISTS := check-update clean cu nc ncs note-count note-counts notecount \
@@ -50,33 +52,27 @@ NONLISTS := check-update clean cu nc ncs note-count note-counts notecount \
 
 .DEFAULT_GOAL := %
 
-
 # Location of scripts used in this makefile:
 BINDIR=bin
 
-# Locaion of the LIST files:
+# Location of the LIST files:
 LISTDIR=.lists
 
-
 ###########################################################################
-
 
 # Remove downloaded repositories and links to file in them:
 clean:
 	-rm -rf .source
 	$(BINDIR)/deleteBrokenLinks
 
-
 # See if any online repositories have been updated:
 cu: check-update
 check-update:
 	$(BINDIR)/checkIfNeedUpdates -v
 
-
 # Create the README.md file in the root directory:
 readme:
 	$(BINDIR)/makeReadme > README.md
-
 
 # Count number of notes in local directories (symbolic links only):
 ncs: notecount
@@ -87,32 +83,28 @@ notecounts: notecount
 notecount:
 	@$(BINDIR)/getNoteCount
 
-
 # Generate complicated LIST files:
 make-lists: pc timp timp-year
-
 
 # Create/update the polish-composers LIST:
 pc:
 	$(BINDIR)/makePolishCommposerList > .lists/LIST-polish-composers.txt
 
-
 # Create/update the tasso-composer LIST:
 timp:
 	$(BINDIR)/makeTassoComposerList > .lists/LIST-tasso-composers.txt
-
 
 # Create/update the tasso-publication-year LIST:
 timp-year:
 	$(BINDIR)/makeTassoYearList > .lists/LIST-tasso-publication-year.txt
 
-
-# Downlod the entire dataset or specific subsets:
+# Download the entire dataset or specific subsets:
 %:
-	@if [[ ! " $(NONLISTS) " =~ " $@ " && "$@" != "%" ]]; then \
-		"$(BINDIR)/processList" ".lists/LIST-$@.txt"; \
-	elif [[ "$@" == "%" ]]; then \
+	@if echo "$(NONLISTS)" | grep -w -q "$@"; then \
+		echo "Target $@ is not a valid list."; \
+	elif [ "$@" = "%" ]; then \
 		$(BINDIR)/processList .lists/LIST.txt; \
+	else \
+		$(BINDIR)/processList ".lists/LIST-$@.txt"; \
 	fi
-
 

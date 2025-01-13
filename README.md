@@ -18,8 +18,8 @@ your musical endeavors.  This introduction guides you through essential
 information, instructions for installation, and tips on customizing
 your dataset downloads.
 
-Currently this repository manages 26,450 files containing
-18,394,282 sounding notes, with a total file size of 380.2MB.
+Currently this repository manages 26,490 files containing
+18,428,832 sounding notes, with a total file size of 381MB.
 
 
 ## Summary ##
@@ -307,7 +307,7 @@ for the Mozart sonatas in the `sonatas` dataset:
 
 ```tsv
 !!!source:             https://github.com/craigsapp/mozart-piano-sonatas
-!!!download-date:      2024-10-17 06:32:30 +0200
+!!!download-date:      2025-01-13 02:56:11 -0800
 !!!last-commit:        https://github.com/craigsapp/mozart-piano-sonatas/tree/71b5b1f2
 !!!last-commit-date:   2024-06-06 23:51:39 -0700
 !!!repository-license: https://github.com/craigsapp/mozart-piano-sonatas/blob/main/LICENSE.txt
@@ -395,9 +395,9 @@ the main download list:
 
 | Notes | Files | Size | Repository owner | Repository name |
 | ----- | ----- | ---- | ---------------- | --------------- |
-| 404,209| 416| 4MB| [benory](https://github.com/benory) | [1520s-project-scores](https://github.com/benory/1520s-project-scores) |
+| 431,084| 448| 4.3MB| [benory](https://github.com/benory) | [1520s-project-scores](https://github.com/benory/1520s-project-scores) |
 | 440,222| 8,379| 5.4MB| [ccarh](https://github.com/ccarh) | [essen-folksong-collection](https://github.com/ccarh/essen-folksong-collection) |
-| 145,084| 939| 12.9MB| [Computational-Cognitive-Musicology-Lab](https://github.com/Computational-Cognitive-Musicology-Lab) | [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops) |
+| 145,096| 939| 12.9MB| [Computational-Cognitive-Musicology-Lab](https://github.com/Computational-Cognitive-Musicology-Lab) | [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops) |
 | 0| 124| 1.8MB|  〃  | [MCFlow](https://github.com/Computational-Cognitive-Musicology-Lab/MCFlow) |
 | 1,932| 65| 64.4KB|  〃  | [Star-Wars-Thematic-Corpus](https://github.com/Computational-Cognitive-Musicology-Lab/Star-Wars-Thematic-Corpus) |
 | 1,482| 1| 15.7KB| [craigsapp](https://github.com/craigsapp) | [Musikalisches-Wuerfelspiel](https://github.com/craigsapp/Musikalisches-Wuerfelspiel) |
@@ -450,7 +450,7 @@ the main download list:
 | 5,620| 5| 125.7KB|  〃  | [Pip](https://github.com/josquin-research-project/Pip) |
 | 6,012| 4| 108.4KB|  〃  | [Reg](https://github.com/josquin-research-project/Reg) |
 | 200,915| 172| 2MB|  〃  | [Rue](https://github.com/josquin-research-project/Rue) |
-| 19,127| 19| 186.4KB|  〃  | [Tin](https://github.com/josquin-research-project/Tin) |
+| 19,128| 19| 186.4KB|  〃  | [Tin](https://github.com/josquin-research-project/Tin) |
 | 103,866| 21| 1MB| [musedata](https://github.com/musedata) | [humdrum-bach-brandenburg](https://github.com/musedata/humdrum-bach-brandenburg) |
 | 43,971| 185| 650.1KB|  〃  | [humdrum-bach-chorales-185](https://github.com/musedata/humdrum-bach-chorales-185) |
 | 146,369| 250| 1.3MB|  〃  | [humdrum-corelli](https://github.com/musedata/humdrum-corelli) |
@@ -459,7 +459,7 @@ the main download list:
 | 151,828| 82| 1.3MB|  〃  | [humdrum-mozart-quartets](https://github.com/musedata/humdrum-mozart-quartets) |
 | 23,143| 46| 438.4KB|  〃  | [vivaldi](https://github.com/musedata/vivaldi) |
 | 1,115,811| 512| 14.6MB| [pl-wnifc](https://github.com/pl-wnifc) | [humdrum-chopin-first-editions](https://github.com/pl-wnifc/humdrum-chopin-first-editions) |
-| 11,979,014| 7,961| 284.7MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
+| 11,986,676| 7,969| 285MB|  〃  | [humdrum-polish-scores](https://github.com/pl-wnifc/humdrum-polish-scores) |
 | 17,163| 84| 734.4KB| [polyrhythm-project](https://github.com/polyrhythm-project) | [rds-scores](https://github.com/polyrhythm-project/rds-scores) |
 | 0| 30| 379.3KB| [SEILSdataset](https://github.com/SEILSdataset) | [SEILSdataset](https://github.com/SEILSdataset/SEILSdataset) |
 | 65,796| 915| 987.8KB| [shanahdt](https://github.com/shanahdt) | [densmore](https://github.com/shanahdt/densmore) |
@@ -660,15 +660,15 @@ of the results.
 193	1	5KB	early-music/albano
 493	1	9.8KB	early-music/alberti
 47922	86	742.9KB	early-music/anonymous
-19615	25	212.5KB	early-music/anonymous-1520s
-499	1	7.2KB	early-music/arcadelt
+21960	29	241.1KB	early-music/anonymous-1520s
+2659	4	25.5KB	early-music/arcadelt
 567	1	11.1KB	early-music/asola
 1007	1	17.2KB	early-music/bacchini
 3613	9	77.2KB	early-music/baccusi
 15732	17	281.2KB	early-music/balsamino
 391	1	7.9KB	early-music/barbarino
-561	1	4.6KB	early-music/barra
-13166	10	126.7KB	early-music/bauldeweyn
+1859	2	16.6KB	early-music/barra
+13166	10	126.5KB	early-music/bauldeweyn
 446	1	8.8KB	early-music/bellanda
 2329	5	45.2KB	early-music/bellasio
 735	1	13.5KB	early-music/bellaver
@@ -719,14 +719,14 @@ of the results.
 547	1	5.3KB	early-music/erasmus
 15726	19	334.6KB	early-music/eredi
 692	1	12.5KB	early-music/eremita
-1937	2	17KB	early-music/fage
+3104	3	26.9KB	early-music/fage
 2081	2	37.6KB	early-music/feliciani
 6400	8	120.9KB	early-music/felis
 880	2	18KB	early-music/felix
 885	1	15.5KB	early-music/ferrabosco
 666	1	14.9KB	early-music/ferro
 25926	23	266.6KB	early-music/festa-costanzo
-6214	10	48.6KB	early-music/festa-sebastiano
+8206	13	62.4KB	early-music/festa-sebastiano
 6571	6	117.7KB	early-music/fevin-antoine
 261	1	5.6KB	early-music/fonghetti
 639	1	14.1KB	early-music/fontanelli
@@ -763,7 +763,7 @@ of the results.
 200915	172	2MB	early-music/larue
 1582	1	13.6KB	early-music/lasantier
 25710	20	215.8KB	early-music/lheritier
-4167	3	33.4KB	early-music/lupi
+6038	5	52.2KB	early-music/lupi
 7909	8	67.2KB	early-music/lupus
 3459	5	71.7KB	early-music/luzzaschi
 1946	4	38.3KB	early-music/macigni
@@ -790,7 +790,7 @@ of the results.
 4019	6	82.4KB	early-music/monteverdi
 864	1	16.4KB	early-music/montverdi
 9617	9	84.3KB	early-music/moulu
-20060	22	191.6KB	early-music/mouton
+20710	23	197.3KB	early-music/mouton
 1002	1	17.5KB	early-music/naldi
 682	4	19.9KB	early-music/nanino
 232	1	5.7KB	early-music/nanterni
@@ -817,7 +817,7 @@ of the results.
 6012	4	108.4KB	early-music/regis
 766	2	7.4KB	early-music/renaldo
 1349	3	31KB	early-music/ricci
-33395	29	333.8KB	early-music/richafort
+37537	38	367.1KB	early-music/richafort
 228	1	7.4KB	early-music/roccia
 576	1	10.3KB	early-music/roinci
 183	1	4.6KB	early-music/sabbatini
@@ -825,7 +825,7 @@ of the results.
 549	1	10.3KB	early-music/santini
 171	1	5.6KB	early-music/saracini
 905	1	17.3KB	early-music/scozzese
-36168	47	613.9KB	early-music/senfl
+47418	55	803.6KB	early-music/senfl
 107	1	6.5KB	early-music/serafico
 16766	18	160.9KB	early-music/sermisy
 11365	11	102.1KB	early-music/silva
@@ -834,7 +834,7 @@ of the results.
 1534	3	29.3KB	early-music/stivori
 254	1	6.9KB	early-music/striggio
 1696	2	16KB	early-music/therache
-19127	19	186.4KB	early-music/tinctoris
+19128	19	186.4KB	early-music/tinctoris
 80	1	3.8KB	early-music/torelli
 441	1	9.6KB	early-music/torscianello
 1256	2	22.6KB	early-music/tosone
@@ -867,7 +867,7 @@ of the results.
 1692	2	65.6KB	polish/abersbach-jan-jiri
 1911	2	21.6KB	polish/andrychowicz-j
 7669	6	426KB	polish/anerio-giovanni-francesco
-1237400	2136	28.7MB	polish/anonim
+1241819	2144	28.8MB	polish/anonim
 12769	23	550.9KB	polish/asola-giovanni-matteo
 1671	1	27.9KB	polish/astorga-emanuele-d
 12297	6	191.9KB	polish/bach-johann-christian
@@ -934,7 +934,7 @@ of the results.
 3461	2	28.2KB	polish/dietrich-moritz
 7902	4	138.9KB	polish/dittersdorf-carl-ditters-von
 218292	56	5MB	polish/dobrzynski-ignacy-feliks
-546136	142	16.7MB	polish/elsner-jozef
+549379	142	16.9MB	polish/elsner-jozef
 78173	29	2MB	polish/engel-jan
 129	1	5.9KB	polish/ett-caspar
 18728	4	422.1KB	polish/fertner-karol
@@ -1061,7 +1061,7 @@ of the results.
 1643	1	25.1KB	polish/laube-antonin
 2046	2	27.1KB	polish/lawina-swietochowski-jerzy
 126868	51	2.7MB	polish/lechleitner-ferdinand-simon
-43120	21	1.2MB	polish/lessel-franciszek
+43120	21	1.3MB	polish/lessel-franciszek
 6103	7	158.3KB	polish/leszczynski-wladyslaw
 1663	3	20.2KB	polish/lewandowski-leopold-leon
 1127	1	23.1KB	polish/lheritier-jean
@@ -1136,7 +1136,7 @@ of the results.
 317511	139	12.5MB	polish/paderewski-ignacy-jan
 20672	46	603.3KB	polish/palestrina-giovanni-pierluigi-da
 1030	3	32.6KB	polish/paszkiewicz-andrzej
-11805	7	249.4KB	polish/pausch-eugen
+11805	7	249.9KB	polish/pausch-eugen
 57849	56	1.9MB	polish/pekiel-bartlomiej
 15264	12	307.8KB	polish/pergolesi-giovanni-battista
 3476	1	38KB	polish/pichl-vaclav
@@ -1323,7 +1323,7 @@ of the results.
 62741	232	538.1KB	songs/harmonized/liederschatz
 2446	9	16.7KB	songs/jazz/trumpet
 8552	152	150.9KB	songs/nova-scotia
-85477	739	9.4MB	songs/pop/billboard
+85489	739	9.4MB	songs/pop/billboard
 39729	105	805.6KB	songs/pop/cantonese
 59607	200	3.5MB	songs/pop/rollingstone
 27681	151	713.7KB	songs/psalms/gomolka
@@ -1338,15 +1338,15 @@ of the results.
 252	21	10.9KB	tonerow/webern
 23143	46	438.4KB	vivaldi/op01
 *-	*-	*-	*-
-!!!total-notes: 18394282
-!!!total-files: 26450
-!!!total-size: 387.9MB
+!!!total-notes: 18428832
+!!!total-files: 26490
+!!!total-size: 388.6MB
 ```
 
 </details>
 
-The complete repository-download set contains 26,450 files
-with a total of 18,394,282 sounding notes and total size of 380.2MB.
+The complete repository-download set contains 26,490 files
+with a total of 18,428,832 sounding notes and total size of 381MB.
 
 
 ## Implementation notes ##
